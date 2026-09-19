@@ -1,0 +1,63 @@
+{
+  "digests": {
+    "binary_sha256": "3c5faaf38d8b9ea14001a8561b78b026452804d454b16a5f2e11dbc089605a4d",
+    "counts_sha256": "95bbcc166442bd16538f5804c0fe9262cf977cbed428246c797a11e8f5fe79ca",
+    "dense_json_sha256": "c41eb75b870627e45853a2a2c4ac7f3992b574352629747dfb50010ae63883ba",
+    "events_sha256": "f8b09c7117a2bf54a63c7b0e902744d6a397e875d82891b232068cd6663e9134",
+    "gravlax_commit": "6b92503cffbd48da8312bdd75c1f1f70d5ff2a27",
+    "metadata_sha256": "d37f3c1a6c615f061937756287a75e818ddeecc68779ed2738e3d290cdfb8d48",
+    "metadata_stdout_sha256": "d37f3c1a6c615f061937756287a75e818ddeecc68779ed2738e3d290cdfb8d48",
+    "presence_sha256": "5cfb8d3ba2ab7eeb1a3d40a3bbc35a2bc2dd40a133028d5a7afacf83a25d629c"
+  },
+  "dimensions": {
+    "event_sample_rows_reconstructed": 3258,
+    "events": 543,
+    "nonzero_count_rows": 6516,
+    "presence_rows": 2383,
+    "samples": 6
+  },
+  "event_table_layout": "annotation_genes_json",
+  "gates": {
+    "catalogue_presence_exact": true,
+    "event_catalogue_exact": true,
+    "logical_zeros_reconstruct_dense_rows": true,
+    "matched_commands_exit_zero": true,
+    "metadata_exact": true,
+    "nonzero_count_facts_exact": true,
+    "sample_and_scope_dimensions_exact": true
+  },
+  "inputs": {
+    "binary": "env/cargo-target-atlas-v2/release/aie",
+    "dense_json": "runs/post-v1/federated-sparse-output-r2-final/six-called.chr17.json",
+    "metadata_stdout": "runs/post-v1/federated-sparse-output-r2-final/six-called.chr17.metadata.stdout.json",
+    "sparse_dir": "runs/post-v1/federated-sparse-output-r2-final/six-called.chr17"
+  },
+  "runtime": {
+    "dense_json": {
+      "command": "env/cargo-target-atlas-v2/release/aie cohort events chr17:0-83257441 --sample D0=runs/archive/d0.aie --sample D1=runs/archive/d1.aie --sample D2=runs/archive/d2.aie --sample D2p=runs/archive/d2p.aie --sample D3=runs/archive/d3.aie --sample D4=runs/archive/d4.aie --groups D0=runs/post-v1/federated-biological-screen-r1/D0.called.tsv --groups D1=runs/post-v1/federated-biological-screen-r1/D1.called.tsv --groups D2=runs/post-v1/federated-biological-screen-r1/D2.called.tsv --groups D2p=runs/post-v1/federated-biological-screen-r1/D2p.called.tsv --groups D3=runs/post-v1/federated-biological-screen-r1/D3.called.tsv --groups D4=runs/post-v1/federated-biological-screen-r1/D4.called.tsv --min-support 2 --min-samples 3 --min-informative 50 --max-events 2000000 --min-row-informative 20 --gtf runs/post-v1/federated-biological-screen-r1/gencode.v49.aic --json",
+      "exit_status": 0,
+      "max_rss_kib": 2452780,
+      "sha256": "c0f4ffaf0703b33250412e6328d7605ae9c446a6cbcc8ffb7f0c79e64eb5f500",
+      "wall_seconds": 3.96
+    },
+    "sparse": {
+      "command": "env/cargo-target-atlas-v2/release/aie cohort events chr17:0-83257441 --sample D0=runs/archive/d0.aie --sample D1=runs/archive/d1.aie --sample D2=runs/archive/d2.aie --sample D2p=runs/archive/d2p.aie --sample D3=runs/archive/d3.aie --sample D4=runs/archive/d4.aie --groups D0=runs/post-v1/federated-biological-screen-r1/D0.called.tsv --groups D1=runs/post-v1/federated-biological-screen-r1/D1.called.tsv --groups D2=runs/post-v1/federated-biological-screen-r1/D2.called.tsv --groups D2p=runs/post-v1/federated-biological-screen-r1/D2p.called.tsv --groups D3=runs/post-v1/federated-biological-screen-r1/D3.called.tsv --groups D4=runs/post-v1/federated-biological-screen-r1/D4.called.tsv --min-support 2 --min-samples 3 --min-informative 50 --max-events 2000000 --min-row-informative 20 --gtf runs/post-v1/federated-biological-screen-r1/gencode.v49.aic --sparse-dir runs/post-v1/federated-sparse-output-r2-final/six-called.chr17",
+      "exit_status": 0,
+      "max_rss_kib": 2473920,
+      "sha256": "62bbf8bf5508ec862a8b200432f57c8de59ca10b87c974d8fdcf966aa18e34a0",
+      "wall_seconds": 3.92
+    },
+    "sparse_to_dense_rss_ratio": 1.008618791738354,
+    "sparse_to_dense_wall_ratio": 0.98989898989899
+  },
+  "schema": "gravlax.cohort.events.sparse-validation.v1",
+  "status": "PASS",
+  "storage": {
+    "dense_json_bytes": 3484594,
+    "dense_to_sparse_bundle_ratio": 45.27210601533065,
+    "sparse_bundle_bytes": 76970,
+    "sparse_bundle_fraction_of_dense": 0.02208865652641312,
+    "sparse_compressed_table_bytes": 72741,
+    "sparse_metadata_bytes": 4229
+  }
+}

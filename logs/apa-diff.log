@@ -1,0 +1,14 @@
+             That means the default return type will be a sparse array.
+groups: 466 T cells, 365 monocytes
+genes measured in both: 239; null median shift 14 bp (P95 592); real median 30 bp
+genes with real shift > null P95: 35 (15%)  [null expectation 5%]
+  CD44: 7174 bp shift (null 1312)
+  PSAP: 6810 bp shift (null 696)
+  HMGB1: 6343 bp shift (null 3264)
+  LCP1: 5511 bp shift (null 280)
+  FYB1: 5157 bp shift (null 2366)
+  PTPRC: 4673 bp shift (null 638)
+  CALM2: 3372 bp shift (null 275)
+  SERP1: 3299 bp shift (null 620)
+  ANXA1: 3208 bp shift (null 711)
+  SUB1: 2666 bp shift (null 589)

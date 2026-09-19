@@ -1,0 +1,82 @@
+{
+  "Cell_Ranger_BAM_direct": {
+    "distinct_CB_UB": {
+      "include_left": 10,
+      "include_right": 62,
+      "skip": 2
+    },
+    "include_right_fraction": 0.96875
+  },
+  "Cell_Ranger_alignment_archive": {
+    "totals": {
+      "both": 0,
+      "exclude_only": 2,
+      "include_only": 72,
+      "informative_umis": 74,
+      "usage_fraction": 0.972972972972973
+    }
+  },
+  "STAR_SJ_matrix": {
+    "UMIs": {
+      "include_left": 10,
+      "include_right": 61,
+      "skip": 2
+    },
+    "include_right_fraction": 0.9682539682539683
+  },
+  "annotation_free_targeted_STAR_archive": {
+    "fully_annotated_label": true,
+    "totals": {
+      "both": 0,
+      "exclude_only": 2,
+      "include_only": 72,
+      "informative_umis": 74,
+      "usage_fraction": 0.972972972972973
+    }
+  },
+  "dataset": {
+    "called_nuclei": 10261,
+    "name": "10k Human Brain Nuclei, Chromium GEM-X Epi Multiome",
+    "provider": "10x Genomics",
+    "published": "2026-04-20",
+    "url": "https://www.10xgenomics.com/datasets/multiome-gemx-10k-human-brain"
+  },
+  "gate_checks": {
+    "STAR_SJ_include_right_fraction_at_least_0_50": true,
+    "archive_and_STAR_direction_agree": true,
+    "archive_cassette_inclusion_at_least_0_75": true,
+    "called_nuclei_informative_UMIs_at_least_50": true,
+    "event_present_at_catalogue_support_2": true
+  },
+  "inputs": {
+    "filtered_feature_bc_matrix_h5": {
+      "bytes": 158165615,
+      "sha256": "5dc9d83c2ce7b0f6fbc5f6b9ee75b2fa3cdb7c470b027b7c6284a8381fe2f99a"
+    },
+    "gex_possorted_bam": {
+      "bytes": 26185111333,
+      "sha256": "e49697023eb7f5cca2bac7330a6c032d0ce40c0f3e9dcc703b11e4e72fb1dbbb"
+    },
+    "gex_possorted_bam_bai": {
+      "bytes": 14372368,
+      "sha256": "61fe1a7d796fce3ed1388743f80e7ed0107b5b4055a986d1e32e86311793f046"
+    }
+  },
+  "interpretation": {
+    "claim": "prospective replication of the predeclared FNBP1 normal-brain cassette program",
+    "not_claimed": "novelty, cell-type specificity, mechanism, or genome-wide mapping-sensitivity replication",
+    "targeted_STAR": "annotation-free realignment of reads selected at the locked locus; validates alignment direction and reducer semantics, not reads mapped elsewhere by Cell Ranger"
+  },
+  "locked_event": "cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959",
+  "preparation": {
+    "called_nuclei": 10261,
+    "r1": "fnbp1.R1.fastq",
+    "r2": "fnbp1.R2.fastq",
+    "schema": "gravlax.fnbp1-confirmation-preparation.v1",
+    "target_bam": "fnbp1.called.bam",
+    "target_primary_reads": 46108,
+    "window": "chr9:129907500-129926000"
+  },
+  "schema": "gravlax.fnbp1-normal-brain-confirmation.v1",
+  "status": "PASS"
+}

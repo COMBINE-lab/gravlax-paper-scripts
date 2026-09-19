@@ -1,0 +1,239 @@
+{
+  "schema": "gravlax.sparse-terminal-tail-record.v1",
+  "status": {
+    "biological_pilot": "PASS_PRIMARY_GATES",
+    "ntrk2_secondary": "FAIL_INSUFFICIENT_WITNESSES",
+    "ordinal_signal_promotion": "HARD_STOP_LOSSY"
+  },
+  "source": {
+    "gravlax_base_commit": "e378516a0fb6602e63d626d0c49fb11e58f463c8",
+    "pilot_gate_commit": "ff0cecc75c31aaa9d1c67f47de243cca0ab15500",
+    "pilot_result_commit": "db817cf967c4c6d8df442bb1a73efa81e1152909",
+    "promotion_gate_commit": "50b50a2360d11caf85eb3b1c56c16033f6863546",
+    "counterexample_commit": "d8b7482e1995433d9b017a098ab65b1c700cc2f2",
+    "pilot_binary_bytes": 95068232,
+    "pilot_binary_sha256": "7733f923fb0030e7f6c653d7155d71dd30dc7e162fa97f4ad70c17f2d3cd268c",
+    "pilot_workspace_tests": 141,
+    "counterexample_workspace_tests": 142,
+    "frozen_pilot_spec_source_sha256": "12de85591c6cdc514b5f40be0d5084001d0596b00561eb6aa0d5f730abaf1ecf",
+    "frozen_promotion_spec_source_sha256": "25f02890c7318933fb1f02d4f7a02b9444d0311ea0c855a944c22d2e4aa8d5e1",
+    "aggregation_script_sha256": "c802e5efcee2bf45893b5e92cd6f910737c2755f0b79a52164bafc88206b6d52",
+    "pilot_code_patch_sha256": "fb17ba45f0d72e3baa93694c65282968292a103ca6329ac8946eeed06e7abf19",
+    "counterexample_code_patch_sha256": "31a14af35148a33f0c4ce143c29be8e9eeb0aadb1c261d152091da191f700f1a",
+    "pilot_result_document_sha256": "e3e338511a2d26d739082075967cba8e25e5eb30090a5e382d856ddb89a107cb",
+    "promotion_result_document_sha256": "46b3bd72ac59e8a708b4d21607028ca3bcd0a01787e34e3a36b9f35d7aa12a7c",
+    "committed_pilot_result_sha256": "4115a076ad3049b078afeb208769c36a88503fd105d7d443757b2bf09419f3f8",
+    "committed_ntrk2_result_sha256": "ea54af91f1401d0d051d8199533b8bb0cffabde354e2f2822252663d844f01d0"
+  },
+  "evidence_semantics": {
+    "protocol": "10x Chromium 3-prime gene expression; STAR SoloStrand=Forward",
+    "positive_read": "transcript-3-prime terminal soft clip >=6 nt, oriented A/T fraction >=0.8, transcript-distal homopolymer run >=4 nt",
+    "witness_key": [
+      "reference",
+      "cleavage_anchor",
+      "strand",
+      "corrected_barcode",
+      "UMI"
+    ],
+    "deduplication": "retain the strongest continuous-tail signal for each exact witness key",
+    "sidecar_record_bytes": 16,
+    "retained_sequence_or_quality": false,
+    "default_archive_changed": false
+  },
+  "cohort": {
+    "dataset": "GSE234790 adult human SEZ",
+    "samples": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "counts": {
+      "mapped_primary_reads": 715967790,
+      "eligible_called_cell_barcode_umi_reads": 510389785,
+      "terminal_softclipped_reads": 2932436,
+      "tail_positive_reads": 144673,
+      "exact_umi_tail_witnesses": 136763,
+      "polyasite_tail_witnesses": 53346
+    },
+    "external_vs_shifted_control": {
+      "external": {
+        "tail_positive": 53345,
+        "all_terminal_softclip_witnesses": 186470,
+        "tail_positive_rate": 0.2860781895211026
+      },
+      "shifted_control": {
+        "tail_positive": 763,
+        "all_terminal_softclip_witnesses": 20386,
+        "tail_positive_rate": 0.037427646424016484
+      },
+      "odds_ratio": 10.299211255564257,
+      "minimum_gate_odds_ratio": 5.0,
+      "minimum_gate_witnesses": 100,
+      "pass": true
+    },
+    "candidate_discrimination": {
+      "clip_length_auc": 0.5268426091982206,
+      "continuous_tail_score_auc": 0.6548230234660573,
+      "auc_gain": 0.12798041426783668,
+      "minimum_gate_auc_gain": 0.05,
+      "pass": true
+    },
+    "internal_priming": {
+      "flagged": {
+        "tail_positive": 2085,
+        "all_terminal_softclip_witnesses": 23177,
+        "tail_positive_rate": 0.08995987401303016
+      },
+      "not_flagged": {
+        "tail_positive": 51260,
+        "all_terminal_softclip_witnesses": 163293,
+        "tail_positive_rate": 0.31391425229495445
+      },
+      "depletion_gate_pass": true
+    },
+    "storage": {
+      "archive_bytes": 1326036691,
+      "sidecar_bytes": 1671772,
+      "sidecar_fraction_of_archive": 0.0012607283126828653,
+      "sidecar_percent_of_archive": 0.12607283126828653,
+      "uncompressed_record_payload_bytes": 2188208,
+      "maximum_gate_fraction_of_archive": 0.01,
+      "pass": true
+    },
+    "execution": {
+      "aggregate_elapsed_seconds": 400.08653487,
+      "minimum_donor_elapsed_seconds": 25.493067545,
+      "maximum_donor_elapsed_seconds": 127.55681372,
+      "mode": "standalone single-threaded audit that rereads genome and BAM"
+    },
+    "per_sample": [
+      {
+        "sample": "A",
+        "external_witnesses": 2130,
+        "odds_ratio": 6.962445714015725,
+        "auc_gain": 0.08782915305881045,
+        "sidecar_fraction_of_archive": 0.0006689642829397
+      },
+      {
+        "sample": "B",
+        "external_witnesses": 2851,
+        "odds_ratio": 10.713292953993468,
+        "auc_gain": 0.08891391256723635,
+        "sidecar_fraction_of_archive": 0.0010628488038448374
+      },
+      {
+        "sample": "C",
+        "external_witnesses": 3650,
+        "odds_ratio": 15.751313142777873,
+        "auc_gain": 0.11652765685525135,
+        "sidecar_fraction_of_archive": 0.0013716609876416742
+      },
+      {
+        "sample": "D",
+        "external_witnesses": 15460,
+        "odds_ratio": 9.223249178762513,
+        "auc_gain": 0.12926173794456852,
+        "sidecar_fraction_of_archive": 0.001379685951957455
+      },
+      {
+        "sample": "E",
+        "external_witnesses": 3140,
+        "odds_ratio": 12.050125055736704,
+        "auc_gain": 0.15680752119395897,
+        "sidecar_fraction_of_archive": 0.0012583112228598562
+      },
+      {
+        "sample": "F",
+        "external_witnesses": 3421,
+        "odds_ratio": 10.594370161857846,
+        "auc_gain": 0.1177090294811296,
+        "sidecar_fraction_of_archive": 0.0011395846555320923
+      },
+      {
+        "sample": "G",
+        "external_witnesses": 19460,
+        "odds_ratio": 10.447017394848427,
+        "auc_gain": 0.14374803627270338,
+        "sidecar_fraction_of_archive": 0.001376912835952493
+      },
+      {
+        "sample": "H",
+        "external_witnesses": 3234,
+        "odds_ratio": 22.02680500645541,
+        "auc_gain": 0.12737778275799705,
+        "sidecar_fraction_of_archive": 0.0010905784817867327
+      }
+    ],
+    "all_samples_pass_enrichment_auc_storage_and_internal_priming_gates": true
+  },
+  "ntrk2_secondary": {
+    "window_bp": 25,
+    "sites": 9,
+    "total_witnesses": 3,
+    "eligible_donors": 1,
+    "positive_donors": 0,
+    "minimum_gate_witnesses": 20,
+    "minimum_gate_positive_donors": 6,
+    "observed": {
+      "donor": "G",
+      "astro_nsc_proximal_shorter_coding": 1,
+      "mature_neuron_proximal_shorter_coding": 2,
+      "distal_mane_full_length_like": 0
+    },
+    "pass": false,
+    "claim_limit": "terminal-site witnesses do not phase terminal exons to coding exons and are not molecule-level TrkB.T1/TrkB.FL evidence"
+  },
+  "promotion": {
+    "proposed_layout": "per-chunk sparse local-molecule-ordinal set plus exactly one u16 signal per selected ordinal",
+    "structural_gate_pass": false,
+    "reason": "chain reduction discards middle read endpoints and one emitted MolRec can summarize tail-positive reads at multiple distinct cleavage anchors",
+    "executable_counterexample": {
+      "plus": {
+        "input_spans": [
+          "90..190",
+          "100..140",
+          "110..130"
+        ],
+        "tail_positive_span": "100..140 with trailing 10S A",
+        "retained_endpoints": [
+          190,
+          130
+        ],
+        "lost_cleavage_anchor": 140
+      },
+      "minus": {
+        "input_starts": [
+          290,
+          300,
+          310
+        ],
+        "tail_positive_start": "300 with leading 10S T",
+        "retained_starts": [
+          290,
+          310
+        ],
+        "lost_cleavage_anchor": 300
+      },
+      "emitted_molecule_weight_per_strand": 3
+    },
+    "minimal_exact_redesign": {
+      "unit": "per-selected-molecule event list",
+      "selected_molecule_encoding": "delta-coded strictly increasing local MolRec ordinals",
+      "event_count": "one explicit count per selected ordinal plus a total event count",
+      "event_encoding": "signed varint cleavage-anchor delta from MolRec::anchor(), followed by the frozen u16 signal",
+      "deduplication": "globally by cell, UMI class, chromosome, strand, cleavage anchor; retain strongest signal",
+      "one_to_many_events_allowed": true,
+      "retained_sequence_or_quality": false,
+      "optional_query_index": "event-coordinate extents or postings when candidate queries must skip unrelated chunks"
+    },
+    "size_and_runtime_measured_for_lossy_layout": false,
+    "production_section_written": false,
+    "default_archive_changed": false
+  },
+  "excluded_artifact_manifest": "manifests/sparse-terminal-tail-artifacts.tsv"
+}

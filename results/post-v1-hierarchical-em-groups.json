@@ -1,0 +1,179 @@
+{
+  "status": "complete",
+  "analysis": "replay_only_candidate_excluded_hierarchical_em_groups",
+  "manifest": "${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/experiments/manifests/hierarchical-em.yaml",
+  "manifest_sha256": "ba28342744911eb33e68b869d53a424b670bdbf437ef1f9089e18eda55c4448e",
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.5.2",
+    "scanpy": "1.12.4",
+    "scikit_learn": "1.9.0"
+  },
+  "datasets": [
+    {
+      "id": "D0",
+      "called_cells": 1225,
+      "candidate_genes_excluded": 5663,
+      "detected_genes_before_exclusion": 15146,
+      "eligible_genes_after_exclusion": 12508,
+      "hvg_count": 2000,
+      "dimension": 40,
+      "resolution": 0.6,
+      "leiden_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "medoid_seed": 15,
+      "medoid_mean_within_arm_ari": 0.9777870684924802,
+      "group_sizes": [
+        346,
+        35,
+        193,
+        198,
+        391,
+        39,
+        23
+      ],
+      "real_groups": {
+        "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hierarchical-em-groups-r1/groups/D0.real.tsv",
+        "sha256": "a8ad72b9437af1d06d98ec23e09f3424898e54e35c3abfadad11ea8411c90404"
+      },
+      "shuffled_groups": {
+        "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hierarchical-em-groups-r1/groups/D0.shuffled.tsv",
+        "sha256": "c4ac20d51a3599b469a8b85ad9cc8ca9ee6ad171af5f8885d3b72dd84b442ff7",
+        "sizes_preserved": true
+      },
+      "called_barcodes_sha256": "565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc",
+      "replay_matrix_sha256": "abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335",
+      "replay_features_sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+    },
+    {
+      "id": "D1",
+      "called_cells": 5038,
+      "candidate_genes_excluded": 8500,
+      "detected_genes_before_exclusion": 21611,
+      "eligible_genes_after_exclusion": 17130,
+      "hvg_count": 2000,
+      "dimension": 30,
+      "resolution": 0.4,
+      "leiden_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "medoid_seed": 16,
+      "medoid_mean_within_arm_ari": 0.9710254658153337,
+      "group_sizes": [
+        950,
+        134,
+        1561,
+        563,
+        443,
+        1142,
+        147,
+        98
+      ],
+      "real_groups": {
+        "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hierarchical-em-groups-r1/groups/D1.real.tsv",
+        "sha256": "1c8357521d6e8c76a184a70ea64fe3f2ad967ea4e63684e6988bb4ac20e94ed7"
+      },
+      "shuffled_groups": {
+        "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hierarchical-em-groups-r1/groups/D1.shuffled.tsv",
+        "sha256": "b12ba2d8664337cb7145550deb80d0d9b9dfc18929e70aa5f8e5c3b975ae56fb",
+        "sizes_preserved": true
+      },
+      "called_barcodes_sha256": "23b85638b941d8e6553a73b3f733a053e340e51f406f0d44cc2c44327337c680",
+      "replay_matrix_sha256": "323f10075565411f4a97faa944b6dc8885c7fa86dae91021058bc1c680951054",
+      "replay_features_sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+    },
+    {
+      "id": "D2_prime",
+      "called_cells": 6460,
+      "candidate_genes_excluded": 8800,
+      "detected_genes_before_exclusion": 25816,
+      "eligible_genes_after_exclusion": 20734,
+      "hvg_count": 2000,
+      "dimension": 40,
+      "resolution": 0.25,
+      "leiden_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "medoid_seed": 18,
+      "medoid_mean_within_arm_ari": 0.6571716456239658,
+      "group_sizes": [
+        2728,
+        2527,
+        206,
+        380,
+        97,
+        522
+      ],
+      "real_groups": {
+        "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hierarchical-em-groups-r1/groups/D2_prime.real.tsv",
+        "sha256": "9ca8511e6a6e5259839e9ee89199d345a54d61639daba5dfae54bf18fdc7805e"
+      },
+      "shuffled_groups": {
+        "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hierarchical-em-groups-r1/groups/D2_prime.shuffled.tsv",
+        "sha256": "504fec35a344b6e0514abb17604cf449b9689f32d1e136c33aa18dc597dd964b",
+        "sizes_preserved": true
+      },
+      "called_barcodes_sha256": "8337209908869cedc60372b6920687d46b2775a2cee8e459b490a2f57e43210a",
+      "replay_matrix_sha256": "c41276b8aa28a6f0446f6bad9971d722a24e3814b287ea24b3081d5a1b4d880c",
+      "replay_features_sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+    }
+  ]
+}

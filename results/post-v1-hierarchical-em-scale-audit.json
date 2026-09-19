@@ -1,0 +1,379 @@
+{
+  "status": "complete",
+  "analysis": "post_hoc_hierarchical_em_scale_audit",
+  "inferential_status": "exploratory_not_independent_confirmation",
+  "warning": "D1 and D2-prime had already been inspected under the registered gate; these results diagnose scale but are not a new confirmatory test.",
+  "protocol": {
+    "date": "2026-08-31",
+    "status": "post_hoc_exploratory_not_independent_confirmation",
+    "threads": "24",
+    "gravlax_commit": "7813c0b1c755eea07abb0d21e2296f8cc17091ee",
+    "scripts_commit": "d638293943f27785916306f70436fc8fbf0f57e3",
+    "aie_binary_sha256": "efe4a48d4b7ffb9ee8a3431b74234d8cd29a3ca416e1278f661633755468b1b2",
+    "hostname": "analysis-host",
+    "kernel": "Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux"
+  },
+  "registered_gate": {
+    "result": "results/post-v1-hierarchical-em.json",
+    "verdict_remains": "STOP for the registered alpha grid"
+  },
+  "d0_registered_scale_diagnostic": {
+    "registered_group_alpha": 80,
+    "registered_global_alpha": 20,
+    "called_cells": 1225,
+    "groups": 7,
+    "candidate_genes": 5663,
+    "cell_library_quantiles_0_10_50_90_100": [
+      509.0,
+      2717.6000000000004,
+      6745.0,
+      13601.800000000001,
+      57063.0
+    ],
+    "group_total_counts": [
+      3414490,
+      574619,
+      1376899,
+      1109019,
+      2636857,
+      39406,
+      282840
+    ],
+    "candidate_prior_contribution_quantiles_0_50_90_99_99_9_100": [
+      0.0,
+      3.6039359220193066e-05,
+      0.005712743680559117,
+      0.25164761952829595,
+      1.1934668682639353,
+      11.958825863968745
+    ],
+    "nonzero_fraction": 0.6823238566131026,
+    "interpretation": "A unit local count dominates the registered prior for more than 99% of D0 candidate/group pairs."
+  },
+  "d0_exploratory_selection": {
+    "grid": [
+      {
+        "group_alpha": 0,
+        "global_alpha": 6400,
+        "negative_log_loss_by_seed": [
+          0.05979592273041318,
+          0.05901377506337804,
+          0.06091394385923811
+        ],
+        "mean_negative_log_loss": 0.059907880551009776,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.24002111974656,
+          "negative_log_loss": 0.05990770524304066,
+          "multiclass_brier": 0.027567577287954607
+        }
+      },
+      {
+        "group_alpha": 1280,
+        "global_alpha": 5120,
+        "negative_log_loss_by_seed": [
+          0.059567163947272316,
+          0.05878741426451377,
+          0.06073970452504545
+        ],
+        "mean_negative_log_loss": 0.05969809424561051,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.24142110294676,
+          "negative_log_loss": 0.059697910010524,
+          "multiclass_brier": 0.02749533572754008
+        }
+      },
+      {
+        "group_alpha": 3200,
+        "global_alpha": 3200,
+        "negative_log_loss_by_seed": [
+          0.059425165550959225,
+          0.05863299574899125,
+          0.06063806966170054
+        ],
+        "mean_negative_log_loss": 0.059565410320550335,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.2424210909469,
+          "negative_log_loss": 0.05956521960875227,
+          "multiclass_brier": 0.02743232314137244
+        }
+      },
+      {
+        "group_alpha": 5120,
+        "global_alpha": 1280,
+        "negative_log_loss_by_seed": [
+          0.05956103580564379,
+          0.0587234594883004,
+          0.06078359314666447
+        ],
+        "mean_negative_log_loss": 0.05968936281353622,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.2424210909469,
+          "negative_log_loss": 0.05968917094885186,
+          "multiclass_brier": 0.02741910559095671
+        }
+      },
+      {
+        "group_alpha": 0,
+        "global_alpha": 25600,
+        "negative_log_loss_by_seed": [
+          0.05761048646425987,
+          0.0566738921018088,
+          0.0587478727885393
+        ],
+        "mean_negative_log_loss": 0.05767741711820266,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.24802102374771,
+          "negative_log_loss": 0.05767724008877476,
+          "multiclass_brier": 0.026830609672340223
+        }
+      },
+      {
+        "group_alpha": 5120,
+        "global_alpha": 20480,
+        "negative_log_loss_by_seed": [
+          0.05741709102925461,
+          0.056497448421581865,
+          0.0586078504525938
+        ],
+        "mean_negative_log_loss": 0.057507463301143424,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.25182097814826,
+          "negative_log_loss": 0.05750727739599948,
+          "multiclass_brier": 0.026757549439253556
+        }
+      },
+      {
+        "group_alpha": 12800,
+        "global_alpha": 12800,
+        "negative_log_loss_by_seed": [
+          0.05729652176820626,
+          0.056375041200263175,
+          0.05851881881619665
+        ],
+        "mean_negative_log_loss": 0.05739679392822203,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.2506209925481,
+          "negative_log_loss": 0.05739660288914863,
+          "multiclass_brier": 0.026691987036401656
+        }
+      },
+      {
+        "group_alpha": 20480,
+        "global_alpha": 5120,
+        "negative_log_loss_by_seed": [
+          0.05743159031219813,
+          0.0564716293282984,
+          0.05865194487857747
+        ],
+        "mean_negative_log_loss": 0.05751838817302467,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.25222097334832,
+          "negative_log_loss": 0.05751819781036569,
+          "multiclass_brier": 0.026691140270921083
+        }
+      },
+      {
+        "group_alpha": 0,
+        "global_alpha": 102400,
+        "negative_log_loss_by_seed": [
+          0.05757037322492463,
+          0.05658853891016091,
+          0.058826024993227255
+        ],
+        "mean_negative_log_loss": 0.057661645709437596,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.2458210501474,
+          "negative_log_loss": 0.0576614497857868,
+          "multiclass_brier": 0.02686218785838079
+        }
+      },
+      {
+        "group_alpha": 20480,
+        "global_alpha": 81920,
+        "negative_log_loss_by_seed": [
+          0.057411187576598355,
+          0.05646098983641744,
+          0.058714258010278325
+        ],
+        "mean_negative_log_loss": 0.05752881180776471,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.23562117254593,
+          "negative_log_loss": 0.05752860784388701,
+          "multiclass_brier": 0.026809736872536048
+        }
+      },
+      {
+        "group_alpha": 51200,
+        "global_alpha": 51200,
+        "negative_log_loss_by_seed": [
+          0.057290666782776584,
+          0.0563497134026016,
+          0.05861600478458058
+        ],
+        "mean_negative_log_loss": 0.057418794989986255,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.22182133814394,
+          "negative_log_loss": 0.05741858730283642,
+          "multiclass_brier": 0.026749995945935006
+        }
+      },
+      {
+        "group_alpha": 81920,
+        "global_alpha": 20480,
+        "negative_log_loss_by_seed": [
+          0.05740253544951936,
+          0.05642864936789187,
+          0.05871168423988429
+        ],
+        "mean_negative_log_loss": 0.05751428968576517,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.2334211989456,
+          "negative_log_loss": 0.05751408495018967,
+          "multiclass_brier": 0.02674083116502383
+        }
+      },
+      {
+        "group_alpha": 327680,
+        "global_alpha": 81920,
+        "negative_log_loss_by_seed": [
+          0.05795477604175686,
+          0.05701488022376978,
+          0.05936896244997884
+        ],
+        "mean_negative_log_loss": 0.05811287290516849,
+        "aggregate": {
+          "n_across_seeds": 500006,
+          "top1_percent": 98.18322180133839,
+          "negative_log_loss": 0.05811265069641596,
+          "multiclass_brier": 0.02706534757031432
+        }
+      }
+    ],
+    "selected": {
+      "group_alpha": 12800,
+      "global_alpha": 12800,
+      "negative_log_loss_by_seed": [
+        0.05729652176820626,
+        0.056375041200263175,
+        0.05851881881619665
+      ],
+      "mean_negative_log_loss": 0.05739679392822203,
+      "aggregate": {
+        "n_across_seeds": 500006,
+        "top1_percent": 98.2506209925481,
+        "negative_log_loss": 0.05739660288914863,
+        "multiclass_brier": 0.026691987036401656
+      }
+    }
+  },
+  "datasets": {
+    "D0": {
+      "pooled": {
+        "n_across_seeds": 500006,
+        "top1_percent": 98.18202181573821,
+        "negative_log_loss": 0.05972566238469802,
+        "multiclass_brier": 0.02789596677568946
+      },
+      "calibrated_cell_global_0_25600": {
+        "n_across_seeds": 500006,
+        "top1_percent": 98.24802102374771,
+        "negative_log_loss": 0.05767724008877476,
+        "multiclass_brier": 0.026830609672340223
+      },
+      "real_hierarchy_12800_12800": {
+        "n_across_seeds": 500006,
+        "top1_percent": 98.2506209925481,
+        "negative_log_loss": 0.05739660288914863,
+        "multiclass_brier": 0.026691987036401656
+      },
+      "shuffled_hierarchy_12800_12800": {
+        "n_across_seeds": 500006,
+        "top1_percent": 98.24502105974729,
+        "negative_log_loss": 0.05766704444546848,
+        "multiclass_brier": 0.02683447165065949
+      }
+    },
+    "D1": {
+      "pooled": {
+        "n_across_seeds": 2595186,
+        "top1_percent": 98.29603735531866,
+        "negative_log_loss": 0.0538050802602899,
+        "multiclass_brier": 0.026015446257236976
+      },
+      "calibrated_cell_global_0_25600": {
+        "n_across_seeds": 2595186,
+        "top1_percent": 98.35133204325238,
+        "negative_log_loss": 0.05224618897584614,
+        "multiclass_brier": 0.02513400348704252
+      },
+      "real_hierarchy_12800_12800": {
+        "n_across_seeds": 2595186,
+        "top1_percent": 98.37048288639042,
+        "negative_log_loss": 0.051502172366191576,
+        "multiclass_brier": 0.02489705810742045
+      },
+      "shuffled_hierarchy_12800_12800": {
+        "n_across_seeds": 2595186,
+        "top1_percent": 98.35094671441662,
+        "negative_log_loss": 0.05193633536027789,
+        "multiclass_brier": 0.02510816048322012
+      }
+    },
+    "D2_prime": {
+      "pooled": {
+        "n_across_seeds": 210091,
+        "top1_percent": 88.55448353332604,
+        "negative_log_loss": 0.27845561567689464,
+        "multiclass_brier": 0.1590469651188522
+      },
+      "calibrated_cell_global_0_25600": {
+        "n_across_seeds": 210091,
+        "top1_percent": 88.75534887263139,
+        "negative_log_loss": 0.27677773031379194,
+        "multiclass_brier": 0.15774246185679103
+      },
+      "real_hierarchy_12800_12800": {
+        "n_across_seeds": 210091,
+        "top1_percent": 88.75154099890048,
+        "negative_log_loss": 0.2757362979387823,
+        "multiclass_brier": 0.15742968581576655
+      },
+      "shuffled_hierarchy_12800_12800": {
+        "n_across_seeds": 210091,
+        "top1_percent": 88.74630517252048,
+        "negative_log_loss": 0.27709267673080795,
+        "multiclass_brier": 0.15793604125935906
+      }
+    }
+  },
+  "combined_d1_d2_prime": {
+    "n_across_seeds": 2805277,
+    "pooled_negative_log_loss": 0.07062946360503977,
+    "calibrated_cell_global_negative_log_loss": 0.06906166069262504,
+    "real_hierarchy_negative_log_loss": 0.0682953702128467,
+    "shuffled_hierarchy_negative_log_loss": 0.06879859919906317,
+    "calibrated_cell_global_improvement_vs_pooled": 0.02219757637098724,
+    "real_hierarchy_improvement_vs_pooled": 0.03304702135705467,
+    "real_hierarchy_improvement_vs_calibrated_cell_global": 0.011095743602067212,
+    "real_hierarchy_improvement_vs_shuffled": 0.0073145237268626906
+  },
+  "interpretation": {
+    "implementation_failure": false,
+    "registered_grid_was_under_scaled": true,
+    "most_gain_is_calibrated_cell_global_shrinkage": true,
+    "real_groups_add_small_consistent_signal": true,
+    "positive_paper_claim_requires_new_independent_validation": true
+  }
+}

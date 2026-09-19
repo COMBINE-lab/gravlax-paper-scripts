@@ -1,0 +1,160 @@
+experiment: hybrid_em_default_promotion
+date_locked: 2026-08-31
+status: locked_before_new_D0_D4_grid_or_paired_measurement
+reference_gravlax_commit: 0446feaa3b49d5bd657f59584888d3fde71ab888
+scope:
+  D0: development
+  D4: development_after_completed_untouched_confirmation
+  D3: untouched_confirmation_used_once_after_model_freeze
+disclosure:
+  prior_results_observed: true
+  D0:
+    selected_depth_scale: 64
+    selected_depth_power: 2
+    relative_nll_gain_hybrid_over_proxy: 0.005134178
+  D4:
+    selected_depth_scale: 64
+    selected_depth_power: 2
+    relative_nll_gain_hybrid_over_proxy: 0.004595805
+    absolute_brier_change_hybrid_minus_proxy: 0.0000131771
+    top1_percentage_point_change_hybrid_minus_proxy: 0.0180404
+    real_group_relative_nll_gain: 0.010169646
+    formal_verdict: MARGINAL
+  pooled_direct_comparison_observed_before_lock: false
+  paired_cell_clustered_intervals_observed_before_lock: false
+protocol_amendment_2026_08_31:
+  timing: after_D0_seed7_original_hybrid_baseline_before_grid_selection_or_selected_candidate_audit
+  observed_D0_seed7_hybrid_vs_pooled:
+    mean_NLL_difference: -0.0017915691
+    NLL_CI95: [-0.0026467375, -0.0009364006]
+    mean_Brier_difference: -0.0011025990
+    Brier_CI95: [-0.0017244817, -0.0004807164]
+  added_rule:
+    across_seed_point_estimate: target_count_weighted
+    across_seed_standard_error: weighted_sum_of_seed_clustered_SEs
+    interpretation: conservative_perfect_positive_seed_correlation
+  rationale: seeds_reuse_cells_and_partially_overlapping_masked_targets
+fixed_components:
+  convex:
+    cell_weight: 0.20
+    group_weight: 0.60
+    sample_weight: 0.20
+    group_prior: 80
+  dirichlet_proxy:
+    cell_prior: 64
+    group_prior: 80
+  iterations: 10
+  epsilon: 1.0e-9
+  cell_shards: 64
+model_family:
+  name: monotone_depth_gated_hybrid
+  equation: hybrid_equals_one_minus_s_times_convex_plus_s_times_dirichlet_proxy
+  gate: s_of_d_equals_d_to_p_over_d_to_p_plus_D_to_p
+  depth: mode_independent_initial_fitted_unique_candidate_mass
+  depth_scales: [2, 4, 8, 16, 32, 64, 128, 256]
+  depth_powers: [0.5, 1, 2, 4, 8]
+targets:
+  type: keyed_mixed_class_mask
+  mask_fraction: 0.20
+  seeds: [7, 17, 29]
+  groups: previously_frozen_real_group_maps
+development_selection:
+  reference_models: [pooled, dirichlet-proxy]
+  aggregation_within_dataset: target_count_weighted_across_seeds
+  eligibility_all_required_in_D0_and_D4:
+    mean_negative_log_loss_below_each_reference: true
+    mean_multiclass_brier_at_most_each_reference: true
+    top1_drop_vs_better_reference_percentage_points_max: 0.10
+  objective: minimum_target_count_weighted_NLL_across_D0_and_D4
+  tie_break: [lower_depth_power, lower_depth_scale]
+  no_eligible_candidate: STOP_simple_depth_only_family_without_relaxing_criteria
+selected_development_audit:
+  paired_unit: masked_target
+  uncertainty_cluster: cell
+  interval: normal_95_percent_cell_clustered
+  comparisons: [hybrid_vs_pooled, hybrid_vs_dirichlet-proxy]
+  required:
+    NLL_upper_confidence_limit_below_zero_in_D0_and_D4: true
+    Brier_upper_confidence_limit_at_most_zero_in_D0_and_D4: true
+    top1_drop_vs_either_reference_percentage_points_max: 0.10
+    peak_rss_gib_max: 4
+robustness_amendment_2026_08_31:
+  timing: after_NLL_optimal_candidate_audit_before_any_paired_audit_of_other_grid_candidates
+  reason: NLL_optimal_candidate_failed_only_D4_Brier_CI_superiority_vs_proxy
+  observed_candidate:
+    depth_scale: 32
+    depth_power: 2
+    D4_mean_Brier_difference_vs_proxy: -0.0000394355
+    D4_Brier_CI95_vs_proxy: [-0.0001003253, 0.0000214544]
+    other_development_audit_criteria_passed: 12_of_12
+  eligible_pool: configurations_passing_original_mean_NLL_Brier_top1_constraints
+  selection:
+    objective: maximize_minimum_relative_mean_Brier_improvement_vs_proxy_across_D0_D4
+    tie_break: [lower_joint_target_weighted_NLL, lower_depth_power, lower_depth_scale]
+  paired_audit: identical_to_selected_development_audit
+  if_audit_fails: STOP_simple_depth_only_family
+promotion_candidate:
+  status: frozen_after_D0_D4_DEVELOPMENT_PASS_before_D3_preparation
+  depth_scale: 8
+  depth_power: 8
+  development_results:
+    D0:
+      NLL_difference_vs_pooled: -0.0018462616
+      NLL_CI95_vs_pooled: [-0.0028302645, -0.0008622587]
+      Brier_difference_vs_pooled: -0.0012016416
+      Brier_CI95_vs_pooled: [-0.0019360588, -0.0004672245]
+      NLL_difference_vs_proxy: -0.0002270038
+      NLL_CI95_vs_proxy: [-0.0003160250, -0.0001379825]
+      Brier_difference_vs_proxy: -0.0000854366
+      Brier_CI95_vs_proxy: [-0.0001314158, -0.0000394573]
+    D4:
+      NLL_difference_vs_pooled: -0.0023740228
+      NLL_CI95_vs_pooled: [-0.0031750350, -0.0015730107]
+      Brier_difference_vs_pooled: -0.0014303539
+      Brier_CI95_vs_pooled: [-0.0017741748, -0.0010865330]
+      NLL_difference_vs_proxy: -0.0002615952
+      NLL_CI95_vs_proxy: [-0.0003664822, -0.0001567081]
+      Brier_difference_vs_proxy: -0.0000986257
+      Brier_CI95_vs_proxy: [-0.0001489868, -0.0000482646]
+  all_development_audit_criteria_passed: true
+  maximum_peak_rss_kib: 1240796
+D3_confirmation:
+  opened_only_after_model_and_gate_are_committed_and_pushed: true
+  model_fitting_or_threshold_adjustment_after_open: forbidden
+  primary_reference: pooled
+  secondary_reference: dirichlet-proxy
+  acceptance:
+    NLL_upper_confidence_limit_below_zero_vs_pooled: true
+    Brier_upper_confidence_limit_at_most_zero_vs_pooled: true
+    mean_NLL_below_dirichlet_proxy: true
+    mean_Brier_at_most_dirichlet_proxy: true
+    top1_drop_vs_either_reference_percentage_points_max: 0.10
+    real_groups_beat_shuffled_groups_on_NLL_seeds_min: 2
+    peak_rss_gib_max: 4
+  grouping_protocol:
+    manifest: experiments/manifests/depth-hybrid-em-confirmation.yaml
+    manifest_sha256: e4cecb3a015b60ab71c672a2309b1da824db16a749a38b8240904afa6bf406c1
+    rule: identical_frozen_candidate_excluded_replay_only_group_selection_used_for_D4
+decisions:
+  D3_PASS: promote_hybrid_as_default_evaluator_and_implement_opt_in_emission
+  D3_FAIL: retain_pooled_default_and_label_hybrid_experimental
+  production_counts_before_D3_PASS: pooled
+D3_result:
+  status: complete
+  formal_verdict: FAIL
+  sole_failed_criterion: peak_RSS_below_4_GiB
+  scientific_criteria_passed: 7_of_7
+  maximum_peak_rss_kib: 7807888
+  scientific_results:
+    NLL_difference_vs_pooled: -0.0024718729
+    NLL_CI95_vs_pooled: [-0.0035908333, -0.0013529125]
+    Brier_difference_vs_pooled: -0.0016884628
+    Brier_CI95_vs_pooled: [-0.0025292890, -0.0008476367]
+    NLL_difference_vs_proxy: -0.0002081915
+    NLL_CI95_vs_proxy: [-0.0002442213, -0.0001721616]
+    Brier_difference_vs_proxy: -0.0000905761
+    Brier_CI95_vs_proxy: [-0.0001099280, -0.0000712242]
+    real_group_relative_nll_gain: 0.0107372030
+    real_group_seed_wins: 3_of_3
+  interpretation: scientific_replication_with_operational_memory_failure
+  formal_verdict_must_not_be_relabelled_after_remediation: true

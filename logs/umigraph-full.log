@@ -1,0 +1,29 @@
+reads used: 63563687 / 63567946   cells: 657996   oracle tags: true
+=== UMI adjacency graph ===
+base molecules (exact-UMI, 2000 bp loci): 22098420
+distinct (cell,chrom,strand,value) classes: 21583520
+cells touched by any edge: 51643
+
+      window same-value links        1MM edges
+       10000           355733          1185745
+      100000           424420          1187610
+     1000000           454070          1189068
+     3000000           462742          1190066
+  chrom-wide           514900          1208244
+
+stored graph @ 3000000 bp: 462742 links + 1190066 edges = 3691835 B zstd  (1.3365 bits/molecule; UMI stream was 27.00)
+
+--- graph replay vs STARsolo collapse [strict (G-D greedy)] ---
+G1 molecules:     10191963
+replay molecules: 10724463
+overall L1 / G1:  5.2300%
+median per-cell:  1.9134%   (Gate G-D frozen grouping was 0.939%)
+p90 per-cell:     2.3053%
+
+--- graph replay vs STARsolo collapse [merge_ties (CR-like)] ---
+G1 molecules:     10191963
+replay molecules: 10630740
+overall L1 / G1:  4.3780%
+median per-cell:  1.0490%   (Gate G-D frozen grouping was 0.939%)
+p90 per-cell:     1.4052%
+wrote results/umigraph-full.json

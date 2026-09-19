@@ -1,0 +1,15 @@
+path	bytes	status
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R1_001.fastq.gz	1454745759	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R1_001.fastq.gz	1467090489	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R1_001.fastq.gz	1455782991	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R1_001.fastq.gz	1464919379	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R2_001.fastq.gz	3268329473	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R2_001.fastq.gz	3296122770	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R2_001.fastq.gz	3286890261	accepted
+${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R2_001.fastq.gz	3294253353	accepted
+${GRAVLAX_PROJECT_ROOT}/ref/star-49/Genome	3250619009	accepted
+${GRAVLAX_PROJECT_ROOT}/ref/star-49/SA	25246969567	accepted
+${GRAVLAX_PROJECT_ROOT}/ref/star-49/SAindex	1565873619	accepted
+# attempted_files	11
+# advised_bytes	49051596670
+# failures	0

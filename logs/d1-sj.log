@@ -1,0 +1,8 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-base --readFilesIn data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L001_R2_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L002_R2_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L003_R2_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L004_R2_001.fastq.gz --readFilesCommand zcat --outSAMtype None --outFileNamePrefix runs/d1-sj/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 15:27:11 ..... started STAR run
+Aug 28 15:27:11 ..... loading genome
+Aug 28 15:27:13 ..... started mapping
+Aug 28 15:32:05 ..... finished mapping
+Aug 28 15:32:05 ..... finished successfully
+D1_SJ_DONE

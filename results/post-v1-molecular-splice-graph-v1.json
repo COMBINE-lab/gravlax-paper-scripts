@@ -1,0 +1,180 @@
+{
+  "acceptance": {
+    "complete_transcript_claim_absent": true,
+    "edge_path_umi_conservation": true,
+    "group_edge_path_umi_conservation": true,
+    "lower_bound_semantic_guard": true,
+    "real_multi_edge_fragment": true,
+    "repeated_json_byte_identical": true,
+    "strand_separation": true,
+    "workspace_tests_passed": 119
+  },
+  "benchmark": {
+    "max_peak_rss_kib": 13204,
+    "max_wall_seconds": 0.005645,
+    "measurement": "release executable; warm repeated process invocations; Python perf_counter wall and GNU time maximum RSS",
+    "median_wall_seconds": 0.004785,
+    "min_wall_seconds": 0.004249,
+    "runs": 20
+  },
+  "graph": {
+    "edge_strands": [
+      {
+        "edge_umis": 5,
+        "edges": 5,
+        "strand": "+"
+      },
+      {
+        "edge_umis": 52,
+        "edges": 17,
+        "strand": "-"
+      }
+    ],
+    "multi_edge_fragments": [
+      {
+        "cells": 4,
+        "junctions": [
+          {
+            "acceptor": 129923843,
+            "donor": 129915980
+          },
+          {
+            "acceptor": 129915965,
+            "donor": 129908999
+          }
+        ],
+        "nonzero_groups": [
+          {
+            "cells": 2,
+            "group": "oligodendrocyte_OPC",
+            "umis": 2
+          },
+          {
+            "cells": 2,
+            "group": "astrocyte",
+            "umis": 2
+          }
+        ],
+        "strand": "-",
+        "umis": 4
+      },
+      {
+        "cells": 1,
+        "junctions": [
+          {
+            "acceptor": 129919158,
+            "donor": 129915980
+          },
+          {
+            "acceptor": 129915965,
+            "donor": 129908999
+          }
+        ],
+        "nonzero_groups": [
+          {
+            "cells": 1,
+            "group": "microglia_immune",
+            "umis": 1
+          }
+        ],
+        "strand": "-",
+        "umis": 1
+      },
+      {
+        "cells": 1,
+        "junctions": [
+          {
+            "acceptor": 129923844,
+            "donor": 129915980
+          },
+          {
+            "acceptor": 129915965,
+            "donor": 129908999
+          }
+        ],
+        "nonzero_groups": [
+          {
+            "cells": 1,
+            "group": "neuronal",
+            "umis": 1
+          }
+        ],
+        "strand": "-",
+        "umis": 1
+      }
+    ],
+    "path_length_histogram": [
+      {
+        "edges_per_path": 1,
+        "paths": 21,
+        "umis": 45
+      },
+      {
+        "edges_per_path": 2,
+        "paths": 3,
+        "umis": 6
+      }
+    ],
+    "path_strands": [
+      {
+        "path_umis": 5,
+        "paths": 5,
+        "strand": "+"
+      },
+      {
+        "multi_edge_paths": 3,
+        "multi_edge_umis": 6,
+        "path_umis": 46,
+        "paths": 19,
+        "strand": "-"
+      }
+    ],
+    "planning": {
+      "candidate_paths": 24,
+      "candidate_strand_path_umis": 51,
+      "catalogue_junctions": 21,
+      "independent_chunk_decodes": 21,
+      "retained_paths": 24,
+      "scoped_distinct_umi_classes": 51,
+      "unique_chunk_decodes": 1
+    },
+    "totals": {
+      "edges": 22,
+      "nodes": 37,
+      "paths": 24,
+      "strand_path_umis": 51
+    }
+  },
+  "implementation": {
+    "executable_sha256": "4d015484812c378cedbedda9624c8ea2e3bd8e4bf5b8f82136d851fab2aa2ee7",
+    "gravlax_commit": "2d4d51e0ae47bbfa402d3d39ba797f588a067e49",
+    "query_schema": "gravlax.query.splice-graph.v1"
+  },
+  "inputs": {
+    "archive": "runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-G/fnbp1.called.aie",
+    "archive_sha256": "5f4809d9759f33bf3826883333ebbb55ec030946c1a7785474f087c8629164c3",
+    "groups": "runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-G/groups.archive.tsv",
+    "groups_sha256": "016e69743b7d39c73f11b5d1eb888b9d14e34550ebb8489246bdcb4801524d20",
+    "locus": "chr9:129907500-129926000",
+    "selected_cells": 3998
+  },
+  "interpretation_limits": [
+    "Path fragments are positive co-support lower bounds, not reconstructed transcripts.",
+    "The real-locus observation is a capability gate in one donor, not a population contrast.",
+    "Multimappers use archived anchor-placement evidence without alternative resolution.",
+    "Catalogue support is strand-combined even though returned graphs are strand-separated."
+  ],
+  "output_sha256": "a4f85e217e86ef92e107ccbc58c1e853430da12dad52769e28fb098f66ea6b17",
+  "registration": {
+    "manifest": "experiments/manifests/molecular-splice-graph-v1.json",
+    "registration_commit": "1c54ec1aa9bc2ad6bf3eabdc722a80897551aacb",
+    "specification": "experiments/specs/molecular-splice-graph-v1.md"
+  },
+  "schema": "gravlax.molecular-splice-graph-v1.result.v1",
+  "status": "PASS",
+  "thresholds": {
+    "max_paths": 100000,
+    "min_path_umis": 1,
+    "min_support": 1
+  }
+}

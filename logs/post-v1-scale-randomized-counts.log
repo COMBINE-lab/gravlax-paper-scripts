@@ -1,0 +1,28 @@
+2026-08-30 D1/D2-prime randomized counts-only scale gate
+
+Protocol commit: 25ddca504b3a171768e0710c403c9402e6dad659
+Gravlax commit: ef2126684378d8ba0dad5605ff81eed635bcab6a
+AIE binary SHA-256: 915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd
+STAR: 2.7.11b
+CPUs: 0-23; 24 threads; five alternating blocks; STAR first in odd blocks
+STAR scope: Gene only; --outSAMtype None
+
+D1
+  STAR warm seconds: 475.46 475.47 472.90 468.63 461.54; median 472.90
+  AIE warm seconds: 7.21 6.98 5.80 5.45 5.24; median 5.80
+  median speedup: 81.534483
+  STAR/AIE median max RSS KB: 35307348 / 18347732 = 1.924344
+  cold STAR/AIE seconds: 476.24 / 8.16 = 58.362745
+  cold advised bytes: 57082855749 / 3982997847; failures 0 / 0
+
+D2-prime
+  STAR warm seconds: 326.43 324.54 327.86 319.75 326.70; median 326.43
+  AIE warm seconds: 4.76 5.15 4.74 4.60 4.80; median 4.76
+  median speedup: 68.577731
+  STAR/AIE median max RSS KB: 34990296 / 19282612 = 1.814604
+  cold STAR/AIE seconds: 327.28 / 5.31 = 61.634652
+  cold advised bytes: 49445043453 / 4034222267; failures 0 / 0
+
+Every output comparison passed; no STAR counts-only arm emitted BAM or SAM.
+Warm means no explicit eviction. D1 warm input counters show that the full working set was not
+always resident; see the compact JSON for per-run counters.

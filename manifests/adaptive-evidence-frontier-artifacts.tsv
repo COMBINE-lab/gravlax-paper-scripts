@@ -1,0 +1,61 @@
+logical_path	kind	bytes	sha256	role
+env/cargo-target-frontier/release/aie	executable	91679920	a73a0024512e83731ff8f27c6b1e2a7f9d0bdbbc51f8598d69bb86ef05364de4	exact rejected pilot binary used for reported measurements
+runs/ingest/full/Aligned.sortedByCoord.out.bam	bam	4208722967	0757ea351b0e999bec024e10169f91a7edb14526e31c73b619e8cb41752ef974	D0 annotation-free ingest alignment input
+runs/ingest/d2p/Aligned.sortedByCoord.out.bam	bam	16425883029	d4021960316844222f6e1880db6f1b0bf732f9236734e6da1757150b932167fd	D2-prime annotation-free ingest alignment input
+data/3M-february-2018.txt	whitelist	115512960	843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b	10x v3 whitelist and raw replay barcode universe
+annotations/gencode.v49.annotation.gtf	annotation	3323462848	ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914	query-time GENCODE v49 annotation
+runs/oracle/full/v49/Solo.out/Gene/filtered/barcodes.tsv	barcode_list	20825	565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc	D0 called-cell fidelity universe
+runs/oracle/d2p/v49/Solo.out/Gene/filtered/barcodes.tsv	barcode_list	109820	8337209908869cedc60372b6920687d46b2775a2cee8e459b490a2f57e43210a	D2-prime called-nucleus fidelity universe
+runs/post-v1/adaptive-frontier-pilot-r1/d0-control/d0.aie	aie	111079672	a664edd16cecc86347341bff177f184f67ad53007d3c194ed8b41f0f4d49c82c	D0 paired two-extreme control
+runs/post-v1/adaptive-frontier-pilot-r1/d0-control-current/d0.aie	aie	111079672	a664edd16cecc86347341bff177f184f67ad53007d3c194ed8b41f0f4d49c82c	D0 default rerun with final pilot binary; byte-identical control proof
+runs/post-v1/adaptive-frontier-pilot-r1/d0-frontier/d0.aie	aie	132487429	611e073550a0184f3c6c6cd6ff37d1c864375caa1eade4d5ba3b1c1c29f61f25	D0 all-chain containment-frontier treatment
+runs/post-v1/adaptive-frontier-pilot-r1/d0-junction-frontier/d0.aie	aie	114201153	337a7fe802131a98abb176ad67e8624740dd275b74e80654e896525efe1a1cd4	D0 pre-declared junction-only rescue
+runs/post-v1/adaptive-frontier-pilot-r1/d0-junction-frontier-repeat/d0.aie	aie	114201153	337a7fe802131a98abb176ad67e8624740dd275b74e80654e896525efe1a1cd4	D0 independent rescue repeat; byte-identical determinism proof
+runs/archive/d2p.aie	aie	595246459	b493523e1f6a05df05c656ca15c8791b2d5da2e42c8fe700950030c9886dc06c	D2-prime paired two-extreme control
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-frontier/d2p.aie	aie	640092167	0fb6fef789f59a17ef45caa1253173f55a0531ac76dce34cf2e171d35c3b697c	D2-prime all-chain containment-frontier treatment
+runs/post-v1/adaptive-frontier-pilot-r1/dev-base-binary/dev.aie	aie	10771310	07df0035889a9f308261568c2a3957aba42383137853b36ef3c8fedb104bbbab	development default from untouched base binary
+runs/post-v1/adaptive-frontier-pilot-r1/dev-control/dev.aie	aie	10771310	07df0035889a9f308261568c2a3957aba42383137853b36ef3c8fedb104bbbab	development default from pilot binary; byte-identical to untouched base
+runs/post-v1/adaptive-frontier-pilot-r1/dev-frontier/dev.aie	aie	10804453	108947cc7c87d4903544572129c56252521a07e21d637c03e1c1d2e4a5b8bcfe	development all-chain frontier
+runs/post-v1/adaptive-frontier-pilot-r1/dev-frontier-repeat/dev.aie	aie	10804453	108947cc7c87d4903544572129c56252521a07e21d637c03e1c1d2e4a5b8bcfe	development all-chain repeat; byte-identical determinism proof
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/matrix.mtx	matrix_market	56611976	abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335	D0 control Gene replay
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-frontier/matrix.mtx	matrix_market	56657153	c879ac600fb354314b6fdc04ff81d2bd394cda7a14dd0a55f753904deafb47ed	D0 all-chain Gene replay
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-junction-frontier/matrix.mtx	matrix_market	56611870	397259ebcb5889f50323cfd707f4b125c3e14b45efe96122fa83031da6d5cd17	D0 rescue streaming Gene replay
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-junction-frontier-eager/matrix.mtx	matrix_market	56611870	397259ebcb5889f50323cfd707f4b125c3e14b45efe96122fa83031da6d5cd17	D0 rescue eager Gene replay; byte-identical to streaming
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-control/spliced.mtx	matrix_market	78530712	808642713179eb12a6eac3ad2d9cf7d70e18931a2a6c9801c677e7b950058bb4	D0 control Velocity spliced
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-control/unspliced.mtx	matrix_market	78452607	6faef9a7f3dab340aa6e62e0a767a1863ee1798ff6972d56e73231676f9b3683	D0 control Velocity unspliced
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-control/ambiguous.mtx	matrix_market	78421340	d62fbe5675e2151b29d5776a244788df7500c31adbb171d73c3f20abf8b0173d	D0 control Velocity ambiguous
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-frontier/spliced.mtx	matrix_market	78531960	b051d7637bb4e6fa8356a703a66d273bce94a6124bce94d236e06e2d341482b0	D0 all-chain Velocity spliced
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-frontier/unspliced.mtx	matrix_market	78453584	e673dd2fbe534d9b4f978e418d7a544efa364c54968850f457ec46d3ce3d30d2	D0 all-chain Velocity unspliced
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-frontier/ambiguous.mtx	matrix_market	78422188	02aba3445dc093f0a54345ce0f9dbdee564519cb0bfeb4be2823216094d573e4	D0 all-chain Velocity ambiguous
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-junction-frontier/spliced.mtx	matrix_market	78530712	061c11c22e7045689b205adb62c1ec4a5f565ded77586cc05bb5e846370b697f	D0 rescue Velocity spliced
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-junction-frontier/unspliced.mtx	matrix_market	78452607	6faef9a7f3dab340aa6e62e0a767a1863ee1798ff6972d56e73231676f9b3683	D0 rescue Velocity unspliced
+runs/post-v1/adaptive-frontier-pilot-r1/d0-velocity-junction-frontier/ambiguous.mtx	matrix_market	78421340	0ab650b2a4cda2ea9b8ce1198c559ebdbf82b73f9b2f65cf1d041706fdf093d8	D0 rescue Velocity ambiguous
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-control/spliced.mtx	matrix_market	472694035	7ce1a2fb5425bbb802c6e708e47abfa76c24810ec1651c607d3a9ee00f15c329	D2-prime control Velocity spliced
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-control/unspliced.mtx	matrix_market	473376914	3d155ed0bb4b3f6886f24cce8a6ba0846c7b9cdc98296b18674be6bd7a176873	D2-prime control Velocity unspliced
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-control/ambiguous.mtx	matrix_market	472660754	21cb57aa5ad39a4857ba328d11058ca98f5319f87da799b270282ea9432b6d2e	D2-prime control Velocity ambiguous
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-frontier/spliced.mtx	matrix_market	472699944	0b024e62415330cf8fd993301a218d8e6fb909358020d44cff8a7ead5bbd4c7c	D2-prime all-chain Velocity spliced
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-frontier/unspliced.mtx	matrix_market	473382725	ec85712858f7da2a8b94f628236166c1086e1492fd4faf298e06ad3ba628233c	D2-prime all-chain Velocity unspliced
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-frontier/ambiguous.mtx	matrix_market	472666521	2e85a8dd77d317cb4ecc3d07d3a1ca533865bac6b11b7f665671621a5e35d7a0	D2-prime all-chain Velocity ambiguous
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/gene-vs-oracle.json	json	704	0dcacdc22655b5c8f8f3526d298f58329605c2ca69a9dbcaed027b740994990a	D0 control called-cell Gene fidelity audit
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-frontier/gene-vs-oracle.json	json	700	4b2a998e5340a123945a921a768a3e63543e6cde2caa05ab056ad4ad652cc69f	D0 all-chain called-cell Gene fidelity audit
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-junction-frontier/gene-vs-oracle.json	json	714	f38c139a56bb2d404259f3c73acee9881307a7f4e73c4c88e815d42d6938fd74	D0 rescue called-cell Gene fidelity audit
+runs/post-v1/adaptive-frontier-pilot-r1/d0-control/ingest.stdout.txt	text_log	46922	ef38daa73da43533ffef36bc7afc7e8abee5998e4844dd8c2698c65834040a87	D0 control representative histogram and section accounting
+runs/post-v1/adaptive-frontier-pilot-r1/d0-frontier/ingest.stdout.txt	text_log	46974	2001c74f34fc160657b340d2c175868f64659239d27f84968f64164d7d5b9899	D0 all-chain representative histogram and section accounting
+runs/post-v1/adaptive-frontier-pilot-r1/d0-frontier/debug.txt	text_log	2952	0c69e5e14e3da7f991c282d0c9ca7ba62cb2390a52f3ae3d9ca9048f28e4627c	D0 split empty-junction and junction-containing accounting
+runs/post-v1/adaptive-frontier-pilot-r1/d0-junction-frontier/ingest.stdout.txt	text_log	46981	20f3349f6dc2e0df7933f3266ef5a663b13dd98c151c7ac864a7b72a3fe11dcb	D0 rescue representative histogram and section accounting
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-frontier/ingest.stdout.txt	text_log	112667	30e75d052523b60f018e9e936bb338c8f1c724b2f2f188630bd0617386f738f1	D2-prime all-chain representative histogram and section accounting
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-control-debug/debug.stdout.txt	text_log	3001	6e15c884d24dcbd8754ed88e8e37569314d2406d743cf5667e96d5002806a2cb	D2-prime control representative accounting
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/run1.time.txt	time_log	1076	37ac249a87bc20dca172ea6d6534c2ee5701e4c45dad8bcac19aa6e6b737a04b	D0 original-pair control replay replicate 1
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/run2.time.txt	time_log	1071	dfeeac6f7498f3bf192fe318d96593edb15469fd6c316da2185bf17b6e26faa1	D0 original-pair control replay replicate 2
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/run3.time.txt	time_log	1072	25f050c1eafb85132a114fad2ee67d85c082ebfc7aa217907e8faa803e1e9805	D0 original-pair control replay replicate 3
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-frontier/run1.time.txt	time_log	1074	620d3cedd0ce6eade8980eb614c3bdd92c700e86cb77a19a380f0ebf820a3c4f	D0 all-chain replay replicate 1
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-frontier/run2.time.txt	time_log	1074	d093fd02b65d6d55b15fa14c9afaf6447440e1c8b6c3e4092c58b04c013aa1d4	D0 all-chain replay replicate 2
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-frontier/run3.time.txt	time_log	1073	338cb4157c58fc467762ff8ba27697586670b586768e5273e6653c2e30f65c48	D0 all-chain replay replicate 3
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/rescue-pair-run1.time.txt	time_log	1071	bcc5dd93ef6e6350a506daec98d420912c510888f4b8d041cd75d1d5c21245a0	D0 rescue-pair control replay replicate 1
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/rescue-pair-run2.time.txt	time_log	1071	db0de47b46410e0bcbbd4e632100448e30bff2b6d00594cd0ebdb7cb9b800fd8	D0 rescue-pair control replay replicate 2
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-control/rescue-pair-run3.time.txt	time_log	1071	d89144b20d38fd4e989bf78d745bdc32e7201f417e0b1ac12acdbf3dab3237eb	D0 rescue-pair control replay replicate 3
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-junction-frontier/run1.time.txt	time_log	1091	d9f017b0ef4da33bf415c3666a611fc04fcb4f2657179ed3335a57df3d821f5e	D0 junction-only rescue replay replicate 1
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-junction-frontier/run2.time.txt	time_log	1091	0111c6a8504aa2b0f8c984f1cab02a2eda6e06af4f061fc7d669a9a55b565c1d	D0 junction-only rescue replay replicate 2
+runs/post-v1/adaptive-frontier-pilot-r1/d0-replay-junction-frontier/run3.time.txt	time_log	1091	610231c2350261ac4358a76bb48cb26999f27527b33884f05b3ce99ce6eb8652	D0 junction-only rescue replay replicate 3
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-control/run.time.txt	time_log	1295	2025d48491d10fbbfd1a6c37e545ba8289eb2f5181fc477a33e74b4ea1153ad4	D2-prime control Velocity replay timing
+runs/post-v1/adaptive-frontier-pilot-r1/d2p-velocity-frontier/run.time.txt	time_log	1331	d708969cf039597a264ed7fa849b7729a24824cf157c4e6c46c11953790ac0ab	D2-prime all-chain Velocity replay timing

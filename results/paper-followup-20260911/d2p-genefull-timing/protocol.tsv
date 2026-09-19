@@ -1,0 +1,13 @@
+date	2026-09-11
+dataset	D2-prime brain nuclei
+counting_model	GeneFull
+threads	24
+cpuset	0-23
+warm_blocks	5
+aie_version	aie 0.2.2
+aie_sha256	52c284c562d60b5312b5778ef27fcb7db92689ad941f083742f41b3d0b2c71aa
+archive_sha256	b493523e1f6a05df05c656ca15c8791b2d5da2e42c8fe700950030c9886dc06c
+star_version	2.7.11b
+star_features	GeneFull
+star_alignment_output	None
+annotation	${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf

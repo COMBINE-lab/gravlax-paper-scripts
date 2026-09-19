@@ -1,0 +1,1 @@
+molecule records 108747545 -> records with assignment 57393439; representative rows 108329201 assigned / 194477772 total; UMI classes 51937986 assigned / 91328227 total -> 49972932 collapsed UMIs in 17690037 entries (all input; not restricted to called nuclei) | streaming | open+dict 0.6s, +anno 3.1s, +decode/replay 4.7s, total 9.4s

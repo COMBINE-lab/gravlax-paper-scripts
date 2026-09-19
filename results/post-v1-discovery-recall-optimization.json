@@ -1,0 +1,274 @@
+{
+  "arms": {
+    "compatible": {
+      "absolute_recall_gain_vs_span": -0.29155313351498635,
+      "candidate_ratio_vs_span": 0.11348777141012188,
+      "d0_candidates": 1406,
+      "d1_candidate_recurrence": 1.0,
+      "matched_truth_genes": 57,
+      "recall": 0.1553133514986376,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 8,
+          "recall": 0.13333333333333333,
+          "total": 60
+        },
+        "clean": {
+          "matched": 5,
+          "recall": 0.09615384615384616,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 44,
+          "recall": 0.17254901960784313,
+          "total": 255
+        }
+      },
+      "safeguards_pass": false,
+      "timing": {
+        "d0": {
+          "max_rss_kb": 514212,
+          "wall_seconds": 3.53
+        },
+        "d1": {
+          "max_rss_kb": 1854108,
+          "wall_seconds": 16.11
+        }
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.15818657209833503
+    },
+    "residual-sites-100": {
+      "absolute_recall_gain_vs_span": 0.1989100817438692,
+      "candidate_ratio_vs_span": 1.6994107676164338,
+      "d0_candidates": 21054,
+      "d1_candidate_recurrence": 0.9886007409518381,
+      "matched_truth_genes": 237,
+      "recall": 0.6457765667574932,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 46,
+          "recall": 0.7666666666666667,
+          "total": 60
+        },
+        "clean": {
+          "matched": 51,
+          "recall": 0.9807692307692307,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 140,
+          "recall": 0.5490196078431373,
+          "total": 255
+        }
+      },
+      "safeguards_pass": true,
+      "timing": {
+        "d0": null,
+        "d1": null
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.7325088657810903
+    },
+    "residual-sites-25": {
+      "absolute_recall_gain_vs_span": 0.4550408719346049,
+      "candidate_ratio_vs_span": 6.405359593187505,
+      "d0_candidates": 79356,
+      "d1_candidate_recurrence": 0.9951862493069207,
+      "matched_truth_genes": 331,
+      "recall": 0.9019073569482289,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 59,
+          "recall": 0.9833333333333333,
+          "total": 60
+        },
+        "clean": {
+          "matched": 51,
+          "recall": 0.9807692307692307,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 221,
+          "recall": 0.8666666666666667,
+          "total": 255
+        }
+      },
+      "safeguards_pass": false,
+      "timing": {
+        "d0": null,
+        "d1": null
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.9300204363767506
+    },
+    "residual-sites-50": {
+      "absolute_recall_gain_vs_span": 0.38964577656675753,
+      "candidate_ratio_vs_span": 3.194608120106546,
+      "d0_candidates": 39578,
+      "d1_candidate_recurrence": 0.9924958310172318,
+      "matched_truth_genes": 307,
+      "recall": 0.8365122615803815,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 57,
+          "recall": 0.95,
+          "total": 60
+        },
+        "clean": {
+          "matched": 51,
+          "recall": 0.9807692307692307,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 199,
+          "recall": 0.7803921568627451,
+          "total": 255
+        }
+      },
+      "safeguards_pass": false,
+      "timing": {
+        "d0": null,
+        "d1": null
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.8842940433972472
+    },
+    "residual-sites-75": {
+      "absolute_recall_gain_vs_span": 0.27792915531335155,
+      "candidate_ratio_vs_span": 2.1621599806279765,
+      "d0_candidates": 26787,
+      "d1_candidate_recurrence": 0.9901071415238735,
+      "matched_truth_genes": 266,
+      "recall": 0.7247956403269755,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 52,
+          "recall": 0.8666666666666667,
+          "total": 60
+        },
+        "clean": {
+          "matched": 51,
+          "recall": 0.9807692307692307,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 163,
+          "recall": 0.6392156862745098,
+          "total": 255
+        }
+      },
+      "safeguards_pass": true,
+      "timing": {
+        "d0": {
+          "max_rss_kb": 535856,
+          "wall_seconds": 4.1
+        },
+        "d1": {
+          "max_rss_kb": 1850872,
+          "wall_seconds": 20.75
+        }
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.8149005229308168
+    },
+    "span": {
+      "absolute_recall_gain_vs_span": 0.0,
+      "candidate_ratio_vs_span": 1.0,
+      "d0_candidates": 12389,
+      "d1_candidate_recurrence": 0.9850673984986682,
+      "matched_truth_genes": 164,
+      "recall": 0.44686648501362397,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 32,
+          "recall": 0.5333333333333333,
+          "total": 60
+        },
+        "clean": {
+          "matched": 51,
+          "recall": 0.9807692307692307,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 81,
+          "recall": 0.3176470588235294,
+          "total": 255
+        }
+      },
+      "safeguards_pass": false,
+      "timing": {
+        "d0": {
+          "max_rss_kb": 366344,
+          "wall_seconds": 3.36
+        },
+        "d1": {
+          "max_rss_kb": 1311396,
+          "wall_seconds": 15.19
+        }
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.42570775981246617
+    },
+    "strand-span": {
+      "absolute_recall_gain_vs_span": 0.09809264305177118,
+      "candidate_ratio_vs_span": 3.226168375171523,
+      "d0_candidates": 39969,
+      "d1_candidate_recurrence": 0.9940453851735095,
+      "matched_truth_genes": 200,
+      "recall": 0.5449591280653951,
+      "recall_by_stratum": {
+        "antisense_only": {
+          "matched": 58,
+          "recall": 0.9666666666666667,
+          "total": 60
+        },
+        "clean": {
+          "matched": 49,
+          "recall": 0.9423076923076923,
+          "total": 52
+        },
+        "same_strand": {
+          "matched": 93,
+          "recall": 0.36470588235294116,
+          "total": 255
+        }
+      },
+      "safeguards_pass": false,
+      "timing": {
+        "d0": {
+          "max_rss_kb": 414156,
+          "wall_seconds": 2.41
+        },
+        "d1": {
+          "max_rss_kb": 1409140,
+          "wall_seconds": 9.93
+        }
+      },
+      "truth_genes": 367,
+      "umi_weighted_recall": 0.49313277634188857
+    }
+  },
+  "implementation_commit": "c1ef9c4d8a4f65c762bec118c98a79f0d746d512",
+  "interpretation_guard": "Later-annotation overlap is a recall endpoint, not biological precision; unsupported candidates remain unresolved. The selected residual threshold was chosen only from the predeclared grid and guards.",
+  "protocol_lock_commits": [
+    "c6edf01ba0612e5c081a11d84328d1c28f2c9965",
+    "86193f5bdfb02789ee647e6b4e2843b4ee93c893",
+    "4ca25df24eb222a5a93b5e9f626422b4a697eccb",
+    "023eef4458495349bbf3cd12785dd887455b8c1a"
+  ],
+  "schema": "gravlax.discovery-recall-optimization.v1",
+  "selected_residual_site_geometry": {
+    "added_candidates": 14398,
+    "all_at_most_merge_gap_plus_one": true,
+    "maximum_width_bp": 1001,
+    "median_width_bp": 926,
+    "p95_width_bp": 1001
+  },
+  "selection": {
+    "candidate_volume_limit": 37167,
+    "minimum_absolute_recall_gain": 0.15,
+    "minimum_d1_recurrence": 0.95,
+    "selected": "residual-sites-75"
+  }
+}

@@ -1,0 +1,47 @@
+experiment: downstream_clustering_marker_velocity_fidelity
+date: 2026-08-31
+status: complete_gene_partition_fail_marker_stable_velocity_pass
+preregistered_spec_commit: d3e9b3a
+protocol_commit: 07d37b41ccd9c866ac403c5bb653eddc15e19ec4
+results:
+  primary: results/post-v1-downstream-fidelity.json
+  primary_sha256: 06e017cda86a585aa9b7463a4f1a914a60af54bb0b3e0edfabf33311bd24196f
+  posthoc_diagnostics: results/post-v1-downstream-cluster-diagnostics.json
+  posthoc_diagnostics_sha256: e5e1804c1f7c592c10c2e28711d98b5beb7cec681b1a8ee6ee39a347b2ca3c7c
+project_root_environment: PROJ_ROOT
+software_environment:
+  python: "3.12"
+  required_packages: [scanpy, anndata, numpy, scipy, scikit-learn, igraph, leidenalg, pyyaml]
+datasets:
+  - id: D0
+    role: confirmatory
+    organism: human
+    chemistry: "10x 3-prime v3"
+    oracle_gene: runs/oracle/full/v49/Solo.out/Gene/filtered
+    replay_gene: runs/replay/d0-v15
+    oracle_velocity: runs/oracle/full/v49/Solo.out/Velocyto/filtered
+    replay_velocity: runs/replay/d0-velocity
+  - id: D1
+    role: confirmatory
+    organism: human
+    chemistry: "10x 3-prime v3"
+    oracle_gene: runs/oracle/d1/v49/Solo.out/Gene/filtered
+    replay_gene: runs/replay/d1-v15
+    oracle_velocity: runs/oracle/d1/v49/Solo.out/Velocyto/filtered
+    replay_velocity: runs/replay/d1-velocity
+  - id: D2_prime
+    role: confirmatory
+    organism: human
+    chemistry: "10x 3-prime nuclei"
+    oracle_gene: runs/oracle/d2p/v49/Solo.out/Gene/filtered
+    replay_gene: runs/replay/d2p-v15
+    oracle_velocity: runs/oracle/d2p/v49/Solo.out/Velocyto/filtered
+    replay_velocity: runs/replay/d2p-velocity
+  - id: D5_mouse_5_prime
+    role: cross_chemistry_stress_test
+    organism: mouse
+    chemistry: "10x 5-prime v2"
+    oracle_gene: runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Gene/filtered
+    replay_gene: runs/post-v1/mouse-5p-1k/replay-archive-r2-twopass
+    oracle_velocity: runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Velocyto/filtered
+    replay_velocity: runs/post-v1/mouse-5p-1k/replay-velocity-r2-twopass

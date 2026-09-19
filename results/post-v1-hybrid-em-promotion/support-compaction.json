@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-31",
+  "intervention": "batch_local_exact_support_compaction",
+  "gravlax_commit": "7c1ef42c96c25892a4c818e510b312cdb9c22be7",
+  "dataset": "D3",
+  "control": "shuffled_groups",
+  "seed": 7,
+  "mode": "hybrid_only_D8_p8",
+  "reference": {
+    "wall_seconds": 17.16,
+    "peak_rss_kib": 7653508
+  },
+  "result": {
+    "wall_seconds": 16.71,
+    "peak_rss_kib": 6562508,
+    "peak_rss_reduction_fraction": 0.142437,
+    "metrics_json_byte_identical": true,
+    "stdout_byte_identical": true
+  },
+  "acceptance": {
+    "metrics_json_byte_identical": true,
+    "stdout_byte_identical": true,
+    "peak_rss_at_most_4194304_KiB": false,
+    "wall_at_most_60_seconds": true,
+    "all_Rust_tests_pass": true
+  },
+  "verdict": "FAIL",
+  "code_disposition": "retained_exact_partial_improvement"
+}

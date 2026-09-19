@@ -1,0 +1,120 @@
+# Provenance manifest — annotation-independent molecular evidence
+# Created 2026-08-28 on analysis-host. All paths absolute on this host.
+# Source plan: docs/project_plan.md · Implementation plan: docs/implementation_plan.md
+# Frozen thresholds: docs/decisions/2026-08-28-frozen-gates.md
+
+project_root: ${GRAVLAX_PROJECT_ROOT}
+predecessor: ${GRAVLAX_PYTHON_ROOT}   # Gate 0 STOP; conventions reused
+
+hardware:
+  host: analysis-host
+  cpu: "2x AMD EPYC 9575F 64-core (256 logical), Zen 5, AVX-512"
+  ram: "1.5 TiB (1.1 TiB available)"
+  os: "RHEL 8, kernel 4.18.0-553.156.1.el8_10"
+  scheduler: none (shared interactive server; thread counts capped by policy at 32)
+  disk: "project scratch volume, 14 TB, 2% used"
+
+toolchain:
+  rustc: "1.98.0 (88d9e12ae 2026-08-18)"
+  cargo: "1.98.0 (797e8a9bc 2026-08-05)"
+  cargo_home: ${GRAVLAX_PROJECT_ROOT}/env/cargo   # symlink -> predecessor env
+  rustup_home: ${GRAVLAX_PROJECT_ROOT}/env/rustup # symlink -> predecessor env
+  conda_env: ${GRAVLAX_PROJECT_ROOT}/env/sc
+  conda_binary: ${CONDA_ROOT}/bin/conda   # conda 26.3.2, channels conda-forge + bioconda
+  STAR: "2.7.11b"          # installed 2026-08-28; host-wide STAR is 2.7.2b and too old
+                           # (2.7.2b --soloFeatures supports only Gene/SJ; no GeneFull, no Velocyto)
+  samtools: "1.23.1"
+  gffread: "0.12.9"
+  python_env: ${GRAVLAX_PYTHON_ROOT}/env/py312   # reused, reports/plots only
+                                                                       # python 3.12.14, polars 1.44.1,
+                                                                       # pyarrow 25.0.0, pysam 0.24.0,
+                                                                       # numpy 2.5.2, scipy 1.18.0
+
+reference:
+  genome_fasta: data/GRCh38.primary_assembly.genome.fa.gz
+  genome_source: /shared-resources/references/GRCh38.gencode.v49/GRCh38.primary_assembly.genome.fa.gz
+  genome_sha256: 3023c0705e83e86309271b09e25bdf678945fac98ce2fe5bb6b6e068f2225452
+  star_index_base: ref/star-base
+  star_index_note: >
+    Built with genomeGenerate and NO --sjdbGTFfile, so the base index is annotation-free.
+    Per-annotation splice junctions are inserted at MAPPING time via --sjdbGTFfile, so every
+    oracle run shares one base index. This is also the correct experimental control for Gate G-C:
+    the only thing varying across configs is the annotation, not the underlying suffix array.
+
+annotations:
+  # Verified 2026-08-28: our v49 copy is byte-identical (md5 0ef4a024ea2d35b1b88c12447b0b70b9)
+  # to EBI release_49, so the /shared-resources copy is the official file.
+  A1:
+    id: gencode_v49
+    path: annotations/gencode.v49.annotation.gtf.gz
+    url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.annotation.gtf.gz
+    sha256: d6e6fe0515c95b2a8cd36a853c1989cee9115c736c60237c56ae92b9daaaf7c4
+    genes: 78691
+    transcripts: 507365
+    role: baseline
+  A2_far:
+    id: gencode_v32
+    path: annotations/gencode.v32.annotation.gtf.gz
+    url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_32/gencode.v32.annotation.gtf.gz
+    sha256: da9dc827e9a111c9bde60c55f55b7d37ffebc4649fc01f0745a670240e939ed4
+    genes: 60609
+    transcripts: 227462
+    role: headline cross-annotation case (= CellRanger 2020-A era)
+  A2_near:
+    id: gencode_v48
+    path: annotations/gencode.v48.annotation.gtf.gz
+    url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_48/gencode.v48.annotation.gtf.gz
+    sha256: 37a298c2b57e41988cfe12667134106523c69c24a1807347679d19e88aa1f4a9
+    genes: 78686
+    transcripts: 385669
+    role: hard case, adjacent release
+  A3:
+    id: perturbed_v49
+    status: not yet constructed
+    role: unseen features, programmatic with recorded ground truth
+  # Divergence measured before any run: v32 -> v49 is +29.8% genes, +123% transcripts.
+  # v48 -> v49 is flat in genes (+5) but +31% transcripts.
+
+datasets:
+  D0:
+    id: pbmc_1k_v3
+    chemistry: 10x Chromium 3' v3
+    read_structure: "R1 28 bp = 16 bp CB + 12 bp UMI; R2 91 bp cDNA"
+    r1: data/fastq/pbmc_1k_v3_S1_R1_001.fastq.gz
+    r2: data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz
+    r1_sha256: 804b72218b53f9d8c9e09ca48c1c665c0f5b94a379827ec5de3750e5e4c10172
+    r2_sha256: 0d8fb1918ffd44f8ecafbe61bde89430572df799e639144e198c8ee2696dcf4a
+    size_fastq_gz_bytes: 5038856791
+    staged_from: ${MALVA_ROOT}/reads/   # source volume nearly full; copied to the project scratch volume
+    whitelist: data/3M-february-2018.txt
+    whitelist_sha256: 843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b
+    whitelist_source: ${WHITELIST_SOURCE}/3M-february-2018.txt
+  D0_dev:
+    id: pbmc_1k_v3_chr19
+    note: "$AIE_CHROM subset of D0 for minute-scale iteration; chr19 is gene-dense (~1400 genes)"
+
+baselines:
+  simpleaf_reference_run:
+    path: /fs/cbcb-lab/rob/pbmc_1k_v3_simpleaf/af_quant/alevin/
+    note: validated alevin-fry/simpleaf run on the identical FASTQs (Apr 2025)
+    measured_total_umis: 15519436     # summed from quants_mat.mtx, 2026-08-28
+    measured_barcodes: 71123          # unfiltered permit list
+    measured_nnz: 5709557
+    role: oracle sanity check before Gate G-B
+  malva:
+    source: ${MALVA_ROOT}/
+    index: ${MALVA_ROOT}/indices/pbmc_1k_v3      # 375 MB, measured
+    quant: ${MALVA_ROOT}/quant/pbmc_1k_v3        # pseudoquant.h5ad, 26 MB
+    ratio_vs_fastq: 13.4x
+    citation: "Nature, 26 Aug 2026, s41586-026-10975-w"
+    role: storage and capability baseline on the identical dataset (Gate G-E, Gate 0)
+  star_source_read:
+    path: ${STAR_SOURCE}/
+    files_audited:
+      - Transcriptome_classifyAlign.cpp    # alignToTranscript: blocks + junctions + strand only
+      - Transcriptome_geneCountsAddAlign.cpp
+      - SoloFeature_collapseUMIall.cpp     # collapses per (cell, gene) -> annotation-dependent
+    finding: >
+      Gene assignment reads no sequence, quality or alignment score, so E1 is a sufficient
+      statistic for STARsolo Gene/GeneFull semantics by construction. UMI collapsing is per-gene
+      and therefore annotation-dependent. These two facts set the gate order.

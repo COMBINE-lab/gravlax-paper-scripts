@@ -1,0 +1,2 @@
+classes: single 7193198, mixed 689758 (masked 137930, truth-lost 3793), multi-only 534498, eval targets 117980
+mode dirichlet-proxy: top-1 98.0%  expected-accuracy 96.9%  (n=117980)

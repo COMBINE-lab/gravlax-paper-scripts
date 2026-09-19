@@ -1,0 +1,1824 @@
+{
+  "biological_story": {
+    "headline": "NTRK2 shifts from a proximal shorter-coding terminal group in Astro/NSCs to the distal MANE/full-length-like terminal group in mature neurons",
+    "interpretation_guard": "terminal-group usage is not molecule-level isoform phasing",
+    "ntrk2": {
+      "analysis_context": {
+        "engine_schema": "gravlax.cohort.polyasite-mixture.v1",
+        "global_directional_threshold_pass": false,
+        "ntrk2_gene_test": {
+          "concordant": "8",
+          "effect_B_minus_A": "0.28189041",
+          "eligible_samples": "8",
+          "lodo_stable": "1",
+          "n_sites": "15",
+          "p": "6.79078045e-9",
+          "p_signflip": "7.81250000e-3",
+          "q": "1.48174829e-5",
+          "reported": "1",
+          "t": "32.47577738"
+        },
+        "reported_genes": 95
+      },
+      "classified_site_count": 9,
+      "direction": {
+        "exact_two_sided_signflip_p": 0.0078125,
+        "median_fraction_difference": 0.5680188359269537,
+        "positive_samples": 8,
+        "samples": 8
+      },
+      "gene": "NTRK2",
+      "inputs": {
+        "genes_sha256": "0017bc4511a451a82c655aa05badc6438988309c104f815ceb3d9dd5e4b29ead",
+        "gtf_sha256": "acae152b55eec24eeb9152acd6889e4bc228c6f5f22e48722092774bf7812572",
+        "sites_sha256": "cb1378a45f83fb37ea2034da7c22621e9387ddb5c2e0e7527930bb369d662a03",
+        "summary_sha256": "d4dad307567a886cf8a9da223e9a247cd475e25c905193fe40e4153bde337bb6"
+      },
+      "per_sample": [
+        {
+          "astro_nsc_full_length_like_expected_umis": 51.999999,
+          "astro_nsc_full_length_like_fraction": 0.23318385306360473,
+          "astro_nsc_shorter_coding_expected_umis": 171.0,
+          "fraction_difference": 0.5583055086385229,
+          "mature_neuron_full_length_like_expected_umis": 558.0,
+          "mature_neuron_full_length_like_fraction": 0.7914893617021277,
+          "mature_neuron_shorter_coding_expected_umis": 147.0,
+          "sample": "A"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 23.0,
+          "astro_nsc_full_length_like_fraction": 0.18699186991869918,
+          "astro_nsc_shorter_coding_expected_umis": 100.0,
+          "fraction_difference": 0.49753193553056385,
+          "mature_neuron_full_length_like_expected_umis": 115.0,
+          "mature_neuron_full_length_like_fraction": 0.6845238054492631,
+          "mature_neuron_shorter_coding_expected_umis": 53.000001,
+          "sample": "B"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 102.0,
+          "astro_nsc_full_length_like_fraction": 0.19540229922490862,
+          "astro_nsc_shorter_coding_expected_umis": 419.999999,
+          "fraction_difference": 0.5965052152259585,
+          "mature_neuron_full_length_like_expected_umis": 137.0,
+          "mature_neuron_full_length_like_fraction": 0.791907514450867,
+          "mature_neuron_shorter_coding_expected_umis": 36.0,
+          "sample": "C"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 136.0,
+          "astro_nsc_full_length_like_fraction": 0.18206157965194109,
+          "astro_nsc_shorter_coding_expected_umis": 611.0,
+          "fraction_difference": 0.6332640907046303,
+          "mature_neuron_full_length_like_expected_umis": 1063.9999990000001,
+          "mature_neuron_full_length_like_fraction": 0.8153256703565714,
+          "mature_neuron_shorter_coding_expected_umis": 241.0,
+          "sample": "D"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 16.0,
+          "astro_nsc_full_length_like_fraction": 0.3137254901960784,
+          "astro_nsc_shorter_coding_expected_umis": 35.0,
+          "fraction_difference": 0.5292064469766964,
+          "mature_neuron_full_length_like_expected_umis": 161.0,
+          "mature_neuron_full_length_like_fraction": 0.8429319371727748,
+          "mature_neuron_shorter_coding_expected_umis": 30.0,
+          "sample": "E"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 51.0,
+          "astro_nsc_full_length_like_fraction": 0.16887417162624446,
+          "astro_nsc_shorter_coding_expected_umis": 251.000001,
+          "fraction_difference": 0.5777321632153845,
+          "mature_neuron_full_length_like_expected_umis": 165.0,
+          "mature_neuron_full_length_like_fraction": 0.746606334841629,
+          "mature_neuron_shorter_coding_expected_umis": 56.0,
+          "sample": "F"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 171.0,
+          "astro_nsc_full_length_like_fraction": 0.22529644268774704,
+          "astro_nsc_shorter_coding_expected_umis": 588.0,
+          "fraction_difference": 0.5267696732424035,
+          "mature_neuron_full_length_like_expected_umis": 819.000001,
+          "mature_neuron_full_length_like_fraction": 0.7520661159301506,
+          "mature_neuron_shorter_coding_expected_umis": 270.0,
+          "sample": "G"
+        },
+        {
+          "astro_nsc_full_length_like_expected_umis": 13.0,
+          "astro_nsc_full_length_like_fraction": 0.13402061855670103,
+          "astro_nsc_shorter_coding_expected_umis": 84.0,
+          "fraction_difference": 0.595864433167437,
+          "mature_neuron_full_length_like_expected_umis": 126.999999,
+          "mature_neuron_full_length_like_fraction": 0.729885051724138,
+          "mature_neuron_shorter_coding_expected_umis": 47.000001,
+          "sample": "H"
+        }
+      ],
+      "pooled": {
+        "astro_nsc": {
+          "full_length_like_expected_umis": 563.999999,
+          "full_length_like_fraction": 0.19971671359763338,
+          "shorter_coding_expected_umis": 2260.0
+        },
+        "mature_neuron": {
+          "full_length_like_expected_umis": 3145.999999,
+          "full_length_like_fraction": 0.7814207645848433,
+          "shorter_coding_expected_umis": 880.000002
+        }
+      },
+      "role": "exploratory structure-aware validation of the protocol-aware PolyASite mixture result",
+      "schema": "gravlax.ntrk2-terminal-architecture.v1",
+      "semantics": {
+        "claim": "PolyASite candidates adjacent to GENCODE coding transcript ends; not molecule-level isoform phasing",
+        "full_group_rule": "the unique terminal group containing the GENCODE MANE Select transcript",
+        "short_group_rule": "upstream GENCODE Primary group with shorter median CDS and greatest coding-transcript support",
+        "site_assignment_rule": "nearest terminal group within 2000 bp; ties resolve by distance then genomic order",
+        "terminal_group_rule": "coding transcript endpoints single-link clustered within 5000 bp"
+      },
+      "terminal_groups": [
+        {
+          "assigned_sites": [
+            84811014,
+            84815405,
+            84815599,
+            84815697
+          ],
+          "contains_gencode_primary": true,
+          "contains_mane_select": false,
+          "endpoint_max": 84815706,
+          "endpoint_min": 84811121,
+          "group_index": 0,
+          "median_cds_bases": 1431,
+          "role": "proximal_shorter_coding",
+          "transcripts": [
+            {
+              "cds_bases": 1194,
+              "chrom": "chr9",
+              "endpoint": 84811121,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000692804.1",
+              "transcript_name": "NTRK2-253",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1500,
+              "chrom": "chr9",
+              "endpoint": 84811862,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000693384.1",
+              "transcript_name": "NTRK2-257",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1395,
+              "chrom": "chr9",
+              "endpoint": 84815506,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000685387.1",
+              "transcript_name": "NTRK2-210",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1392,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000686542.1",
+              "transcript_name": "NTRK2-220",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000691415.1",
+              "transcript_name": "NTRK2-243",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000689685.1",
+              "transcript_name": "NTRK2-237",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000693109.1",
+              "transcript_name": "NTRK2-254",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000692389.1",
+              "transcript_name": "NTRK2-248",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000692506.1",
+              "transcript_name": "NTRK2-250",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000688013.1",
+              "transcript_name": "NTRK2-228",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000692762.1",
+              "transcript_name": "NTRK2-252",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000689815.1",
+              "transcript_name": "NTRK2-238",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000687596.1",
+              "transcript_name": "NTRK2-225",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1125,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000693127.1",
+              "transcript_name": "NTRK2-255",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000690281.1",
+              "transcript_name": "NTRK2-241",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000687148.1",
+              "transcript_name": "NTRK2-223",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 963,
+              "chrom": "chr9",
+              "endpoint": 84815655,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000686322.1",
+              "transcript_name": "NTRK2-215",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815702,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000359847.4",
+              "transcript_name": "NTRK2-204",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1431,
+              "chrom": "chr9",
+              "endpoint": 84815706,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000395882.6",
+              "transcript_name": "NTRK2-207",
+              "transcript_type": "protein_coding"
+            }
+          ]
+        },
+        {
+          "assigned_sites": [
+            84877897
+          ],
+          "contains_gencode_primary": false,
+          "contains_mane_select": false,
+          "endpoint_max": 84877898,
+          "endpoint_min": 84877885,
+          "group_index": 1,
+          "median_cds_bases": 1635.0,
+          "role": "other",
+          "transcripts": [
+            {
+              "cds_bases": 1659,
+              "chrom": "chr9",
+              "endpoint": 84877885,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000687636.1",
+              "transcript_name": "NTRK2-226",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1659,
+              "chrom": "chr9",
+              "endpoint": 84877885,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000685720.1",
+              "transcript_name": "NTRK2-213",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1611,
+              "chrom": "chr9",
+              "endpoint": 84877887,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000686443.1",
+              "transcript_name": "NTRK2-218",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1611,
+              "chrom": "chr9",
+              "endpoint": 84877887,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000304053.11",
+              "transcript_name": "NTRK2-202",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1659,
+              "chrom": "chr9",
+              "endpoint": 84877898,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000693539.1",
+              "transcript_name": "NTRK2-258",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1611,
+              "chrom": "chr9",
+              "endpoint": 84877898,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000376208.6",
+              "transcript_name": "NTRK2-205",
+              "transcript_type": "protein_coding"
+            }
+          ]
+        },
+        {
+          "assigned_sites": [
+            85024084,
+            85025208,
+            85026935,
+            85026995,
+            85027028
+          ],
+          "contains_gencode_primary": true,
+          "contains_mane_select": true,
+          "endpoint_max": 85027054,
+          "endpoint_min": 85021896,
+          "group_index": 2,
+          "median_cds_bases": 2466.0,
+          "role": "distal_mane_full_length_like",
+          "transcripts": [
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85021896,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000884758.1",
+              "transcript_name": "NTRK2-260",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85024027,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000884757.1",
+              "transcript_name": "NTRK2-259",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000686259.1",
+              "transcript_name": "NTRK2-214",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000686496.1",
+              "transcript_name": "NTRK2-219",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000691788.1",
+              "transcript_name": "NTRK2-246",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2514,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000686324.1",
+              "transcript_name": "NTRK2-216",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2430,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000323115.11",
+              "transcript_name": "NTRK2-203",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 1998,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000689301.1",
+              "transcript_name": "NTRK2-235",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2046,
+              "chrom": "chr9",
+              "endpoint": 85027050,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000692473.1",
+              "transcript_name": "NTRK2-249",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85027054,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000692181.1",
+              "transcript_name": "NTRK2-247",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2466,
+              "chrom": "chr9",
+              "endpoint": 85027054,
+              "gencode_primary": false,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000376213.6",
+              "transcript_name": "NTRK2-206",
+              "transcript_type": "protein_coding"
+            },
+            {
+              "cds_bases": 2514,
+              "chrom": "chr9",
+              "endpoint": 85027054,
+              "gencode_primary": true,
+              "mane_select": true,
+              "strand": "+",
+              "transcript_id": "ENST00000277120.8",
+              "transcript_name": "NTRK2-201",
+              "transcript_type": "protein_coding"
+            }
+          ]
+        },
+        {
+          "assigned_sites": [],
+          "contains_gencode_primary": true,
+          "contains_mane_select": false,
+          "endpoint_max": 85095751,
+          "endpoint_min": 85095751,
+          "group_index": 3,
+          "median_cds_bases": 2328,
+          "role": "other",
+          "transcripts": [
+            {
+              "cds_bases": 2328,
+              "chrom": "chr9",
+              "endpoint": 85095751,
+              "gencode_primary": true,
+              "mane_select": false,
+              "strand": "+",
+              "transcript_id": "ENST00000687386.1",
+              "transcript_name": "NTRK2-224",
+              "transcript_type": "protein_coding"
+            }
+          ]
+        }
+      ],
+      "total_ntrk2_site_count": 15,
+      "unassigned_sites": [
+        84724806,
+        84725009,
+        84831090,
+        84832797,
+        84872328
+      ]
+    }
+  },
+  "confirmatory_status": "the preregistered global effect-size gate failed and is not rescued",
+  "controls": {
+    "legacy_max_rss_kib": 2432640,
+    "legacy_wall_seconds": 114.0,
+    "primary_gene_sign_stability_fraction": 0.9789473684210527,
+    "primary_genes_same_sign_both_neighboring_gaps": 93,
+    "reported_genes_by_arm": {
+      "primary-gap24": 95,
+      "sensitivity-gap12": 92,
+      "sensitivity-gap48": 96,
+      "shuffled-gap24": 0
+    },
+    "simulation": {
+      "kernel": "runs/post-v1/sez-polyasite-mixture-crossfit-r1/fragment-kernel.tsv",
+      "replicates_per_truth": 100,
+      "rows": [
+        {
+          "bias": -0.03442168792959953,
+          "cases": 500,
+          "depth": 50,
+          "mae": 0.1961104887029477,
+          "median_ae": 0.15075760609839392,
+          "p95_ae": 0.4993885139438793,
+          "separation_bp": 50
+        },
+        {
+          "bias": -0.02118865463686513,
+          "cases": 500,
+          "depth": 200,
+          "mae": 0.09785724763661094,
+          "median_ae": 0.08090190889280313,
+          "p95_ae": 0.2505322255619742,
+          "separation_bp": 50
+        },
+        {
+          "bias": -0.013563536965010819,
+          "cases": 500,
+          "depth": 1000,
+          "mae": 0.054032279433440446,
+          "median_ae": 0.04447314354765863,
+          "p95_ae": 0.13200148743969586,
+          "separation_bp": 50
+        },
+        {
+          "bias": -0.012333012227509307,
+          "cases": 500,
+          "depth": 50,
+          "mae": 0.13577938888543029,
+          "median_ae": 0.09961304533585079,
+          "p95_ae": 0.34850291835125935,
+          "separation_bp": 100
+        },
+        {
+          "bias": -0.005839402424816388,
+          "cases": 500,
+          "depth": 200,
+          "mae": 0.0793166675983038,
+          "median_ae": 0.06482852878087975,
+          "p95_ae": 0.20462090322438442,
+          "separation_bp": 100
+        },
+        {
+          "bias": -0.0025962349347544798,
+          "cases": 500,
+          "depth": 1000,
+          "mae": 0.034658561577503855,
+          "median_ae": 0.027531861461577253,
+          "p95_ae": 0.09275257194007502,
+          "separation_bp": 100
+        },
+        {
+          "bias": -0.0018575656507702275,
+          "cases": 500,
+          "depth": 50,
+          "mae": 0.08603347356029882,
+          "median_ae": 0.07122019687231296,
+          "p95_ae": 0.2181858042807312,
+          "separation_bp": 250
+        },
+        {
+          "bias": 0.005263307503865434,
+          "cases": 500,
+          "depth": 200,
+          "mae": 0.044436798855878215,
+          "median_ae": 0.036970310768561054,
+          "p95_ae": 0.10770259275727684,
+          "separation_bp": 250
+        },
+        {
+          "bias": -0.00019908631869803282,
+          "cases": 500,
+          "depth": 1000,
+          "mae": 0.019618456682976987,
+          "median_ae": 0.015388280564933687,
+          "p95_ae": 0.050193861527703,
+          "separation_bp": 250
+        },
+        {
+          "bias": 0.00048151335645969963,
+          "cases": 500,
+          "depth": 50,
+          "mae": 0.06629442092082131,
+          "median_ae": 0.055044149564397626,
+          "p95_ae": 0.16105142539016104,
+          "separation_bp": 500
+        },
+        {
+          "bias": -0.002812242499861533,
+          "cases": 500,
+          "depth": 200,
+          "mae": 0.03501392051780536,
+          "median_ae": 0.029118134350192226,
+          "p95_ae": 0.09098480811632526,
+          "separation_bp": 500
+        },
+        {
+          "bias": -0.00017702514437659565,
+          "cases": 500,
+          "depth": 1000,
+          "mae": 0.015975146653306193,
+          "median_ae": 0.01325479943754837,
+          "p95_ae": 0.03789590865048764,
+          "separation_bp": 500
+        },
+        {
+          "bias": -0.006658559032182995,
+          "cases": 500,
+          "depth": 50,
+          "mae": 0.05837957613120138,
+          "median_ae": 0.04897539767135571,
+          "p95_ae": 0.13945940475239094,
+          "separation_bp": 1000
+        },
+        {
+          "bias": -0.0009028675366635763,
+          "cases": 500,
+          "depth": 200,
+          "mae": 0.029103288703870193,
+          "median_ae": 0.0248984366928115,
+          "p95_ae": 0.07145141177829895,
+          "separation_bp": 1000
+        },
+        {
+          "bias": 0.0002034032937952708,
+          "cases": 500,
+          "depth": 1000,
+          "mae": 0.013104682571370267,
+          "median_ae": 0.010865054490958093,
+          "p95_ae": 0.03651839990267669,
+          "separation_bp": 1000
+        }
+      ],
+      "schema": "gravlax.polyasite-mixture-simulation.v1",
+      "seed": 20260901,
+      "truths": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ]
+    },
+    "wall_speedup_vs_eight_legacy_scans": 5.177111716621254
+  },
+  "gates": {
+    "heldout_kernel_gain_positive_every_donor": true,
+    "legacy_outputs_complete": true,
+    "legacy_wall_speedup_ge_2": true,
+    "neighboring_gap_sign_stability_ge_80_percent": true,
+    "primary_rss_gib_le_8": true,
+    "primary_wall_seconds_le_90": true,
+    "shuffle_global_fail": true,
+    "shuffle_zero_reported": true
+  },
+  "input_digests": {
+    "gravlax_commit": "e378516a0fb6602e63d626d0c49fb11e58f463c8",
+    "manifest_sha256": "0c7af47d54d78b25bfdbfbd8d386840f961319e4ed752c232637ee690120ec12",
+    "ntrk2_sha256": "de10af0b5bfef45978ec9675e68486e20b0701877a3bd2712e29390af693f6f3",
+    "optimized_binary_and_outputs_sha256": "3dd99d665597d6d0f3acc9cf38a5a5e175344c5342431ca9680f07dec18d6bdb",
+    "primary_genes_sha256": "0017bc4511a451a82c655aa05badc6438988309c104f815ceb3d9dd5e4b29ead",
+    "primary_sites_sha256": "cb1378a45f83fb37ea2034da7c22621e9387ddb5c2e0e7527930bb369d662a03",
+    "primary_summary_sha256": "d4dad307567a886cf8a9da223e9a247cd475e25c905193fe40e4153bde337bb6",
+    "simulation_sha256": "92c8b4f06969d6abc6d7a5ff217c3fb3f9c6db5d7de5b8e6e67baea1a184b4bf"
+  },
+  "primary": {
+    "across_donor_median_effect": 0.012810500126973906,
+    "assigned_expected_umis": 35725392.99999987,
+    "heldout_kernel_gain": [
+      {
+        "bits_per_umi": 0.4182551060796351,
+        "heldout_unique_candidate_umis": 668374,
+        "sample": "A"
+      },
+      {
+        "bits_per_umi": 0.4865586440828631,
+        "heldout_unique_candidate_umis": 316512,
+        "sample": "B"
+      },
+      {
+        "bits_per_umi": 0.5972161295912102,
+        "heldout_unique_candidate_umis": 323448,
+        "sample": "C"
+      },
+      {
+        "bits_per_umi": 0.4553085336151046,
+        "heldout_unique_candidate_umis": 2018820,
+        "sample": "D"
+      },
+      {
+        "bits_per_umi": 0.5982622379750477,
+        "heldout_unique_candidate_umis": 254906,
+        "sample": "E"
+      },
+      {
+        "bits_per_umi": 0.47272077362286424,
+        "heldout_unique_candidate_umis": 403205,
+        "sample": "F"
+      },
+      {
+        "bits_per_umi": 0.5443610365200229,
+        "heldout_unique_candidate_umis": 2561163,
+        "sample": "G"
+      },
+      {
+        "bits_per_umi": 0.5625849184602121,
+        "heldout_unique_candidate_umis": 340490,
+        "sample": "H"
+      }
+    ],
+    "hotpath_speedup": 1.68755676657584,
+    "max_rss_kib": 3660468,
+    "positive_donor_medians": 8,
+    "pre_hotpath_wall_seconds": 37.16,
+    "recurrent_sites": 45705,
+    "registered_global_directional_threshold_pass": false,
+    "reported_genes": 95,
+    "tested_genes": 2182,
+    "wall_seconds": 22.02
+  },
+  "reported_genes": [
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.28189041,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000148053.19",
+      "gene_name": "NTRK2",
+      "lodo_stable": 1,
+      "q": 1.48174829e-05,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.29661808,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000245526.14",
+      "gene_name": "MIR9-2HG",
+      "lodo_stable": 1,
+      "q": 1.96489608e-05,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.22364498,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000085832.19",
+      "gene_name": "EPS15",
+      "lodo_stable": 1,
+      "q": 0.000187129988,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.22549021,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000164402.15",
+      "gene_name": "SEPTIN8",
+      "lodo_stable": 1,
+      "q": 0.000219280578,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.11185124,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000164904.19",
+      "gene_name": "ALDH7A1",
+      "lodo_stable": 1,
+      "q": 0.00151461949,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.15096842,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000087258.18",
+      "gene_name": "GNAO1",
+      "lodo_stable": 1,
+      "q": 0.00151461949,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.11940299,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000179915.25",
+      "gene_name": "NRXN1",
+      "lodo_stable": 1,
+      "q": 0.00151461949,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.14309011,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000131016.18",
+      "gene_name": "AKAP12",
+      "lodo_stable": 1,
+      "q": 0.00220314288,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.3286539,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000150672.19",
+      "gene_name": "DLG2",
+      "lodo_stable": 1,
+      "q": 0.00220314288,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": -0.18347694,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000198947.18",
+      "gene_name": "DMD",
+      "lodo_stable": 1,
+      "q": 0.00220314288,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.1299069,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000170248.16",
+      "gene_name": "PDCD6IP",
+      "lodo_stable": 1,
+      "q": 0.00220314288,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.31409454,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000171735.21",
+      "gene_name": "CAMTA1",
+      "lodo_stable": 1,
+      "q": 0.00220604337,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.1464805,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000154217.16",
+      "gene_name": "PITPNC1",
+      "lodo_stable": 1,
+      "q": 0.00336611268,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.20917114,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000144040.14",
+      "gene_name": "SFXN5",
+      "lodo_stable": 1,
+      "q": 0.00336611268,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.21735816,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000111907.21",
+      "gene_name": "TPD52L1",
+      "lodo_stable": 1,
+      "q": 0.00336611268,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.1320098,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000110436.14",
+      "gene_name": "SLC1A2",
+      "lodo_stable": 1,
+      "q": 0.00372925502,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.17847237,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000187391.23",
+      "gene_name": "MAGI2",
+      "lodo_stable": 1,
+      "q": 0.00380355951,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.18056726,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000073803.15",
+      "gene_name": "MAP3K13",
+      "lodo_stable": 1,
+      "q": 0.00380355951,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.18913928,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000242808.13",
+      "gene_name": "SOX2-OT",
+      "lodo_stable": 1,
+      "q": 0.00380355951,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.14474973,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000089916.19",
+      "gene_name": "GPATCH2L",
+      "lodo_stable": 1,
+      "q": 0.00411184929,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.16677587,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000112137.19",
+      "gene_name": "PHACTR1",
+      "lodo_stable": 1,
+      "q": 0.00411184929,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.11395318,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000145725.22",
+      "gene_name": "PPIP5K2",
+      "lodo_stable": 1,
+      "q": 0.00411184929,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.1345198,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000183023.20",
+      "gene_name": "SLC8A1",
+      "lodo_stable": 1,
+      "q": 0.00411184929,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.1627162,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000135090.15",
+      "gene_name": "TAOK3",
+      "lodo_stable": 1,
+      "q": 0.00411184929,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.11756201,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000102804.17",
+      "gene_name": "TSC22D1",
+      "lodo_stable": 1,
+      "q": 0.00411184929,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.11617114,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000131711.15",
+      "gene_name": "MAP1B",
+      "lodo_stable": 1,
+      "q": 0.00414490491,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.13855545,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000255248.11",
+      "gene_name": "MIR100HG",
+      "lodo_stable": 1,
+      "q": 0.00414490491,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.30182934,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000137285.11",
+      "gene_name": "TUBB2B",
+      "lodo_stable": 1,
+      "q": 0.00414490491,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.13114373,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000137871.22",
+      "gene_name": "ZNF280D",
+      "lodo_stable": 1,
+      "q": 0.00414490491,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.11368152,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000134884.16",
+      "gene_name": "ARGLU1",
+      "lodo_stable": 1,
+      "q": 0.00466314301,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.10038661,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000107863.21",
+      "gene_name": "ARHGAP21",
+      "lodo_stable": 1,
+      "q": 0.00466314301,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.29075239,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000047849.23",
+      "gene_name": "MAP4",
+      "lodo_stable": 1,
+      "q": 0.00503912904,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.17963881,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000164741.16",
+      "gene_name": "DLC1",
+      "lodo_stable": 1,
+      "q": 0.00557664017,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.18037774,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000180957.19",
+      "gene_name": "PITPNB",
+      "lodo_stable": 1,
+      "q": 0.00557664017,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.15195252,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000134343.14",
+      "gene_name": "ANO3",
+      "lodo_stable": 1,
+      "q": 0.00602097409,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.40830015,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000148826.9",
+      "gene_name": "NKX6-2",
+      "lodo_stable": 1,
+      "q": 0.00602097409,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.10201327,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000186298.12",
+      "gene_name": "PPP1CC",
+      "lodo_stable": 1,
+      "q": 0.00602097409,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.13861368,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000164066.14",
+      "gene_name": "INTU",
+      "lodo_stable": 1,
+      "q": 0.00704071202,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.13921547,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000181195.12",
+      "gene_name": "PENK",
+      "lodo_stable": 1,
+      "q": 0.00704071202,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.16313729,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000286288.3",
+      "gene_name": "ENSG00000286288",
+      "lodo_stable": 1,
+      "q": 0.0078333723,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.16235017,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000079215.16",
+      "gene_name": "SLC1A3",
+      "lodo_stable": 1,
+      "q": 0.00802553238,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.10061845,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000102786.16",
+      "gene_name": "INTS6",
+      "lodo_stable": 1,
+      "q": 0.00888795736,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.14536189,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000196792.13",
+      "gene_name": "STRN3",
+      "lodo_stable": 1,
+      "q": 0.00888795736,
+      "stable_sign_gap12_gap48": 0
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.11842011,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000162664.18",
+      "gene_name": "ZNF326",
+      "lodo_stable": 1,
+      "q": 0.00901421072,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.21877426,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000086758.18",
+      "gene_name": "HUWE1",
+      "lodo_stable": 1,
+      "q": 0.00926600593,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.10233618,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000151552.14",
+      "gene_name": "QDPR",
+      "lodo_stable": 1,
+      "q": 0.011013161,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.18027118,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000135472.10",
+      "gene_name": "FAIM2",
+      "lodo_stable": 1,
+      "q": 0.0120650042,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.30448086,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000103260.10",
+      "gene_name": "METRN",
+      "lodo_stable": 1,
+      "q": 0.0120650042,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.27130216,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000127838.16",
+      "gene_name": "PNKD",
+      "lodo_stable": 1,
+      "q": 0.012553276,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.23592569,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000112983.18",
+      "gene_name": "BRD8",
+      "lodo_stable": 1,
+      "q": 0.0140775075,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.2009332,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000130558.21",
+      "gene_name": "OLFM1",
+      "lodo_stable": 1,
+      "q": 0.0140785186,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.16074645,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000141447.20",
+      "gene_name": "OSBPL1A",
+      "lodo_stable": 1,
+      "q": 0.0147119314,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.11627715,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000167380.18",
+      "gene_name": "ZNF226",
+      "lodo_stable": 1,
+      "q": 0.0147119314,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.20357998,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000109065.13",
+      "gene_name": "NAT9",
+      "lodo_stable": 1,
+      "q": 0.0153062992,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.13929437,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000205726.16",
+      "gene_name": "ITSN1",
+      "lodo_stable": 1,
+      "q": 0.0155574677,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.23191444,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000068745.16",
+      "gene_name": "IP6K2",
+      "lodo_stable": 1,
+      "q": 0.0157614945,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.12548053,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000104613.13",
+      "gene_name": "INTS10",
+      "lodo_stable": 1,
+      "q": 0.0159307743,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.1084646,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000107758.17",
+      "gene_name": "PPP3CB",
+      "lodo_stable": 1,
+      "q": 0.0164089731,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.12050583,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000115524.18",
+      "gene_name": "SF3B1",
+      "lodo_stable": 1,
+      "q": 0.0169356884,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.10166778,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000118482.13",
+      "gene_name": "PHF3",
+      "lodo_stable": 1,
+      "q": 0.0180164856,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.14910516,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000131095.15",
+      "gene_name": "GFAP",
+      "lodo_stable": 1,
+      "q": 0.0184555564,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.14127895,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000141404.17",
+      "gene_name": "GNAL",
+      "lodo_stable": 1,
+      "q": 0.0184555564,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.14921426,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000125814.18",
+      "gene_name": "NAPB",
+      "lodo_stable": 1,
+      "q": 0.019793432,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.10347295,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000105993.16",
+      "gene_name": "DNAJB6",
+      "lodo_stable": 1,
+      "q": 0.020313349,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.13455844,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000105894.14",
+      "gene_name": "PTN",
+      "lodo_stable": 1,
+      "q": 0.0204380854,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.14442097,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000102606.21",
+      "gene_name": "ARHGEF7",
+      "lodo_stable": 1,
+      "q": 0.0205568207,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.10551539,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000109685.20",
+      "gene_name": "NSD2",
+      "lodo_stable": 1,
+      "q": 0.0222248916,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.12608436,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000133030.23",
+      "gene_name": "MPRIP",
+      "lodo_stable": 1,
+      "q": 0.0230968263,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.13031829,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000185630.20",
+      "gene_name": "PBX1",
+      "lodo_stable": 1,
+      "q": 0.0249258237,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": -0.1737008,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000124181.16",
+      "gene_name": "PLCG1",
+      "lodo_stable": 1,
+      "q": 0.0249258237,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.1102556,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000162909.19",
+      "gene_name": "CAPN2",
+      "lodo_stable": 1,
+      "q": 0.0252942851,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.14622104,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000168264.13",
+      "gene_name": "IRF2BP2",
+      "lodo_stable": 1,
+      "q": 0.0254697687,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.10887889,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000078142.15",
+      "gene_name": "PIK3C3",
+      "lodo_stable": 1,
+      "q": 0.0259032653,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": -0.1207655,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000066248.16",
+      "gene_name": "NGEF",
+      "lodo_stable": 1,
+      "q": 0.0263796499,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.17646782,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000187189.11",
+      "gene_name": "TSPYL4",
+      "lodo_stable": 1,
+      "q": 0.0263796499,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.11432313,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000173992.10",
+      "gene_name": "CCS",
+      "lodo_stable": 1,
+      "q": 0.026802807,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.12468304,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000227376.1",
+      "gene_name": "FTH1P16",
+      "lodo_stable": 1,
+      "q": 0.026802807,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.15063254,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000230989.9",
+      "gene_name": "HSBP1",
+      "lodo_stable": 1,
+      "q": 0.027208961,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.10545813,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000049759.21",
+      "gene_name": "NEDD4L",
+      "lodo_stable": 1,
+      "q": 0.027208961,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.19897789,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000181449.4",
+      "gene_name": "SOX2",
+      "lodo_stable": 1,
+      "q": 0.0274039657,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": -0.17876474,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000126214.23",
+      "gene_name": "KLC1",
+      "lodo_stable": 1,
+      "q": 0.0284878128,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.10495454,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000153827.16",
+      "gene_name": "TRIP12",
+      "lodo_stable": 1,
+      "q": 0.0284934541,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.12203453,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000187239.20",
+      "gene_name": "FNBP1",
+      "lodo_stable": 1,
+      "q": 0.0285669,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.10456836,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000109689.20",
+      "gene_name": "STIM2",
+      "lodo_stable": 1,
+      "q": 0.0285669,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": -0.21082475,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000089486.18",
+      "gene_name": "CDIP1",
+      "lodo_stable": 1,
+      "q": 0.0305003237,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.12707284,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000112339.16",
+      "gene_name": "HBS1L",
+      "lodo_stable": 1,
+      "q": 0.0308521618,
+      "stable_sign_gap12_gap48": 0
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.10280133,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000172201.13",
+      "gene_name": "ID4",
+      "lodo_stable": 1,
+      "q": 0.0309600808,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": -0.18880406,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000102003.13",
+      "gene_name": "SYP",
+      "lodo_stable": 1,
+      "q": 0.0343867223,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.15083321,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000105854.14",
+      "gene_name": "PON2",
+      "lodo_stable": 1,
+      "q": 0.0346340122,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.19328691,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000198171.14",
+      "gene_name": "DDRGK1",
+      "lodo_stable": 1,
+      "q": 0.0390995615,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": -0.14433753,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000137601.19",
+      "gene_name": "NEK1",
+      "lodo_stable": 1,
+      "q": 0.0390995615,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.10708221,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000291237.2",
+      "gene_name": "SOD2",
+      "lodo_stable": 1,
+      "q": 0.0390995615,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 8,
+      "effect_B_minus_A": 0.15495701,
+      "eligible_samples": 8,
+      "gene_id": "ENSG00000160014.18",
+      "gene_name": "CALM3",
+      "lodo_stable": 1,
+      "q": 0.0414251743,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 6,
+      "effect_B_minus_A": 0.21962231,
+      "eligible_samples": 6,
+      "gene_id": "ENSG00000170915.10",
+      "gene_name": "PAQR8",
+      "lodo_stable": 1,
+      "q": 0.0478675398,
+      "stable_sign_gap12_gap48": 1
+    },
+    {
+      "concordant": 7,
+      "effect_B_minus_A": 0.12041455,
+      "eligible_samples": 7,
+      "gene_id": "ENSG00000106052.15",
+      "gene_name": "TAX1BP1",
+      "lodo_stable": 1,
+      "q": 0.0487131556,
+      "stable_sign_gap12_gap48": 1
+    }
+  ],
+  "schema": "gravlax.sez-polyasite-mixture-result.v1",
+  "status": "PASS_METHOD_AMENDED_EXPLORATORY"
+}

@@ -1,0 +1,65 @@
+experiment: hierarchical_em
+date_locked: 2026-08-31
+status: locked_preimplementation
+reference_gravlax_commit: edec25f0183b0ca2ce21592edce01c7525ca919b
+model:
+  iterations: 10
+  epsilon: 1.0e-9
+  cell_shards: 64
+  existing_blend_alpha: 20
+  alpha_group_grid: [5, 20, 80]
+  alpha_global_grid: [0, 5, 20]
+  selection_metric: mean_negative_log_loss
+  tie_break: [lower_alpha_group, lower_alpha_global]
+targets:
+  type: keyed_mixed_class_mask
+  mask_fraction: 0.20
+  seeds: [7, 17, 29]
+  evaluation_population: supplied_group_barcodes_only
+  candidate_gene_exclusion: union_across_all_seeds
+grouping:
+  source: gravlax_base_gene_matrix_before_em
+  target_sum: 10000
+  transform: log1p
+  hvg_count_max: 2000
+  minimum_eligible_genes: 500
+  leiden_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  label_selection: maximum_mean_within_arm_ari_medoid
+  controls:
+    - deterministic_size_preserving_permutation
+    - all_archive_cells_one_group_with_called_cell_scoring_mask
+datasets:
+  - id: D0
+    role: development
+    archive: runs/archive/d0.aie
+    oracle_called_barcodes: runs/oracle/full/v49/Solo.out/Gene/filtered/barcodes.tsv
+    replay_gene: runs/replay/d0-v15
+    dimension: 40
+    resolution: 0.60
+  - id: D1
+    role: confirmation
+    archive: runs/archive/d1.aie
+    oracle_called_barcodes: runs/oracle/d1/v49/Solo.out/Gene/filtered/barcodes.tsv
+    replay_gene: runs/replay/d1-v15
+    dimension: 30
+    resolution: 0.40
+  - id: D2_prime
+    role: confirmation_sparse_nuclei
+    archive: runs/archive/d2p.aie
+    oracle_called_barcodes: runs/oracle/d2p/v49/Solo.out/Gene/filtered/barcodes.tsv
+    replay_gene: runs/replay/d2p-v15
+    dimension: 40
+    resolution: 0.25
+acceptance:
+  combined_confirmation_log_loss_relative_improvement_min: 0.05
+  per_dataset_top1_drop_percentage_points_max: 0.5
+  d2_prime_top1_gain_percentage_points_min_alternative: 1.0
+  d2_prime_log_loss_relative_improvement_min_alternative: 0.10
+  real_group_fraction_of_gain_beyond_shuffle_min: 0.50
+  one_group_pooled_metric_absolute_tolerance: 1.0e-10
+  d1_wall_ratio_max: 1.5
+  d1_peak_rss_gib_max: 6
+interpretation:
+  production_emission_unchanged: pooled
+  masked_recovery_is_not_ground_truth_quantification_accuracy: true
+  independent_ambiguity_corruption: deferred_separate_followup

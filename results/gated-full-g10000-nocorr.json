@@ -1,0 +1,16 @@
+{
+  "cells_in_stats": 1225,
+  "correct_umi": false,
+  "g1_molecules": 10191963,
+  "g2_matrix_mass": 10875506,
+  "g2_molecules": 10875482,
+  "g2_multi_gene_molecules": 24,
+  "locus_gap": 10000,
+  "mapped_primary_reads": 63567946,
+  "mass_only_in_g2": 0,
+  "median_per_cell_l1_rel": 0.07141019042717447,
+  "overall_l1_rel": 0.06706686435184273,
+  "p90_per_cell_l1_rel": 0.07955559159841051,
+  "umis_merged_1mm": 0,
+  "unique_gene_reads": 33786437
+}

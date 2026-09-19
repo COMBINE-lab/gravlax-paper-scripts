@@ -1,0 +1,20 @@
+POSIX_FADV_DONTNEED accepted for 3 files / 4034222267 bytes; failures=0
+cold-aie exact
+POSIX_FADV_DONTNEED accepted for 11 files / 49051596670 bytes; failures=0
+cold-star exact
+warm-b1-p1-star exact
+warm-b1-p2-aie exact
+warm-b2-p1-aie exact
+warm-b2-p2-star exact
+warm-b3-p1-star exact
+warm-b3-p2-aie exact
+warm-b4-p1-aie exact
+warm-b4-p2-star exact
+warm-b5-p1-star exact
+warm-b5-p2-aie exact
+arm	n	median_wall_s	median_peak_gib	walls
+star	5	361.46	32.55	368.13,361.46,363.66,361.03,358.49
+aie	5	9.27	5.79	9.47,9.10,9.24,9.34,9.27
+speedup_median	38.99
+
+D2P GENEFULL TIMING DONE

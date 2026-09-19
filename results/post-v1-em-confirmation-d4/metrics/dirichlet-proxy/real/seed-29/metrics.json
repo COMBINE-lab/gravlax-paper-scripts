@@ -1,0 +1,133 @@
+{
+  "archive": "${GRAVLAX_PROJECT_ROOT}/runs/archive/d4.aie",
+  "blend_alpha": 20.0,
+  "collapse_groups": false,
+  "convex_candidate_normalized": true,
+  "convex_cell_weight": 0.1,
+  "convex_global_weight": 0.45,
+  "convex_group_prior": 20.0,
+  "convex_group_weight": 0.45,
+  "convex_leave_one_cell_out_group": true,
+  "convex_only": false,
+  "depth_hybrid_adaptive_cell_prior": 64.0,
+  "depth_hybrid_adaptive_component": "posterior-mean Dirichlet proxy",
+  "depth_hybrid_adaptive_group_prior": 80.0,
+  "depth_hybrid_fixed_cell_weight": 0.2,
+  "depth_hybrid_fixed_component": "candidate-normalized convex",
+  "depth_hybrid_fixed_group_prior": 80.0,
+  "depth_hybrid_fixed_group_weight": 0.6,
+  "depth_hybrid_fixed_sample_weight": 0.2,
+  "depth_hybrid_gate": "d^2/(d^2+scale^2) using mode-independent fitted unique candidate mass",
+  "depth_hybrid_only": false,
+  "depth_hybrid_scale": 16.0,
+  "dirichlet_proxy_candidate_normalized": true,
+  "dirichlet_proxy_cell_prior": 64.0,
+  "dirichlet_proxy_group_prior": 80.0,
+  "dirichlet_proxy_inference": "posterior_mean_screen_not_full_variational",
+  "dirichlet_proxy_leave_one_cell_out_group": true,
+  "dirichlet_proxy_only": true,
+  "evidence_depth_definition": "sum of mode-independent fitted unique counts over the target candidate genes: 0-1, (1,4], (4,16], 16+",
+  "global_alpha": 5.0,
+  "group_alpha": 20.0,
+  "group_names": [
+    "g0",
+    "g1",
+    "g2",
+    "g3",
+    "g4",
+    "g5",
+    "g6"
+  ],
+  "groups_file": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-confirmation-d4-prep-r1/groups/D4.real.tsv",
+  "gtf": "${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf",
+  "mask_fraction": 0.2,
+  "modes": [
+    {
+      "calibration_max_probability_deciles": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          89,
+          23
+        ],
+        [
+          289,
+          82
+        ],
+        [
+          842,
+          441
+        ],
+        [
+          799,
+          467
+        ],
+        [
+          820,
+          624
+        ],
+        [
+          1807,
+          1538
+        ],
+        [
+          113616,
+          112756
+        ]
+      ],
+      "evidence_depth_strata": [
+        {
+          "expected_accuracy_percent": 85.90699839702688,
+          "multiclass_brier": 0.16027453146551804,
+          "n": 7704,
+          "name": "0-1",
+          "negative_log_loss": 0.3305152291847499,
+          "top1_percent": 87.70768431983386
+        },
+        {
+          "expected_accuracy_percent": 90.35603563777407,
+          "multiclass_brier": 0.1053736681403154,
+          "n": 5439,
+          "name": "1-4",
+          "negative_log_loss": 0.20038369123652874,
+          "top1_percent": 92.25960654532084
+        },
+        {
+          "expected_accuracy_percent": 95.30327132054605,
+          "multiclass_brier": 0.05084581642741118,
+          "n": 12831,
+          "name": "4-16",
+          "negative_log_loss": 0.10795092448329818,
+          "top1_percent": 96.89034369885434
+        },
+        {
+          "expected_accuracy_percent": 98.45967728163723,
+          "multiclass_brier": 0.012035045313134497,
+          "n": 92301,
+          "name": "16+",
+          "negative_log_loss": 0.03275666939565484,
+          "top1_percent": 99.37595475671986
+        }
+      ],
+      "expected_accuracy_percent": 96.92696631216131,
+      "multiclass_brier": 0.0301934623500593,
+      "n": 118275,
+      "name": "dirichlet-proxy",
+      "negative_log_loss": 0.0680174836289015,
+      "top1_percent": 98.01902346227013
+    }
+  ],
+  "schema_version": 1,
+  "scored_cells": 565,
+  "seed": 29
+}

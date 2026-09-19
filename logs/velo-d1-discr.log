@@ -1,0 +1,26 @@
++ P=${GRAVLAX_PROJECT_ROOT}
++ AIE=${GRAVLAX_PROJECT_ROOT}/src/target/release/aie
++ PY=${GRAVLAX_PYTHON}
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d1.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Velocyto/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-velocity --velocity
+velocity: 108747545 molecules -> 68078410 UMIs in 24145931 (cell,gene) entries | load 6.0s, total 164.2s
++ ${GRAVLAX_PYTHON} ${GRAVLAX_PROJECT_ROOT}/scripts/91_velo_gate.py ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Velocyto/raw ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-velocity ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/filtered/barcodes.tsv
+${GRAVLAX_PROJECT_ROOT}/scripts/91_velo_gate.py:20: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     oracle  33491466  replay  33216821  L1   895043  rel  2.672%  mass-delta  0.820%  [MARGINAL]
+unspliced.mtx   oracle  20870676  replay  20788552  L1   179318  rel  0.859%  mass-delta  0.393%  [PASS]
+ambiguous.mtx   oracle   7240129  replay   7133804  L1   443941  rel  6.132%  mass-delta  1.469%  [MARGINAL]
+VELO-1: MARGINAL
++ echo D1_VELO_DONE
+D1_VELO_DONE
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie query ${GRAVLAX_PROJECT_ROOT}/runs/archive/d0.aie discover --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/withheld/w1.gtf --tsv --emit-gtf ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-novel.gtf
+wrote 9388 candidate loci to ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-novel.gtf
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d0.aie --gtf ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-novel.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-novel
+molecules 22156853 -> assigned 1047880 -> 666295 UMIs in 422067 entries | load 1.0s, +anno 0.0s, +replay 0.9s, total 2.7s
++ echo DISCR_REPLAY_DONE
+DISCR_REPLAY_DONE

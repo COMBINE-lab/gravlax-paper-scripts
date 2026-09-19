@@ -1,0 +1,194 @@
+{
+  "schema": "gravlax.sez-transcript-end-feasibility.v1",
+  "status": "PASS_EVENT_BLIND",
+  "endpoint_evidence_inspected": false,
+  "inputs": {
+    "metadata": {
+      "logical_path": "data/multidonor-fnbp1/gse234790/GSE234790_meta_data_counts.csv.gz",
+      "sha256": "5a26c7e02c02a06ded7eec9e6c24fa62c6a9718ab37a3c212b472ed331a6c593",
+      "bytes": 2201818
+    }
+  },
+  "published_cluster_mapping": {
+    "0": "astro_nsc",
+    "1": "oligodendrocyte",
+    "2": "mature_neuron",
+    "3": "mature_neuron",
+    "4": "opc",
+    "5": "oligodendrocyte",
+    "6": "microglia",
+    "7": "astro_nsc",
+    "8": "ependymal",
+    "9": "neuroblast",
+    "10": "mature_neuron",
+    "11": "immature_neuron",
+    "12": "mature_neuron",
+    "13": "immature_neuron",
+    "14": "immature_neuron",
+    "16": "astro_nsc",
+    "19": "mature_neuron"
+  },
+  "primary_groups": [
+    "astro_nsc",
+    "mature_neuron"
+  ],
+  "donors": [
+    {
+      "sample": "A",
+      "condition": "young",
+      "age": 16.5,
+      "tracked_nuclei": 4275,
+      "groups": {
+        "astro_nsc": 762,
+        "ependymal": 45,
+        "immature_neuron": 162,
+        "mature_neuron": 1374,
+        "microglia": 431,
+        "neuroblast": 263,
+        "oligodendrocyte": 624,
+        "opc": 512,
+        "other": 102
+      },
+      "primary_minimum_nuclei": 762,
+      "groups_sha256": "6b3a710abeaedf4f77c73201e8f7786d0bb5142bc5a549864d3abb82e2c87192"
+    },
+    {
+      "sample": "B",
+      "condition": "young",
+      "age": 18.0,
+      "tracked_nuclei": 1892,
+      "groups": {
+        "astro_nsc": 375,
+        "ependymal": 65,
+        "immature_neuron": 44,
+        "mature_neuron": 455,
+        "microglia": 178,
+        "neuroblast": 131,
+        "oligodendrocyte": 423,
+        "opc": 166,
+        "other": 55
+      },
+      "primary_minimum_nuclei": 375,
+      "groups_sha256": "50979d1a0064cb7930af7685d728a3fb827a3383aebc0ddf33189aa4993508ba"
+    },
+    {
+      "sample": "C",
+      "condition": "young",
+      "age": 21.9,
+      "tracked_nuclei": 2888,
+      "groups": {
+        "astro_nsc": 627,
+        "ependymal": 65,
+        "immature_neuron": 114,
+        "mature_neuron": 773,
+        "microglia": 218,
+        "neuroblast": 8,
+        "oligodendrocyte": 650,
+        "opc": 385,
+        "other": 48
+      },
+      "primary_minimum_nuclei": 627,
+      "groups_sha256": "a7bc9a2e7d6c6bec60083833a2c134dfc9c875ecf298fe82d3afa02b4dbd20b6"
+    },
+    {
+      "sample": "D",
+      "condition": "young",
+      "age": 22.0,
+      "tracked_nuclei": 7259,
+      "groups": {
+        "astro_nsc": 1343,
+        "ependymal": 170,
+        "immature_neuron": 294,
+        "mature_neuron": 1803,
+        "microglia": 719,
+        "neuroblast": 403,
+        "oligodendrocyte": 1728,
+        "opc": 665,
+        "other": 134
+      },
+      "primary_minimum_nuclei": 1343,
+      "groups_sha256": "4f608307c4bec7723d745861ac127a5c5c3a1906d185a81bd84a050863a7ef86"
+    },
+    {
+      "sample": "E",
+      "condition": "middle",
+      "age": 46.0,
+      "tracked_nuclei": 1159,
+      "groups": {
+        "astro_nsc": 164,
+        "ependymal": 8,
+        "immature_neuron": 33,
+        "mature_neuron": 312,
+        "microglia": 53,
+        "neuroblast": 218,
+        "oligodendrocyte": 306,
+        "opc": 51,
+        "other": 14
+      },
+      "primary_minimum_nuclei": 164,
+      "groups_sha256": "3b1112030c16c77977c443df9be6b1a6b8f5510dd2be817c239dd50579147836"
+    },
+    {
+      "sample": "F",
+      "condition": "middle",
+      "age": 48.0,
+      "tracked_nuclei": 2966,
+      "groups": {
+        "astro_nsc": 671,
+        "ependymal": 46,
+        "immature_neuron": 118,
+        "mature_neuron": 675,
+        "microglia": 102,
+        "neuroblast": 282,
+        "oligodendrocyte": 792,
+        "opc": 221,
+        "other": 59
+      },
+      "primary_minimum_nuclei": 671,
+      "groups_sha256": "bf5f5a3c9d7c1f0172f3bb71022b5a4e7e768a85f4d8c5de755da998885eb7b3"
+    },
+    {
+      "sample": "G",
+      "condition": "middle",
+      "age": 53.0,
+      "tracked_nuclei": 14213,
+      "groups": {
+        "astro_nsc": 3285,
+        "ependymal": 1596,
+        "immature_neuron": 625,
+        "mature_neuron": 3908,
+        "microglia": 786,
+        "neuroblast": 29,
+        "oligodendrocyte": 3176,
+        "opc": 703,
+        "other": 105
+      },
+      "primary_minimum_nuclei": 3285,
+      "groups_sha256": "c1b21d616499d8a2d70fc69797cfd0a499b1e3271b866c6f1209e51ea560428d"
+    },
+    {
+      "sample": "H",
+      "condition": "middle",
+      "age": 53.0,
+      "tracked_nuclei": 1974,
+      "groups": {
+        "astro_nsc": 329,
+        "ependymal": 41,
+        "immature_neuron": 78,
+        "mature_neuron": 571,
+        "microglia": 61,
+        "neuroblast": 510,
+        "oligodendrocyte": 284,
+        "opc": 90,
+        "other": 10
+      },
+      "primary_minimum_nuclei": 329,
+      "groups_sha256": "604fd87390ade444feec490df19df003b8461c687f4aeb73d52823829d4fd8d2"
+    }
+  ],
+  "other_published_clusters": {
+    "15": 336,
+    "17": 102,
+    "18": 89
+  }
+}

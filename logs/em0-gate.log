@@ -1,0 +1,11 @@
+wrote UniqueAndMult-EM (4013898 entries) to ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-em-star
+${GRAVLAX_PROJECT_ROOT}/scripts/95_em0_gate.py:11: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+EM-0: oracle 10056352.0  replay 10045585.0  L1 58412.0  rel 0.581%  [PASS]
+EM0_DONE

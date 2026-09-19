@@ -1,0 +1,23 @@
+	Command being timed: "/tmp/gravlax-downstream-env/bin/python ${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/scripts/129_multiresolution_select.py --project-root ${GRAVLAX_PROJECT_ROOT} --manifest ${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/experiments/manifests/downstream-multiresolution.yaml --out ${GRAVLAX_PROJECT_ROOT}/runs/post-v1/downstream-multires-selection-r1/oracle-selection.json"
+	User time (seconds): 391.16
+	System time (seconds): 9.59
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:35.74
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1548328
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3484481
+	Voluntary context switches: 34607
+	Involuntary context switches: 1022
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2264
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

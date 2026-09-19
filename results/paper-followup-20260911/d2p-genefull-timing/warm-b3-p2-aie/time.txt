@@ -1,0 +1,23 @@
+	Command being timed: "taskset -c 0-23 ${GRAVLAX_PROJECT_ROOT}/runs/gravlax-release-0.2.2-20260910/aie-0.2.2 replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2p.aie --gene-full --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d2p/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/d2p-genefull-timing/warm-b3-p2-aie/replay --report-format json --report-output ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/d2p-genefull-timing/warm-b3-p2-aie/report.json"
+	User time (seconds): 34.45
+	System time (seconds): 1.69
+	Percent of CPU this job got: 390%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6046020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10
+	Minor (reclaiming a frame) page faults: 912578
+	Voluntary context switches: 10321
+	Involuntary context switches: 161
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1188920
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

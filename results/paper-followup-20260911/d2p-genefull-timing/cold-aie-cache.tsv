@@ -1,0 +1,7 @@
+path	bytes	status
+${GRAVLAX_PROJECT_ROOT}/runs/archive/d2p.aie	595246459	accepted
+${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf	3323462848	accepted
+${GRAVLAX_PROJECT_ROOT}/runs/oracle/d2p/v49/Solo.out/Gene/raw/barcodes.tsv	115512960	accepted
+# attempted_files	3
+# advised_bytes	4034222267
+# failures	0

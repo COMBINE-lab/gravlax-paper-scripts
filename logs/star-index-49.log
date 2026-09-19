@@ -1,0 +1,16 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runMode genomeGenerate --runThreadN 32 --genomeDir ref/star-49 --genomeFastaFiles ref/GRCh38.primary_assembly.genome.fa --sjdbGTFfile annotations/gencode.v49.annotation.gtf --sjdbOverhang 90 --outFileNamePrefix runs/star-index-49/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 13:14:04 ..... started STAR run
+Aug 28 13:14:04 ... starting to generate Genome files
+Aug 28 13:14:29 ..... processing annotations GTF
+Aug 28 13:14:41 ... starting to sort Suffix Array. This may take a long time...
+Aug 28 13:14:48 ... sorting Suffix Array chunks and saving them to disk...
+Aug 28 13:21:37 ... loading chunks from disk, packing SA...
+Aug 28 13:22:05 ... finished generating suffix array
+Aug 28 13:22:05 ... generating Suffix Array index
+Aug 28 13:24:50 ... completed Suffix Array index
+Aug 28 13:24:51 ..... inserting junctions into the genome indices
+Aug 28 13:26:51 ... writing Genome to disk ...
+Aug 28 13:26:52 ... writing Suffix Array to disk ...
+Aug 28 13:26:56 ... writing SAindex to disk
+Aug 28 13:26:57 ..... finished successfully

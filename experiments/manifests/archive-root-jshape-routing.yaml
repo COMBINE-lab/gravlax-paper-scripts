@@ -1,0 +1,193 @@
+schema: gravlax.archive-root-jshape-routing.v1
+status: GATE_A_PASS_GATE_B_PANEL_AND_HARNESS_FROZEN_BEFORE_CONFIRMATORY_MEASUREMENT
+date: 2026-09-01
+spec: experiments/specs/2026-09-01-archive-root-and-jshape-routing.md
+base_commits:
+  gravlax: 1c1b4fd0c5058d06081c6c3ea3db7c453fa6ef97
+  paper_scripts: 7a6818377476b2fad1b3b4505bcd82017faca922
+
+order:
+  - archive_root_commitment
+  - junction_local_shape_routing
+gate_b_opens_only_after_gate_a_integrity_passes: true
+
+gate_a_result:
+  status: PASS
+  result_commit: 9cba7af125dfce2d0b0c0b14ea56e92e00215a5d
+  artifact: results/post-v1-archive-root-gate-a.json
+  sha256: 3f75fb1f7d5cc8b726405017a320c3698b7384c5da1f833f6d1f0a29453429db
+  gravlax_commit: fbd48e536b39729632f189a74e7ece891166ecd1
+  execution_scripts_commit: df1e363d397c740300c97ec2b1f04fe48cd9eb6b
+
+inputs:
+  primary_panel: SEZ_donors_A_through_H
+  archive_count: 8
+  aggregate_archive_bytes: 1326036691
+  source_identity_record: results/post-v1-collection-index-v2.json
+  reference_digest: 2817ea0bc4a2b919ef6007efdb5504757dd9cb76bf550228e510112a41cb7472
+  replay_guard: D0_pbmc_1k_v3
+  collection_forms: [fresh_eight_archive_root, A_D_base_plus_E_H_extension]
+
+archive_root:
+  format_version: 2
+  payload_digest: BLAKE3_of_compressed_section_payload
+  footer:
+    bytes: 44
+    fields: [directory_offset_u64_le, archive_root_32_bytes, AIED_magic]
+  root_preimage:
+    - fixed_domain_tag
+    - AIE0_magic
+    - version_le
+    - directory_offset_le
+    - exact_directory_bytes
+  meaning: exact_encoded_content_commitment_not_publisher_signature
+  comparison:
+    control: v1_full_file_BLAKE3_identity
+    treatment: v2_root_identity
+    warm_paired_blocks: 8
+    order: alternating
+  size:
+    aggregate_premium_fraction_max: 0.001
+    per_section_bytes_max: 64
+    per_archive_fixed_bytes_max: 256
+  collection_build:
+    identity_content_bytes_read: 0
+    aggregate_source_fraction_read_max: 0.02
+    forbidden_payloads: [molecule_chunks, cell_of_class, patterns, edges]
+    median_wall_ratio_max: 1.10
+    peak_rss_ratio_max: 1.05
+    peak_rss_mib_max: 600
+  replay:
+    median_wall_ratio_max: 1.05
+    peak_rss_ratio_max: 1.02
+  collection_queries:
+    median_wall_ratio_max: 1.10
+    peak_rss_ratio_max: 1.10
+  hard_stops:
+    - unequal_encoded_archives_share_root
+    - exactness_failure
+    - required_corruption_not_rejected
+    - noncanonical_layout_accepted
+    - unbounded_allocation
+
+junction_local_shape_routing:
+  freeze_boundary: panel_after_gate_a_pass_before_gate_b_implementation_or_results
+  serialization_addendum: experiments/specs/2026-09-01-jshape-routing-serialization-addendum.md
+  representation: exact_intron_span_to_sorted_unique_local_shape_id_donor_offset_pairs
+  acceptor_offset: checked_donor_offset_plus_exact_bucket_span
+  equivalence: bijective_to_local_shape_id_donor_offset_acceptor_offset_triples_within_each_exact_span_bucket
+  authoritative_counts: source_molecule_chunks
+  forbidden_fields: [cells, UMIs, molecule_ordinals, annotations, groups, biological_results]
+  prospective_panel:
+    rows: 96
+    presence_strata:
+      one_archive: 24
+      two_to_three_archives: 24
+      four_to_seven_archives: 24
+      eight_archives: 24
+    selection_hash_domain: gravlax-jshape-panel-v1
+    selection: smallest_hash_then_coordinate
+    artifact: experiments/designs/archive-root-jshape-routing-panel.tsv
+    bytes: 11578
+    sha256: 55980706cd6fbf0c07a1e652b330e5aca6946b1365010c8ef4e8cb6d6c4f1ca1
+    digest_artifact: experiments/designs/archive-root-jshape-routing-panel.sha256
+    digest_artifact_sha256: db723b3883fdd9c8a57a4f74090aa3ddf68a018c3d6feccd54c42309180092b1
+    metadata_artifact: experiments/designs/archive-root-jshape-routing-panel.metadata.json
+    metadata_artifact_sha256: c3a0cd6d7cd53dd5e734f425f3dbc5c106911a0bda3ab4627dcee1dad2031d37
+    eligible_rows:
+      one_archive: 1139256
+      two_to_three_archives: 114543
+      four_to_seven_archives: 68436
+      eight_archives: 22035
+  fixed_queries:
+    dense: chr9:129925157-129927194
+    sparse: chr9:129861033-129861542
+    absent: chr9:129861034-129861542
+    region_negative_control: chr9:84800000-85040000
+    junction_set: dense_include_sparse_exclude
+  comparison:
+    control: root_committed_collection_route_disabled
+    treatment: same_binary_route_enabled
+    warm_paired_blocks: 8
+    order: alternating
+  execution:
+    status: harness_frozen_no_confirmatory_result
+    runbook: experiments/specs/2026-09-02-jshape-routing-gate-b-runbook.md
+    driver: scripts/212_benchmark_jshape_routing.py
+    reducer: scripts/213_validate_jshape_routing.py
+    adversarial: scripts/214_jshape_routing_adversarial.py
+    schemas:
+      build: gravlax.collection.build.v2
+      inspect: gravlax.collection.v4
+      junction: gravlax.collection.junction.v2
+      junction_set: gravlax.collection.jset.v2
+      region: gravlax.collection.region.v2
+      adversarial: gravlax.jshape-route-adversarial.v2
+    rust_fixture_tests:
+      - shaperoute::tests::streaming_derivation_preserves_repeated_spans_offsets_and_shape_ids
+      - shaperoute::tests::single_block_shape_has_no_route_and_distinct_spans_partition_at_256
+      - shaperoute::tests::block_codec_is_canonical_bounded_and_context_bound
+      - shaperoute::tests::malformed_pairs_shapes_and_checked_additions_are_rejected
+      - shaperoute::tests::binding_names_directory_and_full_reconstruction_are_exact
+      - collectioncmd::tests::routed_v4_manifest_sections_are_deterministic_and_fully_reconstructable
+      - collectioncmd::tests::route_binding_codec_rejects_wrong_context_names_intervals_and_legacy_sources
+      - collectioncmd::tests::route_free_v4_is_deterministic_and_selects_the_exact_fallback
+      - collectioncmd::tests::routed_build_is_identical_for_repeated_and_reversed_sample_inputs
+      - collectioncmd::tests::routed_and_fallback_reducers_match_on_geometry_multimappers_and_cross_chunk_umis
+    independent_mutations:
+      - manifest_codec_version
+      - manifest_source_root
+      - manifest_shapes_digest
+      - block_shape_id
+      - block_reconstruction_mismatch
+      - block_archive_ordinal
+      - block_span_bucket
+      - container_truncation
+      - route_payload_corruption
+      - container_trailing_bytes
+  size:
+    route_premium_fraction_max: 0.03
+    complete_collection_fraction_max: 0.04
+    route_over_compressed_shapes_ratio_max: 1.25
+  construction:
+    forbidden_payloads: [molecule_chunks, cell_of_class, patterns, edges]
+    wall_ratio_max: 2.0
+    peak_rss_mib_max: 768
+  source_io:
+    fixed_query_ratio_max: 0.20
+    panel_median_ratio_max: 0.25
+    panel_p95_ratio_max: 0.50
+    per_query_ratio_max: 1.05
+    absent_payload_bytes: 0
+  total_logical_io:
+    panel_median_ratio_max: 0.50
+    panel_p95_ratio_max: 0.75
+  runtime:
+    panel_median_ratio_max: 0.75
+    dense_ratio_max: 0.80
+    sparse_ratio_max: 0.85
+    junction_set_ratio_max: 0.80
+    region_regression_fraction_max: 0.05
+  memory:
+    dense_and_jset_ratio_max: 0.65
+    dense_and_jset_mib_max: 256
+    sparse_ratio_max: 0.75
+    sparse_mib_max: 128
+  hard_stops:
+    - exactness_failure
+    - integrity_failure
+    - prospective_panel_failure
+    - size_or_total_io_gate_failure
+  preimplementation_audit_projections:
+    status: projections_not_gate_b_results
+    compressed_shapes_bytes: 33897246
+    dense_query_source_bytes: 36588673
+    sparse_query_source_bytes: 14100036
+
+claim_guards:
+  - archive_root_is_not_a_publisher_signature
+  - ordinary_queries_verify_only_selected_payloads
+  - derived_routes_never_supply_counts
+  - point_and_junction_set_results_do_not_imply_region_or_replay_speedups
+  - performance_has_no_biological_validity_implication
+  - preimplementation_size_and_io_audits_are_projections_not_gate_b_results

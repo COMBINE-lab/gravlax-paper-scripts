@@ -1,0 +1,92 @@
+experiment: downstream_multiresolution_stability
+date_locked: 2026-08-31
+status: locked_postexploratory_oracle_selection_pending
+relationship_to_frozen_gate:
+  frozen_experiment: downstream_clustering_marker_velocity_fidelity
+  frozen_resolution: 0.8
+  interpretation: >-
+    The frozen result remains an immutable high-resolution clustering-instability reference.
+    This analysis asks a different question: whether a nontrivial, oracle-stable macro-partition
+    is retained by replay. The exploratory resolution sweep preceded this lock, so this is a
+    locked post-exploratory robustness analysis, not a claim of untouched preregistration.
+project_root_environment: PROJ_ROOT
+software_environment:
+  python: "3.12"
+  required_packages: [scanpy, anndata, numpy, scipy, scikit-learn, igraph, leidenalg, pyyaml]
+selection:
+  input_arm: oracle_only
+  dimensions: [15, 20, 25, 30, 40]
+  resolutions: [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50, 0.60, 0.80]
+  full_data_seeds: [101, 307, 911, 1729, 4099]
+  subsample_seeds: [101, 911, 1729]
+  subsamples: 6
+  subsample_fraction: 0.80
+  subsample_selection: lowest_sha256_of_multires_dataset_replicate_barcode
+  preprocessing:
+    minimum_oracle_cells_per_gene: 10
+    target_sum: 10000
+    hvg_flavor: seurat
+    hvg_count: 2000
+    neighbors: 15
+    pca_fit_components: 40
+  eligibility:
+    oracle_medoid_cluster_count_min: 4
+    oracle_medoid_cluster_count_max: 15
+    minimum_cluster_cells: 20
+    maximum_cluster_fraction: 0.80
+    optimizer_seed_ari_median_min: 0.90
+    cell_subsample_ari_median_min: 0.80
+    best_adjacent_dimension_medoid_ari_min: 0.85
+    best_adjacent_resolution_medoid_ari_min: 0.85
+    split_half_marker_top25_jaccard_median_min: 0.50
+    split_half_marker_effect_pearson_median_min: 0.90
+  selection_rule: >-
+    Among eligible candidates, find the maximum oracle-medoid cluster count K. Retain candidates
+    with at least K-1 clusters, maximize the minimum of optimizer-seed median ARI, cell-subsample
+    median ARI, best adjacent-dimension medoid ARI, and best adjacent-resolution medoid ARI; break
+    exact ties by higher split-half marker Jaccard, then lower dimension, then lower resolution.
+    If no candidate is eligible, lock no stable partition and do not run a replay partition gate.
+evaluation:
+  ensemble_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  partition_gates:
+    medoid_cross_ari_min: 0.90
+    cross_excess_loss_vs_mean_within_max: 0.05
+  fixed_group_gates:
+    mean_marker_top25_jaccard_min: 0.80
+    median_marker_effect_pearson_min: 0.98
+    pseudobulk_pearson_min: 0.999
+    pseudobulk_spearman_min: 0.999
+  sensitivity_control:
+    selected_cell_fraction: 0.20
+    selection: lowest_sha256_of_dataset_and_barcode
+    perturbation: replace_with_donor_from_next_locked_oracle_cluster
+    replay_minus_control_cross_ari_min: 0.05
+    replay_minus_control_neighbor_jaccard_min: 0.05
+  neighbor_jaccard: >-
+    Reported as a deterministic local-graph perturbation measure but not an absolute partition
+    gate; the registered replay-minus-control sensitivity delta remains required.
+datasets:
+  - id: D0
+    role: confirmatory_human
+    organism: human
+    chemistry: "10x 3-prime v3"
+    oracle_gene: runs/oracle/full/v49/Solo.out/Gene/filtered
+    replay_gene: runs/replay/d0-v15
+  - id: D1
+    role: confirmatory_human
+    organism: human
+    chemistry: "10x 3-prime v3"
+    oracle_gene: runs/oracle/d1/v49/Solo.out/Gene/filtered
+    replay_gene: runs/replay/d1-v15
+  - id: D2_prime
+    role: confirmatory_human
+    organism: human
+    chemistry: "10x 3-prime nuclei"
+    oracle_gene: runs/oracle/d2p/v49/Solo.out/Gene/filtered
+    replay_gene: runs/replay/d2p-v15
+  - id: D5_mouse_5_prime
+    role: cross_chemistry_stress_test
+    organism: mouse
+    chemistry: "10x 5-prime v2"
+    oracle_gene: runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Gene/filtered
+    replay_gene: runs/post-v1/mouse-5p-1k/replay-archive-r2-twopass

@@ -1,0 +1,524 @@
+{
+  "STAR_SJ_matrix_audit": {
+    "D0": {
+      "FNBP1": {
+        "called": {
+          "include_right_fraction": 0.05263157894736842,
+          "include_right_umis": 1,
+          "skip_fraction": 0.9473684210526315,
+          "skip_umis": 18
+        }
+      },
+      "FYB1": {
+        "M": {
+          "include_right_fraction": 0.9607843137254902,
+          "include_right_umis": 49,
+          "skip_fraction": 0.0392156862745098,
+          "skip_umis": 2
+        },
+        "T": {
+          "include_right_fraction": 0.025,
+          "include_right_umis": 1,
+          "skip_fraction": 0.975,
+          "skip_umis": 39
+        }
+      },
+      "MYL6": {
+        "called": {
+          "include_right_fraction": 0.023066169617893754,
+          "include_right_umis": 99,
+          "skip_fraction": 0.9769338303821062,
+          "skip_umis": 4193
+        }
+      },
+      "selected_called_cells": 1225
+    },
+    "D1": {
+      "FNBP1": {
+        "called": {
+          "include_right_fraction": 0.11650485436893204,
+          "include_right_umis": 12,
+          "skip_fraction": 0.883495145631068,
+          "skip_umis": 91
+        }
+      },
+      "FYB1": {
+        "M": {
+          "include_right_fraction": 0.9935483870967742,
+          "include_right_umis": 154,
+          "skip_fraction": 0.0064516129032258064,
+          "skip_umis": 1
+        },
+        "T": {
+          "include_right_fraction": 0.028,
+          "include_right_umis": 7,
+          "skip_fraction": 0.972,
+          "skip_umis": 243
+        }
+      },
+      "MYL6": {
+        "called": {
+          "include_right_fraction": 0.024851892760317303,
+          "include_right_umis": 495,
+          "skip_fraction": 0.9751481072396827,
+          "skip_umis": 19423
+        }
+      },
+      "selected_called_cells": 5038
+    },
+    "D2": {
+      "FNBP1": {
+        "called": {
+          "include_right_fraction": 0.9264705882352942,
+          "include_right_umis": 63,
+          "skip_fraction": 0.07352941176470588,
+          "skip_umis": 5
+        }
+      },
+      "MYL6": {
+        "called": {
+          "include_right_fraction": 0.5993329388347948,
+          "include_right_umis": 22282,
+          "skip_fraction": 0.40066706116520523,
+          "skip_umis": 14896
+        }
+      },
+      "selected_called_cells": 5573
+    },
+    "D2p": {
+      "FNBP1": {
+        "called": {
+          "include_right_fraction": 1.0,
+          "include_right_umis": 31,
+          "skip_fraction": 0.0,
+          "skip_umis": 0
+        }
+      },
+      "MYL6": {
+        "called": {
+          "include_right_fraction": 0.5571293673276676,
+          "include_right_umis": 590,
+          "skip_fraction": 0.4428706326723324,
+          "skip_umis": 469
+        }
+      },
+      "selected_called_cells": 6460
+    },
+    "D3": {
+      "FNBP1": {
+        "called": {
+          "include_right_fraction": 0.03825136612021858,
+          "include_right_umis": 7,
+          "skip_fraction": 0.9617486338797814,
+          "skip_umis": 176
+        }
+      },
+      "FYB1": {
+        "M": {
+          "include_right_fraction": 0.96171875,
+          "include_right_umis": 1231,
+          "skip_fraction": 0.03828125,
+          "skip_umis": 49
+        },
+        "T": {
+          "include_right_fraction": 0.02844950213371266,
+          "include_right_umis": 20,
+          "skip_fraction": 0.9715504978662873,
+          "skip_umis": 683
+        }
+      },
+      "MYL6": {
+        "called": {
+          "include_right_fraction": 0.03247439518840914,
+          "include_right_umis": 1690,
+          "skip_fraction": 0.9675256048115909,
+          "skip_umis": 50351
+        }
+      },
+      "selected_called_cells": 11644
+    },
+    "D4": {
+      "FNBP1": {
+        "called": {
+          "include_right_fraction": 0.06451612903225806,
+          "include_right_umis": 2,
+          "skip_fraction": 0.9354838709677419,
+          "skip_umis": 29
+        }
+      },
+      "FYB1": {
+        "M": {
+          "include_right_fraction": 0.9814814814814815,
+          "include_right_umis": 265,
+          "skip_fraction": 0.018518518518518517,
+          "skip_umis": 5
+        },
+        "T": {
+          "include_right_fraction": 0.03225806451612903,
+          "include_right_umis": 2,
+          "skip_fraction": 0.967741935483871,
+          "skip_umis": 60
+        }
+      },
+      "MYL6": {
+        "called": {
+          "include_right_fraction": 0.03984575835475578,
+          "include_right_umis": 155,
+          "skip_fraction": 0.9601542416452442,
+          "skip_umis": 3735
+        }
+      },
+      "selected_called_cells": 565
+    }
+  },
+  "groups": {
+    "datasets": {
+      "D0": {
+        "M_cells": 365,
+        "TM_map": "D0.TM.tsv",
+        "T_cells": 466,
+        "called_cells": 1225,
+        "called_map": "D0.called.tsv",
+        "source": "runs/oracle/full/v49/Solo.out/Gene/filtered"
+      },
+      "D1": {
+        "M_cells": 1040,
+        "TM_map": "D1.TM.tsv",
+        "T_cells": 1808,
+        "called_cells": 5038,
+        "called_map": "D1.called.tsv",
+        "source": "runs/oracle/d1/v49/Solo.out/Gene/filtered"
+      },
+      "D2": {
+        "called_cells": 5573,
+        "called_map": "D2.called.tsv",
+        "source": "runs/oracle/d2/v49/Solo.out/Gene/filtered"
+      },
+      "D2p": {
+        "called_cells": 6460,
+        "called_map": "D2p.called.tsv",
+        "source": "runs/oracle/d2p/v49/Solo.out/Gene/filtered"
+      },
+      "D3": {
+        "M_cells": 3587,
+        "TM_map": "D3.TM.tsv",
+        "T_cells": 1971,
+        "called_cells": 11644,
+        "called_map": "D3.called.tsv",
+        "source": "runs/post-v1/em-promotion-d3-prep-r1/starsolo/Solo.out/Gene/filtered"
+      },
+      "D4": {
+        "M_cells": 203,
+        "TM_map": "D4.TM.tsv",
+        "T_cells": 157,
+        "called_cells": 565,
+        "called_map": "D4.called.tsv",
+        "source": "runs/post-v1/em-confirmation-d4-prep-r1/starsolo/Solo.out/Gene/filtered"
+      }
+    },
+    "rule": {
+      "M": "LYZ > 3 and CD3E == 0",
+      "T": "CD3E > 0 and LYZ == 0"
+    },
+    "schema": "gravlax.federated-biology.groups.v1"
+  },
+  "interpretation": {
+    "SJ_audit": "same alignments but an independent STAR SJ matrix aggregation; reducer audit, not independent biological validation",
+    "positive_controls": "literature and RT-PCR/RNA-FISH validation were checked after ranking",
+    "screen": "post-hoc exploratory; no confirmatory p-values are assigned",
+    "tissue_screen": "descriptive and potentially confounded by cell composition, cancer, and nuclei/cell protocol"
+  },
+  "pbmc4": {
+    "all_four_testable_strictly_direction_consistent": 784,
+    "candidate_table": "pbmc4-consistent.tsv",
+    "events_screened": 20028,
+    "min_abs_delta_at_least_0_10": 44,
+    "min_abs_delta_at_least_0_15": 14,
+    "performance": {
+      "maximum_peak_rss_kib": 2436292,
+      "sequential_chromosome_wall_seconds": 43.78
+    }
+  },
+  "prospective_confirmation": {
+    "event_id": "cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959",
+    "locked_gate_manifest": "experiments/manifests/federated-biological-screen.yaml",
+    "primary": "FNBP1"
+  },
+  "schema": "gravlax.federated-biology-screen.v1",
+  "selected_events": {
+    "CD47": {
+      "annotation": {
+        "fully_annotated": true,
+        "genes": [
+          {
+            "gene_id": "ENSG00000196776.18",
+            "gene_name": "CD47"
+          }
+        ],
+        "strand": "-"
+      },
+      "event_id": "alt_acceptor:chr3:108047292-108049618:108047292-108057476",
+      "samples": {
+        "D0": {
+          "M_informative": 14,
+          "M_usage": 0.14285714285714285,
+          "M_usage_denominator": 14,
+          "T_informative": 35,
+          "T_usage": 0.6857142857142857,
+          "T_usage_denominator": 35,
+          "delta_T_minus_M": 0.5428571428571429
+        },
+        "D1": {
+          "M_informative": 43,
+          "M_usage": 0.23255813953488372,
+          "M_usage_denominator": 43,
+          "T_informative": 225,
+          "T_usage": 0.7822222222222223,
+          "T_usage_denominator": 225,
+          "delta_T_minus_M": 0.5496640826873386
+        },
+        "D3": {
+          "M_informative": 140,
+          "M_usage": 0.36428571428571427,
+          "M_usage_denominator": 140,
+          "T_informative": 153,
+          "T_usage": 0.7973856209150327,
+          "T_usage_denominator": 153,
+          "delta_T_minus_M": 0.43309990662931847
+        },
+        "D4": {
+          "M_informative": 10,
+          "M_usage": 0.4,
+          "M_usage_denominator": 10,
+          "T_informative": 10,
+          "T_usage": 0.7,
+          "T_usage_denominator": 10,
+          "delta_T_minus_M": 0.29999999999999993
+        }
+      }
+    },
+    "FNBP1": {
+      "annotation": {
+        "fully_annotated": true,
+        "genes": [
+          {
+            "gene_id": "ENSG00000187239.20",
+            "gene_name": "FNBP1"
+          }
+        ],
+        "strand": "-"
+      },
+      "event_id": "cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959",
+      "samples": {
+        "D0": {
+          "informative": 25,
+          "usage": 0.04
+        },
+        "D1": {
+          "informative": 145,
+          "usage": 0.1310344827586207
+        },
+        "D2": {
+          "informative": 85,
+          "usage": 0.9411764705882353
+        },
+        "D2p": {
+          "informative": 36,
+          "usage": 1.0
+        },
+        "D3": {
+          "informative": 192,
+          "usage": 0.07291666666666667
+        },
+        "D4": {
+          "informative": 32,
+          "usage": 0.09375
+        }
+      }
+    },
+    "FYB1": {
+      "annotation": {
+        "fully_annotated": true,
+        "genes": [
+          {
+            "gene_id": "ENSG00000082074.20",
+            "gene_name": "FYB1"
+          }
+        ],
+        "strand": "-"
+      },
+      "event_id": "cassette:chr5:39124278-39125997:39126135-39127740:39124278-39127740",
+      "samples": {
+        "D0": {
+          "M_informative": 315,
+          "M_usage": 0.9873015873015873,
+          "M_usage_denominator": 315,
+          "T_informative": 158,
+          "T_usage": 0.06329113924050633,
+          "T_usage_denominator": 158,
+          "delta_T_minus_M": -0.924010448061081
+        },
+        "D1": {
+          "M_informative": 1278,
+          "M_usage": 0.9906103286384976,
+          "M_usage_denominator": 1278,
+          "T_informative": 971,
+          "T_usage": 0.08753861997940268,
+          "T_usage_denominator": 971,
+          "delta_T_minus_M": -0.9030717086590949
+        },
+        "D3": {
+          "M_informative": 3188,
+          "M_usage": 0.9830614805520702,
+          "M_usage_denominator": 3188,
+          "T_informative": 773,
+          "T_usage": 0.062095730918499355,
+          "T_usage_denominator": 773,
+          "delta_T_minus_M": -0.9209657496335708
+        },
+        "D4": {
+          "M_informative": 461,
+          "M_usage": 0.9891540130151844,
+          "M_usage_denominator": 461,
+          "T_informative": 70,
+          "T_usage": 0.05714285714285714,
+          "T_usage_denominator": 70,
+          "delta_T_minus_M": -0.9320111558723272
+        }
+      }
+    },
+    "MYL6": {
+      "annotation": {
+        "fully_annotated": true,
+        "genes": [
+          {
+            "gene_id": "ENSG00000092841.20",
+            "gene_name": "MYL6"
+          }
+        ],
+        "strand": "+"
+      },
+      "event_id": "cassette:chr12:56160320-56160625:56160670-56161386:56160320-56161386",
+      "samples": {
+        "D0": {
+          "informative": 5716,
+          "usage": 0.032890132960111965
+        },
+        "D1": {
+          "informative": 26550,
+          "usage": 0.033785310734463274
+        },
+        "D2": {
+          "informative": 87907,
+          "usage": 0.7763318052032261
+        },
+        "D2p": {
+          "informative": 2105,
+          "usage": 0.6992874109263658
+        },
+        "D3": {
+          "informative": 54495,
+          "usage": 0.03526929076062024
+        },
+        "D4": {
+          "informative": 4019,
+          "usage": 0.04329435182881314
+        }
+      }
+    },
+    "PPP1R12A": {
+      "annotation": {
+        "fully_annotated": true,
+        "genes": [
+          {
+            "gene_id": "ENSG00000058272.20",
+            "gene_name": "PPP1R12A"
+          }
+        ],
+        "strand": "-"
+      },
+      "event_id": "cassette:chr12:79798584-79805591:79805768-79806165:79798584-79806165",
+      "samples": {
+        "D0": {
+          "informative": 276,
+          "usage": 0.20652173913043478
+        },
+        "D1": {
+          "informative": 1587,
+          "usage": 0.2236925015752993
+        },
+        "D2": {
+          "informative": 1151,
+          "usage": 0.9626411815812337
+        },
+        "D2p": {
+          "informative": 653,
+          "usage": 0.9923430321592649
+        },
+        "D3": {
+          "informative": 2578,
+          "usage": 0.20325833979829325
+        },
+        "D4": {
+          "informative": 124,
+          "usage": 0.2903225806451613
+        }
+      }
+    },
+    "RPS24": {
+      "annotation": {
+        "fully_annotated": true,
+        "genes": [
+          {
+            "gene_id": "ENSG00000138326.22",
+            "gene_name": "RPS24"
+          }
+        ],
+        "strand": "+"
+      },
+      "event_id": "cassette:chr10:78037304-78040203:78040225-78040614:78037304-78040614",
+      "samples": {
+        "D0": {
+          "informative": 18363,
+          "usage": 0.6427054402875347
+        },
+        "D1": {
+          "informative": 85250,
+          "usage": 0.6928445747800587
+        },
+        "D2": {
+          "informative": 14146,
+          "usage": 0.949950516046939
+        },
+        "D2p": {
+          "informative": 2108,
+          "usage": 0.9995256166982922
+        },
+        "D3": {
+          "informative": 182687,
+          "usage": 0.6453387487889122
+        },
+        "D4": {
+          "informative": 8214,
+          "usage": 0.7321645970294619
+        }
+      }
+    }
+  },
+  "six_shard_tissue": {
+    "candidate_table": "brain-associated.tsv",
+    "criteria": {
+      "PBMC_usage_range_max": 0.15,
+      "brain_usage_range_max": 0.2,
+      "each_brain_abs_delta_from_PBMC_median_min": 0.15,
+      "each_sample_usage_denominator_min": 20
+    },
+    "events_screened": 46767,
+    "performance": {
+      "maximum_peak_rss_kib": 2696248,
+      "sequential_chromosome_wall_seconds": 73.71
+    },
+    "strict_candidates": 66
+  },
+  "status": "EXPLORATORY_POSITIVE_CONTROLS_PASS_FNBP1_CONFIRMATION_LOCKED"
+}

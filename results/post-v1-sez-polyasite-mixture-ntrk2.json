@@ -1,0 +1,625 @@
+{
+  "analysis_context": {
+    "engine_schema": "gravlax.cohort.polyasite-mixture.v1",
+    "global_directional_threshold_pass": false,
+    "ntrk2_gene_test": {
+      "concordant": "8",
+      "effect_B_minus_A": "0.28189041",
+      "eligible_samples": "8",
+      "lodo_stable": "1",
+      "n_sites": "15",
+      "p": "6.79078045e-9",
+      "p_signflip": "7.81250000e-3",
+      "q": "1.48174829e-5",
+      "reported": "1",
+      "t": "32.47577738"
+    },
+    "reported_genes": 95
+  },
+  "classified_site_count": 9,
+  "direction": {
+    "exact_two_sided_signflip_p": 0.0078125,
+    "median_fraction_difference": 0.5680188359269537,
+    "positive_samples": 8,
+    "samples": 8
+  },
+  "gene": "NTRK2",
+  "inputs": {
+    "genes_sha256": "0017bc4511a451a82c655aa05badc6438988309c104f815ceb3d9dd5e4b29ead",
+    "gtf_sha256": "acae152b55eec24eeb9152acd6889e4bc228c6f5f22e48722092774bf7812572",
+    "sites_sha256": "cb1378a45f83fb37ea2034da7c22621e9387ddb5c2e0e7527930bb369d662a03",
+    "summary_sha256": "d4dad307567a886cf8a9da223e9a247cd475e25c905193fe40e4153bde337bb6"
+  },
+  "per_sample": [
+    {
+      "astro_nsc_full_length_like_expected_umis": 51.999999,
+      "astro_nsc_full_length_like_fraction": 0.23318385306360473,
+      "astro_nsc_shorter_coding_expected_umis": 171.0,
+      "fraction_difference": 0.5583055086385229,
+      "mature_neuron_full_length_like_expected_umis": 558.0,
+      "mature_neuron_full_length_like_fraction": 0.7914893617021277,
+      "mature_neuron_shorter_coding_expected_umis": 147.0,
+      "sample": "A"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 23.0,
+      "astro_nsc_full_length_like_fraction": 0.18699186991869918,
+      "astro_nsc_shorter_coding_expected_umis": 100.0,
+      "fraction_difference": 0.49753193553056385,
+      "mature_neuron_full_length_like_expected_umis": 115.0,
+      "mature_neuron_full_length_like_fraction": 0.6845238054492631,
+      "mature_neuron_shorter_coding_expected_umis": 53.000001,
+      "sample": "B"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 102.0,
+      "astro_nsc_full_length_like_fraction": 0.19540229922490862,
+      "astro_nsc_shorter_coding_expected_umis": 419.999999,
+      "fraction_difference": 0.5965052152259585,
+      "mature_neuron_full_length_like_expected_umis": 137.0,
+      "mature_neuron_full_length_like_fraction": 0.791907514450867,
+      "mature_neuron_shorter_coding_expected_umis": 36.0,
+      "sample": "C"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 136.0,
+      "astro_nsc_full_length_like_fraction": 0.18206157965194109,
+      "astro_nsc_shorter_coding_expected_umis": 611.0,
+      "fraction_difference": 0.6332640907046303,
+      "mature_neuron_full_length_like_expected_umis": 1063.9999990000001,
+      "mature_neuron_full_length_like_fraction": 0.8153256703565714,
+      "mature_neuron_shorter_coding_expected_umis": 241.0,
+      "sample": "D"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 16.0,
+      "astro_nsc_full_length_like_fraction": 0.3137254901960784,
+      "astro_nsc_shorter_coding_expected_umis": 35.0,
+      "fraction_difference": 0.5292064469766964,
+      "mature_neuron_full_length_like_expected_umis": 161.0,
+      "mature_neuron_full_length_like_fraction": 0.8429319371727748,
+      "mature_neuron_shorter_coding_expected_umis": 30.0,
+      "sample": "E"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 51.0,
+      "astro_nsc_full_length_like_fraction": 0.16887417162624446,
+      "astro_nsc_shorter_coding_expected_umis": 251.000001,
+      "fraction_difference": 0.5777321632153845,
+      "mature_neuron_full_length_like_expected_umis": 165.0,
+      "mature_neuron_full_length_like_fraction": 0.746606334841629,
+      "mature_neuron_shorter_coding_expected_umis": 56.0,
+      "sample": "F"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 171.0,
+      "astro_nsc_full_length_like_fraction": 0.22529644268774704,
+      "astro_nsc_shorter_coding_expected_umis": 588.0,
+      "fraction_difference": 0.5267696732424035,
+      "mature_neuron_full_length_like_expected_umis": 819.000001,
+      "mature_neuron_full_length_like_fraction": 0.7520661159301506,
+      "mature_neuron_shorter_coding_expected_umis": 270.0,
+      "sample": "G"
+    },
+    {
+      "astro_nsc_full_length_like_expected_umis": 13.0,
+      "astro_nsc_full_length_like_fraction": 0.13402061855670103,
+      "astro_nsc_shorter_coding_expected_umis": 84.0,
+      "fraction_difference": 0.595864433167437,
+      "mature_neuron_full_length_like_expected_umis": 126.999999,
+      "mature_neuron_full_length_like_fraction": 0.729885051724138,
+      "mature_neuron_shorter_coding_expected_umis": 47.000001,
+      "sample": "H"
+    }
+  ],
+  "pooled": {
+    "astro_nsc": {
+      "full_length_like_expected_umis": 563.999999,
+      "full_length_like_fraction": 0.19971671359763338,
+      "shorter_coding_expected_umis": 2260.0
+    },
+    "mature_neuron": {
+      "full_length_like_expected_umis": 3145.999999,
+      "full_length_like_fraction": 0.7814207645848433,
+      "shorter_coding_expected_umis": 880.000002
+    }
+  },
+  "role": "exploratory structure-aware validation of the protocol-aware PolyASite mixture result",
+  "schema": "gravlax.ntrk2-terminal-architecture.v1",
+  "semantics": {
+    "claim": "PolyASite candidates adjacent to GENCODE coding transcript ends; not molecule-level isoform phasing",
+    "full_group_rule": "the unique terminal group containing the GENCODE MANE Select transcript",
+    "short_group_rule": "upstream GENCODE Primary group with shorter median CDS and greatest coding-transcript support",
+    "site_assignment_rule": "nearest terminal group within 2000 bp; ties resolve by distance then genomic order",
+    "terminal_group_rule": "coding transcript endpoints single-link clustered within 5000 bp"
+  },
+  "terminal_groups": [
+    {
+      "assigned_sites": [
+        84811014,
+        84815405,
+        84815599,
+        84815697
+      ],
+      "contains_gencode_primary": true,
+      "contains_mane_select": false,
+      "endpoint_max": 84815706,
+      "endpoint_min": 84811121,
+      "group_index": 0,
+      "median_cds_bases": 1431,
+      "role": "proximal_shorter_coding",
+      "transcripts": [
+        {
+          "cds_bases": 1194,
+          "chrom": "chr9",
+          "endpoint": 84811121,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000692804.1",
+          "transcript_name": "NTRK2-253",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1500,
+          "chrom": "chr9",
+          "endpoint": 84811862,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000693384.1",
+          "transcript_name": "NTRK2-257",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1395,
+          "chrom": "chr9",
+          "endpoint": 84815506,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000685387.1",
+          "transcript_name": "NTRK2-210",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1392,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000686542.1",
+          "transcript_name": "NTRK2-220",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000691415.1",
+          "transcript_name": "NTRK2-243",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000689685.1",
+          "transcript_name": "NTRK2-237",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000693109.1",
+          "transcript_name": "NTRK2-254",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000692389.1",
+          "transcript_name": "NTRK2-248",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000692506.1",
+          "transcript_name": "NTRK2-250",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000688013.1",
+          "transcript_name": "NTRK2-228",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000692762.1",
+          "transcript_name": "NTRK2-252",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000689815.1",
+          "transcript_name": "NTRK2-238",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000687596.1",
+          "transcript_name": "NTRK2-225",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1125,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000693127.1",
+          "transcript_name": "NTRK2-255",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000690281.1",
+          "transcript_name": "NTRK2-241",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000687148.1",
+          "transcript_name": "NTRK2-223",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 963,
+          "chrom": "chr9",
+          "endpoint": 84815655,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000686322.1",
+          "transcript_name": "NTRK2-215",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815702,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000359847.4",
+          "transcript_name": "NTRK2-204",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1431,
+          "chrom": "chr9",
+          "endpoint": 84815706,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000395882.6",
+          "transcript_name": "NTRK2-207",
+          "transcript_type": "protein_coding"
+        }
+      ]
+    },
+    {
+      "assigned_sites": [
+        84877897
+      ],
+      "contains_gencode_primary": false,
+      "contains_mane_select": false,
+      "endpoint_max": 84877898,
+      "endpoint_min": 84877885,
+      "group_index": 1,
+      "median_cds_bases": 1635.0,
+      "role": "other",
+      "transcripts": [
+        {
+          "cds_bases": 1659,
+          "chrom": "chr9",
+          "endpoint": 84877885,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000687636.1",
+          "transcript_name": "NTRK2-226",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1659,
+          "chrom": "chr9",
+          "endpoint": 84877885,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000685720.1",
+          "transcript_name": "NTRK2-213",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1611,
+          "chrom": "chr9",
+          "endpoint": 84877887,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000686443.1",
+          "transcript_name": "NTRK2-218",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1611,
+          "chrom": "chr9",
+          "endpoint": 84877887,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000304053.11",
+          "transcript_name": "NTRK2-202",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1659,
+          "chrom": "chr9",
+          "endpoint": 84877898,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000693539.1",
+          "transcript_name": "NTRK2-258",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1611,
+          "chrom": "chr9",
+          "endpoint": 84877898,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000376208.6",
+          "transcript_name": "NTRK2-205",
+          "transcript_type": "protein_coding"
+        }
+      ]
+    },
+    {
+      "assigned_sites": [
+        85024084,
+        85025208,
+        85026935,
+        85026995,
+        85027028
+      ],
+      "contains_gencode_primary": true,
+      "contains_mane_select": true,
+      "endpoint_max": 85027054,
+      "endpoint_min": 85021896,
+      "group_index": 2,
+      "median_cds_bases": 2466.0,
+      "role": "distal_mane_full_length_like",
+      "transcripts": [
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85021896,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000884758.1",
+          "transcript_name": "NTRK2-260",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85024027,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000884757.1",
+          "transcript_name": "NTRK2-259",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000686259.1",
+          "transcript_name": "NTRK2-214",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000686496.1",
+          "transcript_name": "NTRK2-219",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000691788.1",
+          "transcript_name": "NTRK2-246",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2514,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000686324.1",
+          "transcript_name": "NTRK2-216",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2430,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000323115.11",
+          "transcript_name": "NTRK2-203",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 1998,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000689301.1",
+          "transcript_name": "NTRK2-235",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2046,
+          "chrom": "chr9",
+          "endpoint": 85027050,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000692473.1",
+          "transcript_name": "NTRK2-249",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85027054,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000692181.1",
+          "transcript_name": "NTRK2-247",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2466,
+          "chrom": "chr9",
+          "endpoint": 85027054,
+          "gencode_primary": false,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000376213.6",
+          "transcript_name": "NTRK2-206",
+          "transcript_type": "protein_coding"
+        },
+        {
+          "cds_bases": 2514,
+          "chrom": "chr9",
+          "endpoint": 85027054,
+          "gencode_primary": true,
+          "mane_select": true,
+          "strand": "+",
+          "transcript_id": "ENST00000277120.8",
+          "transcript_name": "NTRK2-201",
+          "transcript_type": "protein_coding"
+        }
+      ]
+    },
+    {
+      "assigned_sites": [],
+      "contains_gencode_primary": true,
+      "contains_mane_select": false,
+      "endpoint_max": 85095751,
+      "endpoint_min": 85095751,
+      "group_index": 3,
+      "median_cds_bases": 2328,
+      "role": "other",
+      "transcripts": [
+        {
+          "cds_bases": 2328,
+          "chrom": "chr9",
+          "endpoint": 85095751,
+          "gencode_primary": true,
+          "mane_select": false,
+          "strand": "+",
+          "transcript_id": "ENST00000687386.1",
+          "transcript_name": "NTRK2-224",
+          "transcript_type": "protein_coding"
+        }
+      ]
+    }
+  ],
+  "total_ntrk2_site_count": 15,
+  "unassigned_sites": [
+    84724806,
+    84725009,
+    84831090,
+    84832797,
+    84872328
+  ]
+}

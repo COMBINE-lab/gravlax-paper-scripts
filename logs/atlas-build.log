@@ -1,0 +1,52 @@
++ P=${GRAVLAX_PROJECT_ROOT}
++ cd ${GRAVLAX_PROJECT_ROOT}
++ AIE=src/target/release/aie
++ for D in d4 d3
++ '[' d4 = d3 ']'
++ FQ=data/d4/500_PBMC_3p_LT_Chromium_X_fastqs
+++ ls data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R1_001.fastq.gz data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R1_001.fastq.gz
+++ paste -sd,
++ R1=data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R1_001.fastq.gz,data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R1_001.fastq.gz
+++ paste -sd,
+++ ls data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R2_001.fastq.gz data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R2_001.fastq.gz
++ R2=data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R2_001.fastq.gz,data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R2_001.fastq.gz
++ mkdir -p runs/ingest/d4
++ STAR --runThreadN 24 --genomeDir ref/star-base --twopassMode Basic --readFilesIn data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R2_001.fastq.gz,data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R2_001.fastq.gz data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R1_001.fastq.gz,data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures SJ --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --outSAMattributes NH HI AS nM CR UR CY UY --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 32000000000 --outSAMunmapped Within --outFileNamePrefix runs/ingest/d4/
++ src/target/release/aie ingest-archive runs/ingest/d4/Aligned.sortedByCoord.out.bam --whitelist data/3M-february-2018.txt --out runs/archive/d4.aie --zstd-level 19
++ grep extracted
+extracted: 18091588 molecules, 1448116 edges, 42634 cells, 991824 shapes, 710481 patterns, 15388070 classes (74.0s)
++ stat -c 'd4_SIZE %s' runs/archive/d4.aie
+d4_SIZE 99042482
++ echo d4_ARCHIVE_DONE
+d4_ARCHIVE_DONE
++ for D in d4 d3
++ '[' d3 = d3 ']'
++ FQ=data/d3/pbmc_10k_v3_fastqs
+++ paste -sd,
+++ ls data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R1_001.fastq.gz data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R1_001.fastq.gz
++ R1=data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R1_001.fastq.gz,data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R1_001.fastq.gz
+++ paste -sd,
+++ ls data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R2_001.fastq.gz data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R2_001.fastq.gz
++ R2=data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R2_001.fastq.gz,data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R2_001.fastq.gz
++ mkdir -p runs/ingest/d3
++ STAR --runThreadN 24 --genomeDir ref/star-base --twopassMode Basic --readFilesIn data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R2_001.fastq.gz,data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R2_001.fastq.gz data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R1_001.fastq.gz,data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures SJ --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --outSAMattributes NH HI AS nM CR UR CY UY --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 32000000000 --outSAMunmapped Within --outFileNamePrefix runs/ingest/d3/
++ src/target/release/aie ingest-archive runs/ingest/d3/Aligned.sortedByCoord.out.bam --whitelist data/3M-february-2018.txt --out runs/archive/d3.aie --zstd-level 19
++ grep extracted
+extracted: 228325236 molecules, 18760799 edges, 1722344 cells, 4758023 shapes, 5265099 patterns, 199506805 classes (825.1s)
++ stat -c 'd3_SIZE %s' runs/archive/d3.aie
+d3_SIZE 1020823750
++ echo d3_ARCHIVE_DONE
+d3_ARCHIVE_DONE
++ echo '---- atlas federate: 6 archives ----'
+---- atlas federate: 6 archives ----
++ /usr/bin/time -f federate6_wall=%e src/target/release/aie federate runs/archive/d0.aie runs/archive/d1.aie runs/archive/d3.aie runs/archive/d4.aie runs/archive/d2.aie runs/archive/d2p.aie chr16:89562391-89562883 --top 2
+runs/archive/d0.aie: 60156 UMIs / 4511 cells (index support 115997) top [CGAGAAGTCAAGTTGC:237, TGTTCATAGCTGCCTG:221]
+runs/archive/d1.aie: 315157 UMIs / 29789 cells (index support 711336) top [GATGTTGTCACGAGGA:299, GCTTGGGCAACTTGCA:250]
+runs/archive/d3.aie: 549101 UMIs / 34950 cells (index support 993763) top [TAATCTCAGCACCCAC:277, GACTGATGTTCACGAT:268]
+runs/archive/d4.aie: 41124 UMIs / 4895 cells (index support 80500) top [GCGTTTCAGCCTCTGG:207, GAGTTGTGTATACCTG:200]
+runs/archive/d2.aie: 85567 UMIs / 8987 cells (index support 106848) top [ATTCACTTCCGCAAAT:164, TGGGAGAAGATCGCTT:162]
+runs/archive/d2p.aie: 15023 UMIs / 10778 cells (index support 21909) top [CGAGGAAGTACTAACC:26, GTTTGGATCCTACAAG:21]
+federated 6 archives: 1066128 UMIs across 93910 cells total (3.81s)
+federate6_wall=3.82
++ echo ATLAS_BUILD_DONE
+ATLAS_BUILD_DONE

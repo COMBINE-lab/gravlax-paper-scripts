@@ -1,0 +1,1349 @@
+{
+  "status": "ELIGIBLE_MODEL_SELECTED",
+  "selection_rule": "joint minimum target-weighted NLL among candidates satisfying every per-dataset pooled/proxy NLL, Brier, and top-1 criterion",
+  "reference": {
+    "D0": {
+      "pooled": {
+        "targets": 500006,
+        "negative_log_loss": 0.05972566238469802,
+        "multiclass_brier": 0.02789596677568946,
+        "top1_percent": 98.18202181573821
+      },
+      "dirichlet-proxy": {
+        "targets": 500006,
+        "negative_log_loss": 0.05810640453435863,
+        "multiclass_brier": 0.0267797616906842,
+        "top1_percent": 98.23482118214581
+      }
+    },
+    "D4": {
+      "pooled": {
+        "targets": 354545,
+        "negative_log_loss": 0.06879770680579846,
+        "multiclass_brier": 0.03153110776093485,
+        "top1_percent": 97.88207420778744
+      },
+      "dirichlet-proxy": {
+        "targets": 354545,
+        "negative_log_loss": 0.06668527913876181,
+        "multiclass_brier": 0.030199379508754287,
+        "top1_percent": 98.03325388878703
+      }
+    }
+  },
+  "eligible_configuration_count": 24,
+  "selected": {
+    "depth_scale": 32,
+    "depth_power": 2,
+    "joint_target_weighted_negative_log_loss": 0.06135415713183474,
+    "by_dataset": {
+      "D0": {
+        "targets": 500006,
+        "negative_log_loss": 0.05781830572728661,
+        "multiclass_brier": 0.026704144473535387,
+        "top1_percent": 98.23182121814538
+      },
+      "D4": {
+        "targets": 354545,
+        "negative_log_loss": 0.06634068047127681,
+        "multiclass_brier": 0.030159944017983664,
+        "top1_percent": 98.04961288411909
+      }
+    },
+    "criteria": {
+      "D0_NLL_below_pooled": true,
+      "D0_NLL_below_proxy": true,
+      "D0_Brier_at_most_pooled": true,
+      "D0_Brier_at_most_proxy": true,
+      "D0_top1_drop_at_most_0_10pp": true,
+      "D4_NLL_below_pooled": true,
+      "D4_NLL_below_proxy": true,
+      "D4_Brier_at_most_pooled": true,
+      "D4_Brier_at_most_proxy": true,
+      "D4_top1_drop_at_most_0_10pp": true
+    },
+    "eligible": true
+  },
+  "configurations": [
+    {
+      "depth_scale": 2,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.061488095875967985,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057942424438935394,
+          "multiclass_brier": 0.02674849177397908,
+          "top1_percent": 98.23422118934573
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06648846816311042,
+          "multiclass_brier": 0.030177213012355996,
+          "top1_percent": 98.03945902494746
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 2,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.06148615877881973,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05792841392292346,
+          "multiclass_brier": 0.02672599715494559,
+          "top1_percent": 98.23602116774599
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06650355790845708,
+          "multiclass_brier": 0.030153201702303737,
+          "top1_percent": 98.04792057425715
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 2,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.06150520743410448,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05794134452965581,
+          "multiclass_brier": 0.02672103954493616,
+          "top1_percent": 98.23622116534601
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06653123469552902,
+          "multiclass_brier": 0.03013973824095224,
+          "top1_percent": 98.04989493576274
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 2,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.06151015929624689,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057944920462999615,
+          "multiclass_brier": 0.026717539633830074,
+          "top1_percent": 98.23642116294604
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.0665381269958524,
+          "multiclass_brier": 0.03013258634040582,
+          "top1_percent": 98.0482026259008
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 2,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.06151352288257978,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05794807848344077,
+          "multiclass_brier": 0.026716998915821064,
+          "top1_percent": 98.23602116774599
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06654178048665232,
+          "multiclass_brier": 0.030131056367378905,
+          "top1_percent": 98.04933083247542
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 4,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.061475617045365166,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057935953403579155,
+          "multiclass_brier": 0.026751199281675887,
+          "top1_percent": 98.2340211917457
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06646751668821686,
+          "multiclass_brier": 0.03017609438558522,
+          "top1_percent": 98.0411513348094
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 4,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.06144254349745394,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05789313080578081,
+          "multiclass_brier": 0.0267148522173921,
+          "top1_percent": 98.2354211749459
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.0664481919830135,
+          "multiclass_brier": 0.030141849517718047,
+          "top1_percent": 98.05158724562467
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 4,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.061453210477339704,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05789921346590783,
+          "multiclass_brier": 0.02670428932730494,
+          "top1_percent": 98.23622116534601
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06646532411509515,
+          "multiclass_brier": 0.030117624867063545,
+          "top1_percent": 98.05045903905005
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 4,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.061458629323890006,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05790199001544365,
+          "multiclass_brier": 0.026700066735279682,
+          "top1_percent": 98.2368211581461
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06647446932744111,
+          "multiclass_brier": 0.030108581284084206,
+          "top1_percent": 98.05130519398102
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 4,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.06146161077644747,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057903754479276565,
+          "multiclass_brier": 0.026698913047683296,
+          "top1_percent": 98.23762114854621
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06647916706894413,
+          "multiclass_brier": 0.03010693639488819,
+          "top1_percent": 98.0527154521993
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 8,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.0614720483803113,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057938324552905894,
+          "multiclass_brier": 0.026759428854819984,
+          "top1_percent": 98.23242121094549
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06645557125059763,
+          "multiclass_brier": 0.030178600245726484,
+          "top1_percent": 98.04284364467134
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 8,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.0614063051312702,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057864012143155084,
+          "multiclass_brier": 0.026709080933184772,
+          "top1_percent": 98.23242121094547
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06640191287588791,
+          "multiclass_brier": 0.0301407675293419,
+          "top1_percent": 98.0456641611079
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 8,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.0614107845647502,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05786714403637065,
+          "multiclass_brier": 0.026696763368521798,
+          "top1_percent": 98.23482118214581
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06640829271190485,
+          "multiclass_brier": 0.030113070189364016,
+          "top1_percent": 98.05412571041758
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 8,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.06142081137935933,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05787552022142117,
+          "multiclass_brier": 0.026694192931635826,
+          "top1_percent": 98.23562117254593
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06642064736834809,
+          "multiclass_brier": 0.03010347050195972,
+          "top1_percent": 98.05553596863585
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 8,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.061424341779899465,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05787940076954766,
+          "multiclass_brier": 0.026694325130520512,
+          "top1_percent": 98.23502117974584
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.0664236839644514,
+          "multiclass_brier": 0.03010075382871858,
+          "top1_percent": 98.0552539169922
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 16,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.06148008597002386,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057952079565827354,
+          "multiclass_brier": 0.02677497118873836,
+          "top1_percent": 98.23102122774527
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06645554570048594,
+          "multiclass_brier": 0.030185100526376255,
+          "top1_percent": 98.04481800617692
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 16,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.061382808208480764,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.0578444284828326,
+          "multiclass_brier": 0.026709889618343755,
+          "top1_percent": 98.2312212253453
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06637289717631964,
+          "multiclass_brier": 0.030151582534615712,
+          "top1_percent": 98.04594621275156
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 16,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.06137495883905364,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05783906802313717,
+          "multiclass_brier": 0.026696249090003114,
+          "top1_percent": 98.23522117734588
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06636153775936876,
+          "multiclass_brier": 0.030126380759192002,
+          "top1_percent": 98.0577923817851
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 16,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.06138556375085284,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057847116829488364,
+          "multiclass_brier": 0.02669228566792196,
+          "top1_percent": 98.2354211749459
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06637574748314004,
+          "multiclass_brier": 0.030116309328612624,
+          "top1_percent": 98.05807443342876
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 16,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.0613935620929051,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05785174423836702,
+          "multiclass_brier": 0.02669130225952775,
+          "top1_percent": 98.23482118214581
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06638849976845028,
+          "multiclass_brier": 0.03011481297707588,
+          "top1_percent": 98.05807443342876
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 32,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.06150166289129718,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05797903292844596,
+          "multiclass_brier": 0.026799457327864547,
+          "top1_percent": 98.19382167413991
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06646954036018092,
+          "multiclass_brier": 0.03019548434580424,
+          "top1_percent": 98.04397185124596
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": false,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 32,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.06137932294042421,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05784052024593542,
+          "multiclass_brier": 0.026718696057507818,
+          "top1_percent": 98.2312212253453
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.0663700084107046,
+          "multiclass_brier": 0.03017362127903961,
+          "top1_percent": 98.04792057425715
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 32,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.06135415713183474,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05781830572728661,
+          "multiclass_brier": 0.026704144473535387,
+          "top1_percent": 98.23182121814538
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06634068047127681,
+          "multiclass_brier": 0.030159944017983664,
+          "top1_percent": 98.04961288411909
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 32,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.06136116051971025,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05783066292840405,
+          "multiclass_brier": 0.02670136604595248,
+          "top1_percent": 98.23302120374555
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06634013350942565,
+          "multiclass_brier": 0.03015039988058696,
+          "top1_percent": 98.06033084657801
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 32,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.06136674058590045,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057835844850119444,
+          "multiclass_brier": 0.026698721815449425,
+          "top1_percent": 98.23462118454579
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06634627506887134,
+          "multiclass_brier": 0.030145151403378274,
+          "top1_percent": 98.0597667432907
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": true,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": true
+    },
+    {
+      "depth_scale": 64,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.06153745658879851,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.058019690179797606,
+          "multiclass_brier": 0.026833914003367394,
+          "top1_percent": 98.18142182293812
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06649847510858842,
+          "multiclass_brier": 0.030209228253080804,
+          "top1_percent": 98.0456641611079
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": false,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 64,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.06140358892903712,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05786177348389907,
+          "multiclass_brier": 0.026738385757531305,
+          "top1_percent": 98.22982124214509
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06639852320666532,
+          "multiclass_brier": 0.030203286157692157,
+          "top1_percent": 98.04989493576274
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 64,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.061364006668119954,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05780810264344454,
+          "multiclass_brier": 0.0267195308287528,
+          "top1_percent": 98.229221249345
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06637880971924705,
+          "multiclass_brier": 0.03021253330721141,
+          "top1_percent": 98.05130519398102
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 64,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.06137861967360155,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057827690410532005,
+          "multiclass_brier": 0.026727029727728117,
+          "top1_percent": 98.22902125174498
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.0663864069421016,
+          "multiclass_brier": 0.030222407961863606,
+          "top1_percent": 98.05130519398102
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 64,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.061393780417891904,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05784704147728342,
+          "multiclass_brier": 0.026733602155223853,
+          "top1_percent": 98.22882125414495
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06639565817879076,
+          "multiclass_brier": 0.030224749365137655,
+          "top1_percent": 98.05130519398102
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 128,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.06158656763145063,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.058072796527435605,
+          "multiclass_brier": 0.026878195140981585,
+          "top1_percent": 98.18202181573821
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06654195167193672,
+          "multiclass_brier": 0.03022560182380285,
+          "top1_percent": 98.04594621275156
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": false,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 128,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.061459768572091636,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05791834634207499,
+          "multiclass_brier": 0.026775189964798204,
+          "top1_percent": 98.22942124694504
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06645414830820891,
+          "multiclass_brier": 0.03023422109711024,
+          "top1_percent": 98.0507410906937
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 128,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.06140471804943167,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05781569460888711,
+          "multiclass_brier": 0.026735374418279615,
+          "top1_percent": 98.22902125174498
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06646622858945599,
+          "multiclass_brier": 0.03026237084554448,
+          "top1_percent": 98.05158724562467
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 128,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.061416430474428796,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05780531395691427,
+          "multiclass_brier": 0.026739378303805305,
+          "top1_percent": 98.22902125174498
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06650909833170045,
+          "multiclass_brier": 0.030287118365789612,
+          "top1_percent": 98.05102314233736
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 128,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.06143052663976376,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05781090797528998,
+          "multiclass_brier": 0.026742208727540052,
+          "top1_percent": 98.22902125174498
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06653518486354038,
+          "multiclass_brier": 0.0302979718734508,
+          "top1_percent": 98.05102314233736
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 256,
+      "depth_power": 0.5,
+      "joint_target_weighted_negative_log_loss": 0.06164655641629732,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.05813529682237811,
+          "multiclass_brier": 0.02693057169619069,
+          "top1_percent": 98.18282180613832
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06659839853652795,
+          "multiclass_brier": 0.030243948629755255,
+          "top1_percent": 98.0482026259008
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": false,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": false,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 256,
+      "depth_power": 1,
+      "joint_target_weighted_negative_log_loss": 0.06154595469632126,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.058014843367907014,
+          "multiclass_brier": 0.026838691734815793,
+          "top1_percent": 98.18102182773806
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06652579322422347,
+          "multiclass_brier": 0.030260499608345735,
+          "top1_percent": 98.05130519398102
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": false,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 256,
+      "depth_power": 2,
+      "joint_target_weighted_negative_log_loss": 0.06147162010895104,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057876714262930486,
+          "multiclass_brier": 0.026760216498015483,
+          "top1_percent": 98.22862125654493
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06654142645918966,
+          "multiclass_brier": 0.03028846979147826,
+          "top1_percent": 98.05186929726833
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 256,
+      "depth_power": 4,
+      "joint_target_weighted_negative_log_loss": 0.06144084571133187,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057801152228061634,
+          "multiclass_brier": 0.026740893709935796,
+          "top1_percent": 98.22902125174498
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06657381495302479,
+          "multiclass_brier": 0.03029982298850905,
+          "top1_percent": 98.05186929726833
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    },
+    {
+      "depth_scale": 256,
+      "depth_power": 8,
+      "joint_target_weighted_negative_log_loss": 0.061440188327131204,
+      "by_dataset": {
+        "D0": {
+          "targets": 500006,
+          "negative_log_loss": 0.057792308122498616,
+          "multiclass_brier": 0.026740800552010086,
+          "top1_percent": 98.22902125174498
+        },
+        "D4": {
+          "targets": 354545,
+          "negative_log_loss": 0.06658470309845084,
+          "multiclass_brier": 0.030301370900662365,
+          "top1_percent": 98.05186929726833
+        }
+      },
+      "criteria": {
+        "D0_NLL_below_pooled": true,
+        "D0_NLL_below_proxy": true,
+        "D0_Brier_at_most_pooled": true,
+        "D0_Brier_at_most_proxy": true,
+        "D0_top1_drop_at_most_0_10pp": true,
+        "D4_NLL_below_pooled": true,
+        "D4_NLL_below_proxy": true,
+        "D4_Brier_at_most_pooled": true,
+        "D4_Brier_at_most_proxy": false,
+        "D4_top1_drop_at_most_0_10pp": true
+      },
+      "eligible": false
+    }
+  ]
+}

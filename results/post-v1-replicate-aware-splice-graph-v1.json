@@ -1,0 +1,653 @@
+{
+  "acceptance": {
+    "aggregate_path_and_support_conservation": true,
+    "biological_sample_semantic_guard": true,
+    "common_edge_recurrence_guard": true,
+    "complete_zero_explicit_sample_edge_matrix": true,
+    "complete_zero_explicit_sample_path_matrix": true,
+    "counts_only_emits_no_test": true,
+    "documentation_site_build_passed": true,
+    "per_sample_edge_path_umi_conservation": true,
+    "registered_stop_preserved": true,
+    "repeated_json_byte_identical": true,
+    "sample_strand_total_conservation": true,
+    "workspace_tests_passed": 124
+  },
+  "benchmark": {
+    "max_peak_rss_kib": 14844,
+    "max_wall_seconds": 0.007258,
+    "measurement": "release executable; warm repeated process invocations; Python perf_counter wall and GNU time maximum RSS",
+    "median_wall_seconds": 0.006347,
+    "min_wall_seconds": 0.00593,
+    "runs": 20
+  },
+  "graph": {
+    "edges": [
+      {
+        "acceptor": 129923843,
+        "catalogue_samples": 3,
+        "donor": 129908999,
+        "edge_id": 0,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 1,
+          "F": 0,
+          "G": 0,
+          "H": 0
+        },
+        "strand": "+"
+      },
+      {
+        "acceptor": 129923501,
+        "catalogue_samples": 2,
+        "donor": 129923107,
+        "edge_id": 1,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0,
+          "F": 0,
+          "G": 1,
+          "H": 0
+        },
+        "strand": "+"
+      },
+      {
+        "acceptor": 129915965,
+        "catalogue_samples": 6,
+        "donor": 129908999,
+        "edge_id": 2,
+        "sample_umis": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 8,
+          "E": 3,
+          "F": 1,
+          "G": 12,
+          "H": 1
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129923843,
+        "catalogue_samples": 3,
+        "donor": 129908999,
+        "edge_id": 3,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 2,
+          "E": 1,
+          "F": 0,
+          "G": 5,
+          "H": 0
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129919158,
+        "catalogue_samples": 2,
+        "donor": 129915980,
+        "edge_id": 4,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0,
+          "G": 2,
+          "H": 0
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129923843,
+        "catalogue_samples": 4,
+        "donor": 129915980,
+        "edge_id": 5,
+        "sample_umis": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 6,
+          "E": 1,
+          "F": 0,
+          "G": 7,
+          "H": 0
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129919871,
+        "catalogue_samples": 2,
+        "donor": 129919242,
+        "edge_id": 6,
+        "sample_umis": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0,
+          "G": 0,
+          "H": 0
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129923843,
+        "catalogue_samples": 3,
+        "donor": 129919242,
+        "edge_id": 7,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 5,
+          "E": 1,
+          "F": 0,
+          "G": 4,
+          "H": 0
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129923501,
+        "catalogue_samples": 2,
+        "donor": 129923107,
+        "edge_id": 8,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0,
+          "G": 0,
+          "H": 0
+        },
+        "strand": "-"
+      },
+      {
+        "acceptor": 129924959,
+        "catalogue_samples": 7,
+        "donor": 129924026,
+        "edge_id": 9,
+        "sample_umis": {
+          "A": 4,
+          "B": 0,
+          "C": 1,
+          "D": 6,
+          "E": 4,
+          "F": 4,
+          "G": 8,
+          "H": 2
+        },
+        "strand": "-"
+      }
+    ],
+    "path_length_histogram": [
+      {
+        "edges_per_path": 1,
+        "paths": 10,
+        "umis": 75
+      },
+      {
+        "edges_per_path": 2,
+        "paths": 2,
+        "umis": 11
+      }
+    ],
+    "paths": [
+      {
+        "aggregate_umis": 2,
+        "junctions": [
+          {
+            "acceptor": 129923843,
+            "donor": 129908999
+          }
+        ],
+        "path_id": 0,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 1,
+          "F": 0,
+          "G": 0,
+          "H": 0
+        },
+        "strand": "+",
+        "supporting_samples": 2
+      },
+      {
+        "aggregate_umis": 1,
+        "junctions": [
+          {
+            "acceptor": 129923501,
+            "donor": 129923107
+          }
+        ],
+        "path_id": 1,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0,
+          "F": 0,
+          "G": 1,
+          "H": 0
+        },
+        "strand": "+",
+        "supporting_samples": 1
+      },
+      {
+        "aggregate_umis": 15,
+        "junctions": [
+          {
+            "acceptor": 129915965,
+            "donor": 129908999
+          }
+        ],
+        "path_id": 2,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 3,
+          "E": 3,
+          "F": 1,
+          "G": 7,
+          "H": 1
+        },
+        "strand": "-",
+        "supporting_samples": 5
+      },
+      {
+        "aggregate_umis": 2,
+        "junctions": [
+          {
+            "acceptor": 129919158,
+            "donor": 129915980
+          },
+          {
+            "acceptor": 129915965,
+            "donor": 129908999
+          }
+        ],
+        "path_id": 3,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0,
+          "G": 1,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 2
+      },
+      {
+        "aggregate_umis": 9,
+        "junctions": [
+          {
+            "acceptor": 129923843,
+            "donor": 129915980
+          },
+          {
+            "acceptor": 129915965,
+            "donor": 129908999
+          }
+        ],
+        "path_id": 4,
+        "sample_umis": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 4,
+          "E": 0,
+          "F": 0,
+          "G": 4,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 3
+      },
+      {
+        "aggregate_umis": 8,
+        "junctions": [
+          {
+            "acceptor": 129923843,
+            "donor": 129908999
+          }
+        ],
+        "path_id": 5,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 2,
+          "E": 1,
+          "F": 0,
+          "G": 5,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 3
+      },
+      {
+        "aggregate_umis": 1,
+        "junctions": [
+          {
+            "acceptor": 129919158,
+            "donor": 129915980
+          }
+        ],
+        "path_id": 6,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "E": 0,
+          "F": 0,
+          "G": 1,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 1
+      },
+      {
+        "aggregate_umis": 6,
+        "junctions": [
+          {
+            "acceptor": 129923843,
+            "donor": 129915980
+          }
+        ],
+        "path_id": 7,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 2,
+          "E": 1,
+          "F": 0,
+          "G": 3,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 3
+      },
+      {
+        "aggregate_umis": 2,
+        "junctions": [
+          {
+            "acceptor": 129919871,
+            "donor": 129919242
+          }
+        ],
+        "path_id": 8,
+        "sample_umis": {
+          "A": 0,
+          "B": 1,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0,
+          "G": 0,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 2
+      },
+      {
+        "aggregate_umis": 10,
+        "junctions": [
+          {
+            "acceptor": 129923843,
+            "donor": 129919242
+          }
+        ],
+        "path_id": 9,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 5,
+          "E": 1,
+          "F": 0,
+          "G": 4,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 3
+      },
+      {
+        "aggregate_umis": 1,
+        "junctions": [
+          {
+            "acceptor": 129923501,
+            "donor": 129923107
+          }
+        ],
+        "path_id": 10,
+        "sample_umis": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 1,
+          "E": 0,
+          "F": 0,
+          "G": 0,
+          "H": 0
+        },
+        "strand": "-",
+        "supporting_samples": 1
+      },
+      {
+        "aggregate_umis": 29,
+        "junctions": [
+          {
+            "acceptor": 129924959,
+            "donor": 129924026
+          }
+        ],
+        "path_id": 11,
+        "sample_umis": {
+          "A": 4,
+          "B": 0,
+          "C": 1,
+          "D": 6,
+          "E": 4,
+          "F": 4,
+          "G": 8,
+          "H": 2
+        },
+        "strand": "-",
+        "supporting_samples": 7
+      }
+    ],
+    "planning": {
+      "catalogue_union_edges": 44,
+      "common_coordinate_edges": 8,
+      "nodes": 15,
+      "strand_edges": 10,
+      "tested_paths": 0,
+      "union_paths": 12
+    },
+    "sample_edge_rows": 80,
+    "sample_path_rows": 96,
+    "samples": [
+      {
+        "eligible_strands_at_default": [],
+        "minus_path_umis": 4,
+        "nonzero_paths": 1,
+        "plus_path_umis": 0,
+        "sample": "A"
+      },
+      {
+        "eligible_strands_at_default": [],
+        "minus_path_umis": 2,
+        "nonzero_paths": 2,
+        "plus_path_umis": 0,
+        "sample": "B"
+      },
+      {
+        "eligible_strands_at_default": [],
+        "minus_path_umis": 1,
+        "nonzero_paths": 1,
+        "plus_path_umis": 0,
+        "sample": "C"
+      },
+      {
+        "eligible_strands_at_default": [
+          "-"
+        ],
+        "minus_path_umis": 25,
+        "nonzero_paths": 10,
+        "plus_path_umis": 1,
+        "sample": "D"
+      },
+      {
+        "eligible_strands_at_default": [
+          "-"
+        ],
+        "minus_path_umis": 10,
+        "nonzero_paths": 6,
+        "plus_path_umis": 1,
+        "sample": "E"
+      },
+      {
+        "eligible_strands_at_default": [],
+        "minus_path_umis": 5,
+        "nonzero_paths": 2,
+        "plus_path_umis": 0,
+        "sample": "F"
+      },
+      {
+        "eligible_strands_at_default": [
+          "-"
+        ],
+        "minus_path_umis": 33,
+        "nonzero_paths": 9,
+        "plus_path_umis": 1,
+        "sample": "G"
+      },
+      {
+        "eligible_strands_at_default": [],
+        "minus_path_umis": 3,
+        "nonzero_paths": 2,
+        "plus_path_umis": 0,
+        "sample": "H"
+      }
+    ],
+    "total_path_umis": 86,
+    "zero_edge_rows": 49,
+    "zero_path_rows": 63
+  },
+  "implementation": {
+    "executable_sha256": "a5c192047af3bcbfbae63382e625d07d518dbdced5c4a8b8a967cde587cbdbf8",
+    "gravlax_commit": "173d9256b48eb4d729e73732b8a0b7e0cf01c3ff",
+    "query_schema": "gravlax.cohort.splice-graph.v1"
+  },
+  "inputs": {
+    "archives": [
+      {
+        "bytes": 16458,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-A/fnbp1.called.aie",
+        "sample": "A",
+        "sha256": "d46aa074a88518ca38f7ec94517394dd3e08076512c680c72abbdb0cb01e139b"
+      },
+      {
+        "bytes": 15428,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-B/fnbp1.called.aie",
+        "sample": "B",
+        "sha256": "bfe528a6c66278f8a90d1e17a854ce139c7043f2c427ec23b50f6d657fae10a9"
+      },
+      {
+        "bytes": 15088,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-C/fnbp1.called.aie",
+        "sample": "C",
+        "sha256": "fd353c8d314fd4c4a71a52548ff27436d66c6c2e4cd2d420b078349c2db9beb9"
+      },
+      {
+        "bytes": 40966,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-D/fnbp1.called.aie",
+        "sample": "D",
+        "sha256": "a5a3a5350ae897cea6e1ea35cd630baa1f45cada2ae568ca868e44926b8eb5f8"
+      },
+      {
+        "bytes": 13769,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-E/fnbp1.called.aie",
+        "sample": "E",
+        "sha256": "efc7057eff06c94fe22d29d0a73d6947b125ef7e9fbbeef6a1798fade46b3800"
+      },
+      {
+        "bytes": 16590,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-F/fnbp1.called.aie",
+        "sample": "F",
+        "sha256": "34114e64934ecd6b3cfd44963d17f8d1adefbc1c6cb494884384892481182f73"
+      },
+      {
+        "bytes": 43858,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-G/fnbp1.called.aie",
+        "sample": "G",
+        "sha256": "5f4809d9759f33bf3826883333ebbb55ec030946c1a7785474f087c8629164c3"
+      },
+      {
+        "bytes": 13155,
+        "logical_path": "../../../runs/post-v1/fnbp1-multidonor-sez-validation-r1/donor-H/fnbp1.called.aie",
+        "sample": "H",
+        "sha256": "d46477d6a22b1104d0635475bcd36da1e7d75704692ef98fd589fbaf1d094e20"
+      }
+    ],
+    "dataset": "GSE234790 / PRJNA983239 eight adult human SEZ donors",
+    "design": "experiments/designs/fnbp1-sez-cohort-splice-graph.tsv",
+    "design_sha256": "7aba819684c2cebd223ef789cd5cb770e2c6e281c37181d51aebd4139012b68f",
+    "locus": "chr9:129907500-129926000",
+    "reference_digest": "2817ea0bc4a2b919ef6007efdb5504757dd9cb76bf550228e510112a41cb7472",
+    "registered_result": "results/post-v1-fnbp1-multidonor-sez-validation.json",
+    "registered_result_sha256": "1b71fecf6d8340a93b1244b7399572c26e861f963a9a642179e00103a0da5205"
+  },
+  "interpretation": {
+    "capability": "the common graph exposes exact recurrent edge and multi-junction path-fragment rows across donors",
+    "inference": "none; the real panel is the preregistered single-condition counts-only engineering check",
+    "registered_outcome": "STOP_UNDERPOWERED for primary donor replication and STOP_DESCRIPTIVE for microglial localization remain binding"
+  },
+  "interpretation_limits": [
+    "Path fragments are positive junction co-support, not reconstructed complete transcripts.",
+    "No arbitrary donor contrast was constructed and no p-value was emitted.",
+    "The targeted archives contain only the registered locus and called-cell scope.",
+    "Sparse FNBP1 evidence cannot support a donor-level differential-splicing claim."
+  ],
+  "output_sha256": "6a807a6f4958dcf6fdeee90a141a3b470e290d8b5aa1736c4f60ac1fd6074c72",
+  "registration": {
+    "manifest": "experiments/manifests/replicate-aware-splice-graph-v1.json",
+    "registration_commit": "8d01b5ac87c327598a9ac1e980f07c767d8fe079",
+    "specification": "experiments/specs/replicate-aware-splice-graph-v1.md"
+  },
+  "schema": "gravlax.replicate-aware-splice-graph-v1.result.v1",
+  "status": "PASS_ENGINEERING_COUNTS_ONLY",
+  "thresholds": {
+    "max_paths": 100000,
+    "min_edge_samples": 2,
+    "min_path_samples": 2,
+    "min_path_umis": 5,
+    "min_replicates": 2,
+    "min_sample_umis": 10,
+    "min_support": 1
+  }
+}

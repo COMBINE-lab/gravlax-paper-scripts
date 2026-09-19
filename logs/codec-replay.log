@@ -1,0 +1,18 @@
+molecules 22156853 -> assigned 21197710 -> 10393179 UMIs in 3600217 entries | load 1.5s, +anno 1.9s, +replay 43.6s, total 49.9s
+REGRESSION: BYTE-IDENTICAL
+--- z12 query timing ---
+region chr6:73489308-73525587: 16971 molecules, 16288 UMIs across 2413 cells (2 chunks decoded; open 0.07s, total 0.12s)
+  CGAGAAGTCAAGTTGC	77
+junction chr16:89562391-89562883: 60156 UMIs across 4511 cells (115997 supporting children per index, 1 chunks decoded; open 0.07s, total 0.09s)
+  CGAGAAGTCAAGTTGC	237
+--- z19 query timing ---
+region chr6:73489308-73525587: 16971 molecules, 16288 UMIs across 2413 cells (2 chunks decoded; open 0.08s, total 0.14s)
+  CGAGAAGTCAAGTTGC	77
+junction chr16:89562391-89562883: 60156 UMIs across 4511 cells (115997 supporting children per index, 1 chunks decoded; open 0.07s, total 0.09s)
+  CGAGAAGTCAAGTTGC	237
+--- z22 query timing ---
+region chr6:73489308-73525587: 16971 molecules, 16288 UMIs across 2413 cells (2 chunks decoded; open 0.08s, total 0.14s)
+  CGAGAAGTCAAGTTGC	77
+junction chr16:89562391-89562883: 60156 UMIs across 4511 cells (115997 supporting children per index, 1 chunks decoded; open 0.08s, total 0.10s)
+  CGAGAAGTCAAGTTGC	237
+CODEC_SWEEP_DONE

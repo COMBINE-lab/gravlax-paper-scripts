@@ -1,0 +1,4 @@
+arm	n	median_wall_s	median_peak_gib	walls
+star	5	361.46	32.55	368.13,361.46,363.66,361.03,358.49
+aie	5	9.27	5.79	9.47,9.10,9.24,9.34,9.27
+speedup_median	38.99

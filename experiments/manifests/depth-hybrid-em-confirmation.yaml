@@ -1,0 +1,113 @@
+experiment: depth_hybrid_em_factorial_confirmation
+date_locked: 2026-08-31
+status: locked_before_D4_quantification_grouping_or_EM_measurement
+reference_gravlax_commit: 69a18c2fc227691793907a2a35b3b11a19b8dffc
+disclosure:
+  D4_EM_results_observed_before_lock: false
+  D4_fresh_v49_quantification_observed_before_lock: false
+  D4_group_partition_observed_before_lock: false
+  D3_role: untouched_replication_opened_only_by_D4_PASS
+  development_information:
+    dataset: D0
+    selected_depth_scale: 64
+    hybrid_relative_nll_gain_over_proxy: 0.005134178
+    real_group_relative_nll_gain_with_hybrid: 0.006543
+    locked_D0_verdict: MARGINAL_7_of_8
+    failed_D0_criterion: ratio_conflated_model_form_and_group_information_axes
+model:
+  name: monotone_depth_gated_hybrid
+  depth_scale: 64
+  gate: d_squared_over_d_squared_plus_64_squared
+  depth: mode_independent_initial_fitted_unique_candidate_mass
+  fixed_component:
+    cell_weight: 0.20
+    group_weight: 0.60
+    sample_weight: 0.20
+    group_prior: 80
+  adaptive_component:
+    cell_prior: 64
+    group_prior: 80
+  iterations: 10
+  epsilon: 1.0e-9
+  cell_shards: 64
+  production_emission_unchanged: pooled
+targets:
+  type: keyed_mixed_class_mask
+  mask_fraction: 0.20
+  seeds: [7, 17, 29]
+  candidate_gene_exclusion: union_across_all_seeds
+  evaluation_population: supplied_group_barcodes_only
+groups:
+  expression_source: gravlax_v49_Gene_replay_before_EM
+  called_cell_source: fresh_v49_STARsolo_filtered_barcodes_only
+  fresh_STARsolo_expression_forbidden_in_grouping: true
+  normalization: library_size_10000_log1p
+  detected_gene_minimum_cells: 10
+  hvg_count_max: 2000
+  minimum_eligible_genes: 500
+  dimensions: [20, 30, 40, 50]
+  resolutions: [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00]
+  leiden_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  medoid: maximum_mean_ARI_to_other_seed_partitions
+  eligibility_applies_to: ARI_medoid_partition
+  eligible_cluster_count: [3, 12]
+  minimum_group_cells: 20
+  minimum_median_pairwise_seed_ARI: 0.90
+  selection: maximum_median_pairwise_seed_ARI
+  tie_break: [lower_dimension, resolution_closest_to_0.50, lower_resolution]
+  no_eligible_configuration: STOP
+  shuffle: deterministic_size_preserving_label_permutation
+factorial_arms:
+  - hybrid_real
+  - hybrid_shuffled
+  - Dirichlet_proxy_real
+  - Dirichlet_proxy_shuffled
+  - fixed_convex_real_depth_guardrail
+primary_hypotheses:
+  model_form: hybrid_real_better_than_Dirichlet_proxy_real
+  group_information: hybrid_real_better_than_hybrid_shuffled
+acceptance:
+  D4:
+    model_form_hybrid_beats_proxy_on_all_seeds: true
+    model_form_mean_relative_nll_improvement_min: 0.002
+    group_information_real_beats_shuffled_on_all_seeds: true
+    group_information_mean_relative_nll_improvement_min: 0.002
+    model_form_mean_brier_must_not_increase: true
+    group_information_mean_brier_must_not_increase: true
+    top1_drop_vs_proxy_percentage_points_max: 0.10
+    each_shallow_stratum_relative_nll_regression_vs_fixed_max: 0.0025
+    high_stratum_relative_nll_regression_vs_proxy_max: 0.0025
+    peak_rss_gib_max: 4
+  D3_replication:
+    opened_only_by_D4_PASS: true
+    model_form_mean_relative_nll_improvement_min: 0.0
+    model_form_hybrid_beats_proxy_seeds_min: 2
+    group_information_mean_relative_nll_improvement_min: 0.0
+    group_information_real_beats_shuffled_seeds_min: 2
+    model_form_mean_brier_must_not_increase: true
+    group_information_mean_brier_must_not_increase: true
+    top1_drop_vs_proxy_percentage_points_max: 0.10
+    each_shallow_stratum_relative_nll_regression_vs_fixed_max: 0.0025
+    high_stratum_relative_nll_regression_vs_proxy_max: 0.0025
+    peak_rss_gib_max: 4
+datasets:
+  D4:
+    role: untouched_primary_confirmation
+    archive: runs/archive/d4.aie
+    fastq_dir: data/d4/500_PBMC_3p_LT_Chromium_X_fastqs
+    fastq_prefix: 500_PBMC_3p_LT_Chromium_X_S4
+  D3:
+    role: held_back_replication_if_D4_PASS
+    archive: runs/archive/d3.aie
+    fastq_dir: data/d3/pbmc_10k_v3_fastqs
+    fastq_prefix: pbmc_10k_v3_S1
+decisions:
+  D4_PASS: all_D4_criteria_pass_then_open_D3
+  D4_MARGINAL: both_primary_effects_positive_but_at_least_one_magnitude_or_guardrail_fails
+  D4_STOP: either_primary_effect_nonpositive_or_inconsistent_across_seeds
+  replicated_PASS: D4_PASS_and_all_D3_replication_criteria_pass
+  replication_MARGINAL: D4_PASS_but_D3_does_not_meet_every_replication_criterion
+  full_hierarchical_Dirichlet:
+    implement_only_if: replicated_real_group_signal_and_structured_residual_miscalibration_remains
+    otherwise: close_without_implementation
+  production_emission: pooled

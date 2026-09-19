@@ -1,0 +1,19 @@
+=== EM audit D0 v49 ===
+== multigene audit (EM upside bound) ==
+rows by concordant-gene count (read-weighted): 0 genes 40.24% | 1 gene 55.94% | >=2 genes 3.82%  (13682959 / 21197710 / 2749894 rows)
+classes with gene evidence: single-gene-counted 10148641 | MULTI-ONLY (fully discarded, the EM pool) 691030 (6.25% of counted) | mixed 911207; no-gene classes 7515412
+=== velocity rerun with strata flags ===
+velocity: 22156853 molecules -> 14298196 UMIs in 4998654 (cell,gene) entries | load 1.0s, total 14.0s
+=== VELO-2 strata ===
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     complete      : oracle mass    723973  L1    10223  rel  1.412%
+spliced.mtx     incomplete    : oracle mass   6358817  L1   113088  rel  1.778%
+spliced.mtx     replay-absent : oracle mass      4814  L1     4814  rel 100.000%
+unspliced.mtx   complete      : oracle mass    697140  L1     5826  rel  0.836%
+unspliced.mtx   incomplete    : oracle mass   3877715  L1    10551  rel  0.272%
+unspliced.mtx   replay-absent : oracle mass      7439  L1     7439  rel 100.000%
+ambiguous.mtx   complete      : oracle mass    180529  L1     2093  rel  1.159%
+ambiguous.mtx   incomplete    : oracle mass   1352264  L1    43975  rel  3.252%
+ambiguous.mtx   replay-absent : oracle mass       843  L1      843  rel 100.000%
+EM_VELO2_DONE

@@ -1,0 +1,80 @@
+experiment: mouse_5_prime_generalization
+date: 2026-08-31
+status: gene_pass_velocity_marginal
+
+dataset:
+  id: sc5p_v2_mm_c57bl6_splenocyte_1k
+  organism: Mus musculus
+  tissue: C57BL/6 splenocytes
+  chemistry: "10x Chromium Single Cell 5' v2, R2-only"
+  producer_pipeline: Cell Ranger 4.0.0
+  producer_reference: mm10-2020-A
+  public_summary:
+    url: https://cf.10xgenomics.com/samples/cell-vdj/4.0.0/sc5p_v2_mm_c57bl6_splenocyte_1k/sc5p_v2_mm_c57bl6_splenocyte_1k_gex_web_summary.html
+    read_pairs: 33677140
+    estimated_cells: 1119
+    mean_reads_per_cell: 30096
+    median_genes_per_cell: 1749
+    median_umis_per_cell: 4133
+  fastq_bundle:
+    url: https://cf.10xgenomics.com/samples/cell-vdj/4.0.0/sc5p_v2_mm_c57bl6_splenocyte_1k/sc5p_v2_mm_c57bl6_splenocyte_1k_fastqs.tar
+    bytes: 2895523840
+    sha256: c9da2d7af946853f30dc122d16d23de93d6ae1aa958c4dba3c2bcaa095212eac
+  read_structure:
+    R1: "26 bp: 16 bp cell barcode + 10 bp UMI"
+    R2: "90 bp cDNA"
+    I1: "8 bp sample index"
+    I2: "16 bp sample index"
+  r1_sha256: e5e562e369302e9de39732d4da9dadc6c768f35d9ce8769281d054f77bbc99a3
+  r2_sha256: 3345f5e4e42794090b6067a6e60ca1cf8f95c3e2229357c13e03224be7950007
+
+whitelist:
+  id: 737K-august-2016
+  url: https://raw.githubusercontent.com/10XGenomics/supernova/master/tenkit/lib/python/tenkit/barcodes/737K-august-2016.txt
+  entries: 737280
+  bytes: 12533760
+  sha256: b0dda4b114d8fc7ea8def94fb472e6205c1831a72e3ac245ed13cc332d9f20d1
+
+reference:
+  assembly: GRCm39
+  annotation: GENCODE M39 primary assembly
+  release_date: 2026-06
+  ensembl_release: 116
+  fasta_url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M39/GRCm39.primary_assembly.genome.fa.gz
+  fasta_gzip_sha256: 82724ccc3726f7bbc3d1cf46a86bbda753f05c1c1b27772e3ff87641fc71669f
+  fasta_plain_sha256: 08dc6846bb559fb0f2e12e9d0a970076ee77b2cd09b57e8f58cfab206fde5033
+  gtf_url: https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M39/gencode.vM39.primary_assembly.annotation.gtf.gz
+  gtf_gzip_sha256: d6da97913ce30f99883fc1216b111569f9947cf203886a5afb607b59228574d4
+  gtf_plain_sha256: 6673c5b97ad89173d0aac5e70cc049fb928411251cbaa6e022f444c930c47f23
+  star_index:
+    annotation_free: true
+    sjdb_overhang_at_index_build: null
+    build_threads: 24
+    build_wall_seconds: 421.56
+    build_max_rss_kb: 67195892
+
+software:
+  gravlax_commit: 60a561b
+  STAR: 2.7.11b
+  samtools: 1.23.1
+  threads: 24
+  cpuset: 0-23
+  nofile_soft: 65535
+
+semantics:
+  solo_strand: Reverse
+  barcode_geometry: "CB 1-16; UMI 17-26"
+  barcode_correction: 1MM_multi_Nbase_pseudocounts
+  umi_filtering: MultiGeneUMI_CR
+  umi_dedup: 1MM_CR
+  adapter_clipping: CellRanger4
+  minimum_alignment_score: 30
+  oracle_features: [Gene, GeneFull, SJ, Velocyto]
+  ingest_features: [SJ]
+  ingest_alignment: annotation-free two-pass Basic
+
+claim_boundaries:
+  - Archive and direct-BAM Gravlax replay may be called exact only when byte-identical.
+  - Gravlax replay versus fresh annotation-aware STARsolo is deviation or fidelity, never exactness.
+  - This pilot establishes one public mouse 5-prime v2 chemistry; the public 5k GEM-X 5-prime v3 dataset remains the replication target.
+  - Current-M39 results are not compared numerically with the producer's old mm10-2020-A matrix.

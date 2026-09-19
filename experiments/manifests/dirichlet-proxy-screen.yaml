@@ -1,0 +1,80 @@
+experiment: dirichlet_proxy_screen
+date_locked: 2026-08-31
+status: locked_after_implementation_before_parameter_grid
+reference_gravlax_commit: 16c012db53cd4fa4dad30dc2d6f8321de2c73f9f
+disclosure:
+  observed_before_lock:
+    - dataset: D0
+      role: implementation_smoke_only
+      parameters:
+        cell_prior: 16
+        group_prior: 20
+        seed: 7
+      negative_log_loss: 0.05884808021817527
+      multiclass_brier: 0.026565459370355315
+      top1_percent: 98.26212107582981
+      wall_seconds: 2.86
+      peak_rss_kib: 1224576
+  interpretation: D0_is_development_only_and_the_observed_default_point_cannot_support_selection_or_escalation
+model:
+  name: packed_posterior_mean_dirichlet_proxy
+  full_variational_dirichlet_model: false
+  iterations: 10
+  epsilon: 1.0e-9
+  cell_shards: 64
+  target_cell_removed_from_group: true
+  candidate_normalization: target_candidate_set
+  sample_prior: candidate_normalized_global_distribution
+  production_emission_unchanged: pooled
+development_grid:
+  dataset: D0
+  cell_priors: [1, 4, 16, 64, 256]
+  group_priors: [1, 5, 20, 80, 320]
+  seeds: [7, 17, 29]
+  configurations: 25
+  runs: 75
+  selection_metric: mean_negative_log_loss
+  tie_break: [lower_cell_prior, lower_group_prior]
+comparators:
+  fixed_convex:
+    cell_weight: 0.20
+    group_weight: 0.60
+    group_prior: 80
+    controls: [real_groups, shuffled_groups]
+    seeds: [7, 17, 29]
+  selected_proxy:
+    controls: [real_groups, shuffled_groups]
+    seeds: [7, 17, 29]
+targets:
+  type: keyed_mixed_class_mask
+  mask_fraction: 0.20
+  seeds: [7, 17, 29]
+  candidate_gene_exclusion: union_across_all_seeds
+  evaluation_population: supplied_group_barcodes_only
+groups:
+  source: runs/post-v1/hierarchical-em-groups-r1/groups/D0.real.tsv
+  shuffled_source: runs/post-v1/hierarchical-em-groups-r1/groups/D0.shuffled.tsv
+  leakage_control: inherited_from_candidate_normalized_convex_gate
+evidence_depth:
+  definition: initial_fitted_unique_candidate_mass_for_the_target_cell
+  bins:
+    - {name: 0-1, lower_exclusive: null, upper_inclusive: 1}
+    - {name: 1-4, lower_exclusive: 1, upper_inclusive: 4}
+    - {name: 4-16, lower_exclusive: 4, upper_inclusive: 16}
+    - {name: 16+, lower_exclusive: 16, upper_inclusive: null}
+acceptance:
+  mean_relative_nll_improvement_over_fixed_convex_min: 0.0025
+  selected_real_better_than_selected_shuffled_on_all_seeds: true
+  shuffle_explained_fraction_of_proxy_gain_max: 0.50
+  mean_brier_must_not_increase: true
+  top1_drop_percentage_points_max: 0.10
+  populated_depth_stratum_n_min: 1000
+  populated_depth_strata_improved_min: 2
+  low_or_medium_depth_relative_nll_improvement_min: 0.0025
+  populated_depth_stratum_relative_nll_regression_max: 0.005
+decisions:
+  pass: all_acceptance_criteria_met_then_full_hierarchical_dirichlet_earns_a_separate_implementation_gate
+  marginal: positive_real_group_specific_gain_but_one_magnitude_depth_or_guardrail_criterion_fails
+  stop: no_aggregate_gain_or_no_real_over_shuffle_signal_or_shuffle_explains_more_than_half_the_gain
+  D4_use: forbidden_for_this_screen
+  production_emission: pooled

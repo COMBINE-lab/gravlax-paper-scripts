@@ -1,0 +1,6 @@
+velocity: 22156853 molecules -> 13970340 UMIs in 4922097 (cell,gene) entries | load 1.0s, total 18.7s
+spliced.mtx     oracle   7087604  replay   6895624  L1   241114  rel  3.402%  mass-delta  2.709%  [MARGINAL]
+unspliced.mtx   oracle   4582294  replay   4393827  L1   194813  rel  4.251%  mass-delta  4.113%  [MARGINAL]
+ambiguous.mtx   oracle   1533636  replay   1512259  L1    67363  rel  4.392%  mass-delta  1.394%  [MARGINAL]
+VELO-1: MARGINAL
+DONE3

@@ -1,0 +1,53 @@
+D2_STAGE1_DONE
+extracted: 132419099 molecules, 9536760 edges, 1255535 cells, 2065618 shapes, 1653759 patterns, 126777996 classes (291.0s)
+d2_aie_ingest_wall=350.21
+D2_STAGE2_DONE
+molecules 132419099 -> assigned 111760437 -> 80860192 UMIs in 22055020 entries | load 6.9s, +anno 1.9s, +replay 15.3s, total 27.4s
+d2_replay_wall=32.26
+D2-REG: BYTE-IDENTICAL
+${GRAVLAX_PROJECT_ROOT}/scripts/30_gateb_compare.py:31: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  mtx = scipy.io.mmread(str(solo_raw / "matrix.mtx")).tocsr()
+restricted to 5573 cells from runs/oracle/d2/v49/Solo.out/Gene/filtered/barcodes.tsv
+UMI mass moved (shared genes):   0.426%
+UMI mass moved (gene UNION):     0.426%   [PASS >=3%, STOP <1%]
+cells changing >1% total count:  283/5573
+${GRAVLAX_PROJECT_ROOT}/scripts/30_gateb_compare.py:31: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  mtx = scipy.io.mmread(str(solo_raw / "matrix.mtx")).tocsr()
+UMI mass moved (shared genes):   1.513%
+UMI mass moved (gene UNION):     2.115%   [PASS >=3%, STOP <1%]
+expressed genes changing >10%:   7214/34634 (20.829%)   [PASS >=5%, STOP <2%]
+${GRAVLAX_PROJECT_ROOT}/scripts/91_velo_gate.py:20: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     oracle  59915587  replay  59395312  L1   954331  rel  1.593%  mass-delta  0.868%  [MARGINAL]
+unspliced.mtx   oracle  23348383  replay  23273500  L1   105103  rel  0.450%  mass-delta  0.321%  [PASS]
+ambiguous.mtx   oracle  13484732  replay  13322138  L1   265674  rel  1.970%  mass-delta  1.206%  [MARGINAL]
+VELO-1: MARGINAL
+classes: single 80143229, mixed 1326074 (masked 265622, truth-lost 7865), multi-only 5296266, eval targets 257757
+mode uniform : top-1 40.0%  expected-accuracy 44.9%  (n=257757)
+mode cell    : top-1 90.0%  expected-accuracy 90.0%  (n=257757)
+mode pooled  : top-1 95.7%  expected-accuracy 93.5%  (n=257757)
+mode blend   : top-1 95.7%  expected-accuracy 94.0%  (n=257757)
+---- D2 storage ----
+fastq	17588073774
+bam	12672115830
+cram31	4159680836
+aie	449421697
+D2_CAMPAIGN_DONE

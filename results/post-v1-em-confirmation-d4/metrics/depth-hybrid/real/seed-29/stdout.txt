@@ -1,0 +1,2 @@
+classes: single 7193198, mixed 689758 (masked 138372, truth-lost 3807), multi-only 534498, eval targets 118275
+mode depth-hybrid: top-1 98.0%  expected-accuracy 96.9%  (n=118275)

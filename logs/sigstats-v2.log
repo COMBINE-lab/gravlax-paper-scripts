@@ -1,0 +1,18 @@
+primaries 63683421, secondaries 10579982, mm reads 5359448
+distinct cells: 317891
+=== signature statistics (21236782 molecules, 52283887 signatures) ===
+signatures per molecule: 1: 8948092 (42.135%)  2: 4117636  3: 3105062  >=4: 5065992
+molecules containing any multimapper signature: 3165877 (14.908%)
+junction chains per molecule: 0: 2466498  1: 16740403 (78.827%)  2: 1580695  >=3: 449186   total chains 21314734
+
+=== paralog patterns ===
+multimapper signatures: 5114234   distinct offset-patterns: 651082  (7.85x sharing)
+top-100 patterns cover: 34.42% of mm signatures
+pattern dictionary: 2154148 entries -> 5852170 B zstd; pattern-id stream 5327437 B (4.211 bits/mol)
+
+=== position & cell stream experiments ===
+flat  (pos,cell) sort:  pos 9275979 B (3.494 b/mol)   cell 29494164 B (11.111 b/mol)
+sites (1777308 sites, gap 64): anchors+offsets 2838447+21097201 B (9.017 b/mol)   cell 15963045 B (6.013 b/mol)
+total pos+cell: flat 14.605 vs site-ordered 15.030 bits/mol
+wrote results/sigstats-full-v2.json
+SIGSTATS2_DONE

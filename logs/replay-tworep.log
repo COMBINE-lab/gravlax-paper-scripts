@@ -1,0 +1,29 @@
+annotation compiled: 78691 genes, 507365 transcripts (1.8s)
+barcode frequency pass: 309167 exact whitelist barcodes (23.4s)
+multimapper reads counted (single-gene union): 1355850
+molecules assigned: 20031038 of 0 (594053 multi-gene) from 56981029 reads (76.9s)
+collapse done (4.3s)
+replay complete: 3600217 nonzero entries, 10392824 total UMIs -> runs/replay/full-tworep (107.7s wall total)
+${GRAVLAX_PROJECT_ROOT}/scripts/30_gateb_compare.py:31: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  mtx = scipy.io.mmread(str(solo_raw / "matrix.mtx")).tocsr()
+restricted to 1225 cells from runs/oracle/full/v49/Solo.out/Gene/filtered/barcodes.tsv
+=== Gate G-B: oracle vs replay ===
+genes: 78691 vs 78691  (shared 78691, only-oracle 0, only-replay 0)
+total UMI: 9440606 vs 9433790
+UMI mass in genes present in only one annotation: 0 (0.000%) / 0 (0.000%)
+UMI mass moved (shared genes):   0.248%
+UMI mass moved (gene UNION):     0.248%   [PASS >=3%, STOP <1%]
+  of which gained by replay: 20045 (0.212%)
+  of which lost by   oracle: 26861 (0.285%)
+  reassigned (min):              20045 (0.212%)
+  net gain (|gained-lost|):      6816 (0.072%)
+expressed genes changing >10%:   1398/27879 (5.015%)   [PASS >=5%, STOP <2%]
+cells changing >1% total count:  0/1225
+wrote results/tworep-full-v49.json
+TWOREP_DONE

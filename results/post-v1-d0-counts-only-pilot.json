@@ -1,0 +1,53 @@
+{
+  "schema": "gravlax.post_v1.counts_only_pilot.v1",
+  "date": "2026-08-30",
+  "dataset": "D0 / 10x PBMC 1k v3",
+  "status": "five_warm_replicates_complete_not_randomized",
+  "gravlax_code_commit": "b5a791e681e7f1f93d46459745eedba59ac841d6",
+  "paper_commit_with_corrected_claim": "1a1ef0bf3501ee57c009e37661c773eff88ff046",
+  "threads": 24,
+  "tools": {"STAR": "2.7.11b", "aie": "0.1.0"},
+  "correctness": {
+    "starsolo_all_selected_outputs_byte_identical_to_frozen_oracle": true,
+    "aie_all_outputs_byte_identical_to_frozen_bam_sourced_replay": true,
+    "alignment_files_emitted_by_counts_only_arms": 0,
+    "starsolo_gene_raw_matrix_sha256": "d0580144c5bc16a06fe14a2934393323dabb802b84d16359028e6118bb8b6382",
+    "aie_matrix_sha256": "abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335",
+    "comparison_note": "The two matrix hashes differ because archive replay has the separately reported 0.22% fresh-STARsolo deviation; exactness applies within each serialization regression, not between pipelines."
+  },
+  "warm_replicates": {
+    "starsolo_gene_only_seconds": [83.77, 83.68, 82.37, 83.95, 83.58],
+    "aie_replay_seconds": [2.58, 2.36, 2.46, 2.42, 2.42],
+    "starsolo_gene_only_max_rss_kb": [34935648, 34934624, 34933852, 34934284, 34935220],
+    "aie_replay_max_rss_kb": [6967916, 7034924, 6860464, 6946732, 6929180]
+  },
+  "summary": {
+    "starsolo_gene_only_median_seconds": 83.68,
+    "starsolo_gene_only_range_seconds": [82.37, 83.95],
+    "starsolo_gene_only_mean_seconds": 83.47,
+    "starsolo_gene_only_sample_sd_seconds": 0.629802,
+    "starsolo_gene_only_cv": 0.007545,
+    "aie_replay_median_seconds": 2.42,
+    "aie_replay_range_seconds": [2.36, 2.58],
+    "aie_replay_mean_seconds": 2.448,
+    "aie_replay_sample_sd_seconds": 0.081976,
+    "aie_replay_cv": 0.033487,
+    "median_wall_speedup": 34.578512,
+    "median_peak_rss_ratio": 5.028929
+  },
+  "same_features_no_bam_diagnostic": {
+    "features": ["Gene", "GeneFull", "SJ", "Velocyto"],
+    "wall_seconds": 191.75,
+    "max_rss_kb": 36851256,
+    "all_outputs_byte_identical_to_frozen_oracle": true,
+    "replicates": 1
+  },
+  "superseded_claim": "The manuscript's 150-370x number is no longer the primary speed result. The frozen current oracle log itself completes D0 in about 192 seconds with BAM output, so the earlier 16-minute D0 denominator is not traceable to the current prebuilt-index command.",
+  "limitations": [
+    "The five warm arms were executed sequentially rather than in randomized interleaved order.",
+    "A controlled cold-cache Gene-only replicate is still missing.",
+    "D1 and D2-prime counts-only measurements are still missing.",
+    "The four-feature diagnostic has only one observation and is not a headline estimate."
+  ]
+}
+

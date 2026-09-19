@@ -1,0 +1,12 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-base --sjdbGTFfile annotations/withheld/w1.gtf --sjdbOverhang 90 --readFilesIn data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz data/fastq/pbmc_1k_v3_S1_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures Gene --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --outSAMtype None --outFileNamePrefix runs/oracle/full/w1/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 17:07:40 ..... started STAR run
+Aug 28 17:07:40 ..... loading genome
+Aug 28 17:07:43 ..... processing annotations GTF
+Aug 28 17:07:53 ..... inserting junctions into the genome indices
+Aug 28 17:09:56 ..... started mapping
+Aug 28 17:10:56 ..... finished mapping
+Aug 28 17:10:56 ..... started Solo counting
+Aug 28 17:11:08 ..... finished Solo counting
+Aug 28 17:11:08 ..... finished successfully
+W1_ORACLE_DONE

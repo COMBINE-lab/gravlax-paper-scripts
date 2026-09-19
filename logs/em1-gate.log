@@ -1,0 +1,15 @@
+=== alpha 20 (pre-registered) ===
+classes: single 10084709, mixed 886655 (masked 177600, truth-lost 4491), multi-only 688558, eval targets 173109
+mode uniform : top-1 39.1%  expected-accuracy 41.6%  (n=173109)
+mode cell    : top-1 94.4%  expected-accuracy 94.5%  (n=173109)
+mode pooled  : top-1 98.2%  expected-accuracy 97.1%  (n=173109)
+mode blend   : top-1 98.3%  expected-accuracy 97.3%  (n=173109)
+=== alpha sensitivity 5 / 80 ===
+mode blend   : top-1 98.3%  expected-accuracy 97.3%  (n=173109)
+mode blend   : top-1 98.3%  expected-accuracy 97.3%  (n=173109)
+=== seed sensitivity 13 ===
+mode uniform : top-1 39.2%  expected-accuracy 41.6%  (n=172867)
+mode cell    : top-1 94.3%  expected-accuracy 94.3%  (n=172867)
+mode pooled  : top-1 98.2%  expected-accuracy 97.0%  (n=172867)
+mode blend   : top-1 98.2%  expected-accuracy 97.2%  (n=172867)
+EM1_DONE

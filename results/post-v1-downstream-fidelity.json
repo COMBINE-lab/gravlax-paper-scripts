@@ -1,0 +1,1161 @@
+{
+  "date": "2026-08-31",
+  "preregistered_spec_commit": "d3e9b3a",
+  "claim_scope": "downstream stability against fresh STARsolo; no cell-type truth and no claim of exact fresh annotation-aware processing",
+  "software": {
+    "python": "3.12.14",
+    "packages": {
+      "scanpy": "1.12.4",
+      "anndata": "0.13.3.post0",
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.0",
+      "igraph": "1.0.0",
+      "leidenalg": "0.12.0",
+      "pyyaml": "6.0.3"
+    },
+    "seed": 1729,
+    "hostname": "analysis-host",
+    "platform": "Linux-4.18.0-553.156.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "threads": 24
+  },
+  "parameters": {
+    "target_sum": 10000.0,
+    "hvg_flavor": "seurat",
+    "hvg_count": 2000,
+    "principal_components": 30,
+    "neighbors": 15,
+    "leiden_resolution": 0.8,
+    "control_cell_fraction": 0.2
+  },
+  "datasets": [
+    {
+      "id": "D0",
+      "role": "confirmatory",
+      "organism": "human",
+      "chemistry": "10x 3-prime v3",
+      "gene": {
+        "called_cells": 1225,
+        "retained_genes": 15142,
+        "highly_variable_genes": 2000,
+        "oracle_clusters": 8,
+        "control_selected_cells": 245,
+        "replay": {
+          "ari": 0.9521433941920361,
+          "nmi": 0.9585768037542169,
+          "neighbor_jaccard_mean": 0.8652827651908336,
+          "neighbor_jaccard_median": 0.875,
+          "neighbor_jaccard_p10": 0.7647058823529411,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 287,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.999805236304994
+              },
+              {
+                "cluster": "1",
+                "cells": 194,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997741761672926
+              },
+              {
+                "cluster": "2",
+                "cells": 136,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9996618972214885
+              },
+              {
+                "cluster": "3",
+                "cells": 162,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9996165817128339
+              },
+              {
+                "cluster": "4",
+                "cells": 226,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997126994068085
+              },
+              {
+                "cluster": "5",
+                "cells": 116,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9996443251209539
+              },
+              {
+                "cluster": "6",
+                "cells": 54,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997203219412016
+              },
+              {
+                "cluster": "7",
+                "cells": 50,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9998044019494761
+              }
+            ],
+            "mean_top25_jaccard": 0.9807692307692308,
+            "median_effect_pearson": 0.9997165106740051
+          },
+          "pseudobulk_pearson": 0.9999857154263598,
+          "pseudobulk_spearman": 0.9990254262318913
+        },
+        "positive_control": {
+          "ari": 0.5675397150800243,
+          "nmi": 0.6755606188515029,
+          "neighbor_jaccard_mean": 0.473915951989369,
+          "neighbor_jaccard_median": 0.5789473684210527,
+          "neighbor_jaccard_p10": 0.0,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 287,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9792894907411556
+              },
+              {
+                "cluster": "1",
+                "cells": 194,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9784240464502449
+              },
+              {
+                "cluster": "2",
+                "cells": 136,
+                "top25_jaccard": 0.6129032258064516,
+                "effect_pearson": 0.9726639222163701
+              },
+              {
+                "cluster": "3",
+                "cells": 162,
+                "top25_jaccard": 0.7241379310344828,
+                "effect_pearson": 0.9808254824689399
+              },
+              {
+                "cluster": "4",
+                "cells": 226,
+                "top25_jaccard": 0.5625,
+                "effect_pearson": 0.9617125148511516
+              },
+              {
+                "cluster": "5",
+                "cells": 116,
+                "top25_jaccard": 0.6129032258064516,
+                "effect_pearson": 0.9512363396386391
+              },
+              {
+                "cluster": "6",
+                "cells": 54,
+                "top25_jaccard": 0.6129032258064516,
+                "effect_pearson": 0.8151107574062766
+              },
+              {
+                "cluster": "7",
+                "cells": 50,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9792199394319313
+              }
+            ],
+            "mean_top25_jaccard": 0.7024816378699165,
+            "median_effect_pearson": 0.9755439843333076
+          },
+          "pseudobulk_pearson": 0.999604766599931,
+          "pseudobulk_spearman": 0.997974430803264
+        },
+        "gate": {
+          "checks": {
+            "ari_at_least_0_95": true,
+            "nmi_at_least_0_95": true,
+            "median_neighbor_jaccard_at_least_0_80": true,
+            "mean_marker_top25_jaccard_at_least_0_80": true,
+            "median_marker_effect_pearson_at_least_0_98": true,
+            "pseudobulk_pearson_at_least_0_999": true,
+            "pseudobulk_spearman_at_least_0_999": true,
+            "ari_exceeds_control_by_0_05": true,
+            "neighbor_jaccard_exceeds_control_by_0_05": true
+          },
+          "verdict": "PASS"
+        }
+      },
+      "velocity": {
+        "eligible_genes": 924,
+        "median_cosine": 0.9985789822130591,
+        "mean_cosine": 0.9971271923713521,
+        "cosine_p10": 0.9935807096925152,
+        "positive_cosine_fraction": 1.0,
+        "median_top3_transition_jaccard": 1.0,
+        "mean_top3_transition_jaccard": 0.9139591836734693,
+        "both_transition_sets_empty_fraction": 0.004897959183673469,
+        "checks": {
+          "median_cosine_at_least_0_90": true,
+          "positive_cosine_fraction_at_least_0_95": true,
+          "median_top3_transition_jaccard_at_least_0_80": true
+        },
+        "verdict": "PASS"
+      },
+      "retained_gene_id_sha256": "6436c4f22e29904edffd6a0cc965e949d6eeeb0131332293143139c59e06fce7",
+      "inputs": [
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Gene/filtered/matrix.mtx",
+          "bytes": 32440196,
+          "sha256": "64c43ca0327b52d749d4db0d2ca7e5604fde6a83b3b7ff6b75f0339100cc63eb"
+        },
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Gene/filtered/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Gene/filtered/barcodes.tsv",
+          "bytes": 20825,
+          "sha256": "565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc"
+        },
+        {
+          "path": "runs/replay/d0-v15/matrix.mtx",
+          "bytes": 56611976,
+          "sha256": "abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335"
+        },
+        {
+          "path": "runs/replay/d0-v15/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/replay/d0-v15/barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        },
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Velocyto/filtered/spliced.mtx",
+          "bytes": 46637248,
+          "sha256": "1765962ff9290ea005fab2477210065acc3d0673e7d791ae82e2e2406e36197b"
+        },
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Velocyto/filtered/unspliced.mtx",
+          "bytes": 46560027,
+          "sha256": "d525bd53c87f2e7f904d83b88a65aa1c4114b3b2afd56aa85c8e0bece9019de6"
+        },
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Velocyto/filtered/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/oracle/full/v49/Solo.out/Velocyto/filtered/barcodes.tsv",
+          "bytes": 20825,
+          "sha256": "565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc"
+        },
+        {
+          "path": "runs/replay/d0-velocity/spliced.mtx",
+          "bytes": 78530712,
+          "sha256": "808642713179eb12a6eac3ad2d9cf7d70e18931a2a6c9801c677e7b950058bb4"
+        },
+        {
+          "path": "runs/replay/d0-velocity/unspliced.mtx",
+          "bytes": 78452607,
+          "sha256": "6faef9a7f3dab340aa6e62e0a767a1863ee1798ff6972d56e73231676f9b3683"
+        },
+        {
+          "path": "runs/replay/d0-velocity/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/replay/d0-velocity/barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        }
+      ],
+      "wall_seconds": 4.2017223599832505
+    },
+    {
+      "id": "D1",
+      "role": "confirmatory",
+      "organism": "human",
+      "chemistry": "10x 3-prime v3",
+      "gene": {
+        "called_cells": 5038,
+        "retained_genes": 21655,
+        "highly_variable_genes": 2000,
+        "oracle_clusters": 12,
+        "control_selected_cells": 1007,
+        "replay": {
+          "ari": 0.8335953033450603,
+          "nmi": 0.9010648451208406,
+          "neighbor_jaccard_mean": 0.7906966341492944,
+          "neighbor_jaccard_median": 0.7647058823529411,
+          "neighbor_jaccard_p10": 0.6403508771929864,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 611,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9996516476091268
+              },
+              {
+                "cluster": "1",
+                "cells": 446,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997109283042636
+              },
+              {
+                "cluster": "2",
+                "cells": 442,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9998461758857888
+              },
+              {
+                "cluster": "3",
+                "cells": 282,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9996988817280091
+              },
+              {
+                "cluster": "4",
+                "cells": 712,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997522527975263
+              },
+              {
+                "cluster": "5",
+                "cells": 339,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9998797811772421
+              },
+              {
+                "cluster": "6",
+                "cells": 320,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997409728350531
+              },
+              {
+                "cluster": "7",
+                "cells": 692,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997124073659616
+              },
+              {
+                "cluster": "8",
+                "cells": 789,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997641244132567
+              },
+              {
+                "cluster": "9",
+                "cells": 285,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.999711185744536
+              },
+              {
+                "cluster": "10",
+                "cells": 94,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997793980264935
+              },
+              {
+                "cluster": "11",
+                "cells": 26,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9996546595493732
+              }
+            ],
+            "mean_top25_jaccard": 0.9871794871794872,
+            "median_effect_pearson": 0.9997266901005073
+          },
+          "pseudobulk_pearson": 0.9999633588662227,
+          "pseudobulk_spearman": 0.9988615569641262
+        },
+        "positive_control": {
+          "ari": 0.5661466284684202,
+          "nmi": 0.7078024099982515,
+          "neighbor_jaccard_mean": 0.48046886216336515,
+          "neighbor_jaccard_median": 0.5789473684210527,
+          "neighbor_jaccard_p10": 0.0,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 611,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9977921714734823
+              },
+              {
+                "cluster": "1",
+                "cells": 446,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.942813508206282
+              },
+              {
+                "cluster": "2",
+                "cells": 442,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9904877355612423
+              },
+              {
+                "cluster": "3",
+                "cells": 282,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9672767316401216
+              },
+              {
+                "cluster": "4",
+                "cells": 712,
+                "top25_jaccard": 0.47058823529411764,
+                "effect_pearson": 0.938346745433989
+              },
+              {
+                "cluster": "5",
+                "cells": 339,
+                "top25_jaccard": 0.8518518518518519,
+                "effect_pearson": 0.9911945584370505
+              },
+              {
+                "cluster": "6",
+                "cells": 320,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9746599525204824
+              },
+              {
+                "cluster": "7",
+                "cells": 692,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9695163571749669
+              },
+              {
+                "cluster": "8",
+                "cells": 789,
+                "top25_jaccard": 0.42857142857142855,
+                "effect_pearson": 0.9557398848560683
+              },
+              {
+                "cluster": "9",
+                "cells": 285,
+                "top25_jaccard": 0.6666666666666666,
+                "effect_pearson": 0.9281473092347756
+              },
+              {
+                "cluster": "10",
+                "cells": 94,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9646798645545449
+              },
+              {
+                "cluster": "11",
+                "cells": 26,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9547139736719926
+              }
+            ],
+            "mean_top25_jaccard": 0.7545867349788918,
+            "median_effect_pearson": 0.9659782980973333
+          },
+          "pseudobulk_pearson": 0.9998858460076626,
+          "pseudobulk_spearman": 0.9986053408772523
+        },
+        "gate": {
+          "checks": {
+            "ari_at_least_0_95": false,
+            "nmi_at_least_0_95": false,
+            "median_neighbor_jaccard_at_least_0_80": false,
+            "mean_marker_top25_jaccard_at_least_0_80": true,
+            "median_marker_effect_pearson_at_least_0_98": true,
+            "pseudobulk_pearson_at_least_0_999": true,
+            "pseudobulk_spearman_at_least_0_999": false,
+            "ari_exceeds_control_by_0_05": true,
+            "neighbor_jaccard_exceeds_control_by_0_05": true
+          },
+          "verdict": "FAIL"
+        }
+      },
+      "velocity": {
+        "eligible_genes": 814,
+        "median_cosine": 0.9968993306454745,
+        "mean_cosine": 0.9850967262505369,
+        "cosine_p10": 0.9646833303236817,
+        "positive_cosine_fraction": 1.0,
+        "median_top3_transition_jaccard": 1.0,
+        "mean_top3_transition_jaccard": 0.873077940981871,
+        "both_transition_sets_empty_fraction": 0.00535926955140929,
+        "checks": {
+          "median_cosine_at_least_0_90": true,
+          "positive_cosine_fraction_at_least_0_95": true,
+          "median_top3_transition_jaccard_at_least_0_80": true
+        },
+        "verdict": "PASS"
+      },
+      "retained_gene_id_sha256": "3a81e262711bd4cb158a6d3a3f1366c925e8ab58f9257449cf0cc8bc12332f34",
+      "inputs": [
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Gene/filtered/matrix.mtx",
+          "bytes": 156327273,
+          "sha256": "431c6d3aff426b5cddb74e2c034b99339aa90960cc4dc66d8c0bbf7b749e4813"
+        },
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Gene/filtered/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Gene/filtered/barcodes.tsv",
+          "bytes": 85646,
+          "sha256": "23b85638b941d8e6553a73b3f733a053e340e51f406f0d44cc2c44327337c680"
+        },
+        {
+          "path": "runs/replay/d1-v15/matrix.mtx",
+          "bytes": 278190238,
+          "sha256": "323f10075565411f4a97faa944b6dc8885c7fa86dae91021058bc1c680951054"
+        },
+        {
+          "path": "runs/replay/d1-v15/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/replay/d1-v15/barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        },
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Velocyto/filtered/spliced.mtx",
+          "bytes": 222416196,
+          "sha256": "29f02b303aaac1bdbb8ecce70bdb6a17eb54c74eab1d6ceaef48b319a810501f"
+        },
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Velocyto/filtered/unspliced.mtx",
+          "bytes": 222054900,
+          "sha256": "5d2377346efa055124415b5e33c46dbca3538d8593a47dfac60a075ec09a28ed"
+        },
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Velocyto/filtered/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/oracle/d1/v49/Solo.out/Velocyto/filtered/barcodes.tsv",
+          "bytes": 85646,
+          "sha256": "23b85638b941d8e6553a73b3f733a053e340e51f406f0d44cc2c44327337c680"
+        },
+        {
+          "path": "runs/replay/d1-velocity/spliced.mtx",
+          "bytes": 379347283,
+          "sha256": "360d0818eb0f64d30cf17a7dc1f94dae5fbe1541324edccec1dbee3e304281a7"
+        },
+        {
+          "path": "runs/replay/d1-velocity/unspliced.mtx",
+          "bytes": 378986047,
+          "sha256": "fbc9ae6f0c4a453e829ca610b9ebd667beaabda1fe4920118207827b4da31f4b"
+        },
+        {
+          "path": "runs/replay/d1-velocity/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/replay/d1-velocity/barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        }
+      ],
+      "wall_seconds": 9.127024885965511
+    },
+    {
+      "id": "D2_prime",
+      "role": "confirmatory",
+      "organism": "human",
+      "chemistry": "10x 3-prime nuclei",
+      "gene": {
+        "called_cells": 6460,
+        "retained_genes": 25920,
+        "highly_variable_genes": 2000,
+        "oracle_clusters": 18,
+        "control_selected_cells": 1292,
+        "replay": {
+          "ari": 0.6186287245889569,
+          "nmi": 0.7451436075889997,
+          "neighbor_jaccard_mean": 0.68992134988519,
+          "neighbor_jaccard_median": 0.7647058823529411,
+          "neighbor_jaccard_p10": 0.42857142857142855,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 1315,
+                "top25_jaccard": 0.8518518518518519,
+                "effect_pearson": 0.9993537317517097
+              },
+              {
+                "cluster": "1",
+                "cells": 811,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9995560343587405
+              },
+              {
+                "cluster": "2",
+                "cells": 939,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9993306597584636
+              },
+              {
+                "cluster": "3",
+                "cells": 209,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.999846844148354
+              },
+              {
+                "cluster": "4",
+                "cells": 104,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9996325700295756
+              },
+              {
+                "cluster": "5",
+                "cells": 537,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9998189137597229
+              },
+              {
+                "cluster": "6",
+                "cells": 659,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9991712505090261
+              },
+              {
+                "cluster": "7",
+                "cells": 255,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9984846478662127
+              },
+              {
+                "cluster": "8",
+                "cells": 389,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9998995314686491
+              },
+              {
+                "cluster": "9",
+                "cells": 255,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9980969278592288
+              },
+              {
+                "cluster": "10",
+                "cells": 234,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9982118081450122
+              },
+              {
+                "cluster": "11",
+                "cells": 111,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9974788540008411
+              },
+              {
+                "cluster": "12",
+                "cells": 106,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9975349592389903
+              },
+              {
+                "cluster": "13",
+                "cells": 127,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.997618363446407
+              },
+              {
+                "cluster": "14",
+                "cells": 156,
+                "top25_jaccard": 0.8518518518518519,
+                "effect_pearson": 0.9979239682977351
+              },
+              {
+                "cluster": "15",
+                "cells": 121,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9976763007000525
+              },
+              {
+                "cluster": "16",
+                "cells": 100,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9994894957139975
+              },
+              {
+                "cluster": "17",
+                "cells": 32,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9967874920081133
+              }
+            ],
+            "mean_top25_jaccard": 0.9621715732826844,
+            "median_effect_pearson": 0.9988279491876194
+          },
+          "pseudobulk_pearson": 0.9999933631637108,
+          "pseudobulk_spearman": 0.9990177288204503
+        },
+        "positive_control": {
+          "ari": 0.4847624264831736,
+          "nmi": 0.6214638589838377,
+          "neighbor_jaccard_mean": 0.49270499392379097,
+          "neighbor_jaccard_median": 0.5789473684210527,
+          "neighbor_jaccard_p10": 0.0,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 1315,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9475844788522412
+              },
+              {
+                "cluster": "1",
+                "cells": 811,
+                "top25_jaccard": 0.5625,
+                "effect_pearson": 0.9602417327011854
+              },
+              {
+                "cluster": "2",
+                "cells": 939,
+                "top25_jaccard": 0.08695652173913043,
+                "effect_pearson": 0.30379886969960446
+              },
+              {
+                "cluster": "3",
+                "cells": 209,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.975480519621199
+              },
+              {
+                "cluster": "4",
+                "cells": 104,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9749993754884326
+              },
+              {
+                "cluster": "5",
+                "cells": 537,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9915014351349711
+              },
+              {
+                "cluster": "6",
+                "cells": 659,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9468206391261144
+              },
+              {
+                "cluster": "7",
+                "cells": 255,
+                "top25_jaccard": 0.041666666666666664,
+                "effect_pearson": 0.44805073791909855
+              },
+              {
+                "cluster": "8",
+                "cells": 389,
+                "top25_jaccard": 0.7857142857142857,
+                "effect_pearson": 0.9934031790083381
+              },
+              {
+                "cluster": "9",
+                "cells": 255,
+                "top25_jaccard": 0.5151515151515151,
+                "effect_pearson": 0.8973457104966827
+              },
+              {
+                "cluster": "10",
+                "cells": 234,
+                "top25_jaccard": 0.47058823529411764,
+                "effect_pearson": 0.8997944000361133
+              },
+              {
+                "cluster": "11",
+                "cells": 111,
+                "top25_jaccard": 0.5625,
+                "effect_pearson": 0.907410907990607
+              },
+              {
+                "cluster": "12",
+                "cells": 106,
+                "top25_jaccard": 0.42857142857142855,
+                "effect_pearson": 0.8387236963915938
+              },
+              {
+                "cluster": "13",
+                "cells": 127,
+                "top25_jaccard": 0.35135135135135137,
+                "effect_pearson": 0.8572437273755966
+              },
+              {
+                "cluster": "14",
+                "cells": 156,
+                "top25_jaccard": 0.3888888888888889,
+                "effect_pearson": 0.8509924446760524
+              },
+              {
+                "cluster": "15",
+                "cells": 121,
+                "top25_jaccard": 0.08695652173913043,
+                "effect_pearson": 0.6921169206693667
+              },
+              {
+                "cluster": "16",
+                "cells": 100,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9889241099445526
+              },
+              {
+                "cluster": "17",
+                "cells": 32,
+                "top25_jaccard": 0.21951219512195122,
+                "effect_pearson": 0.7325517718598101
+              }
+            ],
+            "mean_top25_jaccard": 0.5390919063075094,
+            "median_effect_pearson": 0.9036026540133602
+          },
+          "pseudobulk_pearson": 0.9999942392194302,
+          "pseudobulk_spearman": 0.998041581278209
+        },
+        "gate": {
+          "checks": {
+            "ari_at_least_0_95": false,
+            "nmi_at_least_0_95": false,
+            "median_neighbor_jaccard_at_least_0_80": false,
+            "mean_marker_top25_jaccard_at_least_0_80": true,
+            "median_marker_effect_pearson_at_least_0_98": true,
+            "pseudobulk_pearson_at_least_0_999": true,
+            "pseudobulk_spearman_at_least_0_999": true,
+            "ari_exceeds_control_by_0_05": true,
+            "neighbor_jaccard_exceeds_control_by_0_05": true
+          },
+          "verdict": "FAIL"
+        }
+      },
+      "velocity": {
+        "eligible_genes": 927,
+        "median_cosine": 0.9966725023330297,
+        "mean_cosine": 0.9913580193794391,
+        "cosine_p10": 0.9848002686231883,
+        "positive_cosine_fraction": 1.0,
+        "median_top3_transition_jaccard": 1.0,
+        "mean_top3_transition_jaccard": 0.9144659442724457,
+        "both_transition_sets_empty_fraction": 0.0037151702786377707,
+        "checks": {
+          "median_cosine_at_least_0_90": true,
+          "positive_cosine_fraction_at_least_0_95": true,
+          "median_top3_transition_jaccard_at_least_0_80": true
+        },
+        "verdict": "PASS"
+      },
+      "retained_gene_id_sha256": "8b3767e47cd665df589e8d1b47aa97e56823a4b9e9c44cd4a697fe54d00cd814",
+      "inputs": [
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Gene/filtered/matrix.mtx",
+          "bytes": 172298515,
+          "sha256": "266f8a5e270fd803aeec671bc8c1795ac9f1bb588aaa3d71a8ebc1a646e0048d"
+        },
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Gene/filtered/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Gene/filtered/barcodes.tsv",
+          "bytes": 109820,
+          "sha256": "8337209908869cedc60372b6920687d46b2775a2cee8e459b490a2f57e43210a"
+        },
+        {
+          "path": "runs/replay/d2p-v15/matrix.mtx",
+          "bytes": 277152027,
+          "sha256": "c41276b8aa28a6f0446f6bad9971d722a24e3814b287ea24b3081d5a1b4d880c"
+        },
+        {
+          "path": "runs/replay/d2p-v15/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/replay/d2p-v15/barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        },
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Velocyto/filtered/spliced.mtx",
+          "bytes": 307632496,
+          "sha256": "12894c5b6b6832e2cceea2d8c61bfb46004cf101e9386a364917b698621f12b2"
+        },
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Velocyto/filtered/unspliced.mtx",
+          "bytes": 308324746,
+          "sha256": "4b25f5617377cad06f34901bc0c5868fb40d285c01d5e85da838b59c66a5ef1d"
+        },
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Velocyto/filtered/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/oracle/d2p/v49/Solo.out/Velocyto/filtered/barcodes.tsv",
+          "bytes": 109820,
+          "sha256": "8337209908869cedc60372b6920687d46b2775a2cee8e459b490a2f57e43210a"
+        },
+        {
+          "path": "runs/replay/d2p-velocity/spliced.mtx",
+          "bytes": 472694035,
+          "sha256": "7ce1a2fb5425bbb802c6e708e47abfa76c24810ec1651c607d3a9ee00f15c329"
+        },
+        {
+          "path": "runs/replay/d2p-velocity/unspliced.mtx",
+          "bytes": 473376914,
+          "sha256": "3d155ed0bb4b3f6886f24cce8a6ba0846c7b9cdc98296b18674be6bd7a176873"
+        },
+        {
+          "path": "runs/replay/d2p-velocity/features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "path": "runs/replay/d2p-velocity/barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        }
+      ],
+      "wall_seconds": 12.314261424005963
+    },
+    {
+      "id": "D5_mouse_5_prime",
+      "role": "cross_chemistry_stress_test",
+      "organism": "mouse",
+      "chemistry": "10x 5-prime v2",
+      "gene": {
+        "called_cells": 1129,
+        "retained_genes": 12054,
+        "highly_variable_genes": 2000,
+        "oracle_clusters": 6,
+        "control_selected_cells": 225,
+        "replay": {
+          "ari": 0.6093658373326808,
+          "nmi": 0.6804826912498035,
+          "neighbor_jaccard_mean": 0.8572003192807928,
+          "neighbor_jaccard_median": 0.875,
+          "neighbor_jaccard_p10": 0.6666666666666666,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 261,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9984960171470224
+              },
+              {
+                "cluster": "1",
+                "cells": 89,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9988288919972363
+              },
+              {
+                "cluster": "2",
+                "cells": 213,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9997535211995862
+              },
+              {
+                "cluster": "3",
+                "cells": 236,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9994718033208638
+              },
+              {
+                "cluster": "4",
+                "cells": 306,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9990229748695093
+              },
+              {
+                "cluster": "5",
+                "cells": 24,
+                "top25_jaccard": 1.0,
+                "effect_pearson": 0.9993438621837153
+              }
+            ],
+            "mean_top25_jaccard": 1.0,
+            "median_effect_pearson": 0.9991834185266123
+          },
+          "pseudobulk_pearson": 0.9967275463493949,
+          "pseudobulk_spearman": 0.9979586010861783
+        },
+        "positive_control": {
+          "ari": 0.46211722388281545,
+          "nmi": 0.5388333600529641,
+          "neighbor_jaccard_mean": 0.5003540294990764,
+          "neighbor_jaccard_median": 0.5789473684210527,
+          "neighbor_jaccard_p10": 0.0,
+          "markers": {
+            "per_cluster": [
+              {
+                "cluster": "0",
+                "cells": 261,
+                "top25_jaccard": 0.35135135135135137,
+                "effect_pearson": 0.893098348777064
+              },
+              {
+                "cluster": "1",
+                "cells": 89,
+                "top25_jaccard": 0.5625,
+                "effect_pearson": 0.9326334184378566
+              },
+              {
+                "cluster": "2",
+                "cells": 213,
+                "top25_jaccard": 0.9230769230769231,
+                "effect_pearson": 0.9694204448610139
+              },
+              {
+                "cluster": "3",
+                "cells": 236,
+                "top25_jaccard": 0.7241379310344828,
+                "effect_pearson": 0.9508256052079087
+              },
+              {
+                "cluster": "4",
+                "cells": 306,
+                "top25_jaccard": 0.35135135135135137,
+                "effect_pearson": 0.8532005089831516
+              },
+              {
+                "cluster": "5",
+                "cells": 24,
+                "top25_jaccard": 0.8518518518518519,
+                "effect_pearson": 0.9666150013976852
+              }
+            ],
+            "mean_top25_jaccard": 0.6273782347776601,
+            "median_effect_pearson": 0.9417295118228827
+          },
+          "pseudobulk_pearson": 0.9992525563946304,
+          "pseudobulk_spearman": 0.9962731703558392
+        },
+        "gate": {
+          "checks": {
+            "ari_at_least_0_95": false,
+            "nmi_at_least_0_95": false,
+            "median_neighbor_jaccard_at_least_0_80": true,
+            "mean_marker_top25_jaccard_at_least_0_80": true,
+            "median_marker_effect_pearson_at_least_0_98": true,
+            "pseudobulk_pearson_at_least_0_999": false,
+            "pseudobulk_spearman_at_least_0_999": false,
+            "ari_exceeds_control_by_0_05": true,
+            "neighbor_jaccard_exceeds_control_by_0_05": true
+          },
+          "verdict": "FAIL"
+        }
+      },
+      "velocity": {
+        "eligible_genes": 852,
+        "median_cosine": 0.9930586431796448,
+        "mean_cosine": 0.987681075207146,
+        "cosine_p10": 0.9708876205134801,
+        "positive_cosine_fraction": 1.0,
+        "median_top3_transition_jaccard": 1.0,
+        "mean_top3_transition_jaccard": 0.8752140537348686,
+        "both_transition_sets_empty_fraction": 0.012400354295837024,
+        "checks": {
+          "median_cosine_at_least_0_90": true,
+          "positive_cosine_fraction_at_least_0_95": true,
+          "median_top3_transition_jaccard_at_least_0_80": true
+        },
+        "verdict": "PASS"
+      },
+      "retained_gene_id_sha256": "80deb448213e5b61383e1d142660c72d83d1423fded671c588e693e59a6967c1",
+      "inputs": [
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Gene/filtered/matrix.mtx",
+          "bytes": 25058532,
+          "sha256": "6c2629e272319e9176503e9791aad7354608e9061d15b5985ab876f2b598685f"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Gene/filtered/features.tsv",
+          "bytes": 3533776,
+          "sha256": "fb61438ab8b14e3b3d6c0fb2ecbe20b0a425eec470dac7fbf909714eee743472"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Gene/filtered/barcodes.tsv",
+          "bytes": 19193,
+          "sha256": "ac168025bb832535ea42fb851d279d84326c2b38abf7ba65696e1dd2d567f1d2"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-archive-r2-twopass/matrix.mtx",
+          "bytes": 34903640,
+          "sha256": "61af82cb6f936bc52d27bda4d423a758dc8ccf283035ba7a608bfbb59fb413ed"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-archive-r2-twopass/features.tsv",
+          "bytes": 3533776,
+          "sha256": "fb61438ab8b14e3b3d6c0fb2ecbe20b0a425eec470dac7fbf909714eee743472"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-archive-r2-twopass/barcodes.tsv",
+          "bytes": 12533760,
+          "sha256": "b0dda4b114d8fc7ea8def94fb472e6205c1831a72e3ac245ed13cc332d9f20d1"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Velocyto/filtered/spliced.mtx",
+          "bytes": 27545159,
+          "sha256": "240b28018be6519e705ec40cba080d67e2034fb9f7d745fd3925d0f2b2192762"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Velocyto/filtered/unspliced.mtx",
+          "bytes": 27470162,
+          "sha256": "f6e6703becbd333a7fec1f49b0ef3aac197d2f08931ae1717e4eda953f1df663"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Velocyto/filtered/features.tsv",
+          "bytes": 3533776,
+          "sha256": "fb61438ab8b14e3b3d6c0fb2ecbe20b0a425eec470dac7fbf909714eee743472"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/oracle-r2/Solo.out/Velocyto/filtered/barcodes.tsv",
+          "bytes": 19193,
+          "sha256": "ac168025bb832535ea42fb851d279d84326c2b38abf7ba65696e1dd2d567f1d2"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-velocity-r2-twopass/spliced.mtx",
+          "bytes": 38426351,
+          "sha256": "2e176418e0ca7cbc60f1b7587cba1ed933d7b14bea8876b6e2516d5472c2198f"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-velocity-r2-twopass/unspliced.mtx",
+          "bytes": 38352908,
+          "sha256": "462ca0a0001b2520c2349050189e0e3e13dae4e22678ddb11f3119fab748cced"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-velocity-r2-twopass/features.tsv",
+          "bytes": 3533776,
+          "sha256": "fb61438ab8b14e3b3d6c0fb2ecbe20b0a425eec470dac7fbf909714eee743472"
+        },
+        {
+          "path": "runs/post-v1/mouse-5p-1k/replay-velocity-r2-twopass/barcodes.tsv",
+          "bytes": 12533760,
+          "sha256": "b0dda4b114d8fc7ea8def94fb472e6205c1831a72e3ac245ed13cc332d9f20d1"
+        }
+      ],
+      "wall_seconds": 1.1865013539791107
+    }
+  ],
+  "summary": {
+    "human_gene_verdict": "FAIL",
+    "human_velocity_verdict": "PASS",
+    "stress_test_gene_verdicts": {
+      "D5_mouse_5_prime": "FAIL"
+    },
+    "stress_test_velocity_verdicts": {
+      "D5_mouse_5_prime": "PASS"
+    },
+    "wall_seconds": 26.850062545971014
+  },
+  "status": "complete"
+}

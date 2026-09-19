@@ -1,0 +1,31 @@
+Post-v1 D0 fair-baseline pilot
+date: 2026-08-30
+host: analysis-host
+kernel: Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux
+aie: 0.1.0, code b5a791e681e7f1f93d46459745eedba59ac841d6
+samtools/htslib: 1.23.1
+threads: 24
+cache state: warm/uncontrolled; timing observations are not publication estimates
+
+operation	wall_s	user_s	system_s	max_rss_kb	fs_input	fs_output	exit
+make_minimal_bam	56.87	198.28	32.36	34752	0	3602776	0
+make_minimal_cram	67.74	1324.21	56.93	7069076	6142176	1481512	0
+ingest_minimal_bam	67.40	119.71	80.21	5902504	0	217072	0
+ingest_full_bam	72.43	161.05	107.67	5887540	0	217072	0
+stamp_minimal_aie	4.73	4.53	0.20	92264	0	216976	0
+replay_aie	2.52	10.61	6.50	6951916	0	343224	0
+replay_from_minimal_bam	58.68	87.68	8.98	6201108	0	343224	0
+replay_from_full_bam	60.97	124.61	15.45	6190724	0	343224	0
+
+Checks (all exited zero):
+- samtools quickcheck on reduced BAM and CRAM.
+- cmp of independently ingested full-BAM and reduced-BAM AIE files.
+- cmp of genome-stamped reduced-input AIE and frozen canonical D0 AIE.
+- cmp of matrix.mtx, barcodes.tsv, and features.tsv for archive, full-BAM, and
+  reduced-BAM replay against runs/replay/full-frombam.
+- SHA-256 comparison of the complete headerless SAM streams decoded from reduced BAM
+  and CRAM.
+
+Canonical checksums and artifact sizes are in
+results/post-v1-d0-fair-baseline-pilot.json. The fail-closed reproduction driver is
+scripts/111_d0_fair_baseline_pilot.sh.

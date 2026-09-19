@@ -1,0 +1,6 @@
+[D0] replay evaluation d=40 r=0.6
+[D1] replay evaluation d=30 r=0.4
+[D2_prime] replay evaluation d=40 r=0.25
+[D5_mouse_5_prime] replay evaluation d=20 r=0.35
+${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/scripts/131_multiresolution_evaluate.py:371: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  "scanpy": sc.__version__,

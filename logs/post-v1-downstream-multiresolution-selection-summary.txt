@@ -1,0 +1,4 @@
+D0	{'status': 'stable_partition_locked', 'dimension': 40, 'resolution': 0.6, 'oracle_medoid_cluster_count': 7, 'oracle_robustness_score': 0.939813093615709, 'maximum_eligible_cluster_count': 8}
+D1	{'status': 'stable_partition_locked', 'dimension': 30, 'resolution': 0.4, 'oracle_medoid_cluster_count': 9, 'oracle_robustness_score': 0.9292458215589131, 'maximum_eligible_cluster_count': 10}
+D2_prime	{'status': 'stable_partition_locked', 'dimension': 40, 'resolution': 0.25, 'oracle_medoid_cluster_count': 9, 'oracle_robustness_score': 0.8599375316444655, 'maximum_eligible_cluster_count': 9}
+D5_mouse_5_prime	{'status': 'stable_partition_locked', 'dimension': 20, 'resolution': 0.35, 'oracle_medoid_cluster_count': 4, 'oracle_robustness_score': 0.9893271296674059, 'maximum_eligible_cluster_count': 4}

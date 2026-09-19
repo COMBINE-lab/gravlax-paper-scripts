@@ -1,0 +1,57 @@
+logical_path	kind	bytes	sha256	role
+env/cargo-target-tail-pilot/release/aie	executable	95068232	7733f923fb0030e7f6c653d7155d71dd30dc7e162fa97f4ad70c17f2d3cd268c	final experimental pilot binary; donor-A release rerun is byte-identical at the sidecar level
+ref/GRCh38.primary_assembly.genome.fa	reference	3151417447	e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b	GRCh38 sequence used only for frozen internal-priming flags
+runs/apa2/polyasite.bed.gz	external_catalogue	14442791	d60dc7addad2982c3463dcaab67d0a74d278a6e33a2852a4373bd1eeb4174595	PolyASite 2.0 GRCh38 candidate catalogue
+work/gravlax-tail-pilot/pilots/sparse-terminal-tail/ntrk2-sites.tsv	site_set	416	a0f286999a006a37ca7ce8ef39994e16da79c82efd46a9ae984fb512b7158c84	frozen nine-site NTRK2 secondary query set
+runs/post-v1/sez-transcript-end-atlas-r1/donor-A/Aligned.out.bam	bam	3297387976	017faceb438f4e36077a30075b7d79b50fdc262abac3f9a19ce78ca8a2cf9f6f	donor A sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-A/called-whitelist.txt	barcode_list	72675	e89d45df0165ac55e44f22ca90978f1ec04322154697eecdf8fc1483d0868f20	donor A called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-A/sez.called.aie	aie	110183760	5ada1aba18221da9e0b0cc84d0b6bf2046316223d35a503f94456ce08e469b63	donor A matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-A/audit.json	json	163353	762de0f1a0d555abef71db7ea0c29a4cd43e395198502cc76d59b306e551dd68	donor A exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-A/tail-evidence.ait	tail_sidecar	73709	dabf71142323fc9c269b82b2062eaf5efe7f82299c0f1d301e81c3d888b90014	donor A AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-A.tsv	cell_groups	122420	6b3a710abeaedf4f77c73201e8f7786d0bb5142bc5a549864d3abb82e2c87192	donor A frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-B/Aligned.out.bam	bam	3104736941	ff2df41145a5c34f34f95269f7c584535ab9a61704c4686fe47fe0d15366929e	donor B sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-B/called-whitelist.txt	barcode_list	32164	098f090d93c9862711b5e88d5aa6ef01da39345abd662cb7d7f0e63538539ef0	donor B called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-B/sez.called.aie	aie	83674178	8b38206b8903f872ee478ed2077868280f5ff1192799c031d2e797843acd7c95	donor B matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-B/audit.json	json	163052	1d38cdf0e10eb01a2b11e3b054cad02ab804d9970fd768a0fcecf9305e3fb436	donor B exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-B/tail-evidence.ait	tail_sidecar	88933	f1b7bd8fb1c401b81c407a3f5f158d4a18df03d5d25365e3682ec6b1f7b2da61	donor B AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-B.tsv	cell_groups	54621	50979d1a0064cb7930af7685d728a3fb827a3383aebc0ddf33189aa4993508ba	donor B frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-C/Aligned.out.bam	bam	2704286364	0ef1b2d34e986d16d059948bd6fd4091b2eaf7bd7be802ee2d2bd693ac066a82	donor C sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-C/called-whitelist.txt	barcode_list	49096	7c4ef25bbaebd5d3362ca52f505e1a2061914298783758316503dfb1dcca25db	donor C called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-C/sez.called.aie	aie	68177196	e3e82d93c76f06d571e27fe3237b0b325cdabbcbb2165359335704e6b110151f	donor C matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-C/audit.json	json	164776	089cbd930ecd8b301a337848ca75b425caa757aa7c41b236da0373c182d870d6	donor C exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-C/tail-evidence.ait	tail_sidecar	93516	957ad599ece9277f066ec52c17cbc4f51108134d01c74aa8309a833d53dba6ed	donor C AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-C.tsv	cell_groups	83158	a7bc9a2e7d6c6bec60083833a2c134dfc9c875ecf298fe82d3afa02b4dbd20b6	donor C frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-D/Aligned.out.bam	bam	11402623598	91668ff1ffa984f16a37af84f87b8560f048cf9762b82903e9579980f7183928	donor D sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-D/called-whitelist.txt	barcode_list	123403	1982627f4bcd5c32c20c26cff9331e5f71beeaee1cd0f1ea790f48437833bf8c	donor D called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-D/sez.called.aie	aie	397844161	0c5a9557d52d36aff6263146208ec8a85698de4336c64f0eeed9d33274cd6db6	donor D matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-D/audit.json	json	220828	ee7113b2cb413586edd029cf3a641abb8d11503cfa8b851766cee59c132b5726	donor D exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-D/tail-evidence.ait	tail_sidecar	548900	c1eab2081a8889d40d8bd11071fb6e12558008a64e4eb93ddacb11d0c1721a2a	donor D AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-D.tsv	cell_groups	211214	4f608307c4bec7723d745861ac127a5c5c3a1906d185a81bd84a050863a7ef86	donor D frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-E/Aligned.out.bam	bam	2589184120	2665e0f647d8e4398f076c30f771db134c31a52d11e3a935f372a67ffbfbb410	donor E sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-E/called-whitelist.txt	barcode_list	19703	c56c16d7a8ef908dc16bf21500c0fa3bbe628310d39715672b26f4815ae0bbcf	donor E called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-E/sez.called.aie	aie	64156624	71ab71dc458169ae0513ce2d741856e2de07e840955d71af5dcb1ef858571e44	donor E matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-E/audit.json	json	154508	a5f9bca0214c3bdde073e756aaac1e7a222dfb8fb2ffdf7b31707b259d0debc4	donor E exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-E/tail-evidence.ait	tail_sidecar	80729	3c125a463b78f0e5a4b6b53a4583b68017bf84d4241bdd299cb34e9a7e25de93	donor E AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-E.tsv	cell_groups	34431	3b1112030c16c77977c443df9be6b1a6b8f5510dd2be817c239dd50579147836	donor E frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-F/Aligned.out.bam	bam	3054631407	8abb77c84d5e84c5fba558c12c194ad63ad635c135ce33c745861959a128be1a	donor F sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-F/called-whitelist.txt	barcode_list	50422	8fb7bfabd17a7ae9fd07410e431b84a9f0551461c5956bb055ca56c0f2f9bb58	donor F called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-F/sez.called.aie	aie	91947535	112524cc9e4c0457770b33c93ce99b2390c43f60651161f0d7bed61864ab5a5c	donor F matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-F/audit.json	json	171612	e67a3e0a046081e7216c750f9c3e01b3d6f60a18a50f76b89fcc6f662b207a28	donor F exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-F/tail-evidence.ait	tail_sidecar	104782	dd24990ec2c860b50494e6a0bcd3f163e8cd5b32e0511a1c76d9fc6b964c245d	donor F AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-F.tsv	cell_groups	86962	bf5f5a3c9d7c1f0172f3bb71022b5a4e7e768a85f4d8c5de755da998885eb7b3	donor F frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-G/Aligned.out.bam	bam	13697423033	e6b0ccf975dfd84748b974c42f1b77bbff425c18e16bebed94c6ad343ade2aff	donor G sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-G/called-whitelist.txt	barcode_list	241621	4aba8d4c5340aed7df142ecff0426e7400e42b7cafc4b299bf97537455ed4d22	donor G called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-G/sez.called.aie	aie	436377659	cd7b533fb972ebf91160313fb482c58b61269e61c8eb5ff7414fe2708d9102d8	donor G matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-G/audit.json	json	221460	80cc753d2f2de879c50f45893ae5c97781ddc2beca3a12b3baa01880d5877102	donor G exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-G/tail-evidence.ait	tail_sidecar	600854	894dddb63092766c31ef214a917d264733dd4b3b450b2833129aa03dd4989ffc	donor G AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-G.tsv	cell_groups	417580	c1b21d616499d8a2d70fc69797cfd0a499b1e3271b866c6f1209e51ea560428d	donor G frozen cell-group mapping for NTRK2 query
+runs/post-v1/sez-transcript-end-atlas-r1/donor-H/Aligned.out.bam	bam	2626819140	38ef8788896c87bc4ab59d171e32139e220f20bacc2b04f4d22a50056d0f58fa	donor H sequence-bearing annotation-free STAR alignment
+runs/post-v1/sez-transcript-end-atlas-r1/donor-H/called-whitelist.txt	barcode_list	33558	7bf183a7a8d0331e86cc2b01990f9522051a465522169bb2ee45614add4435ca	donor H called-cell whitelist
+runs/post-v1/sez-transcript-end-atlas-r1/donor-H/sez.called.aie	aie	73675578	4f0c395f44de9f5de7e8223deb7ca11d0a3a881f69f258a0f738e12995b6ed5f	donor H matching archive; storage denominator only
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-H/audit.json	json	156307	24232cd19dfa2a87e06d28b9d64db1912f5522a16cfe5d9f3ff03e5adf86952e	donor H exact-key audit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/donor-H/tail-evidence.ait	tail_sidecar	80349	80f3671061b57feb880969ec800cb4518b59f92872915a2f7b66313552163a89	donor H AIETAIL1 sidecar
+gravlax-paper-scripts/results/post-v1-sez-transcript-end-feasibility/groups/donor-H.tsv	cell_groups	57684	604fd87390ade444feec490df19df003b8461c687f4aeb73d52823829d4fd8d2	donor H frozen cell-group mapping for NTRK2 query
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/cohort-summary-locked.json	json	6382	4115a076ad3049b078afeb208769c36a88503fd105d7d443757b2bf09419f3f8	locked eight-donor aggregate copied into the experimental Gravlax result commit
+runs/post-v1/sparse-terminal-tail-pilot-r2-dedup/ntrk2-query.json	json	7130	ea54af91f1401d0d051d8199533b8bb0cffabde354e2f2822252663d844f01d0	frozen-window NTRK2 secondary query
+runs/post-v1/sparse-terminal-tail-pilot-r3-release-verify/donor-A/audit.json	json	163363	a0640ee7a9e86c64edafaafb8771a9c30aaafd2bed0ab1c12a33245d095d0df2	donor A final-release binary audit; non-timing metrics match r2 exactly
+runs/post-v1/sparse-terminal-tail-pilot-r3-release-verify/donor-A/tail-evidence.ait	tail_sidecar	73709	dabf71142323fc9c269b82b2062eaf5efe7f82299c0f1d301e81c3d888b90014	donor A final-release sidecar; byte-identical to r2

@@ -1,0 +1,13 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-base --twopassMode Basic --readFilesIn data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R2_001.fastq.gz,data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R2_001.fastq.gz data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L003_R1_001.fastq.gz,data/d4/500_PBMC_3p_LT_Chromium_X_fastqs/500_PBMC_3p_LT_Chromium_X_S4_L004_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures SJ --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --outSAMattributes NH HI AS nM CR UR CY UY --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 32000000000 --outSAMunmapped Within --outFileNamePrefix runs/ingest/d4/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 30 00:11:34 ..... started STAR run
+Aug 30 00:11:34 ..... loading genome
+Aug 30 00:11:40 ..... started 1st pass mapping
+Aug 30 00:13:05 ..... finished 1st pass mapping
+Aug 30 00:13:05 ..... inserting junctions into the genome indices
+Aug 30 00:14:15 ..... started mapping
+Aug 30 00:15:45 ..... finished mapping
+Aug 30 00:15:48 ..... started Solo counting
+Aug 30 00:15:51 ..... finished Solo counting
+Aug 30 00:15:51 ..... started sorting BAM
+Aug 30 00:16:12 ..... finished successfully

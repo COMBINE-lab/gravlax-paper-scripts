@@ -1,0 +1,248 @@
+{
+  "schema": "gravlax.post_v1.matched_cram_generalization.v1",
+  "date": "2026-08-30",
+  "status": "d0_d1_d2_prime_storage_and_streamed_quantification_complete",
+  "gravlax_commit": "ef2126684378d8ba0dad5605ff81eed635bcab6a",
+  "aie_binary_sha256": "915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd",
+  "samtools": "samtools 1.23.1",
+  "protocols": {
+    "post_correction_storage": "scripts/118_post_correction_storage.sh",
+    "post_correction_storage_commit": "5e558cae65ff735866bb0845554d21cd5a08ee22",
+    "streamed_cram_replay": "scripts/117_stream_molecule_cram_replay.sh",
+    "streamed_cram_replay_commit": "1b64f8322ac59ecdfbfdf265f556255788a604b9",
+    "native_aie_replay": "scripts/119_native_aie_replay.sh",
+    "native_aie_replay_commit": "6bd6e1fa051e5b000a4de1862251c1acd57edbc8"
+  },
+  "resource_control": {
+    "threads_per_process": 24,
+    "shared_cpuset": "0-23",
+    "combined_hardware_thread_budget": 24,
+    "warm_replicates_per_arm": 5,
+    "cold_replicates_per_arm": 1,
+    "cold_method": "POSIX_FADV_DONTNEED on named inputs; advisory and non-destructive",
+    "transport": "samtools CRAM-to-BAM decode over a named pipe; no materialized BAM"
+  },
+  "requirements": [
+    "CRAM decoder preserving record order and Gravlax local tags",
+    "exact reference FASTA used by CRAM, with externally recorded digest",
+    "Gravlax post-correction molecule-BAM importer",
+    "compatible GTF annotation",
+    "barcode list defining output column order"
+  ],
+  "not_required": [
+    "materialized BAM intermediate",
+    "raw FASTQ",
+    "STAR genome index",
+    "barcode whitelist or raw barcode re-correction",
+    "nucleotide UMI strings"
+  ],
+  "datasets": [
+    {
+      "id": "D0",
+      "description": "10x PBMC 1k v3",
+      "molecules": 22156853,
+      "bam_records": 48220505,
+      "records_per_molecule": 2.176325,
+      "aie": {
+        "bytes": 111087381,
+        "sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842"
+      },
+      "post_correction_cram": {
+        "bytes": 258151959,
+        "sha256": "d494242c81ace999e8d1ca1ffe710fa6ed641bb56d41deb06068cfc23a19ed0e"
+      },
+      "storage": {
+        "cram_to_aie_ratio": 2.323864,
+        "aie_fewer_bytes_percent": 56.968221
+      },
+      "streamed_cram_warm_wall_seconds": [
+        21.251791052,
+        20.598180885,
+        20.651640174,
+        20.876267525,
+        20.352123186
+      ],
+      "native_aie_warm_wall_seconds": [
+        2.402967846,
+        2.306800002,
+        2.799337711,
+        2.335744707,
+        2.304860322
+      ],
+      "timing": {
+        "streamed_cram_warm_median_seconds": 20.651640174,
+        "streamed_cram_warm_range_seconds": [20.352123186, 21.251791052],
+        "streamed_cram_warm_cv": 0.016323,
+        "native_aie_warm_median_seconds": 2.335744707,
+        "native_aie_warm_range_seconds": [2.304860322, 2.799337711],
+        "native_aie_warm_cv": 0.086535,
+        "cram_to_aie_runtime_ratio": 8.841566,
+        "streamed_cram_cold_seconds": 20.742647199,
+        "native_aie_cold_seconds": 2.630447779,
+        "streamed_cram_load_median_seconds": 18.3,
+        "native_aie_load_median_seconds": 0.4,
+        "streamed_seconds_per_million_records": 0.428275
+      },
+      "memory": {
+        "streamed_replay_process_median_max_rss_kb": 7481452,
+        "decoder_process_median_max_rss_kb": 7128940,
+        "sum_of_process_median_max_rss_kb": 14610392,
+        "native_aie_median_max_rss_kb": 6941708,
+        "sum_of_process_medians_to_native_ratio": 2.104726,
+        "caveat": "The sum of process maxima is an upper bound, not a synchronized pipeline peak."
+      },
+      "correctness": {
+        "normalized_bam_cram_record_stream_identical": true,
+        "streamed_cram_exact_runs": 6,
+        "native_aie_exact_runs": 6
+      }
+    },
+    {
+      "id": "D1",
+      "description": "10x PBMC 5k v3",
+      "molecules": 108747545,
+      "umi_edges": 6693867,
+      "bam_records": 253082119,
+      "records_per_molecule": 2.327244,
+      "aie": {
+        "bytes": 544022039,
+        "sha256": "e8568b72525a84342203e062fc0f544baf84fcb2b346da7d50c8e1ba8e78c834"
+      },
+      "post_correction_bam": {
+        "bytes": 3582119668,
+        "sha256": "145b6732bc4f399f3c79532e4b0ea24f6e4ea7d0af1aab059ff65f31c8775c97"
+      },
+      "post_correction_cram": {
+        "bytes": 1293782063,
+        "sha256": "d9e67f148b59176f6b7bd63fea982ac129278706f6aa60d583469269a3fef7e9"
+      },
+      "normalized_record_stream_sha256": "5c630fbf6856eb645b8329b96af3b8fe82c3e0a703e85a0830e845e5e251c605",
+      "storage": {
+        "cram_to_aie_ratio": 2.378180,
+        "aie_fewer_bytes_percent": 57.951029
+      },
+      "streamed_cram_warm_wall_seconds": [
+        96.766440396,
+        95.737041463,
+        97.081020932,
+        97.074163641,
+        97.019432914
+      ],
+      "native_aie_warm_wall_seconds": [
+        7.129844684,
+        7.048165419,
+        7.643746788,
+        7.185773324,
+        7.054684897
+      ],
+      "timing": {
+        "streamed_cram_warm_median_seconds": 97.019432914,
+        "streamed_cram_warm_range_seconds": [95.737041463, 97.081020932],
+        "streamed_cram_warm_cv": 0.005922,
+        "native_aie_warm_median_seconds": 7.129844684,
+        "native_aie_warm_range_seconds": [7.048165419, 7.643746788],
+        "native_aie_warm_cv": 0.034344,
+        "cram_to_aie_runtime_ratio": 13.607510,
+        "streamed_cram_cold_seconds": 97.680994496,
+        "native_aie_cold_seconds": 7.536249937,
+        "streamed_cram_load_median_seconds": 91.3,
+        "native_aie_load_median_seconds": 2.5,
+        "streamed_seconds_per_million_records": 0.383352
+      },
+      "memory": {
+        "streamed_replay_process_median_max_rss_kb": 20422916,
+        "decoder_process_median_max_rss_kb": 8119760,
+        "sum_of_process_median_max_rss_kb": 28542676,
+        "native_aie_median_max_rss_kb": 18450696,
+        "sum_of_process_medians_to_native_ratio": 1.546970,
+        "caveat": "The sum of process maxima is an upper bound, not a synchronized pipeline peak."
+      },
+      "correctness": {
+        "bam_quickcheck": true,
+        "cram_quickcheck": true,
+        "normalized_bam_cram_record_stream_identical": true,
+        "materialized_bam_replay_exact": true,
+        "streamed_cram_exact_runs": 6,
+        "native_aie_exact_runs": 6
+      }
+    },
+    {
+      "id": "D2_prime",
+      "description": "10x human brain nuclei",
+      "molecules": 130270701,
+      "umi_edges": 10184129,
+      "bam_records": 224324157,
+      "records_per_molecule": 1.721985,
+      "aie": {
+        "bytes": 595246459,
+        "sha256": "b493523e1f6a05df05c656ca15c8791b2d5da2e42c8fe700950030c9886dc06c"
+      },
+      "post_correction_bam": {
+        "bytes": 3791941865,
+        "sha256": "b4e267577a9a3bdeaffe5bac984f3b1c1216213e11db34a914614c751e835189"
+      },
+      "post_correction_cram": {
+        "bytes": 1519093985,
+        "sha256": "9df205225272a44c26804966ca47dc6469edfec7ce6e1e2d8ce4dd9ff7952b8b"
+      },
+      "normalized_record_stream_sha256": "be7d3c2703c5e3d3467732670e39041c6ae8fa6e94b06318d8e9cd9214443da8",
+      "storage": {
+        "cram_to_aie_ratio": 2.552042,
+        "aie_fewer_bytes_percent": 60.815692
+      },
+      "streamed_cram_warm_wall_seconds": [
+        86.585719253,
+        85.539281880,
+        86.187692817,
+        85.784012417,
+        86.606362257
+      ],
+      "native_aie_warm_wall_seconds": [
+        6.294116035,
+        6.307903629,
+        6.151605284,
+        6.178126406,
+        6.531094228
+      ],
+      "timing": {
+        "streamed_cram_warm_median_seconds": 86.187692817,
+        "streamed_cram_warm_range_seconds": [85.539281880, 86.606362257],
+        "streamed_cram_warm_cv": 0.005525,
+        "native_aie_warm_median_seconds": 6.294116035,
+        "native_aie_warm_range_seconds": [6.151605284, 6.531094228],
+        "native_aie_warm_cv": 0.023851,
+        "cram_to_aie_runtime_ratio": 13.693375,
+        "streamed_cram_cold_seconds": 86.346123360,
+        "native_aie_cold_seconds": 6.747738110,
+        "streamed_cram_load_median_seconds": 80.6,
+        "native_aie_load_median_seconds": 1.8,
+        "streamed_seconds_per_million_records": 0.384210
+      },
+      "memory": {
+        "streamed_replay_process_median_max_rss_kb": 23324408,
+        "decoder_process_median_max_rss_kb": 8317604,
+        "sum_of_process_median_max_rss_kb": 31642012,
+        "native_aie_median_max_rss_kb": 19012392,
+        "sum_of_process_medians_to_native_ratio": 1.664284,
+        "caveat": "The sum of process maxima is an upper bound, not a synchronized pipeline peak."
+      },
+      "correctness": {
+        "bam_quickcheck": true,
+        "cram_quickcheck": true,
+        "normalized_bam_cram_record_stream_identical": true,
+        "materialized_bam_replay_exact": true,
+        "streamed_cram_exact_runs": 6,
+        "native_aie_exact_runs": 6
+      }
+    }
+  ],
+  "summary": {
+    "cram_to_aie_storage_ratio_range": [2.323864, 2.552042],
+    "aie_fewer_bytes_percent_range": [56.968221, 60.815692],
+    "cram_to_aie_runtime_ratio_range": [8.841566, 13.693375],
+    "streamed_seconds_per_million_records_range": [0.383352, 0.428275],
+    "all_36_timed_outputs_exact": true,
+    "cold_materially_slower_than_warm": false
+  },
+  "interpretation": "The reduced CRAM is sufficient for exact tested Gene quantification without an intermediate BAM, but is 2.32-2.55x larger and 8.84-13.69x slower than native AIE replay. Decode and explicit-record molecule reconstruction dominate; annotation and assignment remain a small tail."
+}

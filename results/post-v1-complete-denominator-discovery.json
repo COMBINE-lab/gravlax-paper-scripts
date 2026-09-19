@@ -1,0 +1,478 @@
+{
+  "accounting": {
+    "candidate_class_sum": 12389,
+    "candidate_rows": 12389,
+    "truth_matched_plus_unmatched": 367,
+    "truth_rows": 367,
+    "truth_strata_sum": 367
+  },
+  "annotation_history": {
+    "v32_genes": 60609,
+    "v49_added_stable_gene_ids": 19443,
+    "v49_genes": 78691
+  },
+  "annotation_history_confirmation": {
+    "candidate_classes": {
+      "other_v49_added_gene": {
+        "d0_umi_mass": 140032,
+        "loci": 2145
+      },
+      "preexisting_v49_gene_span": {
+        "d0_umi_mass": 207099,
+        "loci": 1625
+      },
+      "primary_match": {
+        "d0_umi_mass": 28701,
+        "loci": 164
+      },
+      "unresolved": {
+        "d0_umi_mass": 428487,
+        "loci": 8455
+      }
+    },
+    "emitted_d0_candidates": 12389,
+    "matched_primary_truth": 164,
+    "precision_at": {
+      "100": {
+        "positives": 6,
+        "precision": 0.06,
+        "rows": 100
+      },
+      "1000": {
+        "positives": 99,
+        "precision": 0.099,
+        "rows": 1000
+      },
+      "500": {
+        "positives": 55,
+        "precision": 0.11,
+        "rows": 500
+      }
+    },
+    "precision_at_emission_floor": 0.013237549439018484,
+    "ranked_event_average_precision": 0.04892672334382709,
+    "recall_at_emission_floor": 0.44686648501362397
+  },
+  "configuration": {
+    "d1_expression_min_umis": 10,
+    "discovery_merge_gap_bp": 1000,
+    "discovery_min_umis": 10,
+    "matching": "same-chromosome/strand interval overlap; deterministic maximum-cardinality one-to-one",
+    "polyasite_downstream_bp": 500,
+    "primary_min_d0_gene_umis": 50,
+    "sensitivity_thresholds": [
+      10,
+      100
+    ],
+    "star_min_unique_reads": 3
+  },
+  "gravlax_code_commit": "3d7dcd5d739fc9d1bbee0a889569ff30d1e1f913",
+  "independent_support": {
+    "d0_candidate_d1_recurrence_by_annotation_history_class": {
+      "other_v49_added_gene": {
+        "d0_umi_mass": 140032,
+        "loci": 2145,
+        "recurrence_fraction": 0.9846153846153847,
+        "recurrence_umi_fraction": 0.9870958066727605,
+        "recurrent_d0_umi_mass": 138225,
+        "recurrent_loci": 2112
+      },
+      "preexisting_v49_gene_span": {
+        "d0_umi_mass": 207099,
+        "loci": 1625,
+        "recurrence_fraction": 0.9926153846153846,
+        "recurrence_umi_fraction": 0.9993143375873375,
+        "recurrent_d0_umi_mass": 206957,
+        "recurrent_loci": 1613
+      },
+      "primary_match": {
+        "d0_umi_mass": 28701,
+        "loci": 164,
+        "recurrence_fraction": 1.0,
+        "recurrence_umi_fraction": 1.0,
+        "recurrent_d0_umi_mass": 28701,
+        "recurrent_loci": 164
+      },
+      "unresolved": {
+        "d0_umi_mass": 428487,
+        "loci": 8455,
+        "recurrence_fraction": 0.9834417504435246,
+        "recurrence_umi_fraction": 0.9928842648668454,
+        "recurrent_d0_umi_mass": 425438,
+        "recurrent_loci": 8315
+      }
+    },
+    "d0_candidate_d1_recurrence_fraction": 0.9850673984986682,
+    "d0_candidate_d1_recurrence_loci": 12204,
+    "d0_candidate_d1_recurrence_umi_fraction": 0.9937860475756509,
+    "d0_candidate_d1_recurrence_umi_mass": 799321,
+    "d1_discovery_candidates": 41944,
+    "primary_truth_support": {
+      "all": {
+        "d1_discovery": {
+          "fraction": 0.4986376021798365,
+          "rows": 183
+        },
+        "d1_expression": {
+          "fraction": 1.0,
+          "rows": 367
+        },
+        "polyasite": {
+          "fraction": 0.8555858310626703,
+          "rows": 314
+        },
+        "star_splice": {
+          "fraction": 0.4032697547683924,
+          "rows": 148
+        }
+      },
+      "by_match": {
+        "matched": {
+          "d1_discovery": {
+            "fraction": 1.0,
+            "rows": 164
+          },
+          "d1_expression": {
+            "fraction": 1.0,
+            "rows": 164
+          },
+          "polyasite": {
+            "fraction": 0.9024390243902439,
+            "rows": 148
+          },
+          "star_splice": {
+            "fraction": 0.3719512195121951,
+            "rows": 61
+          }
+        },
+        "unmatched": {
+          "d1_discovery": {
+            "fraction": 0.09359605911330049,
+            "rows": 19
+          },
+          "d1_expression": {
+            "fraction": 1.0,
+            "rows": 203
+          },
+          "polyasite": {
+            "fraction": 0.8177339901477833,
+            "rows": 166
+          },
+          "star_splice": {
+            "fraction": 0.42857142857142855,
+            "rows": 87
+          }
+        }
+      },
+      "by_stratum": {
+        "antisense_only": {
+          "d1_discovery": {
+            "fraction": 0.5666666666666667,
+            "rows": 34
+          },
+          "d1_expression": {
+            "fraction": 1.0,
+            "rows": 60
+          },
+          "polyasite": {
+            "fraction": 0.85,
+            "rows": 51
+          },
+          "star_splice": {
+            "fraction": 0.21666666666666667,
+            "rows": 13
+          }
+        },
+        "clean": {
+          "d1_discovery": {
+            "fraction": 1.0,
+            "rows": 52
+          },
+          "d1_expression": {
+            "fraction": 1.0,
+            "rows": 52
+          },
+          "polyasite": {
+            "fraction": 0.7307692307692307,
+            "rows": 38
+          },
+          "star_splice": {
+            "fraction": 0.09615384615384616,
+            "rows": 5
+          }
+        },
+        "same_strand": {
+          "d1_discovery": {
+            "fraction": 0.3803921568627451,
+            "rows": 97
+          },
+          "d1_expression": {
+            "fraction": 1.0,
+            "rows": 255
+          },
+          "polyasite": {
+            "fraction": 0.8823529411764706,
+            "rows": 225
+          },
+          "star_splice": {
+            "fraction": 0.5098039215686274,
+            "rows": 130
+          }
+        }
+      }
+    },
+    "support_combinations": {
+      "D": {
+        "d0_umi_mass": 274242,
+        "loci": 6395
+      },
+      "DP": {
+        "d0_umi_mass": 480258,
+        "loci": 5614
+      },
+      "DPS": {
+        "d0_umi_mass": 42854,
+        "loci": 155
+      },
+      "DS": {
+        "d0_umi_mass": 1967,
+        "loci": 40
+      },
+      "P": {
+        "d0_umi_mass": 1961,
+        "loci": 43
+      },
+      "PS": {
+        "d0_umi_mass": 45,
+        "loci": 2
+      },
+      "S": {
+        "d0_umi_mass": 32,
+        "loci": 3
+      },
+      "none": {
+        "d0_umi_mass": 2960,
+        "loci": 137
+      }
+    }
+  },
+  "inputs": {
+    "aie_binary": {
+      "bytes": 75306424,
+      "path": "aie",
+      "sha256": "6f0986326e4febdd35bcd4842fb2fcc9c902d671cf36ea8120f9080659dad3fe"
+    },
+    "d0_discovery": {
+      "bytes": 394787,
+      "path": "runs/post-v1/complete-denominator-discovery/discover-v32-d0.tsv",
+      "sha256": "a130189b5091315d10eb65c7bcd202e772fad1b289e7e32d36ada11f777b3127"
+    },
+    "d0_filtered_barcodes": {
+      "bytes": 20825,
+      "path": "runs/oracle/full/v49/Solo.out/Gene/filtered/barcodes.tsv",
+      "sha256": "565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc"
+    },
+    "d0_gene_features": {
+      "bytes": 3595044,
+      "path": "runs/oracle/full/v49/Solo.out/Gene/raw/features.tsv",
+      "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+    },
+    "d0_gene_matrix": {
+      "bytes": 56657865,
+      "path": "runs/oracle/full/v49/Solo.out/Gene/raw/matrix.mtx",
+      "sha256": "d0580144c5bc16a06fe14a2934393323dabb802b84d16359028e6118bb8b6382"
+    },
+    "d0_raw_barcodes": {
+      "bytes": 115512960,
+      "path": "runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv",
+      "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    "d0_star_junctions": {
+      "bytes": 4668712,
+      "path": "runs/oracle/full/v49/SJ.out.tab",
+      "sha256": "d18a0455b4d3491e4c5c8bb25cd46c6c28f44b95d5647169dbe35a9f2f4a391e"
+    },
+    "d1_discovery": {
+      "bytes": 1348912,
+      "path": "runs/post-v1/complete-denominator-discovery/discover-v32-d1.tsv",
+      "sha256": "e0605e09515e6e08b50e087a0cc7d2473299a519646545f0e3a9ece6d0f3e110"
+    },
+    "d1_filtered_barcodes": {
+      "bytes": 85646,
+      "path": "runs/oracle/d1/v49/Solo.out/Gene/filtered/barcodes.tsv",
+      "sha256": "23b85638b941d8e6553a73b3f733a053e340e51f406f0d44cc2c44327337c680"
+    },
+    "d1_gene_features": {
+      "bytes": 3595044,
+      "path": "runs/oracle/d1/v49/Solo.out/Gene/raw/features.tsv",
+      "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+    },
+    "d1_gene_matrix": {
+      "bytes": 278800092,
+      "path": "runs/oracle/d1/v49/Solo.out/Gene/raw/matrix.mtx",
+      "sha256": "5d52dfb8ec868390835b42a9cad945a2e2fb0bd42f90330c95952d76fc24e26c"
+    },
+    "d1_raw_barcodes": {
+      "bytes": 115512960,
+      "path": "runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv",
+      "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    "gencode_v32": {
+      "bytes": 1331772691,
+      "path": "annotations/gencode.v32.annotation.gtf",
+      "sha256": "b90d9bda40bec0d5f5dfc42e3556e3a690469e992f4087038c6e81612ee5ff0b"
+    },
+    "gencode_v49": {
+      "bytes": 3323462848,
+      "path": "annotations/gencode.v49.annotation.gtf",
+      "sha256": "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914"
+    },
+    "polyasite": {
+      "bytes": 14442791,
+      "path": "runs/apa2/polyasite.bed.gz",
+      "sha256": "d60dc7addad2982c3463dcaab67d0a74d278a6e33a2852a4373bd1eeb4174595"
+    }
+  },
+  "interpretation_guard": "Precision is annotation-history confirmation only; unsupported loci are unresolved, not established biological false positives.",
+  "primary_gate": {
+    "accounting": "pass",
+    "all_strata_macro_recall_verdict": "marginal",
+    "clean_recall_verdict": "pass"
+  },
+  "protocol_lock_commit": "522bad43daf8d22c5141d7c5b4eb3f8fe9ca6563",
+  "schema": "gravlax.complete-denominator-discovery.v1",
+  "thresholds": {
+    "10": {
+      "macro_recall": 0.4750390015600624,
+      "matched_genes": 609,
+      "matched_umi_mass": 37994,
+      "minimum_d0_gene_umis": 10,
+      "permissive_any_overlap_genes": 618,
+      "permissive_any_overlap_recall": 0.48205928237129486,
+      "strata": {
+        "antisense_only": {
+          "matched_genes": 181,
+          "matched_umi_mass": 8166,
+          "permissive_any_overlap_genes": 181,
+          "permissive_any_overlap_recall": 0.4905149051490515,
+          "recall": 0.4905149051490515,
+          "truth_genes": 369,
+          "truth_umi_mass": 14366,
+          "umi_weighted_recall": 0.5684254489767506
+        },
+        "clean": {
+          "matched_genes": 263,
+          "matched_umi_mass": 11738,
+          "permissive_any_overlap_genes": 271,
+          "permissive_any_overlap_recall": 0.9644128113879004,
+          "recall": 0.9359430604982206,
+          "truth_genes": 281,
+          "truth_umi_mass": 12327,
+          "umi_weighted_recall": 0.952218706903545
+        },
+        "same_strand": {
+          "matched_genes": 165,
+          "matched_umi_mass": 18090,
+          "permissive_any_overlap_genes": 166,
+          "permissive_any_overlap_recall": 0.2626582278481013,
+          "recall": 0.2610759493670886,
+          "truth_genes": 632,
+          "truth_umi_mass": 59500,
+          "umi_weighted_recall": 0.30403361344537816
+        }
+      },
+      "truth_genes": 1282,
+      "truth_umi_mass": 86193,
+      "umi_weighted_recall": 0.4408014571948998,
+      "unmatched_genes": 673
+    },
+    "100": {
+      "macro_recall": 0.4581005586592179,
+      "matched_genes": 82,
+      "matched_umi_mass": 22884,
+      "minimum_d0_gene_umis": 100,
+      "permissive_any_overlap_genes": 82,
+      "permissive_any_overlap_recall": 0.4581005586592179,
+      "strata": {
+        "antisense_only": {
+          "matched_genes": 13,
+          "matched_umi_mass": 3617,
+          "permissive_any_overlap_genes": 13,
+          "permissive_any_overlap_recall": 0.65,
+          "recall": 0.65,
+          "truth_genes": 20,
+          "truth_umi_mass": 5184,
+          "umi_weighted_recall": 0.6977237654320988
+        },
+        "clean": {
+          "matched_genes": 20,
+          "matched_umi_mass": 5502,
+          "permissive_any_overlap_genes": 20,
+          "permissive_any_overlap_recall": 1.0,
+          "recall": 1.0,
+          "truth_genes": 20,
+          "truth_umi_mass": 5502,
+          "umi_weighted_recall": 1.0
+        },
+        "same_strand": {
+          "matched_genes": 49,
+          "matched_umi_mass": 13765,
+          "permissive_any_overlap_genes": 49,
+          "permissive_any_overlap_recall": 0.35251798561151076,
+          "recall": 0.35251798561151076,
+          "truth_genes": 139,
+          "truth_umi_mass": 42739,
+          "umi_weighted_recall": 0.32207117620908304
+        }
+      },
+      "truth_genes": 179,
+      "truth_umi_mass": 53425,
+      "umi_weighted_recall": 0.4283387927000468,
+      "unmatched_genes": 97
+    },
+    "50": {
+      "macro_recall": 0.44686648501362397,
+      "matched_genes": 164,
+      "matched_umi_mass": 28330,
+      "minimum_d0_gene_umis": 50,
+      "permissive_any_overlap_genes": 166,
+      "permissive_any_overlap_recall": 0.45231607629427795,
+      "strata": {
+        "antisense_only": {
+          "matched_genes": 32,
+          "matched_umi_mass": 4829,
+          "permissive_any_overlap_genes": 32,
+          "permissive_any_overlap_recall": 0.5333333333333333,
+          "recall": 0.5333333333333333,
+          "truth_genes": 60,
+          "truth_umi_mass": 7958,
+          "umi_weighted_recall": 0.6068107564714752
+        },
+        "clean": {
+          "matched_genes": 51,
+          "matched_umi_mass": 7446,
+          "permissive_any_overlap_genes": 52,
+          "permissive_any_overlap_recall": 1.0,
+          "recall": 0.9807692307692307,
+          "truth_genes": 52,
+          "truth_umi_mass": 7676,
+          "umi_weighted_recall": 0.9700364773319438
+        },
+        "same_strand": {
+          "matched_genes": 81,
+          "matched_umi_mass": 16055,
+          "permissive_any_overlap_genes": 82,
+          "permissive_any_overlap_recall": 0.3215686274509804,
+          "recall": 0.3176470588235294,
+          "truth_genes": 255,
+          "truth_umi_mass": 50914,
+          "umi_weighted_recall": 0.3153356640609655
+        }
+      },
+      "truth_genes": 367,
+      "truth_umi_mass": 66548,
+      "umi_weighted_recall": 0.42570775981246617,
+      "unmatched_genes": 203
+    }
+  }
+}

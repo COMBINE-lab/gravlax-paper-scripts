@@ -1,0 +1,13 @@
+phase	block	position	arm	label	status
+cold	0	1	aie	cold-aie	exact
+cold	0	1	star	cold-star	exact
+warm	1	1	star	warm-b1-p1-star	exact
+warm	1	2	aie	warm-b1-p2-aie	exact
+warm	2	1	aie	warm-b2-p1-aie	exact
+warm	2	2	star	warm-b2-p2-star	exact
+warm	3	1	star	warm-b3-p1-star	exact
+warm	3	2	aie	warm-b3-p2-aie	exact
+warm	4	1	aie	warm-b4-p1-aie	exact
+warm	4	2	star	warm-b4-p2-star	exact
+warm	5	1	star	warm-b5-p1-star	exact
+warm	5	2	aie	warm-b5-p2-aie	exact

@@ -1,0 +1,42 @@
+2026-08-30 matched molecule-CRAM generalization
+
+Gravlax commit: ef2126684378d8ba0dad5605ff81eed635bcab6a
+AIE binary SHA-256: 915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd
+samtools: 1.23.1
+CPUs: 0-23; RAYON_NUM_THREADS=24; five warm plus one advisory-cold run per arm
+
+D0
+  AIE: 111087381 bytes
+  post-correction CRAM: 258151959 bytes
+  size ratio: 2.323864
+  streamed warm seconds: 21.251791052 20.598180885 20.651640174 20.876267525 20.352123186
+  native matched warm seconds: 2.402967846 2.306800002 2.799337711 2.335744707 2.304860322
+  medians: 20.651640174 / 2.335744707 = 8.841566
+  cold: 20.742647199 / 2.630447779
+
+D1
+  molecules / UMI edges / BAM records: 108747545 / 6693867 / 253082119
+  AIE: 544022039 bytes e8568b72525a84342203e062fc0f544baf84fcb2b346da7d50c8e1ba8e78c834
+  BAM: 3582119668 bytes 145b6732bc4f399f3c79532e4b0ea24f6e4ea7d0af1aab059ff65f31c8775c97
+  CRAM: 1293782063 bytes d9e67f148b59176f6b7bd63fea982ac129278706f6aa60d583469269a3fef7e9
+  normalized BAM/CRAM stream: 5c630fbf6856eb645b8329b96af3b8fe82c3e0a703e85a0830e845e5e251c605
+  size ratio: 2.378180
+  streamed warm seconds: 96.766440396 95.737041463 97.081020932 97.074163641 97.019432914
+  native warm seconds: 7.129844684 7.048165419 7.643746788 7.185773324 7.054684897
+  medians: 97.019432914 / 7.129844684 = 13.607510
+  cold: 97.680994496 / 7.536249937
+
+D2-prime
+  molecules / UMI edges / BAM records: 130270701 / 10184129 / 224324157
+  AIE: 595246459 bytes b493523e1f6a05df05c656ca15c8791b2d5da2e42c8fe700950030c9886dc06c
+  BAM: 3791941865 bytes b4e267577a9a3bdeaffe5bac984f3b1c1216213e11db34a914614c751e835189
+  CRAM: 1519093985 bytes 9df205225272a44c26804966ca47dc6469edfec7ce6e1e2d8ce4dd9ff7952b8b
+  normalized BAM/CRAM stream: be7d3c2703c5e3d3467732670e39041c6ae8fa6e94b06318d8e9cd9214443da8
+  size ratio: 2.552042
+  streamed warm seconds: 86.585719253 85.539281880 86.187692817 85.784012417 86.606362257
+  native warm seconds: 6.294116035 6.307903629 6.151605284 6.178126406 6.531094228
+  medians: 86.187692817 / 6.294116035 = 13.693375
+  cold: 86.346123360 / 6.747738110
+
+All BAM/CRAM construction checks and all 36 timed output comparisons passed.
+Large run trees are excluded; only this compact log, the JSON result, protocols, and memo are committed.

@@ -1,0 +1,13 @@
+{
+  "sensitive_genes": 3283,
+  "delta_mass_oracle": 360556.0,
+  "delta_mass_replay": 361683.0,
+  "sign_agreement": 3281,
+  "sign_agreement_frac": 0.999390801096558,
+  "delta_within_10pct": 3185,
+  "delta_within_10pct_frac": 0.9701492537313433,
+  "delta_within_25pct": 3243,
+  "delta_within_25pct_frac": 0.9878160219311605,
+  "delta_error_l1_ratio": 0.011673637382265168,
+  "delta_pearson_supplementary": 0.9999275654333502
+}

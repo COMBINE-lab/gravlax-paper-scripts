@@ -1,0 +1,47 @@
+{
+  "bounded": {
+    "exit_status": 0,
+    "max_rss_kib": 2262980,
+    "record_sha256": "265782299d7f7d7211c694cd253428442632c69659a615e2a5b7f7e4409390f1",
+    "wall_seconds": 28.21
+  },
+  "comparison": {
+    "rss_reduction_fraction": 0.38177850482506603,
+    "wall_ratio": 1.2811080835603996
+  },
+  "gates": {
+    "exit_status_zero": true,
+    "max_rss_kib_le_2_25_gib": true,
+    "scientific_tables_byte_identical": true,
+    "wall_seconds_le_30": true
+  },
+  "implementation": {
+    "chunk_frontier": 8,
+    "classification": "read-only prefetched COC blocks with parallel chunk classification",
+    "counts": "flat sorted packed coordinate rows; downstream gene ranges are borrowed",
+    "endpoint_frontier": "one chromosome per active archive",
+    "sample_frontier": "at most two adjacent archives and 256 MiB aggregate compressed archive bytes"
+  },
+  "input_digests": {
+    "bounded_summary_sha256": "f275245fe0c2bd5862160a4491f426daa81af2d829be1850f22f9c766f832233",
+    "frozen_summary_sha256": "d4dad307567a886cf8a9da223e9a247cd475e25c905193fe40e4153bde337bb6",
+    "gravlax_commit": "655a7de923e71d9eaf0ef5b40f2a0afb3c3f3e55",
+    "tables": {
+      "fragment-kernel.tsv": "fe95c3b0e701215181e2b9d3288ce2f2a73bf157cbfe26dff04d8ff270ebeb45",
+      "genes.tsv": "0017bc4511a451a82c655aa05badc6438988309c104f815ceb3d9dd5e4b29ead",
+      "sites.tsv": "cb1378a45f83fb37ea2034da7c22621e9387ddb5c2e0e7527930bb369d662a03"
+    }
+  },
+  "prior_optimized": {
+    "exit_status": 0,
+    "max_rss_kib": 3660468,
+    "record_sha256": "366c619cdb567ecb0c3dc178ef085b4bf3ec956938cebb40f903340912e20857",
+    "wall_seconds": 22.02
+  },
+  "schema": "gravlax.polyasite-bounded-memory.v1",
+  "status": "PASS",
+  "thresholds": {
+    "max_rss_kib": 2359296,
+    "wall_seconds": 30.0
+  }
+}

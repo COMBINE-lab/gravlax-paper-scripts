@@ -1,0 +1,209 @@
+{
+  "date": "2026-08-31",
+  "dataset": "10x 1k C57BL/6 mouse splenocytes 5-prime v2",
+  "claim_scope": "public mouse 5-prime v2 pilot; GEM-X 5-prime v3 replication pending raw-data access",
+  "software": {
+    "gravlax_commit": "60a561b5998dfb180eff8c3befc017e2ea0be68b",
+    "aie_binary_sha256": "0ded96a69d6f07e159f07204f8afaa78f53d4b0dcbf124cc0e1a8ba99ef2f24b",
+    "STAR": "2.7.11b",
+    "samtools": "1.23.1",
+    "threads": 24,
+    "cpuset": "0-23",
+    "solo_strand": "Reverse"
+  },
+  "dataset_metrics": {
+    "read_pairs": 33677140,
+    "fresh_m39_called_cells": 1129,
+    "producer_mm10_2020_a_called_cells": 1119,
+    "oracle": {
+      "input_reads": 33677140,
+      "uniquely_mapped_reads": 26772871,
+      "splices_total": 11904706,
+      "multimapped_reads": 4462470,
+      "uniquely_mapped_percent": 79.5,
+      "multimapped_percent": 13.25
+    },
+    "annotation_free_twopass": {
+      "input_reads": 33677140,
+      "uniquely_mapped_reads": 26600161,
+      "splices_total": 11718396,
+      "multimapped_reads": 4668822,
+      "uniquely_mapped_percent": 78.99,
+      "multimapped_percent": 13.86
+    }
+  },
+  "resources": {
+    "index": {
+      "wall_seconds": 421.56,
+      "user_seconds": 3575.08,
+      "system_seconds": 27.31,
+      "max_rss_kb": 67195892,
+      "filesystem_inputs": 32,
+      "filesystem_outputs": 134138600
+    },
+    "fresh_starsolo_oracle": {
+      "wall_seconds": 223.1,
+      "user_seconds": 1192.87,
+      "system_seconds": 28.7,
+      "max_rss_kb": 33147624,
+      "filesystem_inputs": 144,
+      "filesystem_outputs": 45071104
+    },
+    "annotation_free_twopass": {
+      "wall_seconds": 137.97,
+      "user_seconds": 1184.11,
+      "system_seconds": 24.34,
+      "max_rss_kb": 33889732,
+      "filesystem_inputs": 0,
+      "filesystem_outputs": 34203672
+    },
+    "aie_ingest": {
+      "wall_seconds": 32.2,
+      "user_seconds": 83.42,
+      "system_seconds": 9.99,
+      "max_rss_kb": 4146472,
+      "filesystem_inputs": 0,
+      "filesystem_outputs": 121888
+    },
+    "aie_streaming_replay": {
+      "wall_seconds": 1.79,
+      "user_seconds": 6.49,
+      "system_seconds": 0.51,
+      "max_rss_kb": 910620,
+      "filesystem_inputs": 0,
+      "filesystem_outputs": 99560
+    },
+    "direct_ingest_bam_replay": {
+      "wall_seconds": 30.92,
+      "user_seconds": 59.85,
+      "system_seconds": 6.76,
+      "max_rss_kb": 3209480,
+      "filesystem_inputs": 0,
+      "filesystem_outputs": 99560
+    },
+    "aie_velocity_replay": {
+      "wall_seconds": 6.04,
+      "user_seconds": 18.35,
+      "system_seconds": 3.7,
+      "max_rss_kb": 4290316,
+      "filesystem_inputs": 0,
+      "filesystem_outputs": 331168
+    },
+    "direct_ingest_bam_velocity": {
+      "wall_seconds": 34.99,
+      "user_seconds": 71.96,
+      "system_seconds": 13.21,
+      "max_rss_kb": 4467900,
+      "filesystem_inputs": 0,
+      "filesystem_outputs": 331168
+    }
+  },
+  "storage": {
+    "annotation_free_ingest_bam_bytes": 1913704718,
+    "aie_bytes": 62404050,
+    "aie_sha256": "210d200c0e98b0ffc914744cea735df340dee7709b6dcbaa79625a844029370f",
+    "aie_bits_per_read_pair": 14.82407354068665,
+    "post_correction_molecule_bam_bytes": 365374829,
+    "post_correction_molecule_cram_bytes": 131251875,
+    "matched_cram_to_aie_ratio": 2.1032589230987413,
+    "molecule_bam_sha256": "c63a18692c5ac165bb7411d743121f8bc932b6b44be38b33f5dd1da596cb0bba",
+    "molecule_cram_sha256": "611b2d072dfdda8aad75031582864cbc4999b387c792fc67ea80e3ebcc02e0d9",
+    "normalized_bam_cram_stream_sha256": "9e5ddd63633ffc22646b95d4ccf471b3609bdaa127ae120594e725d3bd1bf3e1",
+    "archive_structure": {
+      "molecules": 10338517,
+      "umi_classes": 7973248,
+      "shapes": 826705,
+      "single_block_shapes": 75,
+      "spliced_shapes": 826630,
+      "patterns": 206645,
+      "pattern_alternatives": 671983,
+      "distinct_junction_chains": 51046,
+      "spliced_shape_to_chain_sharing": 16.19
+    }
+  },
+  "gene": {
+    "oracle_filtered_umi": 5522226,
+    "replay_filtered_umi": 5513815,
+    "forward_negative_control_filtered_umi": 919561,
+    "forward_over_reverse_mass_ratio": 0.16677400311762364,
+    "fresh_pipeline_fidelity": {
+      "label_a": "fresh_STARsolo",
+      "label_b": "Gravlax_replay",
+      "genes_a": 78348,
+      "genes_b": 78348,
+      "genes_shared": 78348,
+      "genes_only_a": 0,
+      "genes_only_b": 0,
+      "total_umi_a": 5522226.0,
+      "total_umi_b": 5513815.0,
+      "umi_mass_in_genes_only_a": 0.0,
+      "umi_mass_in_genes_only_b": 0.0,
+      "l1_shared": 82949.0,
+      "l1_union": 82949.0,
+      "umi_mass_moved_frac": 0.007510467699076423,
+      "umi_mass_moved_union_frac": 0.007510467699076423,
+      "mass_gained": 37269.0,
+      "mass_lost": 45680.0,
+      "mass_reassigned": 37269.0,
+      "mass_net_gain": 8411.0,
+      "expressed_genes": 21970,
+      "genes_changed_gt10pct": 1093,
+      "genes_changed_gt10pct_frac": 0.04974965862539827,
+      "cells_changed_gt1pct": 2,
+      "cells_live": 1129
+    },
+    "onepass_failed_pilot_moved_mass_fraction": 0.13891553877005397,
+    "archive_direct_bam_byte_identical": true,
+    "post_correction_molecule_bam_byte_identical": true
+  },
+  "velocity": {
+    "components": {
+      "spliced.mtx": {
+        "oracle_umi": 4730388,
+        "replay_umi": 4638444,
+        "l1": 137502,
+        "relative_l1": 0.029067805854403488,
+        "mass_delta": 0.0194368834015307,
+        "verdict": "MARGINAL"
+      },
+      "unspliced.mtx": {
+        "oracle_umi": 651683,
+        "replay_umi": 646983,
+        "l1": 6118,
+        "relative_l1": 0.009387999993862046,
+        "mass_delta": 0.007212095451316054,
+        "verdict": "PASS"
+      },
+      "ambiguous.mtx": {
+        "oracle_umi": 537171,
+        "replay_umi": 550750,
+        "l1": 24839,
+        "relative_l1": 0.0462403964473138,
+        "mass_delta": 0.025278728747456583,
+        "verdict": "MARGINAL"
+      }
+    },
+    "archive_direct_bam_byte_identical": true,
+    "overall_verdict": "MARGINAL"
+  },
+  "matched_cram_replay": {
+    "all_outputs_exact": true,
+    "cold_pipeline_wall_seconds": 12.516859839,
+    "warm_pipeline_wall_seconds": [
+      11.837915241,
+      11.883203203,
+      11.886456673,
+      11.937822078,
+      11.944865483
+    ],
+    "warm_median_seconds": 11.886456673,
+    "warm_cram_to_native_replay_ratio": 6.640478588268156
+  },
+  "gates": {
+    "gene_source_exact": true,
+    "velocity_source_exact": true,
+    "gene_fresh_pipeline_moved_mass_at_most_1pct": true,
+    "velocity_fresh_pipeline": "MARGINAL",
+    "wrong_forward_orientation_loses_at_least_75pct_mass": true
+  }
+}

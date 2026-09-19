@@ -1,0 +1,802 @@
+campaign: post-v1-week1
+date: 2026-08-30
+base_tag: gravlax-v1-8-30-2026
+state: executing
+
+claim_taxonomy:
+  serialization_identity:
+    comparator: archive-sourced Gravlax vs BAM-sourced Gravlax after the same row reduction
+    allowed_words: [byte-identical, exact]
+  reduction_error:
+    comparator: two-representative Gravlax vs full-read Gravlax on fixed alignments
+    allowed_words: [deviation, incremental reduction error]
+  fresh_pipeline_deviation:
+    comparator: archive replay vs fresh annotation-aware STARsolo
+    allowed_words: [deviation, fidelity]
+    forbidden_words: [exact, byte-identical]
+
+code_gates:
+  - id: container-future-version
+    requirement: seekable reader rejects versions newer than the implementation
+  - id: container-directory-integrity
+    requirement: directory extents, names, and inline headers are validated before allocation
+  - id: entropy-stream-truncation
+    requirement: missing rANS residual bits return an error rather than zero-fill
+  - id: cli-golden
+    requirement: generated multi-chunk tagged BAM to streaming AIE, eager AIE, and BAM replay is byte-identical
+  - id: malformed-gtf
+    requirement: zero, reversed, truncated, and invalid-strand exon records fail closed
+
+experiment_gates:
+  fair_baselines:
+    spec: experiments/specs/fair-baselines.md
+    status: complete_on_d0_d1_d2_prime
+    primary_dataset: D0
+    scale_datasets: [D1, D2_prime]
+    repetitions:
+      warm: 5
+      cold: 1
+    required_metrics: [bytes, wall_seconds, cpu_seconds, max_rss_bytes, bytes_read, bytes_written]
+    main_runtime_baseline: counts-only fresh STARsolo
+    storage_claim_requires_capability_match: true
+    d0_pilot:
+      result: results/post-v1-d0-fair-baseline-pilot.json
+      full_vs_minimal_archive_byte_identical: true
+      stamped_minimal_vs_frozen_archive_byte_identical: true
+      all_replays_vs_frozen_matrix_byte_identical: true
+      minimal_cram_to_aie_ratio: 6.828085
+      publishable_timing_complete: false
+      counts_only_result: results/post-v1-d0-counts-only-pilot.json
+      starsolo_gene_only_warm_replicates: 5
+      aie_warm_replicates: 5
+      sequential_pilot_median_wall_speedup: 34.578512
+      randomized_result: results/post-v1-d0-randomized-counts.json
+      randomized_median_wall_speedup: 34.307377
+      randomized_median_peak_rss_ratio: 5.032323
+      randomized_order_complete: true
+      specific_file_cold_observation_complete: true
+      specific_file_cold_wall_speedup: 31.207273
+      host_wide_cache_drop_used: false
+      post_correction_result: results/post-v1-d0-post-correction-baseline.json
+      post_correction_bam_cram_record_stream_identical: true
+      post_correction_replays_vs_frozen_matrix_byte_identical: true
+      post_correction_cram_to_aie_ratio: 2.323864
+      post_correction_streamed_replay_result: results/post-v1-d0-streamed-cram-replay.json
+      post_correction_streamed_replay_warm_median_seconds: 20.651640174
+      post_correction_streamed_replay_to_matched_aie_runtime_ratio: 8.841566
+      post_correction_streamed_replay_exact: true
+      post_correction_generalized_to_d1_d2_prime: true
+      generalized_result: results/post-v1-matched-cram-generalization.json
+    scale_result:
+      result: results/post-v1-matched-cram-generalization.json
+      protocols:
+        storage: scripts/118_post_correction_storage.sh
+        streamed_cram: scripts/117_stream_molecule_cram_replay.sh
+        native_aie: scripts/119_native_aie_replay.sh
+      datasets: [D0, D1, D2_prime]
+      all_36_timed_outputs_exact: true
+      normalized_bam_cram_record_streams_identical: true
+      post_correction_cram_to_aie_ratio_range: [2.323864, 2.552042]
+      post_correction_cram_to_aie_runtime_ratio_range: [8.841566, 13.693375]
+      scale_counts_result: results/post-v1-scale-randomized-counts.json
+      d1_counts_only_median_speedup: 81.534483
+      d2_prime_counts_only_median_speedup: 68.577731
+      d1_d2_prime_all_24_timed_outputs_exact: true
+      next_binding_gate: mouse_5_prime_generalization
+  streaming_replay:
+    spec: experiments/specs/streaming-replay.md
+    status: complete_on_d0_d1
+    protocols:
+      benchmark: scripts/121_streaming_replay_gate.sh
+      summarizer: scripts/122_summarize_streaming_replay.py
+    results:
+      D0: results/post-v1-streaming-replay-d0.json
+      D1: results/post-v1-streaming-replay-d1.json
+    exact_timed_outputs: 20
+    d0:
+      streaming_median_wall_seconds: 2.77
+      eager_median_wall_seconds: 2.38
+      streaming_over_eager_wall_ratio: 1.163866
+      streaming_median_max_rss_kb: 1361388
+      eager_over_streaming_rss_ratio: 3.096822
+      every_streaming_run_below_2_gib: true
+    d1:
+      streaming_median_wall_seconds: 6.90
+      eager_median_wall_seconds: 5.57
+      streaming_over_eager_wall_ratio: 1.238779
+      streaming_median_max_rss_kb: 5322812
+      eager_over_streaming_rss_ratio: 3.311077
+      every_streaming_run_below_6_gib: true
+    next_binding_gate: mouse_5_prime_generalization
+  mouse_5_prime_generalization:
+    spec: experiments/specs/mouse-5p-generalization.md
+    manifest: experiments/manifests/mouse-5p.yaml
+    status: gene_pass_velocity_marginal_on_public_v2_pilot
+    result: results/post-v1-mouse-5p-pilot.json
+    protocols:
+      fetch: scripts/123_fetch_mouse_5p.sh
+      full_gate: scripts/124_mouse_5p_gate.sh
+      summarizer: scripts/125_summarize_mouse_5p.py
+      matched_cram_storage: scripts/118_post_correction_storage.sh
+      streamed_cram_replay: scripts/117_stream_molecule_cram_replay.sh
+    dataset: 10x_1k_C57BL6_splenocytes_5prime_v2
+    organism: mouse
+    chemistry:
+      cDNA_orientation: R2_only_reverse
+      cell_barcode_bp: 16
+      umi_bp: 10
+    current_reference: GRCm39_GENCODE_M39
+    fresh_m39_called_cells: 1129
+    producer_old_reference_called_cells: 1119
+    archive_direct_bam_gene_byte_identical: true
+    archive_direct_bam_velocity_byte_identical: true
+    archive_post_correction_bam_gene_byte_identical: true
+    gene_fresh_pipeline_moved_mass_fraction: 0.007510468
+    cells_with_total_count_change_gt_1pct: 2
+    one_pass_failed_pilot_moved_mass_fraction: 0.138915539
+    wrong_forward_over_reverse_filtered_mass_ratio: 0.166774003
+    velocity:
+      overall: marginal
+      spliced_relative_l1: 0.029067806
+      unspliced_relative_l1: 0.009388000
+      ambiguous_relative_l1: 0.046240396
+    storage:
+      archive_bytes: 62404050
+      archive_bits_per_read_pair: 14.824074
+      matched_cram_bytes: 131251875
+      matched_cram_to_aie_ratio: 2.103259
+    runtime:
+      native_replay_seconds: 1.79
+      native_replay_max_rss_kb: 910620
+      direct_ingest_bam_replay_seconds: 30.92
+      streamed_matched_cram_warm_median_seconds: 11.886457
+      streamed_matched_cram_to_native_ratio: 6.640479
+    replication_target: 10x_5k_Mouse_PBMCs_GEM-X_5prime_v3
+    replication_blocker: public raw FASTQ_or_alignment_URL_not_resolved
+    next_binding_gate: downstream_clustering_marker_velocity_fidelity
+  downstream_clustering_marker_velocity_fidelity:
+    spec: experiments/specs/downstream-fidelity.md
+    status: complete_gene_partition_fail_marker_stable_velocity_pass
+    date: 2026-08-31
+    protocols:
+      primary: scripts/126_downstream_fidelity.py
+      runner: scripts/127_downstream_fidelity_gate.sh
+      posthoc_failure_localization: scripts/128_downstream_cluster_diagnostics.py
+    confirmatory_datasets: [D0, D1, D2_prime]
+    cross_chemistry_stress_test: D5_mouse_5_prime_v2
+    seed: 1729
+    gene_pipeline:
+      minimum_oracle_cells_per_gene: 10
+      target_sum: 10000
+      hvg_flavor: seurat
+      hvg_count: 2000
+      principal_components: 30
+      neighbors: 15
+      leiden_resolution: 0.8
+    gene_gates:
+      ari_min: 0.95
+      nmi_min: 0.95
+      median_neighbor_jaccard_min: 0.80
+      mean_marker_top25_jaccard_min: 0.80
+      median_marker_effect_pearson_min: 0.98
+      pseudobulk_pearson_min: 0.999
+      pseudobulk_spearman_min: 0.999
+      replay_minus_control_ari_min: 0.05
+      replay_minus_control_neighbor_jaccard_min: 0.05
+    positive_control:
+      selected_cell_fraction: 0.20
+      selection: lowest_sha256_of_dataset_and_barcode
+      perturbation: replace_with_donor_from_next_oracle_cluster
+    velocity_pipeline:
+      minimum_spliced_cells_per_gene: 20
+      minimum_unspliced_cells_per_gene: 10
+      target_sum_joint_layers: 10000
+      smoothing_graph: fixed_oracle_gene_15nn
+      residual: U_minus_oracle_total_ratio_times_S
+      transition_destinations: 3
+    velocity_gates:
+      median_cosine_min: 0.90
+      positive_cosine_fraction_min: 0.95
+      median_top3_transition_jaccard_min: 0.80
+      marginal_median_cosine_min: 0.75
+    results:
+      primary: results/post-v1-downstream-fidelity.json
+      posthoc_cluster_diagnostics: results/post-v1-downstream-cluster-diagnostics.json
+      primary_sha256: 06e017cda86a585aa9b7463a4f1a914a60af54bb0b3e0edfabf33311bd24196f
+      diagnostics_sha256: e5e1804c1f7c592c10c2e28711d98b5beb7cec681b1a8ee6ee39a347b2ca3c7c
+      protocol_commit: 07d37b41ccd9c866ac403c5bb653eddc15e19ec4
+      deterministic_replicate_non_time_fields_identical: true
+      primary_wall_seconds: 28.26
+      primary_max_rss_kb: 3014024
+      replicate_wall_seconds: 27.55
+      replicate_max_rss_kb: 3086512
+    verdicts:
+      human_gene: fail
+      human_velocity_consequence: pass
+      mouse_gene_stress_test: fail
+      mouse_velocity_consequence: pass
+    D0:
+      gene_verdict: pass
+      ari: 0.952143
+      nmi: 0.958577
+      median_neighbor_jaccard: 0.875000
+      mean_marker_top25_jaccard: 0.980769
+      pseudobulk_pearson: 0.999986
+      velocity_median_cosine: 0.998579
+    D1:
+      gene_verdict: fail
+      ari: 0.833595
+      nmi: 0.901065
+      median_neighbor_jaccard: 0.764706
+      mean_marker_top25_jaccard: 0.987179
+      pseudobulk_pearson: 0.999963
+      velocity_median_cosine: 0.996899
+    D2_prime:
+      gene_verdict: fail
+      ari: 0.618629
+      nmi: 0.745144
+      median_neighbor_jaccard: 0.764706
+      mean_marker_top25_jaccard: 0.962172
+      pseudobulk_pearson: 0.999993
+      velocity_median_cosine: 0.996673
+    D5_mouse_5_prime:
+      gene_verdict: fail
+      ari: 0.609366
+      nmi: 0.680483
+      median_neighbor_jaccard: 0.875000
+      mean_marker_top25_jaccard: 1.000000
+      pseudobulk_pearson: 0.996728
+      velocity_median_cosine: 0.993059
+    next_binding_gate: complete_denominator_discovery_with_orthogonal_truth
+  downstream_multiresolution_stability:
+    spec: experiments/specs/downstream-multiresolution.md
+    manifest: experiments/manifests/downstream-multiresolution.yaml
+    status: complete_partition_marker_control_pass_pseudobulk_composite_fail
+    date: 2026-08-31
+    chronology: locked_postexploratory_not_untouched_preregistration
+    protocol_lock_commit: a83fe33
+    oracle_selection_lock_commit: 7d36bf8
+    final_evaluator_commit: de8f603
+    protocols:
+      oracle_selector: scripts/129_multiresolution_select.py
+      oracle_runner: scripts/130_multiresolution_select.sh
+      replay_evaluator: scripts/131_multiresolution_evaluate.py
+      replay_runner: scripts/132_multiresolution_evaluate.sh
+    results:
+      oracle_selection: results/post-v1-downstream-multiresolution-selection.json
+      oracle_selection_sha256: 91bbe3ccd97aeebcdf0c101ec375cb119f607ce68c54b2de6e770f16e982d09a
+      replay_evaluation: results/post-v1-downstream-multiresolution-evaluation.json
+      replay_evaluation_sha256: 1b3750c4fc579c6b4d003ad869866bcffeaaeadabdec5edf54c3b53b82e7583c
+    verdicts:
+      human_partition_retention: pass
+      human_marker_retention: pass
+      human_control_sensitivity: pass
+      human_pseudobulk_retention: fail_D1_spearman
+      human_composite: fail
+      mouse_partition_retention: pass
+      mouse_marker_retention: pass
+      mouse_control_sensitivity: pass
+      mouse_pseudobulk_retention: fail
+      frozen_resolution_0_8_changed: false
+    D0:
+      dimension: 40
+      resolution: 0.60
+      clusters: 7
+      oracle_subsample_ari: 0.939813
+      medoid_cross_ari: 0.992033
+      cross_excess_loss: 0.002858
+    D1:
+      dimension: 30
+      resolution: 0.40
+      clusters: 9
+      oracle_subsample_ari: 0.929246
+      medoid_cross_ari: 0.978164
+      cross_excess_loss: 0.008367
+    D2_prime:
+      dimension: 40
+      resolution: 0.25
+      clusters: 9
+      oracle_subsample_ari: 0.872318
+      medoid_cross_ari: 0.964976
+      cross_excess_loss: 0.023994
+    D5_mouse_5_prime:
+      dimension: 20
+      resolution: 0.35
+      clusters: 4
+      oracle_subsample_ari: 0.991087
+      medoid_cross_ari: 0.996779
+      cross_excess_loss: -0.001198
+    interpretation: >-
+      Stable macro-partitions are retained across all datasets. The frozen resolution-0.8 result
+      is an instability reference rather than the primary measure of Gravlax retention.
+    next_binding_gate: complete_denominator_discovery_with_orthogonal_truth
+  packed_sharded_em:
+    spec: experiments/specs/packed-sharded-em.md
+    status: complete_pass_d0_d1
+    date: 2026-08-31
+    reference_tag: gravlax-v1-8-30-2026
+    primary_dataset: D1
+    validation_dataset: D0
+    layout:
+      support_words_u32: 2
+      target_encoding: CSR
+      target_ids: u32
+      offsets: u64
+      cell_shards: 64
+      keyed_mask_fields: [seed, cell, class]
+    gates:
+      d0_max_rss_gib: 4
+      d1_max_rss_gib: 12
+      max_median_wall_ratio_to_eager: 1.5
+      masked_score_tolerance_percentage_points: 0.5
+      impact_relative_l1_max_if_not_byte_identical: 1.0e-10
+      impact_max_absolute_error_if_not_byte_identical: 1.0e-8
+    results:
+      D0: results/post-v1-packed-sharded-em-d0.json
+      D1: results/post-v1-packed-sharded-em-d1.json
+    implementation_commit: 3d7dcd5d739fc9d1bbee0a889569ff30d1e1f913
+    D0:
+      masked_median_wall_seconds: 3.10
+      impact_median_wall_seconds: 3.64
+      worst_arm_median_max_rss_kb: 1242732
+      masked_speedup: 4.170968
+      impact_speedup: 3.645604
+      rss_reduction: 6.550085
+      extra_explicit_zero_coordinates: 9
+    D1:
+      masked_median_wall_seconds: 10.06
+      impact_median_wall_seconds: 10.01
+      worst_arm_median_max_rss_kb: 4559380
+      masked_speedup: 6.371769
+      impact_speedup: 7.322677
+      rss_reduction: 8.353466
+      extra_explicit_zero_coordinates: 3
+    scientific_equivalence:
+      class_partitions_identical: true
+      emitted_relative_l1: 0.0
+      emitted_max_absolute_error: 0.0
+      emitted_moved_mass: 0.0
+      nonzero_coordinate_sets_identical: true
+      masked_best_mode_within_0_5_percentage_points: true
+      deterministic_repeats: true
+    next_binding_gate: complete_denominator_discovery_with_orthogonal_truth
+  complete_denominator_discovery:
+    spec: experiments/specs/complete-denominator-discovery.md
+    status: complete_conservative_baseline_then_bounded_residual_pass
+    date: 2026-08-31
+    primary_dataset: D0
+    independent_library: D1
+    truth:
+      old_annotation: GENCODE_v32
+      future_annotation: GENCODE_v49
+      primary_min_d0_gene_umis: 50
+      includes_old_annotation_overlaps: true
+      strata: [clean, antisense_only, same_strand]
+    matching:
+      chromosome_required: true
+      strand_required: true
+      interval_overlap_required: true
+      primary: deterministic_maximum_cardinality_one_to_one
+    external_support:
+      d1_min_gene_umis: 10
+      d1_min_discovery_umis: 10
+      polyasite_downstream_bp: 500
+      star_min_unique_reads: 3
+    gates:
+      clean_recall_pass: 0.90
+      clean_recall_marginal: 0.75
+      all_strata_recall_pass: 0.60
+      all_strata_recall_marginal: 0.35
+      accounting_exact: true
+      deterministic_non_timing_fields: true
+    protocols:
+      runner: scripts/136_complete_denominator_discovery.sh
+      evaluator: scripts/137_complete_denominator_discovery.py
+    results:
+      summary: results/post-v1-complete-denominator-discovery.json
+      truth_audit: results/post-v1-complete-denominator-truth.tsv
+      candidate_audit: results/post-v1-complete-denominator-candidates.tsv
+      summary_sha256: b2b87a95801b952b1ebde3946588549b3cf6ada9a012b3151a9945dc08964a91
+      truth_audit_sha256: cb370539de51b5f476fa84eafbd77d814a8fdfab65ca3b3af9648faf5b406a2d
+      candidate_audit_sha256: 26526c970366f666458c96171be430e430e23e28aae58c26cbf49610ce32d304
+      deterministic_replicate_non_time_fields_identical: true
+    primary:
+      truth_genes: 367
+      matched_genes: 164
+      macro_recall: 0.4468664850
+      umi_weighted_recall: 0.4257077598
+      overall_verdict: marginal
+      clean: {matched: 51, total: 52, recall: 0.9807692308, verdict: pass}
+      clean_permissive_any_overlap: {matched: 52, total: 52, recall: 1.0}
+      antisense_only: {matched: 32, total: 60, recall: 0.5333333333}
+      same_strand: {matched: 81, total: 255, recall: 0.3176470588}
+    supporting_evidence:
+      d1_expressed_truth_genes: 367
+      polyasite_supported_truth_genes: 314
+      star_splice_supported_truth_genes: 148
+      d0_candidates: 12389
+      d1_recurrent_candidate_loci: 12204
+      d1_recurrent_candidate_fraction: 0.9850673985
+      d1_recurrent_candidate_umi_fraction: 0.9937860476
+    interpretation: >-
+      Discovery has essentially complete recall in old-annotation-free loci but is conservative
+      inside existing spans, especially same-strand overlaps. Unsupported candidates remain
+      unresolved rather than biological false positives.
+    followup: discovery_recall_optimization
+    next_binding_gate: complete
+  query_junction_enumeration:
+    spec: experiments/specs/query-junction-enumeration.md
+    status: complete_pass
+    date: 2026-08-31
+    dataset: D0
+    archive_format_change: false
+    coordinates: zero_based_half_open
+    default_interval_semantics: both_endpoints_contained
+    machine_formats: [tsv, json]
+    exact_cell_counts_opt_in: true
+    gates:
+      index_only_median_wall_seconds_max: 0.20
+      index_only_max_rss_gib: 0.50
+      with_cells_median_wall_seconds_max: 2.0
+      with_cells_max_rss_gib: 2.0
+      warm_repetitions: 5
+      full_workspace_tests: true
+      point_interval_counts_equal: true
+    implementation_commit: 0efabed0d3e92a72c432b4c815c2e0b70c7155e4
+    protocols:
+      runner: scripts/138_query_junctions_gate.sh
+      summarizer: scripts/139_summarize_query_junctions.py
+    result: results/post-v1-query-junctions.json
+    result_sha256: 63653620f5acd99c102f4e787988680f640e05b23262533d909954ad9a29198c
+    correctness:
+      workspace_tests_passed: 93
+      point_interval_aggregate_and_per_cell_exact: true
+      tsv_json_ordered_rows_equal: true
+      five_repetitions_byte_identical: true
+      filters_and_boundary_semantics_exercised: true
+      archive_bytes_added: 0
+    fixed_locus:
+      region: chr11:35138870-35232402
+      min_supporting_children: 20
+      junctions: 2
+    performance:
+      index_only_median_wall_seconds: 0.01
+      index_only_max_rss_kb: 28388
+      with_cells_median_wall_seconds: 0.06
+      with_cells_max_rss_kb: 108988
+    limitation: >-
+      Format-v1 junctions have no strand bit, so GTF annotation flags are explicitly
+      either-strand. This does not affect coordinate, UMI, or cell-count exactness.
+    next_binding_gate: complete
+  discovery_recall_optimization:
+    spec: experiments/specs/discovery-recall-and-hotpath-optimization.md
+    status: complete_pass
+    date: 2026-08-31
+    implementation_commit: c1ef9c4d8a4f65c762bec118c98a79f0d746d512
+    protocol_lock_commits:
+      - c6edf01ba0612e5c081a11d84328d1c28f2c9965
+      - 86193f5bdfb02789ee647e6b4e2843b4ee93c893
+      - 4ca25df24eb222a5a93b5e9f626422b4a697eccb
+      - 023eef4458495349bbf3cd12785dd887455b8c1a
+    protocols:
+      runner: scripts/140_discovery_recall_optimization.sh
+      summarizer: scripts/141_summarize_discovery_recall_optimization.py
+    results:
+      sweep: results/post-v1-discovery-recall-optimization.json
+      selected_evaluator: results/post-v1-discovery-recall-optimization-selected.json
+      truth_audit: results/post-v1-discovery-recall-optimization-truth.tsv
+      candidate_audit: results/post-v1-discovery-recall-optimization-candidates.tsv
+      sweep_sha256: 4f2718fdca6c148c338b71d1d6baf45153ca306003b66b54c2268fe34d1fd360
+      selected_evaluator_sha256: 1768840405597df6ce45ec3be31f5562166022745d2daabe9b27c6c665fd8333
+      truth_audit_sha256: 30ab30fa687ad7011177623619dbd11396f61be890b670a4a24d878a8e1d7e87
+      candidate_audit_sha256: 773e840f0663af891cf46308f7eb9c6130684f8bd7cd3cd4408d30bfd890a888
+    safeguards:
+      candidate_volume_ratio_max: 3.0
+      d1_same_strand_recurrence_min: 0.95
+      absolute_recall_gain_min: 0.15
+      residual_site_width_max_bp: 1001
+    selected:
+      mode: residual_sites
+      span_min_umis: 10
+      residual_min_umis: 75
+      truth_matched: 266
+      truth_total: 367
+      macro_recall: 0.7247956403
+      umi_weighted_recall: 0.8149005229
+      d0_candidates: 26787
+      candidate_ratio_vs_span: 2.1623214142
+      d1_same_strand_recurrence: 0.9901071415
+      strata:
+        clean: {matched: 51, total: 52, recall: 0.9807692308}
+        antisense_only: {matched: 52, total: 60, recall: 0.8666666667}
+        same_strand: {matched: 163, total: 255, recall: 0.6392156863}
+      added_site_geometry:
+        candidates: 14398
+        median_width_bp: 926
+        p95_width_bp: 1001
+        maximum_width_bp: 1001
+    interpretation: >-
+      Span remains the compatibility default. Residual-sites is a measured human 3-prime
+      operating point. Later-annotation overlap is a recall endpoint rather than biological
+      precision, and candidates without v49 overlap remain unresolved.
+    next_binding_gate: hierarchical_em_crossfit
+  hotpath_optimization:
+    spec: experiments/specs/discovery-recall-and-hotpath-optimization.md
+    status: complete_query_and_discovery_pass_replay_no_change
+    date: 2026-08-31
+    baseline_commit: 0efabed0d3e92a72c432b4c815c2e0b70c7155e4
+    implementation_commit: c1ef9c4d8a4f65c762bec118c98a79f0d746d512
+    protocols:
+      runner: scripts/142_hotpath_optimization_gate.sh
+      summarizer: scripts/143_summarize_hotpath_optimization.py
+    result: results/post-v1-hotpath-optimization.json
+    result_sha256: 32f752253d88c0e7913b6adac1cc6838a58ce725f215bf998908ef06870cd822
+    default_discovery:
+      d0_median_wall_seconds: {baseline: 3.36, optimized: 2.30}
+      d1_median_wall_seconds: {baseline: 15.07, optimized: 10.67}
+      decode_pair_molecule_cap: 500000
+      d0_median_rss_change_kb: 64920
+      d1_median_rss_change_kb: 83004
+      byte_identical: true
+    d1_chromosome_junction_query:
+      rows: 5089
+      median_wall_seconds: {baseline: 0.51, optimized: 0.44}
+      median_max_rss_kb: {baseline: 1189836, optimized: 1048624}
+      byte_identical: true
+    replay:
+      accepted_change: false
+      fused_decode_classification_d1_seconds: 8.42
+      baseline_d1_seconds: 7.12
+      inplace_compaction_improvement_below_two_percent: true
+    next_binding_gate: hierarchical_em_crossfit
+  hierarchical_em_registered:
+    spec: experiments/specs/hierarchical-em.md
+    status: complete_stop_registered_grid
+    date: 2026-08-31
+    implementation_commit: 7813c0b1c755eea07abb0d21e2296f8cc17091ee
+    protocols:
+      group_builder: scripts/144_build_hierarchical_em_groups.py
+      group_preparation: scripts/145_prepare_hierarchical_em_groups.sh
+      selector: scripts/146_select_hierarchical_em.py
+      runner: scripts/147_hierarchical_em_gate.sh
+      summarizer: scripts/148_summarize_hierarchical_em.py
+    result: results/post-v1-hierarchical-em.json
+    result_sha256: 64351569019d20a714480baae195fe176f5ed0035c3ecc3ee4d4845fe5cf2178
+    selected: {group_alpha: 80, global_alpha: 20}
+    registered_outcome:
+      combined_confirmation_nll_relative_change: 0.4539
+      d2_prime_top1_change_percentage_points: -0.546
+      verdict: STOP
+    qualification: >-
+      The STOP applies to the registered bounded alpha grid. A later scale audit showed that
+      whole-transcriptome normalization made 80/20 negligible beside a unit local count for more
+      than 99% of D0 candidate/group pairs; it does not establish failure of hierarchy itself.
+  hierarchical_em_scale_audit:
+    spec: experiments/specs/hierarchical-em-scale-audit.md
+    status: complete_post_hoc_exploratory
+    date: 2026-08-31
+    implementation_commit: 7813c0b1c755eea07abb0d21e2296f8cc17091ee
+    protocol_commit: d638293943f27785916306f70436fc8fbf0f57e3
+    protocols:
+      runner: scripts/149_hierarchical_em_scale_audit.sh
+      summarizer: scripts/150_summarize_hierarchical_em_scale_audit.py
+    result: results/post-v1-hierarchical-em-scale-audit.json
+    result_sha256: 39de056536de06ab8b36dd27678e4c5c52201edd29c6bb37f8584856295d173b
+    inferential_status: exploratory_not_independent_confirmation
+    selected_on_d0: {group_alpha: 12800, global_alpha: 12800}
+    calibrated_no_group: {group_alpha: 0, global_alpha: 25600}
+    combined_d1_d2_prime:
+      pooled_nll: 0.0706294636
+      calibrated_cell_global_nll: 0.0690616607
+      real_hierarchy_nll: 0.0682953702
+      hierarchy_improvement_vs_pooled: 0.0330470214
+      hierarchy_improvement_vs_calibrated_cell_global: 0.0110957436
+      hierarchy_improvement_vs_shuffled: 0.0073145237
+    interpretation: >-
+      The registered grid was under-scaled. Stronger calibrated cell/global shrinkage explains
+      most of the exploratory rescue; real groups add a small consistent increment. D1 and
+      D2-prime were already inspected, so this is a model diagnosis rather than a positive claim.
+    next_binding_gate: candidate_normalized_crossfit_on_untouched_data
+  candidate_normalized_convex_em:
+    spec: experiments/specs/candidate-normalized-convex-em.md
+    manifest: experiments/manifests/candidate-normalized-convex-em.yaml
+    status: complete_D0_development_only
+    date: 2026-08-31
+    implementation_commit: f6fd759ae118049ae0a11ef9f50b0d32d5daee07
+    result: results/post-v1-candidate-normalized-convex-em-d0.json
+    result_sha256: 3e342b182170449b4cf9e6d43c657c3df8ee820019f56eb7fa440ff87db555e1
+    selected:
+      cell_weight: 0.20
+      group_weight: 0.60
+      sample_weight: 0.20
+      group_prior: 80
+    D0:
+      mean_negative_log_loss: 0.0586036240
+      relative_nll_improvement_over_pooled: 0.01879
+      relative_nll_improvement_over_tuned_no_group: 0.00621
+      relative_nll_real_over_shuffled: 0.00144
+      shuffle_explained_fraction_of_group_gain: 0.769
+    interpretation: >-
+      Candidate normalization repaired the pseudo-count scale, but D0 selection is development
+      only and shuffled labels reproduced most of the group increment. Production remains pooled.
+    next_binding_gate: posterior_mean_Dirichlet_proxy_screen
+  dirichlet_proxy_screen:
+    spec: experiments/specs/dirichlet-proxy-screen.md
+    manifest: experiments/manifests/dirichlet-proxy-screen.yaml
+    status: complete_marginal_stop_before_full_model
+    date: 2026-08-31
+    implementation_commit: 16c012db53cd4fa4dad30dc2d6f8321de2c73f9f
+    locked_protocol_commit: f21526a97d5adcd5d1094ce7f945a57fc6e6a011
+    protocols:
+      runner: scripts/154_dirichlet_proxy_grid.sh
+      selector: scripts/155_select_dirichlet_proxy.py
+      summarizer: scripts/156_summarize_dirichlet_proxy.py
+    result: results/post-v1-dirichlet-proxy-screen-d0.json
+    result_sha256: 5876388e4e5aec6456b10bf67575d99d82c4e49ae5c88a15928b2445557d54b7
+    selected: {cell_prior: 64, group_prior: 80}
+    D0:
+      mean_negative_log_loss: 0.0581066337
+      relative_nll_improvement_over_fixed_convex: 0.00848054
+      real_better_than_shuffled_on_all_seeds: true
+      shuffle_explained_fraction_of_proxy_gain: 0.198503
+      top1_change_percentage_points: 0.0526041
+      depth_relative_nll_improvement:
+        0-1: -0.00625363
+        1-4: -0.0103484
+        4-16: -0.00531560
+        16+: 0.0340523
+    verdict: MARGINAL
+    interpretation: >-
+      Aggregate proper scores and the real-label control passed, but adaptivity helped only the
+      high-evidence stratum and regressed every shallow stratum. The predeclared depth gate failed;
+      do not implement the full hierarchical Dirichlet model without new independent signal.
+    production_emission: pooled
+  monotone_depth_gated_hybrid_em:
+    spec: experiments/specs/depth-gated-hybrid-em.md
+    manifest: experiments/manifests/depth-gated-hybrid-em.yaml
+    status: complete_marginal_7_of_8_criteria
+    date: 2026-08-31
+    implementation_commit: 9ccc3f65bd665dbbc30dc84de36bb2254d2cdbe7
+    locked_protocol_commit: 5eee6865fd050f73e4aa2efea1ae49bb41604a92
+    protocols:
+      runner: scripts/157_depth_hybrid_grid.sh
+      selector: scripts/158_select_depth_hybrid.py
+      summarizer: scripts/159_summarize_depth_hybrid.py
+    result: results/post-v1-depth-hybrid-em-d0.json
+    result_sha256: 94b0fbd8d21480d66c197c0eda7ddefff4f9c169cfcce7095446f5995bb9d5a1
+    selected: {depth_scale: 64, gate_power: 2}
+    D0:
+      mean_negative_log_loss: 0.0578083039
+      relative_nll_improvement_over_Dirichlet_proxy: 0.00513418
+      relative_nll_improvement_over_fixed_convex: 0.0135712
+      hard_stratum_oracle_gain_recovered: 1.20172
+      real_better_than_shuffled_on_all_seeds: true
+      shuffle_explained_fraction_of_hybrid_gain: 1.34253
+      mean_multiclass_brier: 0.0267196159
+      mean_top1_percent: 98.2292100
+      depth_relative_nll_change_vs_locked_reference:
+        0-1_vs_fixed: -0.00000154618
+        1-4_vs_fixed: 0.0000400159
+        4-16_vs_fixed: 0.0000381279
+        16+_vs_proxy: -0.00239900
+    verdict: MARGINAL
+    interpretation: >-
+      The model passed aggregate, oracle-recovery, every depth, Brier, top-1, and real-over-shuffle
+      criteria. It failed only the locked shuffle-explained fraction because the depth-model gain
+      was larger under shuffled groups. Post-hoc factorial contrasts show both a depth-model main
+      effect and a retained real-group main effect; this cannot retroactively change the verdict.
+    next_binding_gate: separately_locked_untouched_factorial_confirmation_if_pursued
+    full_hierarchical_Dirichlet_licensed: false
+    production_emission: pooled
+  federated_biological_event_screen:
+    manifest: experiments/manifests/federated-biological-screen.yaml
+    status: exploratory_screen_complete_FNBP1_confirmation_PASS
+    date: 2026-08-31
+    implementation_commit: cc28ab4f05ab19c81f0943364e8ea6deebc24317
+    protocols:
+      group_builder: scripts/179_build_federated_biology_groups.py
+      runner: scripts/180_run_federated_biology_screen.sh
+      summarizer: scripts/181_summarize_federated_biology.py
+    results:
+      summary: results/post-v1-federated-biological-screen.json
+      summary_sha256: 84ade0154abf9f1a1bd7591593d73b3521f607b22bfc23cc5f05c2b1e1eab05c
+      PBMC_table: results/post-v1-federated-biological-pbmc.tsv
+      PBMC_table_sha256: 4caf5db65601894b9a897a6cf6b7e70e4458d0c38d1594873d6a856ef5e724b9
+      tissue_table: results/post-v1-federated-biological-tissue.tsv
+      tissue_table_sha256: 622a090ce71a4621dfcb1a665f2005e02507d8ea93b927b6066e2a492f643002
+    PBMC4:
+      events_screened: 20028
+      all_four_testable_strictly_direction_consistent: 784
+      minimum_absolute_usage_delta_at_least_0_10: 44
+      sequential_chromosome_wall_seconds: 43.78
+      peak_rss_gib: 2.32
+      positive_controls: [FYB1, CD47]
+    six_shard:
+      events_screened: 46767
+      strict_descriptive_candidates: 66
+      sequential_chromosome_wall_seconds: 73.71
+      peak_rss_gib: 2.57
+      positive_controls: [MYL6, RPS24, PPP1R12A]
+    inferential_status: post_hoc_exploratory_no_confirmatory_p_values
+    prospective_candidate: FNBP1
+    confirmation:
+      result: results/post-v1-fnbp1-normal-brain-confirmation.json
+      result_sha256: 678b9f100aae5429f2d2d5b59d7a7e90542a81270835c1d4a2303b649a699bcb
+      scripts: [scripts/182_prepare_fnbp1_confirmation.py, scripts/183_summarize_fnbp1_confirmation.py, scripts/184_fnbp1_normal_brain_confirmation.sh]
+      called_nuclei: 10261
+      informative_UMIs: 74
+      archive_usage: 0.972973
+      STAR_SJ_include_right_fraction: 0.968254
+      every_locked_criterion_passed: true
+      verdict: PASS
+      qualification: targeted_annotation_free_STAR_is_not_a_whole_transcriptome_mapping_test
+    next_binding_gate: biological_annotation_or_independent_donor_cohort_if_pursued
+  depth_hybrid_em_factorial_confirmation:
+    spec: experiments/specs/depth-hybrid-em-confirmation.md
+    manifest: experiments/manifests/depth-hybrid-em-confirmation.yaml
+    status: complete_D4_marginal_stop_before_D3
+    date: 2026-08-31
+    implementation_commit: 69a18c2fc227691793907a2a35b3b11a19b8dffc
+    locked_protocol_commit: 8b11be1
+    harness_corrections_before_verdict: [d57e77c, 9417c1a, 37fee9f]
+    protocols:
+      preparation: scripts/160_prepare_em_confirmation_dataset.sh
+      group_selection: scripts/161_build_em_confirmation_groups.py
+      runner: scripts/162_run_em_confirmation.sh
+      summarizer: scripts/163_summarize_em_confirmation.py
+    result: results/post-v1-em-confirmation-d4/summary.json
+    result_sha256: 9cd0934fd07be01b07a01a091a1457e2b07c5585a7c16b590e065b697ab98474
+    groups_result: results/post-v1-em-confirmation-d4/groups.json
+    groups_result_sha256: 112886f2ac43e7c11d43bc31f04dc29ca2aff000120b94efbb4f7b37353584cf
+    grouping:
+      called_cells: 565
+      dimension: 20
+      resolution: 0.70
+      clusters: 7
+      minimum_group_cells: 20
+      median_pairwise_seed_ARI: 1.0
+      eligible_configurations: 28
+    D4:
+      hybrid_mean_negative_log_loss: 0.0663768033
+      proxy_mean_negative_log_loss: 0.0666832666
+      model_form_relative_nll_improvement: 0.00459581
+      model_form_hybrid_better_on_all_seeds: true
+      group_information_relative_nll_improvement: 0.01016965
+      group_information_real_better_on_all_seeds: true
+      hybrid_mean_multiclass_brier: 0.0302119326
+      proxy_mean_multiclass_brier: 0.0301987555
+      absolute_brier_regression: 0.0000131771
+      relative_brier_regression: 0.00043635
+      hybrid_top1_percent: 98.0513251
+      top1_change_vs_proxy_percentage_points: 0.0180404
+      peak_rss_gib: 1.0914
+    failed_criterion: model_form_mean_Brier_must_not_increase
+    verdict: MARGINAL
+    interpretation: >-
+      The independently locked D4 test confirms both distinct NLL effects on every seed: the
+      monotone hybrid improves model form and real groups improve the hybrid. The sole failure is
+      a 0.0000132 absolute mean-Brier regression versus the proxy, localized to the two deeper
+      evidence strata. The registered full-pass rule therefore does not open D3. This result is
+      not relabeled, and the full hierarchical Dirichlet model is not licensed.
+    D3_status: not_opened_by_registered_gate
+    full_hierarchical_Dirichlet_licensed: false
+    production_emission: pooled
+  archive_root_and_jshape_routing:
+    spec: experiments/specs/2026-09-01-archive-root-and-jshape-routing.md
+    manifest: experiments/manifests/archive-root-jshape-routing.yaml
+    status: frozen_before_implementation_or_measurement
+    date: 2026-09-01
+    ordered_gates: [archive_root_commitment, junction_local_shape_routing]
+    gate_b_freeze_boundary: >-
+      materialize and commit the 96-row panel after Gate A passes but before any Gate B
+      implementation or result is opened
+    archive_root_hard_requirements:
+      - exact compressed-payload commitment through a fixed 44-byte footer
+      - exact replay and collection-query outputs
+      - fail-closed lazy and full-content verification
+      - zero complete-file identity scan during root-based collection construction
+    jshape_hard_requirements:
+      - exact route/fallback answers on fixed loci and the prospective 96-row panel
+      - route construction reads no molecule chunk
+      - derived routes remain source-root-bound and never supply counts
+      - complete collection remains below four percent of aggregate archive bytes

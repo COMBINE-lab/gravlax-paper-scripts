@@ -1,0 +1,150 @@
+{
+  "schema": "gravlax.post_v1.scale_randomized_counts.v1",
+  "date": "2026-08-30",
+  "status": "d1_d2_prime_randomized_counts_only_complete",
+  "gravlax_commit": "ef2126684378d8ba0dad5605ff81eed635bcab6a",
+  "protocol": "scripts/120_scale_randomized_counts_comparison.sh",
+  "protocol_script_commit": "25ddca504b3a171768e0710c403c9402e6dad659",
+  "aie_binary_sha256": "915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd",
+  "tools": {
+    "STAR": "2.7.11b",
+    "aie": "0.1.0"
+  },
+  "resource_control": {
+    "threads": 24,
+    "cpuset": "0-23",
+    "warm_blocks": 5,
+    "schedule_seed": 20260830,
+    "schedule": [
+      ["star", "aie"],
+      ["aie", "star"],
+      ["star", "aie"],
+      ["aie", "star"],
+      ["star", "aie"]
+    ],
+    "star_features": ["Gene"],
+    "star_alignment_output": "None",
+    "cold_method": "POSIX_FADV_DONTNEED on named arm inputs; advisory and non-destructive"
+  },
+  "correctness": {
+    "starsolo_all_selected_outputs_byte_identical_to_frozen_oracle": true,
+    "aie_all_outputs_byte_identical_to_frozen_bam_sourced_replay": true,
+    "alignment_files_emitted_by_counts_only_arms": 0,
+    "runs_passing": 24,
+    "runs_total": 24
+  },
+  "datasets": [
+    {
+      "id": "D1",
+      "description": "10x PBMC 5k v3",
+      "reads": 383900000,
+      "archive_sha256": "e8568b72525a84342203e062fc0f544baf84fcb2b346da7d50c8e1ba8e78c834",
+      "warm_replicates": {
+        "starsolo_seconds": [475.46, 475.47, 472.90, 468.63, 461.54],
+        "aie_seconds": [7.21, 6.98, 5.80, 5.45, 5.24],
+        "starsolo_max_rss_kb": [35305964, 35307348, 35305464, 35307828, 35308868],
+        "aie_max_rss_kb": [18436232, 18435140, 18347732, 18132336, 18307556],
+        "starsolo_file_system_inputs": [0, 539336, 8354896, 59159664, 408],
+        "aie_file_system_inputs": [0, 0, 7572056, 0, 0]
+      },
+      "warm_summary": {
+        "starsolo_median_seconds": 472.90,
+        "starsolo_range_seconds": [461.54, 475.47],
+        "starsolo_mean_seconds": 470.80,
+        "starsolo_sample_sd_seconds": 5.881985,
+        "starsolo_cv": 0.012494,
+        "aie_median_seconds": 5.80,
+        "aie_range_seconds": [5.24, 7.21],
+        "aie_mean_seconds": 6.136,
+        "aie_sample_sd_seconds": 0.901682,
+        "aie_cv": 0.146949,
+        "median_wall_speedup": 81.534483,
+        "starsolo_median_max_rss_kb": 35307348,
+        "aie_median_max_rss_kb": 18347732,
+        "median_peak_rss_ratio": 1.924344
+      },
+      "cold_observations": {
+        "aie": {
+          "advised_files": 3,
+          "advised_bytes": 3982997847,
+          "advisory_failures": 0,
+          "wall_seconds": 8.16,
+          "max_rss_kb": 18109744,
+          "file_system_inputs": 7777224
+        },
+        "starsolo": {
+          "advised_files": 25,
+          "advised_bytes": 57082855749,
+          "advisory_failures": 0,
+          "wall_seconds": 476.24,
+          "max_rss_kb": 35305936,
+          "file_system_inputs": 59158824
+        },
+        "wall_speedup": 58.362745
+      }
+    },
+    {
+      "id": "D2_prime",
+      "description": "10x human brain nuclei",
+      "reads": 263400000,
+      "archive_sha256": "b493523e1f6a05df05c656ca15c8791b2d5da2e42c8fe700950030c9886dc06c",
+      "warm_replicates": {
+        "starsolo_seconds": [326.43, 324.54, 327.86, 319.75, 326.70],
+        "aie_seconds": [4.76, 5.15, 4.74, 4.60, 4.80],
+        "starsolo_max_rss_kb": [34990296, 34990436, 34989336, 34990156, 34992996],
+        "aie_max_rss_kb": [19282612, 19341816, 18906352, 19579512, 19253764],
+        "starsolo_file_system_inputs": [32, 32, 0, 32, 32],
+        "aie_file_system_inputs": [0, 0, 0, 0, 0]
+      },
+      "warm_summary": {
+        "starsolo_median_seconds": 326.43,
+        "starsolo_range_seconds": [319.75, 327.86],
+        "starsolo_mean_seconds": 325.056,
+        "starsolo_sample_sd_seconds": 3.196597,
+        "starsolo_cv": 0.009834,
+        "aie_median_seconds": 4.76,
+        "aie_range_seconds": [4.60, 5.15],
+        "aie_mean_seconds": 4.81,
+        "aie_sample_sd_seconds": 0.204450,
+        "aie_cv": 0.042505,
+        "median_wall_speedup": 68.577731,
+        "starsolo_median_max_rss_kb": 34990296,
+        "aie_median_max_rss_kb": 19282612,
+        "median_peak_rss_ratio": 1.814604
+      },
+      "cold_observations": {
+        "aie": {
+          "advised_files": 3,
+          "advised_bytes": 4034222267,
+          "advisory_failures": 0,
+          "wall_seconds": 5.31,
+          "max_rss_kb": 19238680,
+          "file_system_inputs": 7871808
+        },
+        "starsolo": {
+          "advised_files": 25,
+          "advised_bytes": 49445043453,
+          "advisory_failures": 0,
+          "wall_seconds": 327.28,
+          "max_rss_kb": 34989552,
+          "file_system_inputs": 59158920
+        },
+        "wall_speedup": 61.634652
+      }
+    }
+  ],
+  "d0_context": {
+    "result": "results/post-v1-d0-randomized-counts.json",
+    "median_wall_speedup": 34.307377,
+    "median_peak_rss_ratio": 5.032323,
+    "cold_wall_speedup": 31.207273
+  },
+  "summary": {
+    "median_wall_speedup_range_all_three_datasets": [34.307377, 81.534483],
+    "scale_dataset_median_wall_speedup_range": [68.577731, 81.534483],
+    "scale_dataset_cold_wall_speedup_range": [58.362745, 61.634652],
+    "scale_dataset_median_peak_rss_ratio_range": [1.814604, 1.924344]
+  },
+  "cache_caveat": "Warm means no explicit eviction. D1's 57 GB STAR working set was not always resident on the shared host, as nonzero file-system input counters show; report the measured distribution and do not describe every D1 replicate as fully cache-resident.",
+  "interpretation": "The fair counts-only speed advantage strengthens rather than collapses at scale: 81.53x on deep PBMC D1 and 68.58x on brain-nuclei D2-prime, with exact outputs and no BAM serialization."
+}

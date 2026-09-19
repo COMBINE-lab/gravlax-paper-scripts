@@ -1,0 +1,1485 @@
+{
+  "donors": {
+    "A": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 0,
+          "include_right": 4,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": false,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 4,
+        "exclude_only": 0,
+        "include_only": 4,
+        "informative_umis": 4,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "d46aa074a88518ca38f7ec94517394dd3e08076512c680c72abbdb0cb01e139b",
+        "jset_sha256": "d46cb13a456db6577c8e7b6b2448e3ce1260b8123e5c5fcd047133ab715bdf8c",
+        "target_bam_sha256": "945e0d06b20c4bb6cec87c05b97418be1f3b8e43be2bf352f7be63462c58a769"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 94,
+          "group": "ambiguous_or_doublet",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 29,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 523,
+          "group": "astrocyte",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 172,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 258,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 17,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 957,
+          "group": "neuronal",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 212,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 833,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 190,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 1515,
+          "group": "unresolved",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 223,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 95,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 24,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 66841000,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 2,
+        "exclude_only": 0,
+        "include_only": 2,
+        "informative_umis": 2,
+        "usage_fraction": 1.0
+      },
+      "published_QC_nuclei": 4275,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 36653956,
+          "wall_seconds": 269.24
+        },
+        "archive_bytes": 16458,
+        "ingest": {
+          "peak_rss_kib": 601000,
+          "wall_seconds": 12.46
+        },
+        "query": {
+          "peak_rss_kib": 8240,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 98644
+      }
+    },
+    "B": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 0,
+          "include_right": 0,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": false,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "digests": {
+        "archive_sha256": "bfe528a6c66278f8a90d1e17a854ce139c7043f2c427ec23b50f6d657fae10a9",
+        "jset_sha256": "ed563cf56cb8abdb3355b87024ebaa89b304bd887c4544ce99c9b544bb221c74",
+        "target_bam_sha256": "f36456ef57eb45e35c218505683adc1df800cbc6a9f8ab44051d63dccab0297b"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 33,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 15,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 281,
+          "group": "astrocyte",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 114,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 116,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 18,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 342,
+          "group": "neuronal",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 114,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 421,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 153,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 636,
+          "group": "unresolved",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 153,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 63,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 27,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 64522235,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "published_QC_nuclei": 1892,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 36674676,
+          "wall_seconds": 312.27
+        },
+        "archive_bytes": 15428,
+        "ingest": {
+          "peak_rss_kib": 853292,
+          "wall_seconds": 10.82
+        },
+        "query": {
+          "peak_rss_kib": 10208,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 119085
+      }
+    },
+    "C": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 0,
+          "include_right": 1,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": false,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 1,
+        "exclude_only": 0,
+        "include_only": 1,
+        "informative_umis": 1,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "fd353c8d314fd4c4a71a52548ff27436d66c6c2e4cd2d420b078349c2db9beb9",
+        "jset_sha256": "18d7d0dcc23e1f0b67e3d26c25043a3183f2f6cfdb08029885e96873b5e31d80",
+        "target_bam_sha256": "730e591c73b51e9397adfd7545a05a0162fb2ff4aca40926ea15646b1d7c2e6c"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 22,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 6,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 496,
+          "group": "astrocyte",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 177,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 99,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 8,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 612,
+          "group": "neuronal",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 58,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 743,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 220,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 857,
+          "group": "unresolved",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 158,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 59,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 17,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 66508966,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "published_QC_nuclei": 2888,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 36591084,
+          "wall_seconds": 329.78
+        },
+        "archive_bytes": 15088,
+        "ingest": {
+          "peak_rss_kib": 793392,
+          "wall_seconds": 9.93
+        },
+        "query": {
+          "peak_rss_kib": 7924,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 129960
+      }
+    },
+    "D": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 2,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 2,
+            "include_right": 2,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 1,
+            "include_right": 2,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 3,
+          "include_right": 6,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": true,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 9,
+        "exclude_only": 0,
+        "include_only": 9,
+        "informative_umis": 9,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "a5a3a5350ae897cea6e1ea35cd630baa1f45cada2ae568ca868e44926b8eb5f8",
+        "jset_sha256": "cf9ed0770e8d0f1dd49adef54cb16dbefd85c46eb69fe98b38da9d935cc3fd2b",
+        "target_bam_sha256": "32f3a4bfaa170fdfe96d38f610371851d1b2954078b1f26586b93e7fb8b10969"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 179,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 83,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 2,
+          "exclude_only": 0,
+          "full_group_nuclei": 1174,
+          "group": "astrocyte",
+          "include_only": 2,
+          "informative_umis": 2,
+          "selected_cells": 758,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 395,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 50,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 1665,
+          "group": "neuronal",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 755,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 4,
+          "exclude_only": 0,
+          "full_group_nuclei": 1872,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 4,
+          "informative_umis": 4,
+          "selected_cells": 893,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 3,
+          "exclude_only": 0,
+          "full_group_nuclei": 1669,
+          "group": "unresolved",
+          "include_only": 3,
+          "informative_umis": 3,
+          "selected_cells": 515,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 305,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 145,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 297115616,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 6,
+        "exclude_only": 0,
+        "include_only": 6,
+        "informative_umis": 6,
+        "usage_fraction": 1.0
+      },
+      "published_QC_nuclei": 7259,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 37020452,
+          "wall_seconds": 1059.63
+        },
+        "archive_bytes": 40966,
+        "ingest": {
+          "peak_rss_kib": 787392,
+          "wall_seconds": 9.84
+        },
+        "query": {
+          "peak_rss_kib": 8640,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 552223
+      }
+    },
+    "E": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 2,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 1,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 1,
+            "include_right": 1,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 2,
+          "include_right": 4,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": true,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 6,
+        "exclude_only": 0,
+        "include_only": 6,
+        "informative_umis": 6,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "efc7057eff06c94fe22d29d0a73d6947b125ef7e9fbbeef6a1798fade46b3800",
+        "jset_sha256": "d764ba234f782acb46fe876493a3bca3f32e3d7c541a1bec8dd304a9ba896ae6",
+        "target_bam_sha256": "fbe2dfdd17b746440509475fa161fc9769a971c14c879ff018ab03fea5287d25"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 40,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 15,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 2,
+          "exclude_only": 0,
+          "full_group_nuclei": 171,
+          "group": "astrocyte",
+          "include_only": 2,
+          "informative_umis": 2,
+          "selected_cells": 62,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 71,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 14,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 229,
+          "group": "neuronal",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 87,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 2,
+          "exclude_only": 0,
+          "full_group_nuclei": 212,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 2,
+          "informative_umis": 2,
+          "selected_cells": 88,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 394,
+          "group": "unresolved",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 109,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 42,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 17,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 52244860,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 5,
+        "exclude_only": 0,
+        "include_only": 5,
+        "informative_umis": 5,
+        "usage_fraction": 1.0
+      },
+      "published_QC_nuclei": 1159,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 36647880,
+          "wall_seconds": 268.06
+        },
+        "archive_bytes": 13769,
+        "ingest": {
+          "peak_rss_kib": 603548,
+          "wall_seconds": 9.98
+        },
+        "query": {
+          "peak_rss_kib": 9980,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 86170
+      }
+    },
+    "F": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 2,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 0,
+          "include_right": 4,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": false,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 4,
+        "exclude_only": 0,
+        "include_only": 4,
+        "informative_umis": 4,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "34114e64934ecd6b3cfd44963d17f8d1adefbc1c6cb494884384892481182f73",
+        "jset_sha256": "2ced1bb10f280e841900a2aaceff47119966adbb0d0d37a70c65089652d70417",
+        "target_bam_sha256": "bc1e2bdd431863c4cba451ab968637dec9f977bb2490d3a3f9935be72a1cf059"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 61,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 16,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 2,
+          "exclude_only": 0,
+          "full_group_nuclei": 523,
+          "group": "astrocyte",
+          "include_only": 2,
+          "informative_umis": 2,
+          "selected_cells": 184,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 115,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 22,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 557,
+          "group": "neuronal",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 123,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 727,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 220,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 903,
+          "group": "unresolved",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 188,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 80,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 18,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 64280614,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 3,
+        "exclude_only": 0,
+        "include_only": 3,
+        "informative_umis": 3,
+        "usage_fraction": 1.0
+      },
+      "published_QC_nuclei": 2966,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 36640860,
+          "wall_seconds": 270.78
+        },
+        "archive_bytes": 16590,
+        "ingest": {
+          "peak_rss_kib": 933528,
+          "wall_seconds": 13.93
+        },
+        "query": {
+          "peak_rss_kib": 11920,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 124233
+      }
+    },
+    "G": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 3,
+            "include_right": 0,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 2,
+            "include_right": 3,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 5,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 5,
+          "include_right": 8,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": true,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 13,
+        "exclude_only": 0,
+        "include_only": 13,
+        "informative_umis": 13,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "5f4809d9759f33bf3826883333ebbb55ec030946c1a7785474f087c8629164c3",
+        "jset_sha256": "7441bbb70e172ec019bca993b2fd2edbc6cc475b9eeca181a19e67bf79aada58",
+        "target_bam_sha256": "e2a34333540561ec3a5c449e8040b4b4f5af34b857fe147fad2320a610863ad8"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": true,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 152,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 60,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 3,
+          "exclude_only": 0,
+          "full_group_nuclei": 2357,
+          "group": "astrocyte",
+          "include_only": 3,
+          "informative_umis": 3,
+          "selected_cells": 820,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 527,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 66,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 2895,
+          "group": "neuronal",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 767,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 5,
+          "exclude_only": 0,
+          "full_group_nuclei": 2743,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 5,
+          "informative_umis": 5,
+          "selected_cells": 913,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 5,
+          "exclude_only": 0,
+          "full_group_nuclei": 5196,
+          "group": "unresolved",
+          "include_only": 5,
+          "informative_umis": 5,
+          "selected_cells": 1269,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 343,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 103,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 310977420,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 8,
+        "exclude_only": 0,
+        "include_only": 8,
+        "informative_umis": 8,
+        "usage_fraction": 1.0
+      },
+      "published_QC_nuclei": 14213,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 37152996,
+          "wall_seconds": 1334.03
+        },
+        "archive_bytes": 43858,
+        "ingest": {
+          "peak_rss_kib": 929028,
+          "wall_seconds": 9.82
+        },
+        "query": {
+          "peak_rss_kib": 8780,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 541188
+      }
+    },
+    "H": {
+      "STAR_SJ": {
+        "by_group": {
+          "ambiguous_or_doublet": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "astrocyte": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "microglia_immune": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "neuronal": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "oligodendrocyte_OPC": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          },
+          "unresolved": {
+            "include_left": 0,
+            "include_right": 1,
+            "skip": 0
+          },
+          "vascular": {
+            "include_left": 0,
+            "include_right": 0,
+            "skip": 0
+          }
+        },
+        "called_nucleus_UMIs": {
+          "include_left": 0,
+          "include_right": 2,
+          "skip": 0
+        },
+        "feature_present": {
+          "include_left": false,
+          "include_right": true,
+          "skip": false
+        }
+      },
+      "bulk": {
+        "both": 0,
+        "cells": 2,
+        "exclude_only": 0,
+        "include_only": 2,
+        "informative_umis": 2,
+        "usage_fraction": 1.0
+      },
+      "digests": {
+        "archive_sha256": "d46477d6a22b1104d0635475bcd36da1e7d75704692ef98fd589fbaf1d094e20",
+        "jset_sha256": "622eb9c3925329f882029f95d4763bc79f14efbeb983d1b5badbb44c19c7cb66",
+        "target_bam_sha256": "62a403fb693acf688d5a01a8f9a66673206a3b464d734ad14a81c8f4e6c98329"
+      },
+      "eligible_microglia": false,
+      "eligible_primary": false,
+      "group_rows": [
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 50,
+          "group": "ambiguous_or_doublet",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 13,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 283,
+          "group": "astrocyte",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 81,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 42,
+          "group": "microglia_immune",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 6,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 419,
+          "group": "neuronal",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 73,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 305,
+          "group": "oligodendrocyte_OPC",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 70,
+          "usage_fraction": null
+        },
+        {
+          "both": 0,
+          "cells": 1,
+          "exclude_only": 0,
+          "full_group_nuclei": 830,
+          "group": "unresolved",
+          "include_only": 1,
+          "informative_umis": 1,
+          "selected_cells": 145,
+          "usage_fraction": 1.0
+        },
+        {
+          "both": 0,
+          "cells": 0,
+          "exclude_only": 0,
+          "full_group_nuclei": 45,
+          "group": "vascular",
+          "include_only": 0,
+          "informative_umis": 0,
+          "selected_cells": 19,
+          "usage_fraction": null
+        }
+      ],
+      "input_read_pairs": 54821911,
+      "microglia_immune": {
+        "both": 0,
+        "cells": 0,
+        "exclude_only": 0,
+        "include_only": 0,
+        "informative_umis": 0,
+        "usage_fraction": null
+      },
+      "microglia_minus_other_usage": null,
+      "other_resolved": {
+        "both": 0,
+        "cells": 1,
+        "exclude_only": 0,
+        "include_only": 1,
+        "informative_umis": 1,
+        "usage_fraction": 1.0
+      },
+      "published_QC_nuclei": 1974,
+      "resources": {
+        "alignment": {
+          "peak_rss_kib": 36617332,
+          "wall_seconds": 225.63
+        },
+        "archive_bytes": 13155,
+        "ingest": {
+          "peak_rss_kib": 779172,
+          "wall_seconds": 13.99
+        },
+        "query": {
+          "peak_rss_kib": 9864,
+          "wall_seconds": 0.0
+        },
+        "target_bam_bytes": 67734
+      }
+    }
+  },
+  "inputs": {
+    "acquisition_sha256": "f3822f7c22880fee1f9a73ed414337fa18b5019f08cbe1572e2de22ac56a7126",
+    "executable_sha256": "1d17a4ca5a2f30c9721438b235078b4d181ecae27f3a7fea14627f42e173de7a",
+    "feasibility_sha256": "50f5ee9dbba448e9aa283bfb58ce3693529eb9b06e18db77ea2f2af4849032f2",
+    "manifest_sha256": "47e652e56c2c22165a0f0055d91fc0e6de3a5f8ce5152f5eda6bac498858a4cb"
+  },
+  "interpretation_limits": [
+    "no mechanism",
+    "no causal age effect",
+    "no generalization outside adult human SEZ",
+    "cells and molecules are not replicates",
+    "STAR-SJ is an independent reduction of the same annotation-free alignments, not an independent mapper"
+  ],
+  "locked_event": "cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959",
+  "microglia_localization": {
+    "eligible_donors": 0,
+    "fraction_negative_among_eligible": null,
+    "negative_differences": 0,
+    "nonzero_differences": 0,
+    "positive_differences": 0,
+    "status": "STOP_DESCRIPTIVE",
+    "stop_reason": "fewer than six eligible donors or fewer than six nonzero paired differences",
+    "ties": 0,
+    "two_sided_exact_sign_test_p": null
+  },
+  "primary_brain_replication": {
+    "donors_usage_above_0.50": 1,
+    "eligible_donors": 1,
+    "fraction_usage_above_0.50": 1.0,
+    "median_donor_usage": 1.0,
+    "status": "STOP_UNDERPOWERED"
+  },
+  "registration": {
+    "feasibility_commit": "9683cb9ae0b9d9b220ed5bd41246e14253652983",
+    "gate_commit": "95b79ad9190063d3a6702f8bdfab7d3cf9cd1cb6",
+    "gate_commit_time": "2026-09-01T11:01:55-04:00",
+    "raw_acquisition_started_after_both_commits": true
+  },
+  "schema": "gravlax.fnbp1-multidonor-sez-validation.v1",
+  "status": "STOP_UNDERPOWERED",
+  "unit_of_replication": "donor"
+}

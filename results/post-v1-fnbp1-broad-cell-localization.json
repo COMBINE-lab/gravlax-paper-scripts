@@ -1,0 +1,193 @@
+{
+  "bulk_exact_reproduction": {
+    "both": 0,
+    "exclude_only": 2,
+    "include_only": 72,
+    "inclusion_usage": 0.972972972972973,
+    "informative_umis": 74
+  },
+  "dataset": {
+    "called_nuclei": 10261,
+    "filtered_feature_bc_matrix_h5_sha256": "5dc9d83c2ce7b0f6fbc5f6b9ee75b2fa3cdb7c470b027b7c6284a8381fe2f99a",
+    "id": "10k_Human_Brain_MO_gemx",
+    "role": "the prospectively locked D5 normal-brain confirmation sample"
+  },
+  "execution": {
+    "executable_sha256": "e0b7da33af840f0def87729af43d3f0daef5e7b59af025ef85b45a9871c94ffd",
+    "query": {
+      "peak_rss_kib": 135112,
+      "wall_seconds": 0.08
+    },
+    "raw_query_output_sha256": "262855fe36924b5cd978e92d1e8705d9905d195bed3b49b86efc9b638d64cc34"
+  },
+  "groups": [
+    {
+      "archive_selected_nuclei": 635,
+      "both": 0,
+      "event_bearing_cells": 4,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 4.333694474539545,
+      "event_bearing_fraction_wilson_95": [
+        0.0016865408834646784,
+        0.011089601905574027
+      ],
+      "exclude_only": 0,
+      "full_H5_nuclei": 923,
+      "group": "neuronal",
+      "include_only": 4,
+      "inclusion_usage": 1.0,
+      "inclusion_usage_wilson_95": [
+        0.5101091635454027,
+        1.0
+      ],
+      "informative_umis": 4
+    },
+    {
+      "archive_selected_nuclei": 2345,
+      "both": 0,
+      "event_bearing_cells": 30,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 9.357454772301933,
+      "event_bearing_fraction_wilson_95": [
+        0.006562518695542731,
+        0.01332676856045454
+      ],
+      "exclude_only": 0,
+      "full_H5_nuclei": 3206,
+      "group": "oligodendrocyte_OPC",
+      "include_only": 30,
+      "inclusion_usage": 1.0,
+      "inclusion_usage_wilson_95": [
+        0.8864866068260312,
+        0.9999999999999999
+      ],
+      "informative_umis": 30
+    },
+    {
+      "archive_selected_nuclei": 571,
+      "both": 0,
+      "event_bearing_cells": 7,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 8.883248730964468,
+      "event_bearing_fraction_wilson_95": [
+        0.004309580589330196,
+        0.01822202421861429
+      ],
+      "exclude_only": 0,
+      "full_H5_nuclei": 788,
+      "group": "astrocyte",
+      "include_only": 7,
+      "inclusion_usage": 1.0,
+      "inclusion_usage_wilson_95": [
+        0.6456695649333126,
+        1.0
+      ],
+      "informative_umis": 7
+    },
+    {
+      "archive_selected_nuclei": 386,
+      "both": 0,
+      "event_bearing_cells": 4,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 3.2733224222585924,
+      "event_bearing_fraction_wilson_95": [
+        0.0012736450060583165,
+        0.008386216581659608
+      ],
+      "exclude_only": 2,
+      "full_H5_nuclei": 1222,
+      "group": "microglia_immune",
+      "include_only": 2,
+      "inclusion_usage": 0.5,
+      "inclusion_usage_wilson_95": [
+        0.15003898915214947,
+        0.8499610108478506
+      ],
+      "informative_umis": 4
+    },
+    {
+      "archive_selected_nuclei": 167,
+      "both": 0,
+      "event_bearing_cells": 1,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 3.4965034965034967,
+      "event_bearing_fraction_wilson_95": [
+        0.0006174855994545338,
+        0.019536493905278264
+      ],
+      "exclude_only": 0,
+      "full_H5_nuclei": 286,
+      "group": "vascular",
+      "include_only": 1,
+      "inclusion_usage": 1.0,
+      "inclusion_usage_wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "informative_umis": 1
+    },
+    {
+      "archive_selected_nuclei": 2280,
+      "both": 0,
+      "event_bearing_cells": 27,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 7.642230399094254,
+      "event_bearing_fraction_wilson_95": [
+        0.005257580815634528,
+        0.011096406066203391
+      ],
+      "exclude_only": 0,
+      "full_H5_nuclei": 3533,
+      "group": "unresolved",
+      "include_only": 27,
+      "inclusion_usage": 1.0,
+      "inclusion_usage_wilson_95": [
+        0.8754449702581328,
+        0.9999999999999998
+      ],
+      "informative_umis": 27
+    },
+    {
+      "archive_selected_nuclei": 200,
+      "both": 0,
+      "event_bearing_cells": 1,
+      "event_bearing_cells_per_1000_full_H5_nuclei": 3.3003300330033003,
+      "event_bearing_fraction_wilson_95": [
+        0.0005828270480050992,
+        0.018454557414788894
+      ],
+      "exclude_only": 0,
+      "full_H5_nuclei": 303,
+      "group": "ambiguous_or_doublet",
+      "include_only": 1,
+      "inclusion_usage": 1.0,
+      "inclusion_usage_wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "informative_umis": 1
+    }
+  ],
+  "interpretation": {
+    "claims_forbidden": [
+      "differential splicing",
+      "cell-type-specific splicing",
+      "sample-level inference",
+      "mechanism"
+    ],
+    "descriptive_observation": "both exclusion-only molecules occur in the broad microglia/immune group, which also contains two of the 72 inclusion-only molecules",
+    "label_limit": "the conservative frozen marker rule leaves 3,533 of 10,261 nuclei unresolved and marks 303 ambiguous/doublet; labels are broad marker-rule assignments, not externally curated truth",
+    "localization": "event-bearing cells occur in every broad compartment, with the largest absolute count in oligodendrocyte/OPC nuclei",
+    "power": "only 74 informative molecules occur in one donor; microglia/immune has four informative molecules and a 0.50 inclusion estimate with a wide Wilson interval"
+  },
+  "label_lock": {
+    "FNBP1_used_for_labels": false,
+    "archive_group_map_sha256": "2a9fe398be49677d054a0508ae4ada6d73a15f839ebac4a8d062a47f45936f26",
+    "group_map_sha256": "89ca5e0b5a1a90be8451e90b9c4d2a76895387825a422add835ea8f99fd02a34",
+    "labels_frozen_before_event_query": true,
+    "manifest": "experiments/manifests/fnbp1-broad-cell-localization.json",
+    "manifest_sha256": "6e93f87b0d4f3333ed37f7af55a8c63d98c713c6b1fde39c5b7b6b60468d6dd1"
+  },
+  "locked_event": "cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959",
+  "schema": "gravlax.fnbp1-broad-cell-localization.v1",
+  "scope": {
+    "full_H5_nuclei": 10261,
+    "rate_denominator": "full H5-labelled group size",
+    "targeted_archive_nuclei": 6584
+  },
+  "status": "DESCRIPTIVE_SINGLE_DONOR_LOCALIZATION_COMPLETE"
+}

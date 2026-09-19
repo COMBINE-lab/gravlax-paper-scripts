@@ -1,0 +1,1 @@
+extracted: 22201602 molecules, 1834211 edges, 324500 cells, 810808 shapes, 775037 patterns, 19267537 classes (59.1s)

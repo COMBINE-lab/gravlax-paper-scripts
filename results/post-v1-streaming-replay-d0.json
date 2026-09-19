@@ -1,0 +1,145 @@
+{
+  "date": "2026-08-30",
+  "dataset": "D0",
+  "design": "five-block balanced alternating same-binary crossover; all outputs byte-compared to frozen reference",
+  "protocol": {
+    "date": "2026-08-30",
+    "dataset": "D0 / 10x PBMC 1k v3",
+    "threads": "24",
+    "cpuset": "0-23",
+    "warm_blocks": "5",
+    "schedule_seed": "20260830",
+    "schedule_design": "balanced alternating two-arm crossover; eager first in odd blocks",
+    "streaming_mode": "default bounded archive chunk decode and global cell-shard reducer",
+    "eager_mode": "--eager full archive materialization; same binary and reducer semantics",
+    "gravlax_commit": "1dcd63be7c097fd38126039b21141d9cad714fe1",
+    "dirty_worktree": "0",
+    "aie_binary_sha256": "b15829f434c01e3156df4ceb9fddf2988eae5868b29e47a3cd6379793efbee37",
+    "archive_sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842",
+    "gtf_sha256": "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914",
+    "hostname": "analysis-host",
+    "kernel": "Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux"
+  },
+  "arms": {
+    "streaming": {
+      "n": 5,
+      "wall_seconds": [
+        2.75,
+        2.78,
+        2.77,
+        2.77,
+        2.74
+      ],
+      "wall_median_seconds": 2.77,
+      "max_rss_kb": [
+        1361388,
+        1352660,
+        1362724,
+        1367844,
+        1360348
+      ],
+      "max_rss_median_kb": 1361388,
+      "runs": [
+        {
+          "wall_seconds": 2.75,
+          "max_rss_kb": 1361388,
+          "user_seconds": 10.84,
+          "system_seconds": 0.65,
+          "label": "warm-b1-p2-streaming"
+        },
+        {
+          "wall_seconds": 2.78,
+          "max_rss_kb": 1352660,
+          "user_seconds": 10.93,
+          "system_seconds": 0.6,
+          "label": "warm-b2-p1-streaming"
+        },
+        {
+          "wall_seconds": 2.77,
+          "max_rss_kb": 1362724,
+          "user_seconds": 10.89,
+          "system_seconds": 0.62,
+          "label": "warm-b3-p2-streaming"
+        },
+        {
+          "wall_seconds": 2.77,
+          "max_rss_kb": 1367844,
+          "user_seconds": 10.88,
+          "system_seconds": 0.63,
+          "label": "warm-b4-p1-streaming"
+        },
+        {
+          "wall_seconds": 2.74,
+          "max_rss_kb": 1360348,
+          "user_seconds": 10.88,
+          "system_seconds": 0.62,
+          "label": "warm-b5-p2-streaming"
+        }
+      ]
+    },
+    "eager": {
+      "n": 5,
+      "wall_seconds": [
+        2.38,
+        2.44,
+        2.38,
+        2.36,
+        2.35
+      ],
+      "wall_median_seconds": 2.38,
+      "max_rss_kb": [
+        4238272,
+        4181244,
+        4233848,
+        4195308,
+        4215976
+      ],
+      "max_rss_median_kb": 4215976,
+      "runs": [
+        {
+          "wall_seconds": 2.38,
+          "max_rss_kb": 4238272,
+          "user_seconds": 10.74,
+          "system_seconds": 1.8,
+          "label": "warm-b1-p1-eager"
+        },
+        {
+          "wall_seconds": 2.44,
+          "max_rss_kb": 4181244,
+          "user_seconds": 10.74,
+          "system_seconds": 1.79,
+          "label": "warm-b2-p2-eager"
+        },
+        {
+          "wall_seconds": 2.38,
+          "max_rss_kb": 4233848,
+          "user_seconds": 10.7,
+          "system_seconds": 1.89,
+          "label": "warm-b3-p1-eager"
+        },
+        {
+          "wall_seconds": 2.36,
+          "max_rss_kb": 4195308,
+          "user_seconds": 10.66,
+          "system_seconds": 1.79,
+          "label": "warm-b4-p2-eager"
+        },
+        {
+          "wall_seconds": 2.35,
+          "max_rss_kb": 4215976,
+          "user_seconds": 10.74,
+          "system_seconds": 1.74,
+          "label": "warm-b5-p1-eager"
+        }
+      ]
+    }
+  },
+  "streaming_over_eager_wall_ratio": 1.1638655462184875,
+  "eager_over_streaming_rss_ratio": 3.096821773072776,
+  "gates": {
+    "exact_outputs": true,
+    "streaming_wall_at_most_1_25x_eager": true,
+    "all_streaming_rss_below_limit": true,
+    "rss_limit_gb": 2.0
+  }
+}

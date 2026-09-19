@@ -1,0 +1,46 @@
+experiment: D3_hybrid_em_batch_support_compaction
+date_locked: 2026-08-31
+status: locked_after_finalization_remediation_FAIL_before_compaction_code_or_measurement
+reference_gravlax_commit: 0446feaa3b49d5bd657f59584888d3fde71ab888
+disclosure:
+  D3_formal_verdict: FAIL_only_peak_RSS
+  reference_hybrid_only_seed_7:
+    wall_seconds: 17.16
+    peak_rss_kib: 7653508
+  rejected_serial_finalization:
+    metrics_byte_identical: true
+    wall_seconds: 28.69
+    peak_rss_kib: 7639532
+hypothesis: repeated_representatives_create_redundant_class_gene_supports_before_finalization
+implementation:
+  unit_of_compaction: one_bounded_decode_batch_and_cell_shard
+  key: [class, gene]
+  reduction: bitwise_OR_of_unique_and_multimapper_flags
+  final_global_sort_and_reduction_retained: true
+  remove_full_n_molecules_support_preallocation: true
+  estimator_or_numeric_order_change: forbidden
+gate:
+  dataset: D3
+  control: shuffled_groups
+  seed: 7
+  mode: hybrid_only
+  depth_scale: 8
+  depth_power: 8
+  required:
+    metrics_json_byte_identical_to_reference: true
+    stdout_byte_identical_to_reference: true
+    peak_rss_kib_max: 4194304
+    wall_seconds_max: 60
+    all_Rust_tests_pass: true
+decision:
+  PASS: operational_cap_remediated_formal_D3_verdict_remains_historical_FAIL
+  FAIL: implement_disk_backed_support_shards
+result:
+  verdict: FAIL
+  gravlax_commit: 7c1ef42c96c25892a4c818e510b312cdb9c22be7
+  metrics_json_byte_identical_to_reference: true
+  stdout_byte_identical_to_reference: true
+  peak_rss_kib: 6562508
+  wall_seconds: 16.71
+  peak_rss_reduction_fraction: 0.142437
+  disposition: retain_as_exact_speed_neutral_partial_improvement

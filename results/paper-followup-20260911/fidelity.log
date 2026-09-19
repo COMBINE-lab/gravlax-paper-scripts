@@ -1,0 +1,114 @@
+[Fri Sep 11 14:03:48 EDT 2026] ingest with --geometry-fidelity
+[Fri Sep 11 14:11:15 EDT 2026] replay compact: Gene
+[Fri Sep 11 14:11:24 EDT 2026] replay compact: velocity
+[Fri Sep 11 14:14:08 EDT 2026] replay fidelity: Gene
+[Fri Sep 11 14:14:22 EDT 2026] replay fidelity: velocity
+compact_gene_vs_archived_replay exact
+compact_velocity_vs_archived_replay exact
+== sizes
+d1.aie	544022039 bytes	11.34 bits/read
+d1-fidelity.aie	692731515 bytes	14.44 bits/read
+== Gene deviation (compact) vs STARsolo v49, filtered cells
+${GRAVLAX_PROJECT_ROOT}/scripts/30_gateb_compare.py:31: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  mtx = scipy.io.mmread(str(solo_raw / "matrix.mtx")).tocsr()
+restricted to 5038 cells from ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/filtered/barcodes.tsv
+=== Gate G-B: oracle vs replay ===
+genes: 78691 vs 78691  (shared 78691, only-oracle 0, only-replay 0)
+total UMI: 44354967 vs 44277676
+UMI mass in genes present in only one annotation: 0 (0.000%) / 0 (0.000%)
+UMI mass moved (shared genes):   0.307%
+UMI mass moved (gene UNION):     0.307%   [PASS >=3%, STOP <1%]
+  of which gained by replay: 97450 (0.220%)
+  of which lost by   oracle: 174741 (0.394%)
+  reassigned (min):              97450 (0.220%)
+  net gain (|gained-lost|):      77291 (0.174%)
+expressed genes changing >10%:   2901/36216 (8.010%)   [PASS >=5%, STOP <2%]
+cells changing >1% total count:  10/5038
+== velocity components (compact)
+${GRAVLAX_PROJECT_ROOT}/scripts/91_velo_gate.py:20: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     oracle  33491466  replay  33216821  L1   895043  rel  2.672%  mass-delta  0.820%  [MARGINAL]
+unspliced.mtx   oracle  20870676  replay  20788552  L1   179318  rel  0.859%  mass-delta  0.393%  [PASS]
+ambiguous.mtx   oracle   7240129  replay   7133804  L1   443941  rel  6.132%  mass-delta  1.469%  [MARGINAL]
+VELO-1: MARGINAL
+== velocity completeness strata (compact)
+${GRAVLAX_PROJECT_ROOT}/scripts/94_velo2_strata.py:25: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     complete      : oracle mass   2617242  L1    53429  rel  2.041%
+spliced.mtx     incomplete    : oracle mass  30846095  L1   813485  rel  2.637%
+spliced.mtx     replay-absent : oracle mass     28129  L1    28129  rel 100.000%
+unspliced.mtx   complete      : oracle mass   2479815  L1    32108  rel  1.295%
+unspliced.mtx   incomplete    : oracle mass  18346931  L1   103280  rel  0.563%
+unspliced.mtx   replay-absent : oracle mass     43930  L1    43930  rel 100.000%
+ambiguous.mtx   complete      : oracle mass    638565  L1     9524  rel  1.491%
+ambiguous.mtx   incomplete    : oracle mass   6595817  L1   428670  rel  6.499%
+ambiguous.mtx   replay-absent : oracle mass      5747  L1     5747  rel 100.000%
+== Gene deviation (fidelity) vs STARsolo v49, filtered cells
+${GRAVLAX_PROJECT_ROOT}/scripts/30_gateb_compare.py:31: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  mtx = scipy.io.mmread(str(solo_raw / "matrix.mtx")).tocsr()
+restricted to 5038 cells from ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/filtered/barcodes.tsv
+=== Gate G-B: oracle vs replay ===
+genes: 78691 vs 78691  (shared 78691, only-oracle 0, only-replay 0)
+total UMI: 44354967 vs 44317557
+UMI mass in genes present in only one annotation: 0 (0.000%) / 0 (0.000%)
+UMI mass moved (shared genes):   0.253%
+UMI mass moved (gene UNION):     0.253%   [PASS >=3%, STOP <1%]
+  of which gained by replay: 93706 (0.211%)
+  of which lost by   oracle: 131116 (0.296%)
+  reassigned (min):              93706 (0.211%)
+  net gain (|gained-lost|):      37410 (0.084%)
+expressed genes changing >10%:   1885/36205 (5.206%)   [PASS >=5%, STOP <2%]
+cells changing >1% total count:  5/5038
+== velocity components (fidelity)
+${GRAVLAX_PROJECT_ROOT}/scripts/91_velo_gate.py:20: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     oracle  33491466  replay  33378511  L1   788461  rel  2.354%  mass-delta  0.337%  [MARGINAL]
+unspliced.mtx   oracle  20870676  replay  20790186  L1   177716  rel  0.852%  mass-delta  0.386%  [PASS]
+ambiguous.mtx   oracle   7240129  replay   6970308  L1   338049  rel  4.669%  mass-delta  3.727%  [MARGINAL]
+VELO-1: MARGINAL
+== velocity completeness strata (fidelity)
+${GRAVLAX_PROJECT_ROOT}/scripts/94_velo2_strata.py:25: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     complete      : oracle mass  33463766  L1   760761  rel  2.273%
+spliced.mtx     replay-absent : oracle mass     27700  L1    27700  rel 100.000%
+unspliced.mtx   complete      : oracle mass  20826766  L1   133806  rel  0.642%
+unspliced.mtx   replay-absent : oracle mass     43910  L1    43910  rel 100.000%
+ambiguous.mtx   complete      : oracle mass   7234380  L1   332300  rel  4.593%
+ambiguous.mtx   replay-absent : oracle mass      5749  L1     5749  rel 100.000%
+D1 GEOMETRY FIDELITY DONE

@@ -1,0 +1,30 @@
+{
+  "chain_hist": [
+    2466498,
+    16740403,
+    1580695,
+    449186
+  ],
+  "distinct_patterns": 651082,
+  "flat_cell_bytes": 29494164,
+  "flat_pos_bytes": 9275979,
+  "mm_molecules": 3165877,
+  "mm_signatures": 5114234,
+  "molecules": 21236782,
+  "n_sites": 1777308,
+  "pattern_dict_bytes": 5852170,
+  "pattern_id_bytes": 5327437,
+  "sig_hist": [
+    0,
+    8948092,
+    4117636,
+    3105062,
+    5065992
+  ],
+  "signatures": 52283887,
+  "site_anchor_bytes": 2838447,
+  "site_cell_bytes": 15963045,
+  "site_offset_bytes": 21097201,
+  "top100_cover": 0.3441645415520682,
+  "total_chains": 21314734
+}

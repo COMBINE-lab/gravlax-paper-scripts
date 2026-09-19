@@ -1,0 +1,87 @@
+{
+  "schema": "gravlax.sez-transcript-end-atlas-gate.v1",
+  "status": "FROZEN_BEFORE_WHOLE_GENOME_ENDPOINT_INSPECTION",
+  "registration": {
+    "date": "2026-09-01",
+    "event_blind_feasibility": "results/post-v1-sez-transcript-end-feasibility/feasibility.json",
+    "event_blind_feasibility_sha256": "ad9b0c1e1d0acb63eff4a4c671abee38b47edd0ad5fbceb5774e9535ffbe351b",
+    "design": "experiments/designs/sez-transcript-end-atlas-v1.tsv",
+    "design_sha256": "867a3fcb6e8ec3319bb9b28b40ec209eeef2204cae17ef879ef5873f037f0ea5",
+    "prohibited_before_registration": [
+      "whole-genome GSE234790 alignment endpoint inspection",
+      "PolyASite matching of GSE234790 endpoints",
+      "gene or pathway selection from GSE234790 endpoint results",
+      "replacement of the primary published-cluster contrast"
+    ],
+    "event_blind_amendment": "all 36,626 published-QC barcodes are retained; clusters 15, 17, and 18 are labeled other rather than omitted"
+  },
+  "dataset": {
+    "series": "GSE234790",
+    "bioproject": "PRJNA983239",
+    "chemistry": "10x Chromium Single Cell 3 prime v3.1",
+    "donors": 8,
+    "primary_groups": {
+      "astro_nsc": [0, 7, 16],
+      "mature_neuron": [2, 3, 10, 12, 19]
+    },
+    "young_donors": ["A", "B", "C", "D"],
+    "middle_age_donors": ["E", "F", "G", "H"],
+    "age_role": "secondary descriptive only"
+  },
+  "hypothesis": {
+    "primary": "mature neuronal nuclei recurrently use more distal RNA 3-prime ends than Astro/NSC nuclei within the same donor",
+    "effect": "mature_neuron minus astro_nsc distal usage index",
+    "global_pass": "at least 7 of 8 donor median shifts are positive and the across-donor median is at least 0.02",
+    "forbidden_reselection": "another cell contrast cannot replace the primary after endpoint inspection"
+  },
+  "catalogue": {
+    "site_gap_bp": 24,
+    "min_site_umis_per_recurrent_donor": 10,
+    "min_recurrent_donors": 3,
+    "high_confidence": "not internal-priming flagged and either same-strand PolyASite within 50 bp or canonical PAS motif 5-60 bp upstream with recurrence in at least 4 donors",
+    "gene_assignment": "unique same-strand GENCODE v49 gene window with 2000-bp transcript-oriented tail extension",
+    "ambiguous_gene_window": "report and exclude from primary analysis",
+    "terminology_guard": "alignment endpoint clusters are not called cleavage sites without tail or orthogonal support"
+  },
+  "inference": {
+    "replicate": "donor",
+    "response": "UMI-weighted transcript-oriented site rank in [0,1]",
+    "min_group_gene_umis_per_donor": 20,
+    "min_eligible_donors": 6,
+    "min_gene_sites": 2,
+    "min_distal_site_umis": 20,
+    "test": "two-sided paired donor t test",
+    "calibration": "exact two-sided paired sign-flip p-value",
+    "multiplicity": "Benjamini-Hochberg across eligible genes",
+    "reported_gene": "q <= 0.05, absolute mean effect >= 0.10, concordant sign in at least 6 donors, and no leave-one-donor-out mean sign reversal"
+  },
+  "accuracy": {
+    "external_catalogue": "PolyASite 2.0 GRCh38.96",
+    "internal_priming": "at least 12 A in downstream 20 nt or an 8-A run within downstream 140 nt, in transcript orientation",
+    "required_separation": "primary-site PolyASite match rate exceeds internal-priming-flagged-site match rate",
+    "null": "within-donor shuffled group labels; at most 5 percent q <= 0.05 and no global directional PASS",
+    "site_gap_sensitivity_bp": [12, 24, 48],
+    "tail_audit": "measure before adding sparse sequence evidence; no format change is pre-authorized by this gate"
+  },
+  "alternative_last_exon": {
+    "role": "secondary capability",
+    "promotion": "at least 100 genes with two recurrent terminal junction-to-site paths supported in at least 3 donors"
+  },
+  "performance": {
+    "host_wall_seconds_max": 90,
+    "host_peak_rss_gib_max": 8,
+    "legacy_improvement": "at least 2-fold wall-time or peak-RSS improvement over eight independent legacy apa-test reductions",
+    "required_algorithm": "one scan per archive, coordinate aggregation before site construction, no cell-by-site matrix",
+    "overflow": "hard error, never truncate"
+  },
+  "acceptance": [
+    "exact synthetic and independent-reference counts",
+    "explicit zero sample-by-group-by-site rows",
+    "strand-aware site ordering and motif checks",
+    "paired donor inference without cell or molecule pseudoreplication",
+    "PolyASite/internal-priming accuracy separation",
+    "within-donor shuffled-label negative control",
+    "12/24/48-bp site-gap sensitivity",
+    "legacy outputs unchanged"
+  ]
+}

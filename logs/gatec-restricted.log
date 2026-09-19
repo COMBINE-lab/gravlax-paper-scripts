@@ -1,0 +1,9 @@
+collecting gene-assigned reads from runs/oracle/full/v49/Aligned.sortedByCoord.out.bam
+  34628655 gene-assigned reads
+reads compared:      34628655
+identical evidence:  34177267  (98.6965%)
+  block_boundary         1250  (0.0036%)
+  junction             279906  (0.8083%)
+  locus                 36648  (0.1058%)
+  multiplicity         130118  (0.3758%)
+  presence               3466  (0.0100%)

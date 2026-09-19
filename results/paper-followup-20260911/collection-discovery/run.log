@@ -1,0 +1,14 @@
+[Fri Sep 11 18:33:31 EDT 2026] find-events routed-novel-v32
+find-events routed-novel-v32 FAILED (see stderr)
+[Fri Sep 11 18:33:33 EDT 2026] find-events coord-novel-v32
+find-events coord-novel-v32 FAILED (see stderr)
+[Fri Sep 11 18:33:35 EDT 2026] find-events routed-all
+find-events routed-all FAILED (see stderr)
+[Fri Sep 11 18:33:36 EDT 2026] naive per-archive discovery
+# Collection discovery benchmark
+
+## find-events routed-novel-v32: unavailable ([Errno 2] No such file or directory: '${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/collection-discovery/find-routed-novel-v32.json')
+## find-events coord-novel-v32: unavailable ([Errno 2] No such file or directory: '${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/collection-discovery/find-coord-novel-v32.json')
+## find-events routed-all: unavailable ([Errno 2] No such file or directory: '${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/collection-discovery/find-routed-all.json')
+## naive per-archive discovery: 22.9 s total wall over 200 runs; per archive: A 1.6s, B 1.5s, C 1.0s, D 5.5s, E 1.2s, F 1.4s, G 9.4s, H 1.2s
+COLLECTION DISCOVERY DONE

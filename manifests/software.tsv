@@ -1,0 +1,16 @@
+component	version_or_value	notes
+gravlax_commit	d9257ca2c81569aa14dfeb2899beb4b90ebb5a9d	authoritative code revision
+paper_commit	67da17775aed087a16ab9dbd1aea91e3eca7160a	authoritative manuscript revision
+archive_format	v1.5	rans2; 10 chunk streams; coc block 65536
+rustc	1.98.0 (88d9e12ae 2026-08-18)	-
+cargo	1.98.0 (797e8a9bc 2026-08-05)	-
+STAR	2.7.11b	-
+samtools	1.23.1	htslib 1.23.1
+gffread	0.12.9	-
+typst	0.15.1 (9dfd3a08)	-
+python	3.12.14	analysis environment
+os	Linux 4.18.0-553.156.1.el8_10.x86_64	x86_64 GNU/Linux
+cpu	2x AMD EPYC 9575F	64 cores/socket; 2 threads/core; 256 logical CPUs
+memory_kb	1583748932	/proc/meminfo MemTotal
+default_gravlax_threads	24	binary default
+campaign_thread_range	20-32	see scripts and PROVENANCE.md

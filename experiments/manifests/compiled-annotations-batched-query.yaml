@@ -1,0 +1,66 @@
+experiment: compiled_annotations_and_batched_query_plans
+date_locked: 2026-08-31
+status: passed_and_implemented
+reference_gravlax_commit: f248cd3dbe3efd09677b6b5c55b2a02a6c4e34a4
+implementation_gravlax_commit: 4bde878b640fed18460a1defaddc9d84e53153b4
+result: results/post-v1-compiled-annotations-batched-query.json
+threads: 24
+scope:
+  compiled_annotation:
+    command: aie_compile-annotation_INPUT_--out_OUTPUT
+    transparent_consumers: all_existing_GTF_arguments
+    source_format: uncompressed_GTF
+    artifact_suffix: .aic
+    source_remains_authoritative: true
+  batch_query:
+    command: aie_query_ARCHIVE_batch_--plan_PLAN
+    plan_format: strict_headered_TSV
+    v1_query_kinds: [region, junction]
+    output: one_deterministic_JSON_object_in_plan_order
+    explicitly_deferred: [region_tracks, APA, APA-test, discovery, junction_enumeration]
+compiled_annotation_gate:
+  format:
+    magic_and_version_guard: required
+    payload_checksum: required
+    little_endian_fixed_width: required
+    bounds_and_trailing_byte_checks: required
+    deterministic_byte_identical_builds: required
+  correctness:
+    GTF_and_AIC_D0_Gene_replay_outputs_byte_identical: true
+    GTF_and_AIC_junction_annotation_output_byte_identical: true
+    GTF_and_AIC_discovery_output_byte_identical: true
+    malformed_truncated_future_and_corrupt_artifacts_rejected: true
+    all_Rust_tests_pass: true
+  performance:
+    dataset: D0
+    annotation: GENCODE_v49
+    repetitions: 5
+    compiled_load_query_median_fraction_of_GTF_path_max: 0.25
+    artifact_fraction_of_source_GTF_max: 0.05
+    compiled_load_peak_rss_kib_max: 1048576
+batch_query_gate:
+  dataset: D0
+  plan: experiments/plans/batched-query-d0.tsv
+  queries: 32
+  plan_profile: high_locality_gene_panel_with_16_regions_and_16_exact_junctions
+  repetitions: 7
+  correctness:
+    aggregate_and_per_cell_counts_equal_independent_single_queries: true
+    duplicate_query_ids_rejected: true
+    malformed_header_kind_and_locus_rejected: true
+    repeated_output_byte_identical: true
+    plan_order_preserved: true
+    absent_junction_representable_without_aborting_plan: true
+  performance:
+    unique_chunk_decodes_reported: true
+    chunk_decode_reduction_vs_independent_min: 0.75
+    median_wall_fraction_of_independent_processes_max: 0.35
+    peak_rss_kib_max: 1048576
+decision:
+  compiled_PASS: retain_AIC_as_public_stable_v1_artifact
+  compiled_FAIL: keep_parser_optimizations_but_do_not_publish_artifact
+  batch_PASS: retain_region_and_junction_plan_v1_then_extend_only_with_separate_gates
+  batch_FAIL: retain_internal_many-query_primitives_without_public_plan_surface
+outcome:
+  compiled: PASS
+  batch: PASS

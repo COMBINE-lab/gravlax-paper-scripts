@@ -1,0 +1,70 @@
+experiment: monotone_depth_gated_hybrid_em
+date_locked: 2026-08-31
+status: locked_after_implementation_before_any_D0_hybrid_measurement
+reference_gravlax_commit: 9ccc3f65bd665dbbc30dc84de36bb2254d2cdbe7
+disclosure:
+  hybrid_D0_results_observed_before_lock: false
+  prior_information_used:
+    - fixed_convex_selected_on_D0
+    - Dirichlet_proxy_selected_on_D0
+    - proxy_depth_failure_showed_fixed_better_at_depth_at_most_16_and_proxy_better_above_16
+  inferential_status: D0_development_only
+model:
+  name: monotone_depth_gated_hybrid
+  gate: d_squared_over_d_squared_plus_D_squared
+  depth: mode_independent_initial_fitted_unique_candidate_mass
+  fixed_component:
+    name: candidate_normalized_convex
+    cell_weight: 0.20
+    group_weight: 0.60
+    sample_weight: 0.20
+    group_prior: 80
+  adaptive_component:
+    name: posterior_mean_Dirichlet_proxy
+    cell_prior: 64
+    group_prior: 80
+  shared_iterative_state: true
+  production_emission_unchanged: pooled
+development_grid:
+  dataset: D0
+  depth_scales: [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+  seeds: [7, 17, 29]
+  configurations: 10
+  runs: 30
+  selection_metric: mean_negative_log_loss
+  exact_tie_break: larger_depth_scale
+comparators:
+  rerun_with_same_binary:
+    - fixed_convex_real
+    - fixed_convex_shuffled
+    - Dirichlet_proxy_real
+    - Dirichlet_proxy_shuffled
+  selected_hybrid_controls: [real_groups, shuffled_groups]
+targets:
+  type: keyed_mixed_class_mask
+  mask_fraction: 0.20
+  seeds: [7, 17, 29]
+  candidate_gene_exclusion: union_across_all_seeds
+  evaluation_population: supplied_group_barcodes_only
+oracle_reference:
+  status: post_hoc_upper_reference_not_a_model_or_selection_arm
+  definition:
+    0-1: fixed_convex
+    1-4: fixed_convex
+    4-16: fixed_convex
+    16+: Dirichlet_proxy
+acceptance:
+  mean_relative_nll_improvement_over_proxy_min: 0.002
+  hard_stratum_oracle_gain_recovered_min: 0.50
+  each_shallow_stratum_relative_nll_regression_vs_fixed_max: 0.0025
+  high_stratum_relative_nll_regression_vs_proxy_max: 0.0025
+  selected_real_better_than_selected_shuffled_on_all_seeds: true
+  shuffle_explained_fraction_of_hybrid_gain_max: 0.50
+  mean_brier_must_not_increase_vs_proxy: true
+  top1_drop_vs_best_constituent_percentage_points_max: 0.10
+decisions:
+  pass: all_criteria_met_then_lock_untouched_D4_confirmation
+  marginal: aggregate_gain_positive_but_one_depth_control_or_guardrail_fails
+  stop: no_aggregate_gain_or_no_consistent_real_over_shuffle_signal
+  full_hierarchical_Dirichlet: not_licensed_by_this_gate
+  production_emission: pooled

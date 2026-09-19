@@ -1,0 +1,45 @@
+experiment: D3_hybrid_em_memory_remediation
+date_locked: 2026-08-31
+status: locked_after_D3_formal_FAIL_before_code_change_or_remediation_measurement
+reference_gravlax_commit: 0446feaa3b49d5bd657f59584888d3fde71ab888
+reference_scripts_commit: 710bd432b64413a986d18f4120171ed027fb1315
+disclosure:
+  D3_scores_observed: true
+  D3_formal_verdict: FAIL
+  sole_failed_criterion: peak_RSS_below_4_GiB
+  reference_hybrid_only:
+    seed: 7
+    wall_seconds: 17.16
+    peak_rss_kib_range_all_seeds: [7653508, 7807888]
+    archive_classes:
+      single: 98073063
+      mixed: 6949081
+      multi_only: 6831305
+      evaluated_targets_seed_7: 1305812
+hypothesis: parallel_construction_of_all_64_shards_simultaneously_causes_avoidable_transient_peak
+implementation:
+  preserve_packed_persistent_layout: true
+  bound_concurrent_shard_finalization: true
+  change_estimator_or_numeric_order: forbidden
+gate:
+  dataset: D3
+  control: shuffled_groups
+  seed: 7
+  mode: hybrid_only
+  depth_scale: 8
+  depth_power: 8
+  required:
+    metrics_json_byte_identical_to_reference: true
+    stdout_byte_identical_to_reference: true
+    peak_rss_kib_max: 4194304
+    wall_seconds_max: 60
+    all_Rust_tests_pass: true
+decision:
+  PASS: operational_cap_remediated_formal_D3_verdict_remains_historical_FAIL
+  FAIL: retain_pooled_default_and_prioritize_out_of_core_target_shards
+result:
+  verdict: FAIL
+  metrics_json_byte_identical_to_reference: true
+  peak_rss_kib: 7639532
+  wall_seconds: 28.69
+  interpretation: peak_precedes_shard_finalization

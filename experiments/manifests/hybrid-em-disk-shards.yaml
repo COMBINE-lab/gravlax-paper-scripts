@@ -1,0 +1,70 @@
+experiment: D3_hybrid_em_disk_backed_support_shards
+date_locked: 2026-08-31
+status: complete_PASS
+reference_gravlax_commit: 7c1ef42c96c25892a4c818e510b312cdb9c22be7
+disclosure:
+  D3_formal_verdict: FAIL_only_peak_RSS
+  original_reference:
+    wall_seconds: 17.16
+    peak_rss_kib: 7653508
+  exact_batch_compaction:
+    wall_seconds: 16.71
+    peak_rss_kib: 6562508
+    metrics_and_stdout_byte_identical: true
+implementation:
+  activation: estimated_raw_support_bytes_exceed_512_MiB
+  scan: one_archive_pass
+  files: one_temporary_little_endian_support_stream_per_cell_shard
+  pre_spill_reduction: exact_batch_local_class_gene_flag_OR
+  finalization: load_sort_reduce_one_shard_at_a_time
+  cleanup: temporary_directory_removed_on_success_or_error
+  in_memory_small_archive_path_unchanged: true
+  estimator_or_numeric_order_change: forbidden
+gate:
+  primary:
+    dataset: D3
+    control: shuffled_groups
+    seed: 7
+    mode: hybrid_only_D8_p8
+    required:
+      metrics_json_byte_identical_to_reference: true
+      stdout_byte_identical_to_reference: true
+      peak_rss_kib_max: 4194304
+      wall_seconds_max: 60
+      no_temporary_artifacts_after_exit: true
+  regression:
+    all_Rust_tests_pass: true
+    D0_in_memory_path_metrics_byte_identical: true
+decision:
+  PASS: operational_cap_remediated_formal_D3_verdict_remains_historical_FAIL
+  FAIL: implement_external_sort_or_raise_operational_envelope_with_scaling_model
+result:
+  verdict: PASS
+  gravlax_commit: 93def86f4226ecbc3a8a1fbdfa6ca16a99127fd1
+  preferred_evaluator_default_commit: f248cd3dbe3efd09677b6b5c55b2a02a6c4e34a4
+  metrics_json_byte_identical_to_reference: true
+  stdout_byte_identical_to_reference: true
+  peak_rss_kib: 3846008
+  wall_seconds: 35.86
+  no_temporary_artifacts_after_exit: true
+  D0_in_memory_metrics_byte_identical: true
+  D0_in_memory_stdout_byte_identical: true
+  all_Rust_tests: 106_passed
+  interpretation: operational_cap_remediated_formal_D3_verdict_remains_historical_FAIL
+  production_emission: pooled_pending_separate_downstream_gate
+engineering_log:
+  - intervention: disk_support_shards_only
+    peak_rss_kib: 5666248
+    wall_seconds: 26.56
+  - intervention: drop_archive_before_EM_run
+    peak_rss_kib: 5189144
+    wall_seconds: 27.36
+  - intervention: eight_access_unit_decode_window
+    peak_rss_kib: 4811672
+    wall_seconds: 31.47
+  - intervention: detach_accumulator_and_drop_archive_before_finalization
+    peak_rss_kib: 4631720
+    wall_seconds: 32.09
+  - intervention: command_local_glibc_arena_limit
+    peak_rss_kib: 3846008
+    wall_seconds: 35.86

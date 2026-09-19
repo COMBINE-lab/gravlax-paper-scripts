@@ -1,0 +1,1247 @@
+2 channel Terms of Service accepted
+Channels:
+ - conda-forge
+ - bioconda
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): - \ | / - \ | / - \ | done
+Solving environment: - done
+
+## Package Plan ##
+
+  environment location: ${GRAVLAX_PROJECT_ROOT}/env/sc
+
+  added / updated specs:
+    - gffread
+    - pigz
+    - samtools
+    - star=2.7.11b
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-4.5          |           20_gnu          28 KB  conda-forge
+    bzip2-1.0.8                |      hda65f42_10         252 KB  conda-forge
+    c-ares-1.34.8              |       hebe6cf0_2         223 KB  conda-forge
+    ca-certificates-2026.7.22  |       hbd8a1cb_0         129 KB  conda-forge
+    gffread-0.12.9             |       hf426362_0         127 KB  bioconda
+    htslib-1.23.1              |       h633afcb_0         1.1 MB  bioconda
+    icu-78.3                   |  py310h44b86e0_2        13.8 MB  conda-forge
+    keyutils-1.6.3             |       h7cc23a3_1         132 KB  conda-forge
+    krb5-1.22.2                |       hbc21106_2         1.3 MB  conda-forge
+    libcurl-8.21.0             |       ha042cf0_5         473 KB  conda-forge
+    libdeflate-1.25            |       hd45a770_1          72 KB  conda-forge
+    libedit-3.1.20250104       | pl5321h373387f_1         132 KB  conda-forge
+    libev-4.33                 |       h280c20c_3          42 KB  conda-forge
+    libgcc-16.2.0              |       ha9f2e26_4         1.0 MB  conda-forge
+    libgomp-16.2.0             |       he0feb66_4         625 KB  conda-forge
+    liblzma-5.8.3              |       hb03c661_1         110 KB  conda-forge
+    libnghttp2-1.68.1          |       h74cf4be_1         635 KB  conda-forge
+    libpsl-0.23.1              |       hd9e3e90_1          71 KB  conda-forge
+    libssh2-1.11.1             |       h6154650_1         299 KB  conda-forge
+    libstdcxx-16.2.0           |       h934c35e_4         6.3 MB  conda-forge
+    libzlib-1.3.2              |       h25fd6f3_3          62 KB  conda-forge
+    ncurses-6.6                |       hdb14827_1         890 KB  conda-forge
+    openssl-3.6.4              |       h781a0a9_0         3.1 MB  conda-forge
+    pigz-2.8                   |       h421ea60_2          79 KB  conda-forge
+    samtools-1.23.1            |       ha83d96e_0         479 KB  bioconda
+    star-2.7.11b               |       h5ca1c30_8         1.3 MB  bioconda
+    zstd-1.5.7                 |       hb78ec9c_7         587 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        33.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
+  c-ares             conda-forge/linux-64::c-ares-1.34.8-hebe6cf0_2 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0 
+  gffread            bioconda/linux-64::gffread-0.12.9-hf426362_0 
+  htslib             bioconda/linux-64::htslib-1.23.1-h633afcb_0 
+  icu                conda-forge/linux-64::icu-78.3-py310h44b86e0_2 
+  keyutils           conda-forge/linux-64::keyutils-1.6.3-h7cc23a3_1 
+  krb5               conda-forge/linux-64::krb5-1.22.2-hbc21106_2 
+  libcurl            conda-forge/linux-64::libcurl-8.21.0-ha042cf0_5 
+  libdeflate         conda-forge/linux-64::libdeflate-1.25-hd45a770_1 
+  libedit            conda-forge/linux-64::libedit-3.1.20250104-pl5321h373387f_1 
+  libev              conda-forge/linux-64::libev-4.33-h280c20c_3 
+  libgcc             conda-forge/linux-64::libgcc-16.2.0-ha9f2e26_4 
+  libgomp            conda-forge/linux-64::libgomp-16.2.0-he0feb66_4 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_1 
+  libnghttp2         conda-forge/linux-64::libnghttp2-1.68.1-h74cf4be_1 
+  libpsl             conda-forge/linux-64::libpsl-0.23.1-hd9e3e90_1 
+  libssh2            conda-forge/linux-64::libssh2-1.11.1-h6154650_1 
+  libstdcxx          conda-forge/linux-64::libstdcxx-16.2.0-h934c35e_4 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_3 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_1 
+  openssl            conda-forge/linux-64::openssl-3.6.4-h781a0a9_0 
+  pigz               conda-forge/linux-64::pigz-2.8-h421ea60_2 
+  samtools           bioconda/linux-64::samtools-1.23.1-ha83d96e_0 
+  star               bioconda/linux-64::star-2.7.11b-h5ca1c30_8 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_7 
+
+
+
+Downloading and Extracting Packages: ...working...icu-78.3             | 13.8 MB   |            |   0% 
+libstdcxx-16.2.0     | 6.3 MB    |            |   0% [A
+
+openssl-3.6.4        | 3.1 MB    |            |   0% [A[A
+
+
+krb5-1.22.2          | 1.3 MB    |            |   0% [A[A[A
+
+
+
+star-2.7.11b         | 1.3 MB    |            |   0% [A[A[A[A
+
+
+
+
+htslib-1.23.1        | 1.1 MB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    |            |   0% [A[A[A[A[A[A
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+libnghttp2-1.68.1    | 635 KB    |            |   0% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    |            |   0% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+samtools-1.23.1      | 479 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+libcurl-8.21.0       | 473 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+libssh2-1.11.1       | 299 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c-ares-1.34.8        | 223 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+keyutils-1.6.3       | 132 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libedit-3.1.20250104 | 132 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+krb5-1.22.2          | 1.3 MB    | ########## | 100% [A[A[A
+
+
+
+star-2.7.11b         | 1.3 MB    | ########## | 100% [A[A[A[Aicu-78.3             | 13.8 MB   | ####5      |  46% 
+libstdcxx-16.2.0     | 6.3 MB    | ###5       |  35% [A
+
+openssl-3.6.4        | 3.1 MB    | #######9   |  79% [A[A
+
+
+
+
+htslib-1.23.1        | 1.1 MB    | ######8    |  69% [A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | #########6 |  96% [A[A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+htslib-1.23.1        | 1.1 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | 1          |   2% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+libnghttp2-1.68.1    | 635 KB    | 2          |   3% [A[A[A[A[A[A[A[A
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A
+
+
+
+
+
+
+
+libnghttp2-1.68.1    | 635 KB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+samtools-1.23.1      | 479 KB    | 3          |   3% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+samtools-1.23.1      | 479 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A
+
+
+
+
+
+
+
+
+
+
+
+libcurl-8.21.0       | 473 KB    | 3          |   3% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+libcurl-8.21.0       | 473 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | 6          |   6% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+libssh2-1.11.1       | 299 KB    | 5          |   5% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+libssh2-1.11.1       | 299 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+krb5-1.22.2          | 1.3 MB    | ########## | 100% [A[A[A
+
+
+krb5-1.22.2          | 1.3 MB    | ########## | 100% [A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c-ares-1.34.8        | 223 KB    | 7          |   7% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c-ares-1.34.8        | 223 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+keyutils-1.6.3       | 132 KB    | #2         |  12% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+keyutils-1.6.3       | 132 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libedit-3.1.20250104 | 132 KB    | #2         |  12% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libedit-3.1.20250104 | 132 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+star-2.7.11b         | 1.3 MB    | ########## | 100% [A[A[A[A
+
+
+
+star-2.7.11b         | 1.3 MB    | ########## | 100% [A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | #2         |  12% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+libnghttp2-1.68.1    | 635 KB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+libnghttp2-1.68.1    | 635 KB    | ########## | 100% [A[A[A[A[A[A[A[Aicu-78.3             | 13.8 MB   | ########## | 100% icu-78.3             | 13.8 MB   | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+htslib-1.23.1        | 1.1 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A
+
+
+
+
+
+
+
+
+
+
+samtools-1.23.1      | 479 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+samtools-1.23.1      | 479 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+libcurl-8.21.0       | 473 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+libcurl-8.21.0       | 473 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+bzip2-1.0.8          | 252 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+libssh2-1.11.1       | 299 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+libssh2-1.11.1       | 299 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+keyutils-1.6.3       | 132 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+keyutils-1.6.3       | 132 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libedit-3.1.20250104 | 132 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libedit-3.1.20250104 | 132 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ca-certificates-2026 | 129 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c-ares-1.34.8        | 223 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c-ares-1.34.8        | 223 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aicu-78.3             | 13.8 MB   | ########## | 100% 
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A                                                     
+                                                     [A
+
+                                                     [A[A
+
+
+                                                     [A[A[A
+
+
+
+                                                     [A[A[A[A
+
+
+
+
+                                                     [A[A[A[A[A
+
+
+
+
+
+                                                     [A[A[A[A[A[A
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A done
+Preparing transaction: | done
+Verifying transaction: - \ | done
+Executing transaction: - \ done
+#
+# To activate this environment, use
+#
+#     $ conda activate ${GRAVLAX_PROJECT_ROOT}/env/sc
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+

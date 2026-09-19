@@ -1,0 +1,82 @@
+{
+  "schema": "gravlax.post_v1.streamed_molecule_cram_replay.v1",
+  "date": "2026-08-30",
+  "dataset": "D0 / 10x PBMC 1k v3",
+  "status": "cold_and_five_warm_replays_complete",
+  "gravlax_commit": "ef2126684378d8ba0dad5605ff81eed635bcab6a",
+  "protocol_script_commit": "1b64f8322ac59ecdfbfdf265f556255788a604b9",
+  "protocol": "scripts/117_stream_molecule_cram_replay.sh",
+  "aie_binary_sha256": "915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd",
+  "samtools": "samtools 1.23.1",
+  "threads_per_process": 24,
+  "shared_cpuset": "0-23",
+  "combined_hardware_thread_budget": 24,
+  "transport": "samtools CRAM-to-BAM decode over a named pipe; no materialized BAM",
+  "inputs": {
+    "molecule_cram_bytes": 258151959,
+    "molecule_cram_sha256": "d494242c81ace999e8d1ca1ffe710fa6ed641bb56d41deb06068cfc23a19ed0e",
+    "reference_sha256": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b"
+  },
+  "requirements": [
+    "CRAM decoder that preserves record order and Gravlax local tags",
+    "the exact reference FASTA used by CRAM, with externally recorded digest",
+    "Gravlax post-correction molecule-BAM importer",
+    "compatible GTF annotation",
+    "barcode list defining output column order"
+  ],
+  "not_required": [
+    "materialized BAM intermediate",
+    "raw FASTQ",
+    "STAR genome index",
+    "barcode whitelist or raw barcode re-correction",
+    "nucleotide UMI strings"
+  ],
+  "correctness": {
+    "cram_quickcheck": true,
+    "runs_passing_frozen_matrix_features_barcodes_byte_identity": 6,
+    "runs_total": 6,
+    "molecules": 22156853,
+    "assigned_molecules": 21197710,
+    "output_umis": 10393179,
+    "output_entries": 3600217
+  },
+  "warm_replicates": {
+    "pipeline_wall_seconds": [21.251791052, 20.598180885, 20.651640174, 20.876267525, 20.352123186],
+    "decoder_wall_seconds": [18.16, 17.97, 18.02, 18.19, 17.81],
+    "replay_process_wall_seconds": [20.82, 20.59, 20.64, 20.87, 20.34],
+    "decoder_max_rss_kb": [7210720, 7128940, 6832224, 7285856, 6999580],
+    "replay_max_rss_kb": [7482604, 7480844, 7481452, 7480780, 7483292],
+    "file_system_inputs": [0, 0, 0, 0, 0]
+  },
+  "warm_summary": {
+    "pipeline_median_seconds": 20.651640174,
+    "pipeline_mean_seconds": 20.7460005644,
+    "pipeline_sample_sd_seconds": 0.3386323332,
+    "pipeline_cv": 0.0163227766,
+    "pipeline_range_seconds": [20.352123186, 21.251791052],
+    "decoder_median_seconds": 18.02,
+    "replay_process_median_seconds": 20.64,
+    "median_replay_report_load_seconds": 18.3,
+    "median_decoder_max_rss_kb": 7128940,
+    "median_replay_max_rss_kb": 7481452,
+    "median_combined_average_cpu_cores": 6.417072
+  },
+  "cold_observation": {
+    "advised_files": 5,
+    "advised_bytes": 6848551696,
+    "advisory_failures": 0,
+    "pipeline_wall_seconds": 20.742647199,
+    "decoder_file_system_inputs": 6659344,
+    "replay_file_system_inputs": 6716760,
+    "caveat": "POSIX_FADV_DONTNEED is advisory on a shared host; nonzero timed input counters confirm that the cold run performed physical input I/O."
+  },
+  "context": {
+    "native_aie_warm_median_seconds": 2.44,
+    "molecule_cram_to_native_aie_runtime_ratio": 8.463787,
+    "counts_only_starsolo_warm_median_seconds": 83.71,
+    "counts_only_starsolo_to_molecule_cram_runtime_ratio": 4.053431,
+    "molecule_cram_to_materialized_molecule_bam_replay_ratio": 1.212662,
+    "storage_cram_to_aie_ratio": 2.323864
+  },
+  "interpretation": "The reduced CRAM is operationally quantifiable with bounded storage and no BAM intermediate, but its explicit 48.2-million-record representation costs 8.46x the native AIE replay time. CRAM decoding overlaps molecule reconstruction; the dominant phase is the tag/CIGAR record stream, not annotation assignment."
+}

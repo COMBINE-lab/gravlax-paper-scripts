@@ -1,0 +1,7 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 32 --genomeDir ref/star-49 --readFilesIn data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz --readFilesCommand zcat --outSAMattributes NH HI AS nM jM jI --outSAMtype BAM Unsorted --outSAMunmapped Within --outFileNamePrefix runs/gatec/full/sjdb_v49/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 13:37:04 ..... started STAR run
+Aug 28 13:37:04 ..... loading genome
+Aug 28 13:37:07 ..... started mapping
+Aug 28 13:38:04 ..... finished mapping
+Aug 28 13:38:04 ..... finished successfully

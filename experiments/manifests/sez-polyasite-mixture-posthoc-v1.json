@@ -1,0 +1,41 @@
+{
+  "schema": "gravlax.sez-polyasite-mixture-method-audit.v1",
+  "status": "FROZEN_BEFORE_CROSS_FITTED_SENSITIVITY_AND_SHUFFLE_CONTROLS",
+  "date": "2026-09-01",
+  "confirmatory_status": "method-amended exploratory analysis; it does not rescue the failed preregistered global effect-size threshold",
+  "reason": "In fragmented 10x 3-prime libraries, aligned fragment boundaries form broad occupancy distributions and must not be interpreted as cleavage coordinates.",
+  "inspected_before_freeze": [
+    "registered whole-gene endpoint audit",
+    "terminal-region endpoint audit",
+    "pooled-kernel PolyASite mixture primary and sensitivity/null arms",
+    "leave-one-donor-out kernel primary arm",
+    "empirical-kernel two-site simulation"
+  ],
+  "not_inspected_before_freeze": [
+    "leave-one-donor-out kernel 12-bp candidate-merge sensitivity",
+    "leave-one-donor-out kernel 48-bp candidate-merge sensitivity",
+    "leave-one-donor-out kernel within-donor shuffled-label control"
+  ],
+  "model": {
+    "candidate_identity": "PolyASite 2.0 site in a unique same-strand GENCODE v49 terminal-exon union extended 2000 bp transcript-downstream",
+    "candidate_merge_gap_bp": 24,
+    "internal_priming": "drop candidates with at least 12 A in downstream 20 nt or an 8-A run in downstream 140 nt",
+    "fragment_distance_bp": [-50, 2000],
+    "kernel_bin_bp": 10,
+    "kernel_smoothing": "five-bin moving sum plus one pseudocount per bin",
+    "cross_fitting": "each donor is deconvolved with a kernel learned from the other seven donors",
+    "em": "maximum 50 iterations, stop at maximum mixture-weight change below 1e-8",
+    "replicate": "donor",
+    "contrast": "mature_neuron minus astro_nsc",
+    "inference": "unchanged paired donor t test, exact sign-flip calibration, BH correction, effect/concordance/leave-one-out gates"
+  },
+  "controls": {
+    "candidate_merge_sensitivity_bp": [12, 24, 48],
+    "shuffle_seed": 20260901,
+    "shuffle_gate": "zero reported genes and no global directional pass",
+    "stability_gate": "at least 80 percent of gap-24 reported genes retain effect sign at both neighboring gaps",
+    "heldout_kernel_gate": "positive predictive gain over a uniform distance model in every donor",
+    "performance_gate": "at most 90 seconds and 8 GiB; at least 2-fold faster or smaller than eight legacy apa-test scans"
+  },
+  "claim_guard": "A PolyASite candidate is an orthogonally catalogued polyadenylation site; a Gravlax fragment endpoint is not called a cleavage site."
+}

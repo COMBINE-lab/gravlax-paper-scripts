@@ -1,0 +1,18 @@
+whitelist: 6794880 barcodes
+=== archive build ===
+mapped primary reads:     63683421
+reads with usable barcode:61055878
+reads dropped (barcode):  2579055
+distinct barcodes:        317891  (dictionary 1271564 B)
+molecules:                19918212
+reads per molecule:       3.065
+
+E0  with_umi  total    116159604 B  (+dict    117431168 B = 47.17 bits/molecule, 65703 shapes)
+      streams: pos 8927966 shape 3757733 flags 712292 cb 28145052 umi 67221633 nreads 7213769 chrom 1174 dict 179985
+E0  no_umi    total     48937971 B  (+dict     50209535 B = 20.17 bits/molecule, 65703 shapes)
+      streams: pos 8927966 shape 3757733 flags 712292 cb 28145052 umi 0 nreads 7213769 chrom 1174 dict 179985
+E1  with_umi  total    118230830 B  (+dict    119502394 B = 48.00 bits/molecule, 385001 shapes)
+      streams: pos 8927966 shape 4474290 flags 712292 cb 28145052 umi 67221633 nreads 7213769 chrom 1174 dict 1534654
+E1  no_umi    total     51009197 B  (+dict     52280761 B = 21.00 bits/molecule, 385001 shapes)
+      streams: pos 8927966 shape 4474290 flags 712292 cb 28145052 umi 0 nreads 7213769 chrom 1174 dict 1534654
+wrote results/archive-full.json

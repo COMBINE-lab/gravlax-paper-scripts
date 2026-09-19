@@ -1,0 +1,13 @@
+key	value
+date	2026-08-31
+scope	selected_D0_D4_development_audit
+depth_scale	8
+depth_power	8
+threads	24
+gravlax_commit	0446feaa3b49d5bd657f59584888d3fde71ab888
+scripts_commit	1bc3e1bb1b2e1d23d81871afd4b4a93fda3b5323
+aie_binary_sha256	0af35c11894bfbebe094ba51649349f2c07f5dd4b8f341d314a4baa693a166de
+manifest_sha256	31b6769a550e5eab666db585bc021fdaebfba39b8aae920af7d524ac109184f2
+selection_sha256	278c4d68ab1669a158ffdcccef8b04ef79e0714b4b977cc7465c0d97ad6ca60a
+hostname	analysis-host
+kernel	Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux

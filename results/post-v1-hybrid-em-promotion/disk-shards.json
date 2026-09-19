@@ -1,0 +1,73 @@
+{
+  "date": "2026-08-31",
+  "intervention": "disk_backed_exact_support_shards",
+  "gravlax_commit": "93def86f4226ecbc3a8a1fbdfa6ca16a99127fd1",
+  "preferred_evaluator_default_commit": "f248cd3dbe3efd09677b6b5c55b2a02a6c4e34a4",
+  "dataset": "D3",
+  "control": "shuffled_groups",
+  "seed": 7,
+  "mode": "hybrid_only_D8_p8",
+  "reference": {
+    "wall_seconds": 17.16,
+    "peak_rss_kib": 7653508,
+    "metrics_sha256": "32d47865c47cabfdf69deaf04c9800134098e97207719969e2ad1f50376e6baa",
+    "stdout_sha256": "c1616876798f7625f56b29a0e886bd540614231516c1a8baf0704ecba5a2f9f8"
+  },
+  "engineering_iterations": [
+    {
+      "change": "disk_support_shards_only",
+      "peak_rss_kib": 5666248,
+      "wall_seconds": 26.56
+    },
+    {
+      "change": "drop_archive_before_EM_run",
+      "peak_rss_kib": 5189144,
+      "wall_seconds": 27.36
+    },
+    {
+      "change": "eight_access_unit_decode_window",
+      "peak_rss_kib": 4811672,
+      "wall_seconds": 31.47
+    },
+    {
+      "change": "detach_accumulator_and_drop_archive_before_finalization",
+      "peak_rss_kib": 4631720,
+      "wall_seconds": 32.09
+    },
+    {
+      "change": "command_local_glibc_arena_limit",
+      "peak_rss_kib": 3846008,
+      "wall_seconds": 35.86
+    }
+  ],
+  "result": {
+    "wall_seconds": 35.86,
+    "peak_rss_kib": 3846008,
+    "peak_rss_reduction_fraction": 0.497482,
+    "metrics_json_byte_identical": true,
+    "stdout_byte_identical": true,
+    "metrics_sha256": "32d47865c47cabfdf69deaf04c9800134098e97207719969e2ad1f50376e6baa",
+    "stdout_sha256": "c1616876798f7625f56b29a0e886bd540614231516c1a8baf0704ecba5a2f9f8",
+    "filesystem_output_blocks": 2383192,
+    "temporary_artifacts_after_exit": 0
+  },
+  "small_archive_regression": {
+    "dataset": "D0",
+    "wall_seconds": 4.49,
+    "peak_rss_kib": 794232,
+    "metrics_json_byte_identical": true,
+    "stdout_byte_identical": true
+  },
+  "acceptance": {
+    "metrics_json_byte_identical": true,
+    "stdout_byte_identical": true,
+    "peak_rss_at_most_4194304_KiB": true,
+    "wall_at_most_60_seconds": true,
+    "no_temporary_artifacts_after_exit": true,
+    "all_106_Rust_tests_pass": true,
+    "D0_in_memory_path_byte_identical": true
+  },
+  "verdict": "PASS",
+  "interpretation": "operational_cap_remediated_without_relabeling_the_historical_D3_formal_FAIL",
+  "production_emission": "pooled_pending_separate_downstream_gate"
+}

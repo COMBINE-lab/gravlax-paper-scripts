@@ -1,0 +1,30 @@
+molecules 22156853 -> assigned 23226228 -> 11968036 UMIs in 4646430 entries | load 0.9s, +anno 1.9s, +replay 2.7s, total 6.5s
+d0_ext_replay=7.19
+molecules 130270701 -> assigned 90412600 -> 60221136 UMIs in 27783209 entries | load 7.5s, +anno 1.9s, +replay 16.6s, total 29.6s
+d2p_ext_replay=35.42
+<stdin>:7: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+D0: total UMIs 9434130 -> 10979530 (+16.38%); genes gaining >10%: 7920
+   + 13861  ENSG00000075884  (782 -> 14643)
+   + 13519  ENSG00000188641  (552 -> 14071)
+   + 12564  ENSG00000152601  (2428 -> 14992)
+   +  8911  ENSG00000231721  (1801 -> 10712)
+   +  8861  ENSG00000166501  (2276 -> 11137)
+   +  8751  ENSG00000111913  (2736 -> 11487)
+   +  8240  ENSG00000125740  (10206 -> 18446)
+   +  8060  ENSG00000144218  (366 -> 8426)
+D2p: total UMIs 24153768 -> 54552562 (+125.86%); genes gaining >10%: 15807
+   +337562  ENSG00000179915  (40073 -> 377635)
+   +307409  ENSG00000078328  (5255 -> 312664)
+   +299464  ENSG00000021645  (15906 -> 315370)
+   +292314  ENSG00000185774  (1366 -> 293680)
+   +269939  ENSG00000175161  (7913 -> 277852)
+   +269873  ENSG00000164418  (16514 -> 286387)
+   +243010  ENSG00000151789  (9801 -> 252811)
+   +205731  ENSG00000069667  (7666 -> 213397)
+POOL_EXT_DONE

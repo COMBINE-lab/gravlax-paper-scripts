@@ -1,0 +1,9 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-49 --readFilesIn data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz data/fastq/pbmc_1k_v3_S1_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures Gene --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --soloMultiMappers EM --outSAMtype None --outFileNamePrefix runs/oracle/full/v49mm/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 29 13:11:01 ..... started STAR run
+Aug 29 13:11:02 ..... loading genome
+Aug 29 13:11:07 ..... started mapping
+Aug 29 13:12:16 ..... finished mapping
+Aug 29 13:12:17 ..... started Solo counting
+Aug 29 13:12:35 ..... finished Solo counting
+Aug 29 13:12:35 ..... finished successfully

@@ -1,0 +1,23 @@
+	Command being timed: "taskset -c 0-23 ${GRAVLAX_PROJECT_ROOT}/runs/gravlax-release-0.2.3-20260912/aie-0.2.3 collection find-events ${GRAVLAX_PROJECT_ROOT}/runs/post-v1/jshape-routing-gate-b-r3/collections/canonical/route-root.aicollection --kind cassette --design design.tsv --groups groups.tsv --require-group astro_nsc --require-group mature_neuron --min-group-umi-classes 2 --min-donors 4 --min-samples 4 --min-umi-classes 8 --min-side-umi-classes 2 --min-support 2 --annotation ${GRAVLAX_PROJECT_ROOT}/runs/genefull-20260910/gencode-v32.aic --assembly GRCh38 --annotation-label GENCODE-v32 --max-candidates 10000000 --max-candidates-considered 100000000 --max-routed-entries 1000000000 --max-exact-match-attempts 2500000000 --max-annotation-comparisons 1000000000 --format json -o ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/collection-discovery-0.2.3/find-routed-all.json"
+	User time (seconds): 29.95
+	System time (seconds): 2.71
+	Percent of CPU this job got: 364%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.97
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2956076
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3085906
+	Voluntary context switches: 18538
+	Involuntary context switches: 2325
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1219768
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

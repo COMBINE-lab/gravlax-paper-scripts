@@ -1,0 +1,45 @@
+== sections (raw -> zstd) ==
+  meta: 0.000 MB -> 0.000 MB
+  chroms: 0.002 MB -> 0.000 MB
+  cells: 6.513 MB -> 6.480 MB
+  shapes: 22.126 MB -> 13.877 MB
+  patterns: 62.861 MB -> 46.020 MB
+  rans.tables: 0.001 MB -> 0.000 MB
+  index.chunks: 0.015 MB -> 0.012 MB
+  index.junctions: 5.555 MB -> 4.532 MB
+  index.jpost: 4.285 MB -> 0.470 MB
+  index.cellpost: 16.093 MB -> 5.395 MB
+  edges: 45.564 MB -> 42.052 MB
+  coc x1869: 244.856 MB -> 230.879 MB
+  chunks x849: 881.875 MB -> 279.118 MB
+== chunk streams (raw, concatenated) ==
+  anchor: 132.854 MB
+  class: 145.193 MB
+  layout: 390.812 MB
+  weight: 124.595 MB
+  rep.pos: 71.827 MB
+  rep.shape: 193.346 MB
+  mm.pos: 12.119 MB
+  mm.shape: 14.207 MB
+  mm.pattern: 31.234 MB
+  mm.weight: 10.977 MB
+== value entropy (memoryless coder bound per stream) ==
+  value-entropy anchor: 130270701 values, 23396 distinct, order-0 bound 62.64 MB (3.85 bits/value); varint stream 132.85 MB
+  value-entropy class: 130270701 values, 3937091 distinct, order-0 bound 23.32 MB (1.43 bits/value); varint stream 145.19 MB
+    class: 122483959 of 130270701 tokens fresh (94.0%)
+  value-entropy layout: 130270701 values, 126 distinct, order-0 bound 25.51 MB (1.57 bits/value); varint stream 390.81 MB
+  value-entropy weight: 124595227 values, 100 distinct, order-0 bound 32.45 MB (2.08 bits/value); varint stream 124.60 MB
+  value-entropy rep.pos: 52110424 values, 6673 distinct, order-0 bound 55.35 MB (8.50 bits/value); varint stream 71.83 MB
+    rep.pos: 1083811 of 52110424 offsets are 0 (2.1%) — anchor-equal representatives
+  value-entropy rep.shape: 173703807 values, 2067843 distinct, order-0 bound 65.44 MB (3.01 bits/value); varint stream 193.35 MB
+  value-entropy mm.pos: 10976802 values, 158379 distinct, order-0 bound 3.67 MB (2.67 bits/value); varint stream 12.12 MB
+  value-entropy mm.shape: 10976802 values, 500117 distinct, order-0 bound 6.39 MB (4.66 bits/value); varint stream 14.21 MB
+  value-entropy mm.pattern: 10976802 values, 4135815 distinct, order-0 bound 24.80 MB (18.07 bits/value); varint stream 31.23 MB
+  value-entropy mm.weight: 10976802 values, 30 distinct, order-0 bound 0.74 MB (0.54 bits/value); varint stream 10.98 MB
+== factorization: shapes -> junction chains ==
+  3271595 shapes (47 single-block, 3271548 spliced) -> 423327 distinct chains (7.73x sharing among spliced)
+  shape dict now ~22.126 MB raw; factored ~19.189 MB raw (chain dict 2.831 + residuals 16.358)
+== factorization: hop (intron length) vocabulary ==
+  3594747 intron occurrences in shape dict -> 303808 distinct lengths (11.83x sharing)
+== factorization: pattern alternatives ==
+  4135815 patterns, 13457495 alt entries (78.9% same-shape) -> 6570856 distinct (chrom,offset,flip) alts (2.05x sharing), 6154780 distinct offsets

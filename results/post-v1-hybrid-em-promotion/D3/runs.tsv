@@ -1,0 +1,7 @@
+dataset	seed	control	depth_scale	depth_power	groups	out
+D3	7	real	8	8	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-promotion-d3-prep-r1/groups/D3.real.tsv	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hybrid-em-promotion-d3-r1/real/seed-7
+D3	17	real	8	8	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-promotion-d3-prep-r1/groups/D3.real.tsv	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hybrid-em-promotion-d3-r1/real/seed-17
+D3	29	real	8	8	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-promotion-d3-prep-r1/groups/D3.real.tsv	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hybrid-em-promotion-d3-r1/real/seed-29
+D3	7	shuffled	8	8	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-promotion-d3-prep-r1/groups/D3.shuffled.tsv	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hybrid-em-promotion-d3-r1/shuffled/seed-7
+D3	17	shuffled	8	8	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-promotion-d3-prep-r1/groups/D3.shuffled.tsv	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hybrid-em-promotion-d3-r1/shuffled/seed-17
+D3	29	shuffled	8	8	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-promotion-d3-prep-r1/groups/D3.shuffled.tsv	${GRAVLAX_PROJECT_ROOT}/runs/post-v1/hybrid-em-promotion-d3-r1/shuffled/seed-29

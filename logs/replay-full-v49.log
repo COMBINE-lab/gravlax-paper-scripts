@@ -1,0 +1,6 @@
+annotation compiled: 78691 genes, 507365 transcripts (1.8s)
+multimapper reads counted (single-gene union): 1332588
+molecules assigned: 32556992 of 0 (919861 multi-gene) from 55941644 reads (47.3s)
+collapse done (4.8s)
+replay complete: 3578246 nonzero entries, 10317658 total UMIs -> runs/replay/full-v49 (55.2s wall total)
+REPLAY_FULL_DONE

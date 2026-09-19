@@ -1,0 +1,73 @@
+{
+  "dataset": {
+    "called_nuclei": 10261,
+    "filtered_feature_bc_matrix_h5_sha256": "5dc9d83c2ce7b0f6fbc5f6b9ee75b2fa3cdb7c470b027b7c6284a8381fe2f99a",
+    "id": "10k_Human_Brain_MO_gemx",
+    "role": "the prospectively locked D5 normal-brain confirmation sample"
+  },
+  "event": {
+    "event_id": "cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959",
+    "locus": "chr9:129907500-129926000",
+    "role": "fixed before D5 was opened in the preceding confirmation gate"
+  },
+  "label_rule": {
+    "ambiguous_or_doublet": "the two best eligible lineages both score at least 0.50 and their score margin is below 0.35, or the nucleus is above the 99.5th GEX-UMI percentile and the runner-up is eligible with score at least 0",
+    "assignment": "select the highest lineage score when its selected submodule detects at least two markers, its score is at least 0.50, and its margin over the runner-up is at least 0.35",
+    "expression_transform": "log1p(10000 * marker_count / total_GEX_UMIs_excluding_FNBP1)",
+    "fnbp1_exclusion": "FNBP1 is excluded from the library-size denominator and is absent from all marker modules",
+    "lineage_score": "maximum of the lineage's two submodule scores",
+    "marker_standardization": "z-score each transformed marker over all 10,261 nuclei and clip to [-3,3]",
+    "missing_or_unresolved": "unresolved when the best lineage fails the marker-detection, score, or margin rule and does not meet the ambiguous/doublet rule",
+    "submodule_score": "mean marker z-score, then z-score that mean over all nuclei",
+    "thresholds": {
+      "high_GEX_UMI_quantile": 0.995,
+      "minimum_detected_markers_in_selected_submodule": 2,
+      "minimum_lineage_score": 0.5,
+      "minimum_top_vs_runner_margin": 0.35
+    }
+  },
+  "marker_modules": {
+    "astrocyte": {
+      "homeostatic": ["AQP4", "ALDH1L1", "SLC1A2", "SLC1A3"],
+      "structural_reactive": ["GFAP", "GJA1", "S100B", "SOX9"]
+    },
+    "microglia_immune": {
+      "leukocyte": ["PTPRC", "TYROBP", "LST1", "AIF1", "FCER1G", "CD74"],
+      "microglia": ["P2RY12", "TMEM119", "CX3CR1", "C1QA", "C1QB", "C1QC"]
+    },
+    "neuronal": {
+      "excitatory_core": ["RBFOX3", "SNAP25", "SYT1", "SLC17A7", "CAMK2A", "SATB2"],
+      "inhibitory_core": ["RBFOX3", "SNAP25", "SYT1", "GAD1", "GAD2", "SLC6A1"]
+    },
+    "oligodendrocyte_OPC": {
+      "mature_oligodendrocyte": ["PLP1", "MBP", "MOG", "MOBP", "MAG", "CLDN11"],
+      "OPC": ["PDGFRA", "OLIG1", "OLIG2", "CSPG4", "VCAN", "SOX10"]
+    },
+    "vascular": {
+      "endothelial": ["CLDN5", "EMCN", "PECAM1", "VWF", "KDR", "FLT1"],
+      "mural": ["RGS5", "PDGFRB", "MCAM", "COL4A1", "COL4A2", "CSPG4"]
+    }
+  },
+  "reporting": {
+    "claims_forbidden": [
+      "differential splicing",
+      "cell-type-specific splicing",
+      "sample-level inference",
+      "mechanism"
+    ],
+    "denominator": "all H5-labelled nuclei in each group, including nuclei absent from the targeted archive dictionary",
+    "outputs": [
+      "group size",
+      "include_only, exclude_only, and both informative molecules",
+      "conservative inclusion usage",
+      "event-bearing cells and rate per 1,000 group nuclei"
+    ]
+  },
+  "schema": "gravlax.fnbp1-broad-cell-localization-lock.v1",
+  "status": "LABEL_RULE_LOCKED_BEFORE_ANY_CELL_TYPE_EVENT_QUERY",
+  "timing": {
+    "date": "2026-09-01",
+    "prior_information_allowed": "the already reported D5 bulk total of 72 include-only, 2 exclude-only, and 0 both",
+    "prohibited_before_lock": "inspection of FNBP1 event evidence stratified by these labels"
+  }
+}

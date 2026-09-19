@@ -1,0 +1,60 @@
+{
+  "schema": "gravlax.replicate-aware-splice-graph-gate.v1",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_MEASUREMENT",
+  "objective": "Retain exact per-sample molecular splice-graph rows before a replicate-aware beta-binomial contrast.",
+  "design": {
+    "header": "sample<TAB>condition<TAB>archive<TAB>cells",
+    "path_base": "directory containing the design TSV",
+    "all_cells_token": ".",
+    "unique": [
+      "sample identifier",
+      "resolved archive path"
+    ],
+    "contrast": "explicit ordered A:B; effect is B minus A",
+    "counts_only": "permits any condition count and emits no inferential test"
+  },
+  "candidate_graph": {
+    "edge_recurrence": "catalogue support >= min_support in >= min_edge_samples archives",
+    "measurement": "after selection, reduce all observed local evidence without imputing catalogue absence",
+    "path": "selected junction set co-supported by one archive UMI class on one strand",
+    "overflow": "hard error; never truncate"
+  },
+  "inference": {
+    "unit": "sample or donor",
+    "response": "one per-sample path count versus all same-strand path-fragment counts",
+    "eligibility": "sample strand total >= min_sample_umis",
+    "null": "shared mean usage and shared beta-binomial concentration",
+    "alternative": "condition-specific mean usage and shared beta-binomial concentration",
+    "test": "one-degree-of-freedom likelihood-ratio test",
+    "multiplicity": "Benjamini-Hochberg across tested locus paths",
+    "effect": "fitted condition B mean minus fitted condition A mean",
+    "reserved_extension": "joint Dirichlet-multinomial or hierarchical Dirichlet graph model"
+  },
+  "defaults": {
+    "min_support": 1,
+    "min_edge_samples": 2,
+    "min_sample_umis": 10,
+    "min_replicates": 2,
+    "min_path_umis": 5,
+    "min_path_samples": 2,
+    "max_paths": 100000
+  },
+  "real_gate": {
+    "dataset": "GSE234790 / PRJNA983239 eight adult SEZ donors",
+    "locus": "chr9:129907500-129926000",
+    "mode": "counts-only",
+    "condition": "cohort",
+    "forbidden": "constructing an arbitrary donor contrast or changing the registered FNBP1 STOP"
+  },
+  "acceptance": [
+    "standalone and cohort exact counts agree",
+    "sample path and edge matrices contain explicit zeros",
+    "edge/path conservation holds per sample",
+    "the sample is the only inferential unit",
+    "null and strong-shift synthetic controls order correctly",
+    "insufficient eligibility suppresses rather than fabricates a test",
+    "counts-only output has no p-values",
+    "malformed input and overflow fail closed",
+    "legacy outputs are unchanged"
+  ]
+}

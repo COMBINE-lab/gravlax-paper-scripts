@@ -1,0 +1,113 @@
+{
+  "archives": [
+    {
+      "archive_root": "a2b361ba9f436c9c37d108e5b8b09f478854d129ecbb3802d4bad6aef38f14d7",
+      "bytes": 110224112,
+      "id": "A",
+      "junctions": 173142,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/A.v2.aie",
+      "sha256": "66f9cec66c0cf08a02ecf53641aa709465b6d306ac6eb76dd7605802b326f463"
+    },
+    {
+      "archive_root": "1682bbdba7b5ca241aa3aa4c9eda8022944a88a7cad9d2e8b972c6f151133ed6",
+      "bytes": 83708098,
+      "id": "B",
+      "junctions": 172098,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/B.v2.aie",
+      "sha256": "991e906cadcbab61e1223c01065803bae1265eb628b74b11fba953340f4b40d1"
+    },
+    {
+      "archive_root": "acbda19bd8ff2f472c9cc2f87c2dac05b260a46690d49c1e0b08a5bd667e7a17",
+      "bytes": 68210860,
+      "id": "C",
+      "junctions": 117523,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/C.v2.aie",
+      "sha256": "8ab72a252cad7ac7311a7aab09cb84aa9e5c338b79ee482df4faf73659b26738"
+    },
+    {
+      "archive_root": "1b07a8383a7b8d583155a7fd1799369a4ae963aa9d890160329f86365eaa8095",
+      "bytes": 397913953,
+      "id": "D",
+      "junctions": 506159,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/D.v2.aie",
+      "sha256": "a478b0168d22e797525058af238c706d552d02f45a3d63a7a0becadf8409fa95"
+    },
+    {
+      "archive_root": "e6729534e9c10e7d0cff51f83980433187b9cbe62d6bbcbdcda4d1a9624d168a",
+      "bytes": 64188688,
+      "id": "E",
+      "junctions": 140350,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/E.v2.aie",
+      "sha256": "11e2a42817da24eacc18c1f39d7b1f5996f89fcd700c6969b3fff8a8fbc9965a"
+    },
+    {
+      "archive_root": "7ac8737019a626fe712dcdb72f4f7c16d48aaefb5c935759163437652f739971",
+      "bytes": 91983279,
+      "id": "F",
+      "junctions": 171496,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/F.v2.aie",
+      "sha256": "bfa29a8dcd599e192b13413024b75fdfb276b655834adbd7c1a3cd9457c4208f"
+    },
+    {
+      "archive_root": "05ee7c9f298a4da7dc089dd77bbc171fa30cb2ffe0e52bf536dca51ca30f8941",
+      "bytes": 436454139,
+      "id": "G",
+      "junctions": 513421,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/G.v2.aie",
+      "sha256": "827ae5ae24e2ccfaf4b8352cf73db18fb964930ebf7b83b7517326f32ce673b8"
+    },
+    {
+      "archive_root": "21c7b1088a1c07bcd7900a537526c5d1356c48d2ddab9e61fe2b98954bdc6521",
+      "bytes": 73709402,
+      "id": "H",
+      "junctions": 147701,
+      "path": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/archive-root-gate-a-r3/archives/H.v2.aie",
+      "sha256": "8b6894b69fdb6a9a5d6a17151a7edff2c1bcb7d3f124b577ba0c4d6604cc86c9"
+    }
+  ],
+  "catalogue_rows": {
+    "A": 173142,
+    "B": 172098,
+    "C": 117523,
+    "D": 506159,
+    "E": 140350,
+    "F": 171496,
+    "G": 513421,
+    "H": 147701
+  },
+  "digest_file": {
+    "path": "${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/experiments/designs/archive-root-jshape-routing-panel.sha256",
+    "sha256": "db723b3883fdd9c8a57a4f74090aa3ddf68a018c3d6feccd54c42309180092b1"
+  },
+  "eligible_rows": {
+    "eight_archives": 22035,
+    "four_to_seven_archives": 68436,
+    "one_archive": 1139256,
+    "two_to_three_archives": 114543
+  },
+  "gate_a_result": {
+    "gravlax_commit": "fbd48e536b39729632f189a74e7ece891166ecd1",
+    "paper_scripts_commit": "df1e363d397c740300c97ec2b1f04fe48cd9eb6b",
+    "path": "${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/results/post-v1-archive-root-gate-a.json",
+    "sha256": "3f75fb1f7d5cc8b726405017a320c3698b7384c5da1f833f6d1f0a29453429db"
+  },
+  "panel": {
+    "bytes": 11578,
+    "path": "${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/experiments/designs/archive-root-jshape-routing-panel.tsv",
+    "rows": 96,
+    "sha256": "55980706cd6fbf0c07a1e652b330e5aca6946b1365010c8ef4e8cb6d6c4f1ca1"
+  },
+  "schema": "gravlax.jshape-prospective-panel.v1",
+  "selection": {
+    "domain_ascii": "gravlax-jshape-panel-v1\\0",
+    "domain_hex": "677261766c61782d6a73686170652d70616e656c2d763100",
+    "order": "smallest BLAKE3, then chrom/donor/acceptor",
+    "preimage": "domain || chrom_utf8 || donor_u32_le || acceptor_u32_le",
+    "rows_per_stratum": 24
+  },
+  "status": "FROZEN_AFTER_GATE_A_PASS_BEFORE_GATE_B_IMPLEMENTATION_OR_MEASUREMENT",
+  "zstd": {
+    "path": "${CONDA_ROOT}/bin/zstd",
+    "version": "*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***"
+  }
+}

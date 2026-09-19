@@ -1,0 +1,13 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 20 --genomeDir ref/star-base --twopassMode Basic --readFilesIn data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R2_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R2_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R2_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R2_001.fastq.gz data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R1_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R1_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R1_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures SJ --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --outSAMattributes NH HI AS nM CR UR CY UY --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 32000000000 --outSAMunmapped Within --outFileNamePrefix runs/ingest/d2p/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 29 15:12:55 ..... started STAR run
+Aug 29 15:12:55 ..... loading genome
+Aug 29 15:13:02 ..... started 1st pass mapping
+Aug 29 15:17:37 ..... finished 1st pass mapping
+Aug 29 15:17:37 ..... inserting junctions into the genome indices
+Aug 29 15:20:07 ..... started mapping
+Aug 29 15:25:05 ..... finished mapping
+Aug 29 15:25:07 ..... started Solo counting
+Aug 29 15:25:11 ..... finished Solo counting
+Aug 29 15:25:11 ..... started sorting BAM
+Aug 29 15:26:08 ..... finished successfully

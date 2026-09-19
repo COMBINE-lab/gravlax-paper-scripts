@@ -1,0 +1,148 @@
+{
+  "status": "D0_development_complete_D4_confirmation_pending",
+  "analysis": "candidate_normalized_convex_partial_pooling",
+  "protocol": {
+    "date": "2026-08-31",
+    "scope": "D0_development_only",
+    "threads": "24",
+    "gravlax_commit": "f6fd759ae118049ae0a11ef9f50b0d32d5daee07",
+    "scripts_commit": "d96552ec6a8f34921dd9154fc6528719b4918349",
+    "aie_binary_sha256": "9778779a2c2c1468f4c6665ae13ce0d485e5e22a01d4ed952e0ae537a7be2690",
+    "manifest_sha256": "5d77792a88f688cae3ea15fa603a7b3ee64f76aa26366264879af2fcd50659d4",
+    "groups_sha256": "a8ad72b9437af1d06d98ec23e09f3424898e54e35c3abfadad11ea8411c90404",
+    "archive_sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842",
+    "gtf_sha256": "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914",
+    "hostname": "analysis-host",
+    "kernel": "Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux"
+  },
+  "control_execution_scripts_commit": "d83ed08",
+  "selection": {
+    "selected": {
+      "cell_weight": 0.2,
+      "group_weight": 0.6,
+      "global_weight": 0.2,
+      "group_prior": 80.0,
+      "seeds": 3,
+      "n_by_seed": [
+        166755,
+        166664,
+        166587
+      ],
+      "mean_negative_log_loss": 0.05860362400495007,
+      "mean_multiclass_brier": 0.027328581042477092,
+      "mean_top1_percent": 98.18220906192363
+    },
+    "tuned_no_group": {
+      "cell_weight": 0.2,
+      "group_weight": 0.0,
+      "global_weight": 0.8,
+      "group_prior": 20.0,
+      "seeds": 3,
+      "n_by_seed": [
+        166755,
+        166664,
+        166587
+      ],
+      "mean_negative_log_loss": 0.058969639782781615,
+      "mean_multiclass_brier": 0.02746148542393807,
+      "mean_top1_percent": 98.17561069366985
+    },
+    "configuration_count": 68,
+    "selection_metric": "minimum mean NLL; lower group, cell, then prior tie-break"
+  },
+  "D0": {
+    "real_selected": {
+      "means": {
+        "negative_log_loss": 0.05860362400495007,
+        "multiclass_brier": 0.027328581042477092,
+        "top1_percent": 98.18220906192363
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 166755,
+          "negative_log_loss": 0.05846643332620903,
+          "multiclass_brier": 0.02713330143052691,
+          "top1_percent": 98.2183442775329
+        },
+        {
+          "seed": 17,
+          "n": 166664,
+          "negative_log_loss": 0.05755399126171801,
+          "multiclass_brier": 0.02713091517260585,
+          "top1_percent": 98.18617097873566
+        },
+        {
+          "seed": 29,
+          "n": 166587,
+          "negative_log_loss": 0.05979044742692317,
+          "multiclass_brier": 0.027721526524298514,
+          "top1_percent": 98.1421119295023
+        }
+      ]
+    },
+    "shuffled_selected": {
+      "means": {
+        "negative_log_loss": 0.058688227030507224,
+        "multiclass_brier": 0.027337943859377007,
+        "top1_percent": 98.16841360110077
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 166755,
+          "negative_log_loss": 0.05862466423537985,
+          "multiclass_brier": 0.02718311969798506,
+          "top1_percent": 98.19015921561572
+        },
+        {
+          "seed": 17,
+          "n": 166664,
+          "negative_log_loss": 0.05757231058133688,
+          "multiclass_brier": 0.02707885494245731,
+          "top1_percent": 98.1753708059329
+        },
+        {
+          "seed": 29,
+          "n": 166587,
+          "negative_log_loss": 0.059867706274804956,
+          "multiclass_brier": 0.027751856937688658,
+          "top1_percent": 98.13971078175368
+        }
+      ]
+    },
+    "pooled_reference": {
+      "n_across_seeds": 500006,
+      "top1_percent": 98.18202181573821,
+      "expected_accuracy_percent": 96.99385085905458,
+      "negative_log_loss": 0.05972566238469802,
+      "multiclass_brier": 0.02789596677568946
+    },
+    "relative_nll_improvement_over_pooled": 0.018786537226172736,
+    "relative_nll_improvement_over_tuned_no_group": 0.006206851172565894,
+    "relative_nll_real_over_shuffled": 0.0014415672416407798,
+    "shuffle_explained_fraction_of_group_gain": 0.7688541568934947,
+    "real_beats_shuffled_on_all_seeds": true
+  },
+  "performance": {
+    "runs": 204,
+    "wall_seconds": {
+      "minimum": 2.78,
+      "median": 2.87,
+      "maximum": 3.21
+    },
+    "peak_rss_kib": {
+      "minimum": 1186224,
+      "median": 1227622.0,
+      "maximum": 1253748
+    }
+  },
+  "interpretation": {
+    "confirmation_status": "none_D0_is_development_only",
+    "candidate_normalized_calibration_signal": "encouraging",
+    "biological_group_signal": "small_and_most_gain_is_reproduced_by_shuffling",
+    "full_dirichlet_escalation_supported_now": false,
+    "next_binding_gate": "untouched_D4_real_vs_shuffled_and_tuned_no_group",
+    "production_emission": "pooled"
+  }
+}

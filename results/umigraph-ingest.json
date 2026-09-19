@@ -1,0 +1,18 @@
+{
+  "base_molecules": 23113618,
+  "classes": 22584174,
+  "edges_1mm_w10000": 1076634,
+  "edges_1mm_w100000": 1078540,
+  "edges_1mm_w1000000": 1080072,
+  "edges_1mm_w3000000": 1081023,
+  "edges_1mm_w4294967295": 1098826,
+  "graph_bytes_zstd": 3463112,
+  "same_links_w10000": 349787,
+  "same_links_w100000": 426116,
+  "same_links_w1000000": 468094,
+  "same_links_w3000000": 476687,
+  "same_links_w4294967295": 529444,
+  "store_window": 3000000,
+  "stored_edges": 1081023,
+  "stored_links": 476687
+}

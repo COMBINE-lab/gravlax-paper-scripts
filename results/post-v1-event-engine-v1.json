@@ -1,0 +1,69 @@
+{
+  "schema": "gravlax.gate.event-engine-v1.v1",
+  "status": "PASS_ENGINE_FAIL_HELD_OUT_BIOLOGY",
+  "implementation_gravlax_commit": "cc28ab4f05ab19c81f0943364e8ea6deebc24317",
+  "correctness": {
+    "rust_tests_passed": 115,
+    "standalone_jset_events_checked": 50,
+    "standalone_totals_and_group_rows_exact": true,
+    "cohort_rows_checked": 2198,
+    "cohort_equals_independent_queries": true,
+    "repeated_d0_json_byte_identical": true,
+    "legacy_query_and_federate_bytes_identical": true
+  },
+  "D0_chr1": {
+    "candidate_events": 1905,
+    "retained_events": 1211,
+    "event_types": {
+      "alt_acceptor": 386,
+      "alt_donor": 481,
+      "cassette": 344
+    },
+    "independent_chunk_decodes": 4263,
+    "unique_chunk_decodes": 57,
+    "peak_rss_kib": 336472
+  },
+  "D1_chr1": {
+    "candidate_events": 17951,
+    "retained_events": 9242,
+    "independent_chunk_decodes": 39526,
+    "unique_chunk_decodes": 58,
+    "wall_seconds": 1.64,
+    "peak_rss_kib": 1469384
+  },
+  "D0_D1_cohort": {
+    "candidate_events": 1311,
+    "retained_events": 1291,
+    "wall_seconds": 0.80,
+    "peak_rss_kib": 1171404
+  },
+  "performance": {
+    "repetitions": 7,
+    "event_median_seconds": 0.2009605000494048,
+    "standalone_50_jset_median_seconds": 2.9274721309775487,
+    "wall_fraction": 0.06864642635634573,
+    "gate_max": 0.25,
+    "pass": true
+  },
+  "held_out_D4": {
+    "event_id": "cassette:chr1:45568177-45568484:45568684-45568926:45568177-45568926",
+    "event_present": true,
+    "informative_umis": 110,
+    "eligible_groups": [
+      {
+        "group": "g3",
+        "informative_umis": 46,
+        "usage_fraction": 0.8695652173913043
+      },
+      {
+        "group": "g4",
+        "informative_umis": 29,
+        "usage_fraction": 0.8275862068965517
+      }
+    ],
+    "eligible_usage_range": 0.04197901049475261,
+    "threshold": 0.05,
+    "pass": false
+  },
+  "interpretation": "Publish the exact event and cohort query engine without a biological-generalization claim from the AKR1A1 event."
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "gravlax.molecular-splice-graph-gate.v1",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_MEASUREMENT",
+  "objective": "Represent a locus as strand-aware junction edges and exact molecule-class path fragments without reconstructing full transcripts.",
+  "coordinates": "0-based half-open genomic coordinates",
+  "evidence_semantics": {
+    "edge": "a splice junction observed in at least one archived representative placement",
+    "path_fragment": "the sorted set of selected locus junctions co-supported by one archive UMI class on one strand",
+    "deduplication": "one count per archive UMI class for an edge or exact path fragment",
+    "scope": "cell, frozen cell group, or bulk using the existing strict archive-barcode scope",
+    "strand": "forward and reverse evidence are separate graphs",
+    "multimappers": "count archived anchor-placement junction evidence without resolving alternatives",
+    "forbidden_interpretation": [
+      "a path fragment is a complete transcript",
+      "absence of an edge proves biological absence",
+      "cells or molecules are biological replicates",
+      "archive representative reduction preserves every read-level co-occurrence"
+    ]
+  },
+  "query_gate": {
+    "minimum_catalogue_support_default": 1,
+    "minimum_path_umis_default": 1,
+    "maximum_paths_default": 100000,
+    "overflow": "hard error; never truncate paths silently",
+    "output": [
+      "versioned JSON",
+      "strand-aware nodes and junction edges",
+      "exact edge UMI and cell counts",
+      "exact path-fragment UMI and cell counts",
+      "per-group counts when a frozen group map is supplied",
+      "planning counts and explicit lower-bound semantics"
+    ]
+  },
+  "replicate_layer": {
+    "phase": "next after the exact per-shard primitive",
+    "unit": "sample or donor from an explicit design table",
+    "required_behavior": "retain one exact count row per biological replicate before any beta-binomial or Dirichlet-multinomial contrast",
+    "not_in_v1_query_gate": "no population p-value or differential-splicing claim"
+  },
+  "acceptance": [
+    "a synthetic molecule spanning two junctions produces one two-edge path fragment",
+    "repeated representatives and archive chunks cannot double-count a UMI class",
+    "opposite strands never merge",
+    "edge counts equal the union of path fragments containing that edge",
+    "cell/group/bulk scope totals agree under the same selected cells",
+    "malformed loci, zero thresholds, overflow, and invalid scope fail closed",
+    "all pre-existing query golden tests remain unchanged"
+  ]
+}

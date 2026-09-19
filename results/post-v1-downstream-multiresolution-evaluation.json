@@ -1,0 +1,979 @@
+{
+  "status": "complete",
+  "analysis": "locked_postexploratory_multiresolution_replay_evaluation",
+  "manifest": "${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/experiments/manifests/downstream-multiresolution.yaml",
+  "manifest_sha256": "6f8959321b050e6594b273670428c4f817f320dbede706b8560748f945ff486b",
+  "oracle_selection": "${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/results/post-v1-downstream-multiresolution-selection.json",
+  "oracle_selection_sha256": "91bbe3ccd97aeebcdf0c101ec375cb119f607ce68c54b2de6e770f16e982d09a",
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.5.2",
+    "scanpy": "1.12.4",
+    "scikit_learn": "1.9.0"
+  },
+  "datasets": [
+    {
+      "id": "D0",
+      "role": "confirmatory_human",
+      "status": "complete",
+      "locked_dimension": 40,
+      "locked_resolution": 0.6,
+      "locked_oracle_cluster_count": 7,
+      "called_cells": 1225,
+      "retained_genes": 15142,
+      "hvg_count": 2000,
+      "oracle_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 20825,
+          "sha256": "565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 32440196,
+          "sha256": "64c43ca0327b52d749d4db0d2ca7e5604fde6a83b3b7ff6b75f0339100cc63eb"
+        }
+      ],
+      "replay_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 56611976,
+          "sha256": "abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335"
+        }
+      ],
+      "ensemble": {
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "within_oracle_ari": {
+          "p10": 0.9372929637162357,
+          "median": 0.9945900664164353,
+          "mean": 0.9810628615257441,
+          "p90": 1.0
+        },
+        "within_replay_ari": {
+          "p10": 0.9340188885778747,
+          "median": 0.9951909626915415,
+          "mean": 0.9821975881788206,
+          "p90": 1.0
+        },
+        "replay_cross_ari": {
+          "p10": 0.9347355213043214,
+          "median": 0.9920326452876582,
+          "mean": 0.9793282666152073,
+          "p90": 0.9967843930783942
+        },
+        "control_cross_ari": {
+          "p10": 0.5944100702881651,
+          "median": 0.6195077124883468,
+          "mean": 0.6125140992982139,
+          "p90": 0.6242977811263549
+        },
+        "cross_excess_loss_vs_mean_within": 0.0028578692663301375,
+        "replay_minus_control_cross_ari": 0.3725249327993114,
+        "oracle_medoid_seed": 2,
+        "replay_medoid_seed": 1,
+        "control_medoid_seed": 16,
+        "oracle_medoid_centrality": 0.9891249502623883,
+        "replay_medoid_centrality": 0.9894948493927703,
+        "control_medoid_centrality": 0.9810734036915335
+      },
+      "replay": {
+        "ari": 0.9920326452876582,
+        "nmi": 0.9875723581113297,
+        "neighbor_jaccard_mean": 0.8680474500121306,
+        "neighbor_jaccard_median": 0.875,
+        "neighbor_jaccard_p10": 0.7647058823529411,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 306,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.999797326834253
+            },
+            {
+              "cluster": 1,
+              "cells": 192,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997695566355626
+            },
+            {
+              "cluster": 2,
+              "cells": 138,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9996527692761972
+            },
+            {
+              "cluster": 3,
+              "cells": 392,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997432300377807
+            },
+            {
+              "cluster": 4,
+              "cells": 97,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9996229995292831
+            },
+            {
+              "cluster": 5,
+              "cells": 54,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997283233925818
+            },
+            {
+              "cluster": 6,
+              "cells": 46,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9998184543335517
+            }
+          ],
+          "mean_top25_jaccard": 1.0,
+          "median_effect_pearson": 0.9997432300377807
+        },
+        "pseudobulk_pearson": 0.9999857154263598,
+        "pseudobulk_spearman": 0.9990254262318913
+      },
+      "control": {
+        "ari": 0.6253265977384237,
+        "nmi": 0.6662884828732281,
+        "neighbor_jaccard_mean": 0.4831013180026123,
+        "neighbor_jaccard_median": 0.5789473684210527,
+        "neighbor_jaccard_p10": 0.0,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 306,
+              "top25_jaccard": 0.7857142857142857,
+              "effect_pearson": 0.9805421012421771
+            },
+            {
+              "cluster": 1,
+              "cells": 192,
+              "top25_jaccard": 0.9230769230769231,
+              "effect_pearson": 0.971743606806896
+            },
+            {
+              "cluster": 2,
+              "cells": 138,
+              "top25_jaccard": 0.6666666666666666,
+              "effect_pearson": 0.9677019404420599
+            },
+            {
+              "cluster": 3,
+              "cells": 392,
+              "top25_jaccard": 0.5625,
+              "effect_pearson": 0.9587147130938835
+            },
+            {
+              "cluster": 4,
+              "cells": 97,
+              "top25_jaccard": 0.6666666666666666,
+              "effect_pearson": 0.9401942692680595
+            },
+            {
+              "cluster": 5,
+              "cells": 54,
+              "top25_jaccard": 0.5625,
+              "effect_pearson": 0.8146592780282697
+            },
+            {
+              "cluster": 6,
+              "cells": 46,
+              "top25_jaccard": 0.6666666666666666,
+              "effect_pearson": 0.9878317017606107
+            }
+          ],
+          "mean_top25_jaccard": 0.690541601255887,
+          "median_effect_pearson": 0.9677019404420599
+        },
+        "pseudobulk_pearson": 0.9995518190501771,
+        "pseudobulk_spearman": 0.9977448033380416
+      },
+      "control_selected_cells": 150334,
+      "replay_minus_control_neighbor_jaccard": 0.29605263157894735,
+      "gate": {
+        "checks": {
+          "medoid_cross_ari": true,
+          "cross_excess_loss_vs_mean_within": true,
+          "mean_marker_top25_jaccard": true,
+          "median_marker_effect_pearson": true,
+          "pseudobulk_pearson": true,
+          "pseudobulk_spearman": true,
+          "replay_minus_control_cross_ari": true,
+          "replay_minus_control_neighbor_jaccard": true
+        },
+        "component_verdicts": {
+          "partition_retention": "PASS",
+          "marker_retention": "PASS",
+          "pseudobulk_retention": "PASS",
+          "control_sensitivity": "PASS",
+          "composite": "PASS"
+        },
+        "verdict": "PASS"
+      }
+    },
+    {
+      "id": "D1",
+      "role": "confirmatory_human",
+      "status": "complete",
+      "locked_dimension": 30,
+      "locked_resolution": 0.4,
+      "locked_oracle_cluster_count": 9,
+      "called_cells": 5038,
+      "retained_genes": 21655,
+      "hvg_count": 2000,
+      "oracle_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 85646,
+          "sha256": "23b85638b941d8e6553a73b3f733a053e340e51f406f0d44cc2c44327337c680"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 156327273,
+          "sha256": "431c6d3aff426b5cddb74e2c034b99339aa90960cc4dc66d8c0bbf7b749e4813"
+        }
+      ],
+      "replay_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 278190238,
+          "sha256": "323f10075565411f4a97faa944b6dc8885c7fa86dae91021058bc1c680951054"
+        }
+      ],
+      "ensemble": {
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "within_oracle_ari": {
+          "p10": 0.8861717929547058,
+          "median": 0.9505982804381591,
+          "mean": 0.9385076415196288,
+          "p90": 0.9795791726116255
+        },
+        "within_replay_ari": {
+          "p10": 0.91527258458482,
+          "median": 0.9593896688228727,
+          "mean": 0.9533098640979897,
+          "p90": 0.9879415578022646
+        },
+        "replay_cross_ari": {
+          "p10": 0.8838831829945131,
+          "median": 0.9466272247433765,
+          "mean": 0.9362505915368993,
+          "p90": 0.9730941488153754
+        },
+        "control_cross_ari": {
+          "p10": 0.6027016363803196,
+          "median": 0.6214913169017833,
+          "mean": 0.619396371063625,
+          "p90": 0.6346211133250185
+        },
+        "cross_excess_loss_vs_mean_within": 0.008366749887139369,
+        "replay_minus_control_cross_ari": 0.3251359078415932,
+        "oracle_medoid_seed": 9,
+        "replay_medoid_seed": 16,
+        "control_medoid_seed": 5,
+        "oracle_medoid_centrality": 0.9555468288506896,
+        "replay_medoid_centrality": 0.9659830444595887,
+        "control_medoid_centrality": 0.9762401598552843
+      },
+      "replay": {
+        "ari": 0.9781642043109526,
+        "nmi": 0.9704165358887732,
+        "neighbor_jaccard_mean": 0.7906966341492944,
+        "neighbor_jaccard_median": 0.7647058823529411,
+        "neighbor_jaccard_p10": 0.6403508771929864,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 961,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.999663825290168
+            },
+            {
+              "cluster": 1,
+              "cells": 379,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9998587315423417
+            },
+            {
+              "cluster": 2,
+              "cells": 282,
+              "top25_jaccard": 0.9230769230769231,
+              "effect_pearson": 0.9996988817280091
+            },
+            {
+              "cluster": 3,
+              "cells": 1563,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997737839471155
+            },
+            {
+              "cluster": 4,
+              "cells": 667,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.99986161151865
+            },
+            {
+              "cluster": 5,
+              "cells": 687,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997120728637259
+            },
+            {
+              "cluster": 6,
+              "cells": 317,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997223631084066
+            },
+            {
+              "cluster": 7,
+              "cells": 93,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997353628876228
+            },
+            {
+              "cluster": 8,
+              "cells": 89,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997727981831598
+            }
+          ],
+          "mean_top25_jaccard": 0.9914529914529915,
+          "median_effect_pearson": 0.9997353628876228
+        },
+        "pseudobulk_pearson": 0.9999633588662227,
+        "pseudobulk_spearman": 0.9988615569641262
+      },
+      "control": {
+        "ari": 0.6147686607894807,
+        "nmi": 0.6860128381789922,
+        "neighbor_jaccard_mean": 0.4769745699999791,
+        "neighbor_jaccard_median": 0.5,
+        "neighbor_jaccard_p10": 0.0,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 961,
+              "top25_jaccard": 0.8518518518518519,
+              "effect_pearson": 0.965557745214341
+            },
+            {
+              "cluster": 1,
+              "cells": 379,
+              "top25_jaccard": 0.8518518518518519,
+              "effect_pearson": 0.9887843979552713
+            },
+            {
+              "cluster": 2,
+              "cells": 282,
+              "top25_jaccard": 0.9230769230769231,
+              "effect_pearson": 0.965716063134176
+            },
+            {
+              "cluster": 3,
+              "cells": 1563,
+              "top25_jaccard": 0.5625,
+              "effect_pearson": 0.9657578960411564
+            },
+            {
+              "cluster": 4,
+              "cells": 667,
+              "top25_jaccard": 0.7857142857142857,
+              "effect_pearson": 0.9768184800913727
+            },
+            {
+              "cluster": 5,
+              "cells": 687,
+              "top25_jaccard": 0.42857142857142855,
+              "effect_pearson": 0.9089159967112383
+            },
+            {
+              "cluster": 6,
+              "cells": 317,
+              "top25_jaccard": 0.7241379310344828,
+              "effect_pearson": 0.9428772677398843
+            },
+            {
+              "cluster": 7,
+              "cells": 93,
+              "top25_jaccard": 0.5625,
+              "effect_pearson": 0.976960242622129
+            },
+            {
+              "cluster": 8,
+              "cells": 89,
+              "top25_jaccard": 0.8518518518518519,
+              "effect_pearson": 0.9855311475618692
+            }
+          ],
+          "mean_top25_jaccard": 0.7268951248836306,
+          "median_effect_pearson": 0.9657578960411564
+        },
+        "pseudobulk_pearson": 0.9997068122590992,
+        "pseudobulk_spearman": 0.9983917484213826
+      },
+      "control_selected_cells": 2558414,
+      "replay_minus_control_neighbor_jaccard": 0.2647058823529411,
+      "gate": {
+        "checks": {
+          "medoid_cross_ari": true,
+          "cross_excess_loss_vs_mean_within": true,
+          "mean_marker_top25_jaccard": true,
+          "median_marker_effect_pearson": true,
+          "pseudobulk_pearson": true,
+          "pseudobulk_spearman": false,
+          "replay_minus_control_cross_ari": true,
+          "replay_minus_control_neighbor_jaccard": true
+        },
+        "component_verdicts": {
+          "partition_retention": "PASS",
+          "marker_retention": "PASS",
+          "pseudobulk_retention": "FAIL",
+          "control_sensitivity": "PASS",
+          "composite": "FAIL"
+        },
+        "verdict": "FAIL"
+      }
+    },
+    {
+      "id": "D2_prime",
+      "role": "confirmatory_human",
+      "status": "complete",
+      "locked_dimension": 40,
+      "locked_resolution": 0.25,
+      "locked_oracle_cluster_count": 9,
+      "called_cells": 6460,
+      "retained_genes": 25920,
+      "hvg_count": 2000,
+      "oracle_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 109820,
+          "sha256": "8337209908869cedc60372b6920687d46b2775a2cee8e459b490a2f57e43210a"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 172298515,
+          "sha256": "266f8a5e270fd803aeec671bc8c1795ac9f1bb588aaa3d71a8ebc1a646e0048d"
+        }
+      ],
+      "replay_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 115512960,
+          "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3595044,
+          "sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 277152027,
+          "sha256": "c41276b8aa28a6f0446f6bad9971d722a24e3814b287ea24b3081d5a1b4d880c"
+        }
+      ],
+      "ensemble": {
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "within_oracle_ari": {
+          "p10": 0.8854977467487691,
+          "median": 0.946207090504227,
+          "mean": 0.9404617275424616,
+          "p90": 0.9919879177451668
+        },
+        "within_replay_ari": {
+          "p10": 0.8660841557086446,
+          "median": 0.9248008421006871,
+          "mean": 0.9237749636063936,
+          "p90": 0.9863810962375406
+        },
+        "replay_cross_ari": {
+          "p10": 0.8616773810904931,
+          "median": 0.9115103494582053,
+          "mean": 0.912859254946041,
+          "p90": 0.9649927809256482
+        },
+        "control_cross_ari": {
+          "p10": 0.5358901838912282,
+          "median": 0.5570825023736523,
+          "mean": 0.5534233963923794,
+          "p90": 0.5672882311828972
+        },
+        "cross_excess_loss_vs_mean_within": 0.02399361684425183,
+        "replay_minus_control_cross_ari": 0.354427847084553,
+        "oracle_medoid_seed": 11,
+        "replay_medoid_seed": 12,
+        "control_medoid_seed": 15,
+        "oracle_medoid_centrality": 0.9568362838731531,
+        "replay_medoid_centrality": 0.9393583794557628,
+        "control_medoid_centrality": 0.9956678345275337
+      },
+      "replay": {
+        "ari": 0.9649755664451326,
+        "nmi": 0.9289103681262012,
+        "neighbor_jaccard_mean": 0.6913736548695336,
+        "neighbor_jaccard_median": 0.7647058823529411,
+        "neighbor_jaccard_p10": 0.42857142857142855,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 4927,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9998552444196539
+            },
+            {
+              "cluster": 1,
+              "cells": 207,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9998472795556239
+            },
+            {
+              "cluster": 2,
+              "cells": 95,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9996592629773149
+            },
+            {
+              "cluster": 3,
+              "cells": 628,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9998029839642448
+            },
+            {
+              "cluster": 4,
+              "cells": 379,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9999016711975042
+            },
+            {
+              "cluster": 5,
+              "cells": 120,
+              "top25_jaccard": 0.9230769230769231,
+              "effect_pearson": 0.9976283447795659
+            },
+            {
+              "cluster": 6,
+              "cells": 104,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9983383806740601
+            }
+          ],
+          "mean_top25_jaccard": 0.989010989010989,
+          "median_effect_pearson": 0.9998029839642448
+        },
+        "pseudobulk_pearson": 0.9999933631637108,
+        "pseudobulk_spearman": 0.9990177288204503
+      },
+      "control": {
+        "ari": 0.5672916489737482,
+        "nmi": 0.5524953170060568,
+        "neighbor_jaccard_mean": 0.5176951901565435,
+        "neighbor_jaccard_median": 0.5789473684210527,
+        "neighbor_jaccard_p10": 0.0,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 4927,
+              "top25_jaccard": 0.47058823529411764,
+              "effect_pearson": 0.8721240987595826
+            },
+            {
+              "cluster": 1,
+              "cells": 207,
+              "top25_jaccard": 0.7857142857142857,
+              "effect_pearson": 0.9628285364833467
+            },
+            {
+              "cluster": 2,
+              "cells": 95,
+              "top25_jaccard": 0.8518518518518519,
+              "effect_pearson": 0.9660482652504379
+            },
+            {
+              "cluster": 3,
+              "cells": 628,
+              "top25_jaccard": 0.6129032258064516,
+              "effect_pearson": 0.9152126692126364
+            },
+            {
+              "cluster": 4,
+              "cells": 379,
+              "top25_jaccard": 0.7857142857142857,
+              "effect_pearson": 0.9594108555779072
+            },
+            {
+              "cluster": 5,
+              "cells": 120,
+              "top25_jaccard": 0.28205128205128205,
+              "effect_pearson": 0.7785378513525513
+            },
+            {
+              "cluster": 6,
+              "cells": 104,
+              "top25_jaccard": 0.25,
+              "effect_pearson": 0.8387953911861125
+            }
+          ],
+          "mean_top25_jaccard": 0.5769747380617536,
+          "median_effect_pearson": 0.9152126692126364
+        },
+        "pseudobulk_pearson": 0.999769166361456,
+        "pseudobulk_spearman": 0.9897334434169628
+      },
+      "control_selected_cells": 4141222,
+      "replay_minus_control_neighbor_jaccard": 0.18575851393188847,
+      "gate": {
+        "checks": {
+          "medoid_cross_ari": true,
+          "cross_excess_loss_vs_mean_within": true,
+          "mean_marker_top25_jaccard": true,
+          "median_marker_effect_pearson": true,
+          "pseudobulk_pearson": true,
+          "pseudobulk_spearman": true,
+          "replay_minus_control_cross_ari": true,
+          "replay_minus_control_neighbor_jaccard": true
+        },
+        "component_verdicts": {
+          "partition_retention": "PASS",
+          "marker_retention": "PASS",
+          "pseudobulk_retention": "PASS",
+          "control_sensitivity": "PASS",
+          "composite": "PASS"
+        },
+        "verdict": "PASS"
+      }
+    },
+    {
+      "id": "D5_mouse_5_prime",
+      "role": "cross_chemistry_stress_test",
+      "status": "complete",
+      "locked_dimension": 20,
+      "locked_resolution": 0.35,
+      "locked_oracle_cluster_count": 4,
+      "called_cells": 1129,
+      "retained_genes": 12054,
+      "hvg_count": 2000,
+      "oracle_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 19193,
+          "sha256": "ac168025bb832535ea42fb851d279d84326c2b38abf7ba65696e1dd2d567f1d2"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3533776,
+          "sha256": "fb61438ab8b14e3b3d6c0fb2ecbe20b0a425eec470dac7fbf909714eee743472"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 25058532,
+          "sha256": "6c2629e272319e9176503e9791aad7354608e9061d15b5985ab876f2b598685f"
+        }
+      ],
+      "replay_source_digests": [
+        {
+          "name": "barcodes.tsv",
+          "bytes": 12533760,
+          "sha256": "b0dda4b114d8fc7ea8def94fb472e6205c1831a72e3ac245ed13cc332d9f20d1"
+        },
+        {
+          "name": "features.tsv",
+          "bytes": 3533776,
+          "sha256": "fb61438ab8b14e3b3d6c0fb2ecbe20b0a425eec470dac7fbf909714eee743472"
+        },
+        {
+          "name": "matrix.mtx",
+          "bytes": 34903640,
+          "sha256": "61af82cb6f936bc52d27bda4d423a758dc8ccf283035ba7a608bfbb59fb413ed"
+        }
+      ],
+      "ensemble": {
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "within_oracle_ari": {
+          "p10": 0.8429864681105661,
+          "median": 0.9443846798520549,
+          "mean": 0.9295164955844961,
+          "p90": 0.991576560815859
+        },
+        "within_replay_ari": {
+          "p10": 0.9224432406095343,
+          "median": 0.9443036497993311,
+          "mean": 0.9525535869276379,
+          "p90": 0.9943710880588094
+        },
+        "replay_cross_ari": {
+          "p10": 0.8908190561221485,
+          "median": 0.9455416801956971,
+          "mean": 0.941477677523123,
+          "p90": 0.991827646269248
+        },
+        "control_cross_ari": {
+          "p10": 0.5791969622867962,
+          "median": 0.6190704059070924,
+          "mean": 0.6033344858990053,
+          "p90": 0.6334119309273496
+        },
+        "cross_excess_loss_vs_mean_within": -0.0011975153700041208,
+        "replay_minus_control_cross_ari": 0.3264712742886047,
+        "oracle_medoid_seed": 10,
+        "replay_medoid_seed": 3,
+        "control_medoid_seed": 1,
+        "oracle_medoid_centrality": 0.9499166112338558,
+        "replay_medoid_centrality": 0.9637264389879506,
+        "control_medoid_centrality": 0.9995452344999579
+      },
+      "replay": {
+        "ari": 0.9967794190756973,
+        "nmi": 0.9896388831891867,
+        "neighbor_jaccard_mean": 0.8654193391587965,
+        "neighbor_jaccard_median": 0.875,
+        "neighbor_jaccard_p10": 0.7647058823529411,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 771,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9996975474123715
+            },
+            {
+              "cluster": 1,
+              "cells": 100,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9990506852611493
+            },
+            {
+              "cluster": 2,
+              "cells": 21,
+              "top25_jaccard": 0.8518518518518519,
+              "effect_pearson": 0.9950804436411755
+            },
+            {
+              "cluster": 3,
+              "cells": 213,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9997535211995862
+            },
+            {
+              "cluster": 4,
+              "cells": 24,
+              "top25_jaccard": 1.0,
+              "effect_pearson": 0.9993438621837153
+            }
+          ],
+          "mean_top25_jaccard": 0.9703703703703704,
+          "median_effect_pearson": 0.9993438621837153
+        },
+        "pseudobulk_pearson": 0.9967275463493949,
+        "pseudobulk_spearman": 0.9979586010861783
+      },
+      "control": {
+        "ari": 0.630570041022025,
+        "nmi": 0.5897098240728452,
+        "neighbor_jaccard_mean": 0.5045180632509434,
+        "neighbor_jaccard_median": 0.5789473684210527,
+        "neighbor_jaccard_p10": 0.0,
+        "markers": {
+          "per_cluster": [
+            {
+              "cluster": 0,
+              "cells": 771,
+              "top25_jaccard": 0.7241379310344828,
+              "effect_pearson": 0.955669143180262
+            },
+            {
+              "cluster": 1,
+              "cells": 100,
+              "top25_jaccard": 0.42857142857142855,
+              "effect_pearson": 0.8450014803782341
+            },
+            {
+              "cluster": 2,
+              "cells": 21,
+              "top25_jaccard": 0.7857142857142857,
+              "effect_pearson": 0.9535176959302977
+            },
+            {
+              "cluster": 3,
+              "cells": 213,
+              "top25_jaccard": 0.8518518518518519,
+              "effect_pearson": 0.9494558789142475
+            },
+            {
+              "cluster": 4,
+              "cells": 24,
+              "top25_jaccard": 0.7857142857142857,
+              "effect_pearson": 0.9580050419174658
+            }
+          ],
+          "mean_top25_jaccard": 0.7151979565772668,
+          "median_effect_pearson": 0.9535176959302977
+        },
+        "pseudobulk_pearson": 0.9957319945809232,
+        "pseudobulk_spearman": 0.9900062294175225
+      },
+      "control_selected_cells": 117817,
+      "replay_minus_control_neighbor_jaccard": 0.29605263157894735,
+      "gate": {
+        "checks": {
+          "medoid_cross_ari": true,
+          "cross_excess_loss_vs_mean_within": true,
+          "mean_marker_top25_jaccard": true,
+          "median_marker_effect_pearson": true,
+          "pseudobulk_pearson": false,
+          "pseudobulk_spearman": false,
+          "replay_minus_control_cross_ari": true,
+          "replay_minus_control_neighbor_jaccard": true
+        },
+        "component_verdicts": {
+          "partition_retention": "PASS",
+          "marker_retention": "PASS",
+          "pseudobulk_retention": "FAIL",
+          "control_sensitivity": "PASS",
+          "composite": "FAIL"
+        },
+        "verdict": "FAIL"
+      }
+    }
+  ],
+  "summary": {
+    "human_partition_retention_verdict": "PASS",
+    "human_marker_retention_verdict": "PASS",
+    "human_pseudobulk_retention_verdict": "FAIL",
+    "human_control_sensitivity_verdict": "PASS",
+    "human_composite_verdict": "FAIL",
+    "mouse_5_prime_component_verdicts": {
+      "partition_retention": "PASS",
+      "marker_retention": "PASS",
+      "pseudobulk_retention": "FAIL",
+      "control_sensitivity": "PASS",
+      "composite": "FAIL"
+    },
+    "frozen_resolution_0_8_verdict_changed": false
+  }
+}

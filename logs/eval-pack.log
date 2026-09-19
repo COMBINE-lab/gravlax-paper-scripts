@@ -1,0 +1,22 @@
+=== prospective (v32 -> v49-added genes) ===
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m=scipy.io.mmread(d+"/matrix.mtx").tocsr()
+genes GENCODE added v32->v49, expressed >=50 UMIs: 367
+recovered by prospective discover+requant: 173 (47.1%)
+quantification: median rel err vs GeneFull 66.3% (n=173)
+=== EM x alevin-fry concordance ===
+             
+             
+top-254 EM-recipient genes vs alevin-fry:
+  unique-only:   log-corr 0.7946, median |log2 ratio| 1.342
+  unique + EM:   log-corr 0.8683, median |log2 ratio| 0.149
+  genes moved CLOSER to alevin-fry by the EM layer: 201/254 (79%)
+=== EM calibration (D0, pooled) ===
+mode pooled  : top-1 98.2%  expected-accuracy 97.1%  (n=173109)
+  calibration (max-r decile: empirical accuracy | n): 0.2-: 0%|11 0.3-: 41%|81 0.4-: 52%|175 0.5-: 55%|1384 0.6-: 57%|1302 0.7-: 62%|957 0.8-: 87%|1547 0.9-: 99%|167652 
+EVAL_PACK_DONE

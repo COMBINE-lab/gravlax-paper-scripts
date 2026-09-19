@@ -1,0 +1,661 @@
+{
+  "donors": {
+    "A": 4,
+    "B": 4,
+    "C": 4,
+    "D": 8,
+    "E": 4,
+    "F": 4,
+    "G": 8,
+    "H": 4
+  },
+  "ena_manifest_sha256": "3bab0d53d5cf671cd7c282b015ff04e91e592a4dca9153b40e4bda1a84346491",
+  "event_evidence_inspected": false,
+  "files": [
+    {
+      "bytes": 265530133,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967630_1.fastq.gz",
+      "mate": 1,
+      "md5": "a0718c3865c103f0e4379383b8a34f01",
+      "run": "SRR24967630"
+    },
+    {
+      "bytes": 362766156,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967630_2.fastq.gz",
+      "mate": 2,
+      "md5": "53d12499442d914f0d114cffdae48b19",
+      "run": "SRR24967630"
+    },
+    {
+      "bytes": 266571586,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967631_1.fastq.gz",
+      "mate": 1,
+      "md5": "cbf400f7ee335725eed5016fd5d06627",
+      "run": "SRR24967631"
+    },
+    {
+      "bytes": 364224595,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967631_2.fastq.gz",
+      "mate": 2,
+      "md5": "6bdcf6b6c82a367afe27c2c2e969d7f2",
+      "run": "SRR24967631"
+    },
+    {
+      "bytes": 304689618,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967632_1.fastq.gz",
+      "mate": 1,
+      "md5": "5c9ced8fe6edf3b53b9980d3c32f933f",
+      "run": "SRR24967632"
+    },
+    {
+      "bytes": 416414860,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967632_2.fastq.gz",
+      "mate": 2,
+      "md5": "6bcc4e31b6ae8d6e58b1c47641380aae",
+      "run": "SRR24967632"
+    },
+    {
+      "bytes": 327804475,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967633_1.fastq.gz",
+      "mate": 1,
+      "md5": "2639059f2cd3567cda490901b1281671",
+      "run": "SRR24967633"
+    },
+    {
+      "bytes": 442848266,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967633_2.fastq.gz",
+      "mate": 2,
+      "md5": "597eb81af8c5cef5efbaaa7e1671ddb3",
+      "run": "SRR24967633"
+    },
+    {
+      "bytes": 275378947,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967634_1.fastq.gz",
+      "mate": 1,
+      "md5": "2a6c342542fe2a566b3fe7c444243b8f",
+      "run": "SRR24967634"
+    },
+    {
+      "bytes": 371862712,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967634_2.fastq.gz",
+      "mate": 2,
+      "md5": "5e5edbfc673bf32e2891bd9a4d5367fd",
+      "run": "SRR24967634"
+    },
+    {
+      "bytes": 289134286,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967641_1.fastq.gz",
+      "mate": 1,
+      "md5": "39ed6a0ea9b843390475a1ad52840167",
+      "run": "SRR24967641"
+    },
+    {
+      "bytes": 377663069,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967641_2.fastq.gz",
+      "mate": 2,
+      "md5": "aeeef83af6276f31e59f8430af8452b6",
+      "run": "SRR24967641"
+    },
+    {
+      "bytes": 346817041,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967652_1.fastq.gz",
+      "mate": 1,
+      "md5": "8299c60a576cdc2b2c121efb0e324f60",
+      "run": "SRR24967652"
+    },
+    {
+      "bytes": 459167922,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967652_2.fastq.gz",
+      "mate": 2,
+      "md5": "d34d6e5783749cb09cba50ae89f83b67",
+      "run": "SRR24967652"
+    },
+    {
+      "bytes": 1418305114,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967656_1.fastq.gz",
+      "mate": 1,
+      "md5": "ba05a628cfc5d8fff050de0cd21f0c7c",
+      "run": "SRR24967656"
+    },
+    {
+      "bytes": 1833244484,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967656_2.fastq.gz",
+      "mate": 2,
+      "md5": "d49f100e9ca63ed479b3da580f513366",
+      "run": "SRR24967656"
+    },
+    {
+      "bytes": 28286142,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967658_1.fastq.gz",
+      "mate": 1,
+      "md5": "3a837b5814a1ac4739f221812094aa40",
+      "run": "SRR24967658"
+    },
+    {
+      "bytes": 36042872,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967658_2.fastq.gz",
+      "mate": 2,
+      "md5": "45b06b95df1f548ba6cd75bc4fc36f54",
+      "run": "SRR24967658"
+    },
+    {
+      "bytes": 382304735,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967663_1.fastq.gz",
+      "mate": 1,
+      "md5": "5ae0578691f9c79875c94f11727582e9",
+      "run": "SRR24967663"
+    },
+    {
+      "bytes": 515612624,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967663_2.fastq.gz",
+      "mate": 2,
+      "md5": "20b5aba39d84171c3efecc9438c8e3e5",
+      "run": "SRR24967663"
+    },
+    {
+      "bytes": 302012819,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967635_1.fastq.gz",
+      "mate": 1,
+      "md5": "78740f8bcd737ad11c711c147b94e9d9",
+      "run": "SRR24967635"
+    },
+    {
+      "bytes": 407856868,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967635_2.fastq.gz",
+      "mate": 2,
+      "md5": "34b782e9aa188ed51aa703efc2863051",
+      "run": "SRR24967635"
+    },
+    {
+      "bytes": 383119937,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967636_1.fastq.gz",
+      "mate": 1,
+      "md5": "4a68f911257b6e788e38bad2b7704fee",
+      "run": "SRR24967636"
+    },
+    {
+      "bytes": 517807007,
+      "donor": "F",
+      "logical_path": "donor-F/SRR24967636_2.fastq.gz",
+      "mate": 2,
+      "md5": "6f6890570703a4b61132e790066eca61",
+      "run": "SRR24967636"
+    },
+    {
+      "bytes": 1222127757,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967637_1.fastq.gz",
+      "mate": 1,
+      "md5": "cb59ba007956ef900f1918df7d13137b",
+      "run": "SRR24967637"
+    },
+    {
+      "bytes": 1605015261,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967637_2.fastq.gz",
+      "mate": 2,
+      "md5": "0a45bcaeb4ae53959826ac8937c36ce9",
+      "run": "SRR24967637"
+    },
+    {
+      "bytes": 1214246524,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967638_1.fastq.gz",
+      "mate": 1,
+      "md5": "a38dd786eaf3c12bce9b7edd464013a3",
+      "run": "SRR24967638"
+    },
+    {
+      "bytes": 1594748966,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967638_2.fastq.gz",
+      "mate": 2,
+      "md5": "34030d699ed4077549157401f2480903",
+      "run": "SRR24967638"
+    },
+    {
+      "bytes": 1227442960,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967640_1.fastq.gz",
+      "mate": 1,
+      "md5": "9f576af4cfb687cb2c7b1f6462d8c411",
+      "run": "SRR24967640"
+    },
+    {
+      "bytes": 1612445100,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967640_2.fastq.gz",
+      "mate": 2,
+      "md5": "56011027e882e2e9d75bc9d604957632",
+      "run": "SRR24967640"
+    },
+    {
+      "bytes": 263397334,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967642_1.fastq.gz",
+      "mate": 1,
+      "md5": "b2328529052291fa1e5e194ce07cfe77",
+      "run": "SRR24967642"
+    },
+    {
+      "bytes": 344011033,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967642_2.fastq.gz",
+      "mate": 2,
+      "md5": "be4bda708b6ae65b71b8ef15acecffc6",
+      "run": "SRR24967642"
+    },
+    {
+      "bytes": 329094203,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967643_1.fastq.gz",
+      "mate": 1,
+      "md5": "4a7693bbb659bd3ffaf2e4c144c40e43",
+      "run": "SRR24967643"
+    },
+    {
+      "bytes": 429993289,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967643_2.fastq.gz",
+      "mate": 2,
+      "md5": "ea0ed67d60292b41f459104eb54136cf",
+      "run": "SRR24967643"
+    },
+    {
+      "bytes": 322223858,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967644_1.fastq.gz",
+      "mate": 1,
+      "md5": "a8b432af0dc9190a6f219a3575a16e70",
+      "run": "SRR24967644"
+    },
+    {
+      "bytes": 420986898,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967644_2.fastq.gz",
+      "mate": 2,
+      "md5": "909c55db3a81f1d020c074d13646bfdd",
+      "run": "SRR24967644"
+    },
+    {
+      "bytes": 237556598,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967647_1.fastq.gz",
+      "mate": 1,
+      "md5": "f4738bee67ca7bda5ff4c49b6acca072",
+      "run": "SRR24967647"
+    },
+    {
+      "bytes": 325220932,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967647_2.fastq.gz",
+      "mate": 2,
+      "md5": "b1b3cafc40968fef135647274dbe777e",
+      "run": "SRR24967647"
+    },
+    {
+      "bytes": 275390379,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967648_1.fastq.gz",
+      "mate": 1,
+      "md5": "0a0a77d66c9f4ece1d8d8386ad692142",
+      "run": "SRR24967648"
+    },
+    {
+      "bytes": 377070307,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967648_2.fastq.gz",
+      "mate": 2,
+      "md5": "7683cf3ec42ebcd59cd7ee184d2b2d79",
+      "run": "SRR24967648"
+    },
+    {
+      "bytes": 382061462,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967649_1.fastq.gz",
+      "mate": 1,
+      "md5": "00a782ba8fd1db8372a5736e04e6caad",
+      "run": "SRR24967649"
+    },
+    {
+      "bytes": 505877105,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967649_2.fastq.gz",
+      "mate": 2,
+      "md5": "0042775ba2c8492a89c758f5a886dcb5",
+      "run": "SRR24967649"
+    },
+    {
+      "bytes": 1412822427,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967653_1.fastq.gz",
+      "mate": 1,
+      "md5": "7a9451abf36299611a24b6853066daef",
+      "run": "SRR24967653"
+    },
+    {
+      "bytes": 1825622958,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967653_2.fastq.gz",
+      "mate": 2,
+      "md5": "8e9bc08329102052ca120ef24fc8fa09",
+      "run": "SRR24967653"
+    },
+    {
+      "bytes": 1423954772,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967655_1.fastq.gz",
+      "mate": 1,
+      "md5": "c75cdabf69bd292cd3841d8340497421",
+      "run": "SRR24967655"
+    },
+    {
+      "bytes": 1840302104,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967655_2.fastq.gz",
+      "mate": 2,
+      "md5": "6a4e029cff131c22c197e646aefa78af",
+      "run": "SRR24967655"
+    },
+    {
+      "bytes": 25318931,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967657_1.fastq.gz",
+      "mate": 1,
+      "md5": "866b0d53b72cb40a23edc48692879888",
+      "run": "SRR24967657"
+    },
+    {
+      "bytes": 32233730,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967657_2.fastq.gz",
+      "mate": 2,
+      "md5": "6e6aae891016eb827e6fec2a10670ba1",
+      "run": "SRR24967657"
+    },
+    {
+      "bytes": 309092902,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967661_1.fastq.gz",
+      "mate": 1,
+      "md5": "153183f7b5501e8c1a7dbf45ba13bf4d",
+      "run": "SRR24967661"
+    },
+    {
+      "bytes": 416616559,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967661_2.fastq.gz",
+      "mate": 2,
+      "md5": "08c698e5009f846c332dace4b5721657",
+      "run": "SRR24967661"
+    },
+    {
+      "bytes": 310289000,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967664_1.fastq.gz",
+      "mate": 1,
+      "md5": "2edc32d4aa66efb9d6acf82d8b1cb90b",
+      "run": "SRR24967664"
+    },
+    {
+      "bytes": 418298270,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967664_2.fastq.gz",
+      "mate": 2,
+      "md5": "a0a0225cea43a5df1f63b5fa4e046d40",
+      "run": "SRR24967664"
+    },
+    {
+      "bytes": 332898194,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967665_1.fastq.gz",
+      "mate": 1,
+      "md5": "2c087b63ec5b5100ed6c84f7cb90526e",
+      "run": "SRR24967665"
+    },
+    {
+      "bytes": 452461242,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967665_2.fastq.gz",
+      "mate": 2,
+      "md5": "b8fffe395458023a2e4ef2c3f2ed1b25",
+      "run": "SRR24967665"
+    },
+    {
+      "bytes": 392347108,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967666_1.fastq.gz",
+      "mate": 1,
+      "md5": "543ab95bec9f5b5e28584c949edbac20",
+      "run": "SRR24967666"
+    },
+    {
+      "bytes": 533510399,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967666_2.fastq.gz",
+      "mate": 2,
+      "md5": "d83a35bdbe15cf123f8cbf28f0cd083e",
+      "run": "SRR24967666"
+    },
+    {
+      "bytes": 194861774,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967667_1.fastq.gz",
+      "mate": 1,
+      "md5": "3c6eb5977724ae123cb1f246cca6ff6c",
+      "run": "SRR24967667"
+    },
+    {
+      "bytes": 264417855,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967667_2.fastq.gz",
+      "mate": 2,
+      "md5": "9afa3c194fd9715942a7247721478e87",
+      "run": "SRR24967667"
+    },
+    {
+      "bytes": 259289287,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967629_1.fastq.gz",
+      "mate": 1,
+      "md5": "2a14886ef541fff934e87532c9802e99",
+      "run": "SRR24967629"
+    },
+    {
+      "bytes": 354176148,
+      "donor": "H",
+      "logical_path": "donor-H/SRR24967629_2.fastq.gz",
+      "mate": 2,
+      "md5": "20b590d0e3523f2ee61dcc0223694309",
+      "run": "SRR24967629"
+    },
+    {
+      "bytes": 1231478075,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967639_1.fastq.gz",
+      "mate": 1,
+      "md5": "3efc01213bde55168214795c41af5630",
+      "run": "SRR24967639"
+    },
+    {
+      "bytes": 1617581938,
+      "donor": "G",
+      "logical_path": "donor-G/SRR24967639_2.fastq.gz",
+      "mate": 2,
+      "md5": "4a448128897224c3f266252678888147",
+      "run": "SRR24967639"
+    },
+    {
+      "bytes": 260118906,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967645_1.fastq.gz",
+      "mate": 1,
+      "md5": "2b52c1bb469884bc8bd9e623a4fbaed9",
+      "run": "SRR24967645"
+    },
+    {
+      "bytes": 356232858,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967645_2.fastq.gz",
+      "mate": 2,
+      "md5": "333ac05e35c151f52744a2408b29774e",
+      "run": "SRR24967645"
+    },
+    {
+      "bytes": 269077950,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967646_1.fastq.gz",
+      "mate": 1,
+      "md5": "1efc48e80a3610405ab72d6b41325038",
+      "run": "SRR24967646"
+    },
+    {
+      "bytes": 368442681,
+      "donor": "E",
+      "logical_path": "donor-E/SRR24967646_2.fastq.gz",
+      "mate": 2,
+      "md5": "23b89b214f3c115907a0075bacb1110f",
+      "run": "SRR24967646"
+    },
+    {
+      "bytes": 302974534,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967650_1.fastq.gz",
+      "mate": 1,
+      "md5": "bbe0e198cf21e7e8a7e0fecb5f512f21",
+      "run": "SRR24967650"
+    },
+    {
+      "bytes": 400904095,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967650_2.fastq.gz",
+      "mate": 2,
+      "md5": "2344933aeca3ca164919e942c8fcfd3b",
+      "run": "SRR24967650"
+    },
+    {
+      "bytes": 301700718,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967651_1.fastq.gz",
+      "mate": 1,
+      "md5": "fccd4435ff60c6662e364dbdfffbfbf2",
+      "run": "SRR24967651"
+    },
+    {
+      "bytes": 399220408,
+      "donor": "C",
+      "logical_path": "donor-C/SRR24967651_2.fastq.gz",
+      "mate": 2,
+      "md5": "dfcd06abb4b929680dd2f484993876ce",
+      "run": "SRR24967651"
+    },
+    {
+      "bytes": 1403106988,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967654_1.fastq.gz",
+      "mate": 1,
+      "md5": "0c94adb4258974f2e53260a8910e7b00",
+      "run": "SRR24967654"
+    },
+    {
+      "bytes": 1813112157,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967654_2.fastq.gz",
+      "mate": 2,
+      "md5": "0a100710958089b5496ade40b43726b1",
+      "run": "SRR24967654"
+    },
+    {
+      "bytes": 23591575,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967659_1.fastq.gz",
+      "mate": 1,
+      "md5": "181b892da562cfdb3dcdeed8161e2ef8",
+      "run": "SRR24967659"
+    },
+    {
+      "bytes": 30032429,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967659_2.fastq.gz",
+      "mate": 2,
+      "md5": "99adee89be1775a77cd3d3eab14b0d8b",
+      "run": "SRR24967659"
+    },
+    {
+      "bytes": 26015296,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967660_1.fastq.gz",
+      "mate": 1,
+      "md5": "facfcceb08d8be37eabeae18d466725f",
+      "run": "SRR24967660"
+    },
+    {
+      "bytes": 33136869,
+      "donor": "D",
+      "logical_path": "donor-D/SRR24967660_2.fastq.gz",
+      "mate": 2,
+      "md5": "2b6dd1e05fc11c8a53a93ce45cac2c54",
+      "run": "SRR24967660"
+    },
+    {
+      "bytes": 287454479,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967662_1.fastq.gz",
+      "mate": 1,
+      "md5": "92ef370a6457d60f144e68a0c8b77c29",
+      "run": "SRR24967662"
+    },
+    {
+      "bytes": 387384773,
+      "donor": "B",
+      "logical_path": "donor-B/SRR24967662_2.fastq.gz",
+      "mate": 2,
+      "md5": "4889089cb0820be26428dd0fdfe81bdd",
+      "run": "SRR24967662"
+    },
+    {
+      "bytes": 422757705,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967668_1.fastq.gz",
+      "mate": 1,
+      "md5": "e77ff796a0378503e00f10381928a787",
+      "run": "SRR24967668"
+    },
+    {
+      "bytes": 574809919,
+      "donor": "A",
+      "logical_path": "donor-A/SRR24967668_2.fastq.gz",
+      "mate": 2,
+      "md5": "4aaf8021931d7fe5fd13eb8747238228",
+      "run": "SRR24967668"
+    }
+  ],
+  "manifest_sha256": "47e652e56c2c22165a0f0055d91fc0e6de3a5f8ce5152f5eda6bac498858a4cb",
+  "runs": 40,
+  "schema": "gravlax.fnbp1-multidonor-fastq-acquisition.v1",
+  "status": "PASS",
+  "total_bytes": 44692024247
+}

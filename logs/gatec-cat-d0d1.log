@@ -1,0 +1,22 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-base --sjdbFileChrStartEnd runs/catalogue/d0d1.sjdb --sjdbOverhang 90 --twopassMode Basic --readFilesIn data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz --readFilesCommand zcat --outSAMattributes NH HI AS nM jM jI --outSAMtype BAM Unsorted --outSAMunmapped Within --outFileNamePrefix runs/gatec/full/cat_d0d1/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 15:32:35 ..... started STAR run
+Aug 28 15:32:35 ..... loading genome
+Aug 28 15:32:37 ..... inserting junctions into the genome indices
+Aug 28 15:33:41 ..... started 1st pass mapping
+Aug 28 15:34:49 ..... finished 1st pass mapping
+Aug 28 15:34:49 ..... inserting junctions into the genome indices
+Aug 28 15:35:32 ..... started mapping
+Aug 28 15:36:35 ..... finished mapping
+Aug 28 15:36:35 ..... finished successfully
+[bam_sort_core] merging from 0 files and 12 in-memory blocks...
+collecting gene-assigned reads from runs/oracle/full/v49/Aligned.sortedByCoord.out.bam
+  34628655 gene-assigned reads
+reads compared:      34628655
+identical evidence:  34007658  (98.2067%)
+  block_boundary         1322  (0.0038%)
+  junction             419197  (1.2105%)
+  locus                 37497  (0.1083%)
+  multiplicity         144475  (0.4172%)
+  presence              18506  (0.0534%)
+PIPELINE_DONE

@@ -1,0 +1,22 @@
+extracted: 37630563 rows, 1174710 edges, 324465 cells, 809069 shapes, 844565 patterns, 21007246 classes (78.0s)
+section                 raw         zstd
+meta                    101           91
+chroms                 1996          260
+cells               1297860      1297896
+shapes              5250114      3115332
+patterns           14736694      9161487
+rows.chrom              310          319
+rows.pos           39680588     13219685
+rows.cell          59060014     46484036
+rows.class         56921898     37265033
+rows.flags         37630563      1527781
+rows.shape         51785215      8563540
+rows.weight        37630563     13197138
+rows.pattern        9965057      3139097
+edges               3095728      2602913
+TOTAL                          139574608  (29.67 bits/row over 37630563 rows)
+wrote runs/archive/d0.aie (139574969 bytes)
+rows 37630563 -> assigned 21197710 -> 10683285 UMIs in 3630313 entries | load 0.8s, +anno 1.9s, +replay 39.1s, total 44.5s
+rows 37630563 -> assigned 21197710 -> 10683285 UMIs in 3630313 entries | load 77.4s, +anno 2.2s, +replay 40.4s, total 122.9s
+REGRESSION: BYTE-IDENTICAL
+FULL_ARCHIVE_DONE

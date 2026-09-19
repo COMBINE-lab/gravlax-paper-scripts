@@ -1,0 +1,54 @@
+# Raw sequencing data and downloaded bundles
+data/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.tar
+*.tar.gz
+
+# References, annotations, and generated aligner indexes
+ref/
+annotations/
+*.fa
+*.fa.gz
+*.fasta
+*.fasta.gz
+*.gtf
+*.gtf.gz
+*.gff
+*.gff.gz
+SA
+SAindex
+Genome
+
+# Large generated artifacts
+runs/
+*.aie
+*.bam
+*.bai
+*.cram
+*.crai
+*.sam
+*.mtx
+*.h5
+*.h5ad
+
+# Toolchains, build trees, environments, and caches
+target/
+env/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.astro/
+dist/
+
+# Editor and operating-system noise
+*~
+*.swp
+.DS_Store

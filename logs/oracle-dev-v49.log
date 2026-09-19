@@ -1,0 +1,12 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-base --sjdbGTFfile annotations/gencode.v49.annotation.gtf --readFilesIn data/fastq/dev_R2.fastq.gz data/fastq/dev_R1.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures Gene GeneFull SJ Velocyto --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --outSAMattributes NH HI AS nM CR UR CB UB GX GN --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 80000000000 --outSAMunmapped Within --outFileNamePrefix runs/oracle/dev/v49/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 13:18:14 ..... started STAR run
+Aug 28 13:18:15 ..... loading genome
+Aug 28 13:18:18 ..... processing annotations GTF
+Aug 28 13:18:30 ..... inserting junctions into the genome indices
+Aug 28 13:20:46 ..... started mapping
+Aug 28 13:20:52 ..... finished mapping
+Aug 28 13:20:52 ..... started Solo counting
+Aug 28 13:21:01 ..... finished Solo counting
+Aug 28 13:21:01 ..... started sorting BAM
+Aug 28 13:21:02 ..... finished successfully

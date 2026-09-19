@@ -1,0 +1,134 @@
+experiment: federated_biological_event_screen
+date_screened: 2026-08-31
+status: EXPLORATORY_SCREEN_COMPLETE_FNBP1_CONFIRMATION_PASS
+reference_gravlax_commit: cc28ab4f05ab19c81f0943364e8ea6deebc24317
+reproduction:
+  group_builder: scripts/179_build_federated_biology_groups.py
+  runner: scripts/180_run_federated_biology_screen.sh
+  summarizer: scripts/181_summarize_federated_biology.py
+  compact_result: results/post-v1-federated-biological-screen.json
+  PBMC_candidate_table: results/post-v1-federated-biological-pbmc.tsv
+  tissue_candidate_table: results/post-v1-federated-biological-tissue.tsv
+screen_status:
+  exploratory: true
+  reason: candidate_rules_and_external_literature_were_not_preregistered_before_archive_screen
+  external_literature_checked_after_coordinate_ranking: true
+  confirmatory_p_values: forbidden
+groups:
+  source: fresh_GENCODE_v49_count_matrices
+  role: cell_scope_labels_only
+  event_source: annotation_free_archives
+  T: CD3E_positive_and_LYZ_zero
+  M: LYZ_greater_than_3_and_CD3E_zero
+PBMC_screen:
+  datasets: [D0, D1, D3, D4]
+  event_catalogue_min_support: 2
+  event_catalogue_min_samples: 3
+  output_min_informative_across_samples: 30
+  ranking_eligibility:
+    every_dataset_T_usage_denominator_min: 10
+    every_dataset_M_usage_denominator_min: 10
+    direction_consistent_in_all_four: true
+  observed:
+    events_screened: 20028
+    all_four_testable_strictly_direction_consistent: 784
+    minimum_absolute_usage_delta_at_least_0_10: 44
+    minimum_absolute_usage_delta_at_least_0_15: 14
+    sequential_chromosome_wall_seconds: 43.78
+    peak_rss_GiB: 2.32
+six_shard_tissue_screen:
+  datasets: [D0, D1, D2, D2p, D3, D4]
+  PBMC: [D0, D1, D3, D4]
+  brain_derived: [D2, D2p]
+  caveat: descriptive_contrast_confounded_by_composition_tumor_and_nucleus_vs_cell_protocol
+  event_catalogue_min_support: 2
+  event_catalogue_min_samples: 3
+  output_min_informative_across_samples: 50
+  ranking_eligibility:
+    every_sample_usage_denominator_min: 20
+    PBMC_usage_range_max: 0.15
+    brain_usage_range_max: 0.20
+    each_brain_absolute_delta_from_PBMC_median_min: 0.15
+  observed:
+    events_screened: 46767
+    strict_candidates: 66
+    sequential_chromosome_wall_seconds: 73.71
+    peak_rss_GiB: 2.57
+external_positive_controls_assessed_after_ranking:
+  FYB1:
+    event: cassette:chr5:39124278-39125997:39126135-39127740:39124278-39127740
+    prior_validation: RT_PCR_T_cell_skip_monocyte_include
+    source_doi: 10.3389/fimmu.2023.1116392
+  CD47:
+    event: alt_acceptor:chr3:108047292-108049618:108047292-108057476
+    prior_validation: RT_PCR_and_single_cell_splicing_literature
+    source_dois: [10.3389/fimmu.2023.1116392, 10.1038/s41592-022-01400-x]
+  MYL6:
+    event: cassette:chr12:56160320-56160625:56160670-56161386:56160320-56161386
+    prior_validation: RNA_FISH_and_cross_technology_single_cell_splicing
+    source_doi: 10.7554/eLife.70692
+  PPP1R12A:
+    event: cassette:chr12:79798584-79805591:79805768-79806165:79798584-79806165
+    prior_validation: reported_as_high_magnitude_SpliZ_locus
+    source_doi: 10.1038/s41592-022-01400-x
+  RPS24:
+    event: cassette:chr10:78037304-78040203:78040225-78040614:78037304-78040614
+    prior_validation: single_cell_PCR_and_cross_technology_splicing
+    source_doi: 10.7554/eLife.70692
+prospective_FNBP1_confirmation:
+  lock_time: 2026-08-31_before_any_confirmation_data_download_or_inspection
+  primary_event: cassette:chr9:129908999-129923843:129924026-129924959:129908999-129924959
+  structure: annotated_in_frame_183_nt_exon_on_minus_strand
+  development_observation:
+    PBMC_archive_inclusion_range: [0.040, 0.131]
+    brain_derived_archive_inclusion_range: [0.941, 1.000]
+    STAR_SJ_direction_agrees_in_all_six: true
+  untouched_dataset:
+    name: 10k_Human_Brain_Nuclei_Chromium_GEM-X_Epi_Multiome
+    provider: 10x_Genomics
+    URL: https://www.10xgenomics.com/datasets/multiome-gemx-10k-human-brain
+    published: 2026-04-20
+    tissue: snap_frozen_normal_human_brain
+    assay: Chromium_GEM-X_Epi_Multiome_GEX
+    reads: R1_28_R2_90
+    observations_opened_before_lock: false
+  primary_PASS_requires:
+    event_present_at_catalogue_support_2: true
+    called_nuclei_informative_UMIs_min: 50
+    archive_cassette_inclusion_usage_min: 0.75
+    STAR_SJ_include_right_fraction_min: 0.50
+    archive_and_STAR_direction_agree: true
+  guardrails:
+    no_candidate_or_threshold_change_after_data_open: true
+    no_replacement_dataset_after_failure_without_labeling_new_test_exploratory: true
+    fresh_annotation_aware_counts_may_define_called_nuclei_but_not_event_coordinates: true
+  PASS: report_FNBP1_as_prospectively_replicated_normal_brain_splicing_program
+  FAIL: retain_FNBP1_as_descriptive_candidate_and_report_failure
+confirmation_result:
+  opened_and_executed_after_lock: true
+  date: 2026-08-31
+  compact_result: results/post-v1-fnbp1-normal-brain-confirmation.json
+  result_sha256: 678b9f100aae5429f2d2d5b59d7a7e90542a81270835c1d4a2303b649a699bcb
+  reproduction:
+    preparation: scripts/182_prepare_fnbp1_confirmation.py
+    summarizer: scripts/183_summarize_fnbp1_confirmation.py
+    runner: scripts/184_fnbp1_normal_brain_confirmation.sh
+  observations:
+    called_nuclei: 10261
+    informative_UMIs: 74
+    archive_cassette_inclusion_usage: 0.972973
+    targeted_annotation_free_STAR_archive_usage: 0.972973
+    STAR_SJ_include_right_UMIs: 61
+    STAR_SJ_skip_UMIs: 2
+    STAR_SJ_include_right_fraction: 0.968254
+    Cell_Ranger_BAM_include_right_UMIs: 62
+    Cell_Ranger_BAM_skip_UMIs: 2
+    Cell_Ranger_BAM_include_right_fraction: 0.968750
+  every_locked_criterion_passed: true
+  verdict: PASS
+  qualification: >-
+    STAR was rerun without an annotation over reads selected at the locked FNBP1 window from the
+    public BAM. This independently checks alignment direction and reducer semantics at the event,
+    but it is not a whole-transcriptome test of reads mapped elsewhere by Cell Ranger. The result
+    supports prospective replication of the normal-brain cassette program, not novelty,
+    cell-type specificity, or mechanism.

@@ -1,0 +1,8 @@
+  +    8602  RPL21
+  +    8160  RPS27
+wrote 594290 recovered entries to runs/replay/d0-em-layer
+%%MatrixMarket matrix coordinate real general
+% additive EM-recovered multimapper layer; exact-replay matrices unchanged
+78691 6794880 594290
+3 29808 0.0756
+EMIT_DONE

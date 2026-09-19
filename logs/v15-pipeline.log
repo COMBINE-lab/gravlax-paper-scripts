@@ -1,0 +1,81 @@
++ P=${GRAVLAX_PROJECT_ROOT}
++ AIE=${GRAVLAX_PROJECT_ROOT}/src/target/release/aie
++ GTF=${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf
++ declare -A BAM BARC REF
++ BAM[d0]=${GRAVLAX_PROJECT_ROOT}/runs/ingest/full/Aligned.sortedByCoord.out.bam
++ BARC[d0]=${GRAVLAX_PROJECT_ROOT}/runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv
++ REF[d0]=${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam
++ BAM[d1]=${GRAVLAX_PROJECT_ROOT}/runs/ingest/d1/Aligned.sortedByCoord.out.bam
++ BARC[d1]=${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv
++ REF[d1]=${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam
++ BAM[d2]=${GRAVLAX_PROJECT_ROOT}/runs/ingest/d2/Aligned.sortedByCoord.out.bam
++ BARC[d2]=${GRAVLAX_PROJECT_ROOT}/runs/oracle/d2/v49/Solo.out/Gene/raw/barcodes.tsv
++ REF[d2]=${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-frombam
++ BAM[d2p]=${GRAVLAX_PROJECT_ROOT}/runs/ingest/d2p/Aligned.sortedByCoord.out.bam
++ BARC[d2p]=${GRAVLAX_PROJECT_ROOT}/runs/oracle/d2p/v49/Solo.out/Gene/raw/barcodes.tsv
++ REF[d2p]=${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-frombam
++ for D in d0 d1 d2 d2p
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie ingest-archive ${GRAVLAX_PROJECT_ROOT}/runs/ingest/full/Aligned.sortedByCoord.out.bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --out ${GRAVLAX_PROJECT_ROOT}/runs/archive/d0.aie --zstd-level 19
++ stat -c 'd0_SIZE %s' ${GRAVLAX_PROJECT_ROOT}/runs/archive/d0.aie
+d0_SIZE 111079672
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d0.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-v15
++ ok=1
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-v15/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/matrix.mtx
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-v15/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/barcodes.tsv
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-v15/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/features.tsv
++ '[' 1 = 1 ']'
++ echo 'd0 REGRESSION: BYTE-IDENTICAL'
+d0 REGRESSION: BYTE-IDENTICAL
++ for D in d0 d1 d2 d2p
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie ingest-archive ${GRAVLAX_PROJECT_ROOT}/runs/ingest/d1/Aligned.sortedByCoord.out.bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --out ${GRAVLAX_PROJECT_ROOT}/runs/archive/d1.aie --zstd-level 19
++ stat -c 'd1_SIZE %s' ${GRAVLAX_PROJECT_ROOT}/runs/archive/d1.aie
+d1_SIZE 544014332
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d1.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-v15
++ ok=1
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-v15/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/matrix.mtx
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-v15/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/barcodes.tsv
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-v15/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/features.tsv
++ '[' 1 = 1 ']'
++ echo 'd1 REGRESSION: BYTE-IDENTICAL'
+d1 REGRESSION: BYTE-IDENTICAL
++ for D in d0 d1 d2 d2p
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie ingest-archive ${GRAVLAX_PROJECT_ROOT}/runs/ingest/d2/Aligned.sortedByCoord.out.bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --out ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2.aie --zstd-level 19
++ stat -c 'd2_SIZE %s' ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2.aie
+d2_SIZE 439702114
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d2/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-v15
++ ok=1
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-v15/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-frombam/matrix.mtx
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-v15/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-frombam/barcodes.tsv
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-v15/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2-frombam/features.tsv
++ '[' 1 = 1 ']'
++ echo 'd2 REGRESSION: BYTE-IDENTICAL'
+d2 REGRESSION: BYTE-IDENTICAL
++ for D in d0 d1 d2 d2p
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie ingest-archive ${GRAVLAX_PROJECT_ROOT}/runs/ingest/d2p/Aligned.sortedByCoord.out.bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --out ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2p.aie --zstd-level 19
++ stat -c 'd2p_SIZE %s' ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2p.aie
+d2p_SIZE 595238751
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2p.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d2p/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-v15
++ ok=1
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-v15/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-frombam/matrix.mtx
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-v15/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-frombam/barcodes.tsv
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-v15/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d2p-frombam/features.tsv
++ '[' 1 = 1 ']'
++ echo 'd2p REGRESSION: BYTE-IDENTICAL'
+d2p REGRESSION: BYTE-IDENTICAL
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie query ${GRAVLAX_PROJECT_ROOT}/runs/archive/d2p.aie region chr6:73489308-73525587
++ head -1
+region chr6:73489308-73525587: 6238 molecules, 5985 UMIs across 4576 cells (2 chunks decoded; open 0.01s, total 0.34s)
++ echo V15_PIPELINE_DONE
+V15_PIPELINE_DONE

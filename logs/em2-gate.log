@@ -1,0 +1,28 @@
+classes: single 10084709, mixed 886655 (masked 0, truth-lost 0), multi-only 688558, eval targets 0
+mode uniform : top-1 0.0%  expected-accuracy 0.0%  (n=0)
+mode cell    : top-1 0.0%  expected-accuracy 0.0%  (n=0)
+mode pooled  : top-1 0.0%  expected-accuracy 0.0%  (n=0)
+mode blend   : top-1 0.0%  expected-accuracy 0.0%  (n=0)
+EM-2: recovered 688558 multi-only classes (+6.28% of 10971364 counted); 85.0% assigned with r > 0.8
+  +   51370  RPL41
+  +   31859  RPL17
+  +   26075  MT-CO1
+  +   15869  RPL22
+  +   13538  RPS10
+  +   13100  EEF1G
+  +   13015  H3-3A
+  +   12801  RPL26
+  +   12429  RPL36A
+  +   11316  MT-ATP6
+  +    9489  RPS25
+  +    9034  PFDN5
+  +    8850  RPS3A
+  +    8602  RPL21
+  +    8160  RPS27
+=== D1 ===
+classes: single 46853364, mixed 4600483 (masked 919781, truth-lost 15877), multi-only 3084135, eval targets 903904
+mode uniform : top-1 35.4%  expected-accuracy 40.7%  (n=903904)
+mode cell    : top-1 93.4%  expected-accuracy 94.1%  (n=903904)
+mode pooled  : top-1 98.3%  expected-accuracy 97.4%  (n=903904)
+mode blend   : top-1 98.4%  expected-accuracy 97.7%  (n=903904)
+EM2_DONE

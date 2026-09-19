@@ -1,0 +1,3153 @@
+{
+  "date": "2026-08-31",
+  "status": "posthoc_failure_localization",
+  "changes_frozen_verdicts": false,
+  "primary_result_sha256": "06e017cda86a585aa9b7463a4f1a914a60af54bb0b3e0edfabf33311bd24196f",
+  "datasets": [
+    {
+      "id": "D0",
+      "role": "confirmatory",
+      "oracle_cluster_count": 8,
+      "replay_cluster_count": 7,
+      "hungarian_one_to_one_matched_fraction": 0.950204081632653,
+      "best_overlap_remapped_label_stable_fraction": 0.950204081632653,
+      "oracle_vs_replay_fixed_centroid_label_agreement": 0.9983673469387755,
+      "mismatched_cells": 61,
+      "mismatched_cell_median_total_relative_difference": 0.001221001221001221,
+      "stable_cell_median_total_relative_difference": 0.0008524841275144248,
+      "mismatched_cell_median_moved_mass_fraction": 0.0023518344308560675,
+      "stable_cell_median_moved_mass_fraction": 0.0023385126038716862,
+      "contingency": {
+        "oracle_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "replay_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "counts": [
+          [
+            287,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            194,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            135,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            159,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            224,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            116,
+            0
+          ],
+          [
+            0,
+            0,
+            54,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            49
+          ]
+        ]
+      },
+      "oracle_cluster_strata": [
+        {
+          "oracle_cluster": "0",
+          "cells": 287,
+          "best_replay_cluster": "0",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.000999714367323622,
+          "median_cell_moved_mass_fraction": 0.002158079309414621,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000163220.12",
+              "symbol": "S100A9"
+            },
+            {
+              "gene_id": "ENSG00000143546.11",
+              "symbol": "S100A8"
+            },
+            {
+              "gene_id": "ENSG00000090382.7",
+              "symbol": "LYZ"
+            },
+            {
+              "gene_id": "ENSG00000163221.9",
+              "symbol": "S100A12"
+            },
+            {
+              "gene_id": "ENSG00000163131.13",
+              "symbol": "CTSS"
+            },
+            {
+              "gene_id": "ENSG00000038427.16",
+              "symbol": "VCAN"
+            },
+            {
+              "gene_id": "ENSG00000085265.13",
+              "symbol": "FCN1"
+            },
+            {
+              "gene_id": "ENSG00000163563.9",
+              "symbol": "MNDA"
+            },
+            {
+              "gene_id": "ENSG00000101439.10",
+              "symbol": "CST3"
+            },
+            {
+              "gene_id": "ENSG00000170345.12",
+              "symbol": "FOS"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "1",
+          "cells": 194,
+          "best_replay_cluster": "1",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0007911614208772661,
+          "median_cell_moved_mass_fraction": 0.0026592379517065617,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000211899.10",
+              "symbol": "IGHM"
+            },
+            {
+              "gene_id": "ENSG00000211592.8",
+              "symbol": "IGKC"
+            },
+            {
+              "gene_id": "ENSG00000105369.10",
+              "symbol": "CD79A"
+            },
+            {
+              "gene_id": "ENSG00000019582.18",
+              "symbol": "CD74"
+            },
+            {
+              "gene_id": "ENSG00000204287.15",
+              "symbol": "HLA-DRA"
+            },
+            {
+              "gene_id": "ENSG00000156738.19",
+              "symbol": "MS4A1"
+            },
+            {
+              "gene_id": "ENSG00000231389.9",
+              "symbol": "HLA-DPA1"
+            },
+            {
+              "gene_id": "ENSG00000196126.13",
+              "symbol": "HLA-DRB1"
+            },
+            {
+              "gene_id": "ENSG00000007312.15",
+              "symbol": "CD79B"
+            },
+            {
+              "gene_id": "ENSG00000223865.13",
+              "symbol": "HLA-DPB1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "2",
+          "cells": 136,
+          "best_replay_cluster": "2",
+          "best_replay_overlap_fraction": 0.9926470588235294,
+          "mapped_label_stable_fraction": 0.9926470588235294,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0010402391468145684,
+          "median_cell_moved_mass_fraction": 0.002370196388781134,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000105374.11",
+              "symbol": "NKG7"
+            },
+            {
+              "gene_id": "ENSG00000271503.7",
+              "symbol": "CCL5"
+            },
+            {
+              "gene_id": "ENSG00000008517.20",
+              "symbol": "IL32"
+            },
+            {
+              "gene_id": "ENSG00000145649.8",
+              "symbol": "GZMA"
+            },
+            {
+              "gene_id": "ENSG00000111796.4",
+              "symbol": "KLRB1"
+            },
+            {
+              "gene_id": "ENSG00000113088.6",
+              "symbol": "GZMK"
+            },
+            {
+              "gene_id": "ENSG00000172543.10",
+              "symbol": "CTSW"
+            },
+            {
+              "gene_id": "ENSG00000139187.10",
+              "symbol": "KLRG1"
+            },
+            {
+              "gene_id": "ENSG00000077984.7",
+              "symbol": "CST7"
+            },
+            {
+              "gene_id": "ENSG00000227191.8",
+              "symbol": "TRGC2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "3",
+          "cells": 162,
+          "best_replay_cluster": "3",
+          "best_replay_overlap_fraction": 0.9814814814814815,
+          "mapped_label_stable_fraction": 0.9814814814814815,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0007529404435407938,
+          "median_cell_moved_mass_fraction": 0.0023556538641300298,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000008517.20",
+              "symbol": "IL32"
+            },
+            {
+              "gene_id": "ENSG00000168685.16",
+              "symbol": "IL7R"
+            },
+            {
+              "gene_id": "ENSG00000277734.8",
+              "symbol": "TRAC"
+            },
+            {
+              "gene_id": "ENSG00000227507.3",
+              "symbol": "LTB"
+            },
+            {
+              "gene_id": "ENSG00000167286.12",
+              "symbol": "CD3D"
+            },
+            {
+              "gene_id": "ENSG00000198851.11",
+              "symbol": "CD3E"
+            },
+            {
+              "gene_id": "ENSG00000111716.15",
+              "symbol": "LDHB"
+            },
+            {
+              "gene_id": "ENSG00000211751.9",
+              "symbol": "TRBC1"
+            },
+            {
+              "gene_id": "ENSG00000211772.11",
+              "symbol": "TRBC2"
+            },
+            {
+              "gene_id": "ENSG00000160654.12",
+              "symbol": "CD3G"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "4",
+          "cells": 226,
+          "best_replay_cluster": "4",
+          "best_replay_overlap_fraction": 0.9911504424778761,
+          "mapped_label_stable_fraction": 0.9911504424778761,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0006629011017267626,
+          "median_cell_moved_mass_fraction": 0.0023453276063685434,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000111716.15",
+              "symbol": "LDHB"
+            },
+            {
+              "gene_id": "ENSG00000277734.8",
+              "symbol": "TRAC"
+            },
+            {
+              "gene_id": "ENSG00000167286.12",
+              "symbol": "CD3D"
+            },
+            {
+              "gene_id": "ENSG00000127152.18",
+              "symbol": "BCL11B"
+            },
+            {
+              "gene_id": "ENSG00000081059.21",
+              "symbol": "TCF7"
+            },
+            {
+              "gene_id": "ENSG00000168685.16",
+              "symbol": "IL7R"
+            },
+            {
+              "gene_id": "ENSG00000198851.11",
+              "symbol": "CD3E"
+            },
+            {
+              "gene_id": "ENSG00000177954.15",
+              "symbol": "RPS27"
+            },
+            {
+              "gene_id": "ENSG00000227507.3",
+              "symbol": "LTB"
+            },
+            {
+              "gene_id": "ENSG00000142546.15",
+              "symbol": "NOSIP"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "5",
+          "cells": 116,
+          "best_replay_cluster": "5",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 1.0,
+          "median_cell_total_relative_difference": 0.0007285030908157322,
+          "median_cell_moved_mass_fraction": 0.0023446560754678417,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000101439.10",
+              "symbol": "CST3"
+            },
+            {
+              "gene_id": "ENSG00000231389.9",
+              "symbol": "HLA-DPA1"
+            },
+            {
+              "gene_id": "ENSG00000204287.15",
+              "symbol": "HLA-DRA"
+            },
+            {
+              "gene_id": "ENSG00000158869.12",
+              "symbol": "FCER1G"
+            },
+            {
+              "gene_id": "ENSG00000090382.7",
+              "symbol": "LYZ"
+            },
+            {
+              "gene_id": "ENSG00000167996.17",
+              "symbol": "FTH1"
+            },
+            {
+              "gene_id": "ENSG00000223865.13",
+              "symbol": "HLA-DPB1"
+            },
+            {
+              "gene_id": "ENSG00000204472.14",
+              "symbol": "AIF1"
+            },
+            {
+              "gene_id": "ENSG00000196126.13",
+              "symbol": "HLA-DRB1"
+            },
+            {
+              "gene_id": "ENSG00000019582.18",
+              "symbol": "CD74"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "6",
+          "cells": 54,
+          "best_replay_cluster": "2",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 0.0,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0012369797974698434,
+          "median_cell_moved_mass_fraction": 0.0023682860548556966,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000115523.18",
+              "symbol": "GNLY"
+            },
+            {
+              "gene_id": "ENSG00000105374.11",
+              "symbol": "NKG7"
+            },
+            {
+              "gene_id": "ENSG00000145649.8",
+              "symbol": "GZMA"
+            },
+            {
+              "gene_id": "ENSG00000180644.9",
+              "symbol": "PRF1"
+            },
+            {
+              "gene_id": "ENSG00000134539.18",
+              "symbol": "KLRD1"
+            },
+            {
+              "gene_id": "ENSG00000172543.10",
+              "symbol": "CTSW"
+            },
+            {
+              "gene_id": "ENSG00000077984.7",
+              "symbol": "CST7"
+            },
+            {
+              "gene_id": "ENSG00000171476.24",
+              "symbol": "HOPX"
+            },
+            {
+              "gene_id": "ENSG00000100453.15",
+              "symbol": "GZMB"
+            },
+            {
+              "gene_id": "ENSG00000159674.13",
+              "symbol": "SPON2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "7",
+          "cells": 50,
+          "best_replay_cluster": "6",
+          "best_replay_overlap_fraction": 0.98,
+          "mapped_label_stable_fraction": 0.98,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0013262622797991256,
+          "median_cell_moved_mass_fraction": 0.0022451981137210863,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000198727.2",
+              "symbol": "MT-CYB"
+            },
+            {
+              "gene_id": "ENSG00000198899.2",
+              "symbol": "MT-ATP6"
+            },
+            {
+              "gene_id": "ENSG00000198938.2",
+              "symbol": "MT-CO3"
+            },
+            {
+              "gene_id": "ENSG00000198712.1",
+              "symbol": "MT-CO2"
+            },
+            {
+              "gene_id": "ENSG00000198804.2",
+              "symbol": "MT-CO1"
+            },
+            {
+              "gene_id": "ENSG00000198886.2",
+              "symbol": "MT-ND4"
+            },
+            {
+              "gene_id": "ENSG00000198840.2",
+              "symbol": "MT-ND3"
+            },
+            {
+              "gene_id": "ENSG00000198786.2",
+              "symbol": "MT-ND5"
+            },
+            {
+              "gene_id": "ENSG00000198888.2",
+              "symbol": "MT-ND1"
+            },
+            {
+              "gene_id": "ENSG00000210082.2",
+              "symbol": "MT-RNR2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D1",
+      "role": "confirmatory",
+      "oracle_cluster_count": 12,
+      "replay_cluster_count": 12,
+      "hungarian_one_to_one_matched_fraction": 0.9035331480746328,
+      "best_overlap_remapped_label_stable_fraction": 0.9035331480746328,
+      "oracle_vs_replay_fixed_centroid_label_agreement": 0.9908693926161175,
+      "mismatched_cells": 486,
+      "mismatched_cell_median_total_relative_difference": 0.0018670844466167273,
+      "stable_cell_median_total_relative_difference": 0.0017880475980308046,
+      "mismatched_cell_median_moved_mass_fraction": 0.003023916245356131,
+      "stable_cell_median_moved_mass_fraction": 0.002994773207872602,
+      "contingency": {
+        "oracle_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "replay_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "counts": [
+          [
+            611,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            326,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            115,
+            4,
+            0
+          ],
+          [
+            0,
+            434,
+            0,
+            4,
+            0,
+            0,
+            2,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            282,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            669,
+            0,
+            0,
+            3,
+            38,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            334,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            19,
+            298,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            3,
+            0,
+            5,
+            681,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            57,
+            0,
+            4,
+            3,
+            724,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            284,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            94,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            26
+          ]
+        ]
+      },
+      "oracle_cluster_strata": [
+        {
+          "oracle_cluster": "0",
+          "cells": 611,
+          "best_replay_cluster": "0",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.002221652567717679,
+          "median_cell_moved_mass_fraction": 0.0031137184115523466,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000163220.12",
+              "symbol": "S100A9"
+            },
+            {
+              "gene_id": "ENSG00000090382.7",
+              "symbol": "LYZ"
+            },
+            {
+              "gene_id": "ENSG00000143546.11",
+              "symbol": "S100A8"
+            },
+            {
+              "gene_id": "ENSG00000085265.13",
+              "symbol": "FCN1"
+            },
+            {
+              "gene_id": "ENSG00000163131.13",
+              "symbol": "CTSS"
+            },
+            {
+              "gene_id": "ENSG00000163563.9",
+              "symbol": "MNDA"
+            },
+            {
+              "gene_id": "ENSG00000101439.10",
+              "symbol": "CST3"
+            },
+            {
+              "gene_id": "ENSG00000038427.16",
+              "symbol": "VCAN"
+            },
+            {
+              "gene_id": "ENSG00000163221.9",
+              "symbol": "S100A12"
+            },
+            {
+              "gene_id": "ENSG00000011600.13",
+              "symbol": "TYROBP"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "1",
+          "cells": 446,
+          "best_replay_cluster": "0",
+          "best_replay_overlap_fraction": 0.7309417040358744,
+          "mapped_label_stable_fraction": 0.257847533632287,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0018775240525528655,
+          "median_cell_moved_mass_fraction": 0.003016421683278466,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000090382.7",
+              "symbol": "LYZ"
+            },
+            {
+              "gene_id": "ENSG00000101439.10",
+              "symbol": "CST3"
+            },
+            {
+              "gene_id": "ENSG00000204287.15",
+              "symbol": "HLA-DRA"
+            },
+            {
+              "gene_id": "ENSG00000163220.12",
+              "symbol": "S100A9"
+            },
+            {
+              "gene_id": "ENSG00000196126.13",
+              "symbol": "HLA-DRB1"
+            },
+            {
+              "gene_id": "ENSG00000085265.13",
+              "symbol": "FCN1"
+            },
+            {
+              "gene_id": "ENSG00000019582.18",
+              "symbol": "CD74"
+            },
+            {
+              "gene_id": "ENSG00000197746.16",
+              "symbol": "PSAP"
+            },
+            {
+              "gene_id": "ENSG00000231389.9",
+              "symbol": "HLA-DPA1"
+            },
+            {
+              "gene_id": "ENSG00000163131.13",
+              "symbol": "CTSS"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "2",
+          "cells": 442,
+          "best_replay_cluster": "1",
+          "best_replay_overlap_fraction": 0.9819004524886877,
+          "mapped_label_stable_fraction": 0.9819004524886877,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.0038330918775583258,
+          "median_cell_moved_mass_fraction": 0.004285980512219796,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000198727.2",
+              "symbol": "MT-CYB"
+            },
+            {
+              "gene_id": "ENSG00000198786.2",
+              "symbol": "MT-ND5"
+            },
+            {
+              "gene_id": "ENSG00000198899.2",
+              "symbol": "MT-ATP6"
+            },
+            {
+              "gene_id": "ENSG00000198938.2",
+              "symbol": "MT-CO3"
+            },
+            {
+              "gene_id": "ENSG00000198804.2",
+              "symbol": "MT-CO1"
+            },
+            {
+              "gene_id": "ENSG00000198886.2",
+              "symbol": "MT-ND4"
+            },
+            {
+              "gene_id": "ENSG00000198712.1",
+              "symbol": "MT-CO2"
+            },
+            {
+              "gene_id": "ENSG00000198840.2",
+              "symbol": "MT-ND3"
+            },
+            {
+              "gene_id": "ENSG00000198888.2",
+              "symbol": "MT-ND1"
+            },
+            {
+              "gene_id": "ENSG00000198763.3",
+              "symbol": "MT-ND2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "3",
+          "cells": 282,
+          "best_replay_cluster": "2",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.001283935525304195,
+          "median_cell_moved_mass_fraction": 0.003150163166362394,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000211592.8",
+              "symbol": "IGKC"
+            },
+            {
+              "gene_id": "ENSG00000204287.15",
+              "symbol": "HLA-DRA"
+            },
+            {
+              "gene_id": "ENSG00000019582.18",
+              "symbol": "CD74"
+            },
+            {
+              "gene_id": "ENSG00000105369.10",
+              "symbol": "CD79A"
+            },
+            {
+              "gene_id": "ENSG00000156738.19",
+              "symbol": "MS4A1"
+            },
+            {
+              "gene_id": "ENSG00000196126.13",
+              "symbol": "HLA-DRB1"
+            },
+            {
+              "gene_id": "ENSG00000196735.14",
+              "symbol": "HLA-DQA1"
+            },
+            {
+              "gene_id": "ENSG00000231389.9",
+              "symbol": "HLA-DPA1"
+            },
+            {
+              "gene_id": "ENSG00000223865.13",
+              "symbol": "HLA-DPB1"
+            },
+            {
+              "gene_id": "ENSG00000211899.10",
+              "symbol": "IGHM"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "4",
+          "cells": 712,
+          "best_replay_cluster": "3",
+          "best_replay_overlap_fraction": 0.9396067415730337,
+          "mapped_label_stable_fraction": 0.9396067415730337,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.0016147638961887475,
+          "median_cell_moved_mass_fraction": 0.0028416725614571646,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000111716.15",
+              "symbol": "LDHB"
+            },
+            {
+              "gene_id": "ENSG00000277734.8",
+              "symbol": "TRAC"
+            },
+            {
+              "gene_id": "ENSG00000127152.18",
+              "symbol": "BCL11B"
+            },
+            {
+              "gene_id": "ENSG00000198851.11",
+              "symbol": "CD3E"
+            },
+            {
+              "gene_id": "ENSG00000227507.3",
+              "symbol": "LTB"
+            },
+            {
+              "gene_id": "ENSG00000177954.15",
+              "symbol": "RPS27"
+            },
+            {
+              "gene_id": "ENSG00000112306.9",
+              "symbol": "RPS12"
+            },
+            {
+              "gene_id": "ENSG00000081059.21",
+              "symbol": "TCF7"
+            },
+            {
+              "gene_id": "ENSG00000144713.14",
+              "symbol": "RPL32"
+            },
+            {
+              "gene_id": "ENSG00000118181.12",
+              "symbol": "RPS25"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "5",
+          "cells": 339,
+          "best_replay_cluster": "4",
+          "best_replay_overlap_fraction": 0.9852507374631269,
+          "mapped_label_stable_fraction": 0.9852507374631269,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0020722320899940793,
+          "median_cell_moved_mass_fraction": 0.0030748663101604276,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000115523.18",
+              "symbol": "GNLY"
+            },
+            {
+              "gene_id": "ENSG00000105374.11",
+              "symbol": "NKG7"
+            },
+            {
+              "gene_id": "ENSG00000180644.9",
+              "symbol": "PRF1"
+            },
+            {
+              "gene_id": "ENSG00000137441.9",
+              "symbol": "FGFBP2"
+            },
+            {
+              "gene_id": "ENSG00000145649.8",
+              "symbol": "GZMA"
+            },
+            {
+              "gene_id": "ENSG00000100453.15",
+              "symbol": "GZMB"
+            },
+            {
+              "gene_id": "ENSG00000077984.7",
+              "symbol": "CST7"
+            },
+            {
+              "gene_id": "ENSG00000134539.18",
+              "symbol": "KLRD1"
+            },
+            {
+              "gene_id": "ENSG00000271503.7",
+              "symbol": "CCL5"
+            },
+            {
+              "gene_id": "ENSG00000172543.10",
+              "symbol": "CTSW"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "6",
+          "cells": 320,
+          "best_replay_cluster": "5",
+          "best_replay_overlap_fraction": 0.93125,
+          "mapped_label_stable_fraction": 0.93125,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.001867130339655484,
+          "median_cell_moved_mass_fraction": 0.0030305405594053337,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000271503.7",
+              "symbol": "CCL5"
+            },
+            {
+              "gene_id": "ENSG00000105374.11",
+              "symbol": "NKG7"
+            },
+            {
+              "gene_id": "ENSG00000145649.8",
+              "symbol": "GZMA"
+            },
+            {
+              "gene_id": "ENSG00000077984.7",
+              "symbol": "CST7"
+            },
+            {
+              "gene_id": "ENSG00000008517.20",
+              "symbol": "IL32"
+            },
+            {
+              "gene_id": "ENSG00000100450.14",
+              "symbol": "GZMH"
+            },
+            {
+              "gene_id": "ENSG00000172543.10",
+              "symbol": "CTSW"
+            },
+            {
+              "gene_id": "ENSG00000113088.6",
+              "symbol": "GZMK"
+            },
+            {
+              "gene_id": "ENSG00000126264.11",
+              "symbol": "HCST"
+            },
+            {
+              "gene_id": "ENSG00000134539.18",
+              "symbol": "KLRD1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "7",
+          "cells": 692,
+          "best_replay_cluster": "6",
+          "best_replay_overlap_fraction": 0.9841040462427746,
+          "mapped_label_stable_fraction": 0.9841040462427746,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.00164445059974592,
+          "median_cell_moved_mass_fraction": 0.0028709292529483336,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000008517.20",
+              "symbol": "IL32"
+            },
+            {
+              "gene_id": "ENSG00000168685.16",
+              "symbol": "IL7R"
+            },
+            {
+              "gene_id": "ENSG00000227507.3",
+              "symbol": "LTB"
+            },
+            {
+              "gene_id": "ENSG00000277734.8",
+              "symbol": "TRAC"
+            },
+            {
+              "gene_id": "ENSG00000111796.4",
+              "symbol": "KLRB1"
+            },
+            {
+              "gene_id": "ENSG00000196154.13",
+              "symbol": "S100A4"
+            },
+            {
+              "gene_id": "ENSG00000198851.11",
+              "symbol": "CD3E"
+            },
+            {
+              "gene_id": "ENSG00000167286.12",
+              "symbol": "CD3D"
+            },
+            {
+              "gene_id": "ENSG00000116824.6",
+              "symbol": "CD2"
+            },
+            {
+              "gene_id": "ENSG00000111716.15",
+              "symbol": "LDHB"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "8",
+          "cells": 789,
+          "best_replay_cluster": "7",
+          "best_replay_overlap_fraction": 0.917617237008872,
+          "mapped_label_stable_fraction": 0.917617237008872,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.001410799025266128,
+          "median_cell_moved_mass_fraction": 0.002748357688698217,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000111716.15",
+              "symbol": "LDHB"
+            },
+            {
+              "gene_id": "ENSG00000277734.8",
+              "symbol": "TRAC"
+            },
+            {
+              "gene_id": "ENSG00000198851.11",
+              "symbol": "CD3E"
+            },
+            {
+              "gene_id": "ENSG00000227507.3",
+              "symbol": "LTB"
+            },
+            {
+              "gene_id": "ENSG00000167286.12",
+              "symbol": "CD3D"
+            },
+            {
+              "gene_id": "ENSG00000145425.11",
+              "symbol": "RPS3A"
+            },
+            {
+              "gene_id": "ENSG00000112306.9",
+              "symbol": "RPS12"
+            },
+            {
+              "gene_id": "ENSG00000177954.15",
+              "symbol": "RPS27"
+            },
+            {
+              "gene_id": "ENSG00000081059.21",
+              "symbol": "TCF7"
+            },
+            {
+              "gene_id": "ENSG00000213741.12",
+              "symbol": "RPS29"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "9",
+          "cells": 285,
+          "best_replay_cluster": "8",
+          "best_replay_overlap_fraction": 0.9964912280701754,
+          "mapped_label_stable_fraction": 0.9964912280701754,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.001423579655752556,
+          "median_cell_moved_mass_fraction": 0.0031181217901687453,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000211899.10",
+              "symbol": "IGHM"
+            },
+            {
+              "gene_id": "ENSG00000211592.8",
+              "symbol": "IGKC"
+            },
+            {
+              "gene_id": "ENSG00000019582.18",
+              "symbol": "CD74"
+            },
+            {
+              "gene_id": "ENSG00000204287.15",
+              "symbol": "HLA-DRA"
+            },
+            {
+              "gene_id": "ENSG00000105369.10",
+              "symbol": "CD79A"
+            },
+            {
+              "gene_id": "ENSG00000196126.13",
+              "symbol": "HLA-DRB1"
+            },
+            {
+              "gene_id": "ENSG00000211898.8",
+              "symbol": "IGHD"
+            },
+            {
+              "gene_id": "ENSG00000196735.14",
+              "symbol": "HLA-DQA1"
+            },
+            {
+              "gene_id": "ENSG00000156738.19",
+              "symbol": "MS4A1"
+            },
+            {
+              "gene_id": "ENSG00000100721.11",
+              "symbol": "TCL1A"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "10",
+          "cells": 94,
+          "best_replay_cluster": "10",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 1.0,
+          "median_cell_total_relative_difference": 0.002069869384653508,
+          "median_cell_moved_mass_fraction": 0.003021580948618155,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000101439.10",
+              "symbol": "CST3"
+            },
+            {
+              "gene_id": "ENSG00000204482.12",
+              "symbol": "LST1"
+            },
+            {
+              "gene_id": "ENSG00000204472.14",
+              "symbol": "AIF1"
+            },
+            {
+              "gene_id": "ENSG00000203747.14",
+              "symbol": "FCGR3A"
+            },
+            {
+              "gene_id": "ENSG00000158869.12",
+              "symbol": "FCER1G"
+            },
+            {
+              "gene_id": "ENSG00000163131.13",
+              "symbol": "CTSS"
+            },
+            {
+              "gene_id": "ENSG00000197746.16",
+              "symbol": "PSAP"
+            },
+            {
+              "gene_id": "ENSG00000087086.17",
+              "symbol": "FTL"
+            },
+            {
+              "gene_id": "ENSG00000103187.8",
+              "symbol": "COTL1"
+            },
+            {
+              "gene_id": "ENSG00000231389.9",
+              "symbol": "HLA-DPA1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "11",
+          "cells": 26,
+          "best_replay_cluster": "11",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 1.0,
+          "median_cell_total_relative_difference": 0.0018178053151425523,
+          "median_cell_moved_mass_fraction": 0.002735658215955328,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000100453.15",
+              "symbol": "GZMB"
+            },
+            {
+              "gene_id": "ENSG00000196628.21",
+              "symbol": "TCF4"
+            },
+            {
+              "gene_id": "ENSG00000140968.13",
+              "symbol": "IRF8"
+            },
+            {
+              "gene_id": "ENSG00000135916.16",
+              "symbol": "ITM2C"
+            },
+            {
+              "gene_id": "ENSG00000166428.15",
+              "symbol": "PLD4"
+            },
+            {
+              "gene_id": "ENSG00000019582.18",
+              "symbol": "CD74"
+            },
+            {
+              "gene_id": "ENSG00000132465.13",
+              "symbol": "JCHAIN"
+            },
+            {
+              "gene_id": "ENSG00000185507.22",
+              "symbol": "IRF7"
+            },
+            {
+              "gene_id": "ENSG00000152492.16",
+              "symbol": "CCDC50"
+            },
+            {
+              "gene_id": "ENSG00000173457.12",
+              "symbol": "PPP1R14B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D2_prime",
+      "role": "confirmatory",
+      "oracle_cluster_count": 18,
+      "replay_cluster_count": 19,
+      "hungarian_one_to_one_matched_fraction": 0.7890092879256966,
+      "best_overlap_remapped_label_stable_fraction": 0.8342105263157895,
+      "oracle_vs_replay_fixed_centroid_label_agreement": 0.9509287925696595,
+      "mismatched_cells": 1071,
+      "mismatched_cell_median_total_relative_difference": 0.005370929842228936,
+      "stable_cell_median_total_relative_difference": 0.005233111322549952,
+      "mismatched_cell_median_moved_mass_fraction": 0.0045611189945266575,
+      "stable_cell_median_moved_mass_fraction": 0.004445719202638749,
+      "contingency": {
+        "oracle_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17"
+        ],
+        "replay_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18"
+        ],
+        "counts": [
+          [
+            292,
+            2,
+            6,
+            0,
+            0,
+            930,
+            0,
+            0,
+            0,
+            2,
+            60,
+            4,
+            3,
+            3,
+            3,
+            5,
+            5,
+            0,
+            0
+          ],
+          [
+            107,
+            8,
+            24,
+            0,
+            0,
+            8,
+            0,
+            20,
+            0,
+            1,
+            582,
+            3,
+            6,
+            42,
+            4,
+            3,
+            2,
+            0,
+            1
+          ],
+          [
+            251,
+            2,
+            574,
+            0,
+            0,
+            26,
+            0,
+            18,
+            0,
+            2,
+            44,
+            7,
+            4,
+            3,
+            4,
+            3,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            208,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            68,
+            35,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            481,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            52,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            2,
+            43,
+            0,
+            0,
+            0,
+            0,
+            586,
+            0,
+            0,
+            16,
+            0,
+            4,
+            2,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            8,
+            0,
+            1,
+            0,
+            0,
+            4,
+            0,
+            5,
+            0,
+            0,
+            3,
+            0,
+            227,
+            1,
+            5,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            389,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            15,
+            1,
+            12,
+            0,
+            0,
+            14,
+            0,
+            5,
+            0,
+            185,
+            21,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            10,
+            11,
+            4,
+            0,
+            0,
+            5,
+            0,
+            4,
+            0,
+            0,
+            6,
+            0,
+            2,
+            2,
+            7,
+            1,
+            182,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2,
+            104,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            2,
+            0,
+            0,
+            2,
+            0,
+            2,
+            0,
+            2,
+            3,
+            0,
+            0,
+            0,
+            91,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            123,
+            1,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            4,
+            0,
+            0,
+            3,
+            0,
+            8,
+            0,
+            1,
+            2,
+            0,
+            0,
+            131,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            4,
+            108,
+            1,
+            0,
+            0,
+            2,
+            0,
+            3,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            100,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            28
+          ]
+        ]
+      },
+      "oracle_cluster_strata": [
+        {
+          "oracle_cluster": "0",
+          "cells": 1315,
+          "best_replay_cluster": "5",
+          "best_replay_overlap_fraction": 0.7072243346007605,
+          "mapped_label_stable_fraction": 0.929277566539924,
+          "median_neighbor_jaccard": 0.5789473684210527,
+          "median_cell_total_relative_difference": 0.005245774237419856,
+          "median_cell_moved_mass_fraction": 0.004548900682335102,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000198899.2",
+              "symbol": "MT-ATP6"
+            },
+            {
+              "gene_id": "ENSG00000198840.2",
+              "symbol": "MT-ND3"
+            },
+            {
+              "gene_id": "ENSG00000198888.2",
+              "symbol": "MT-ND1"
+            },
+            {
+              "gene_id": "ENSG00000198886.2",
+              "symbol": "MT-ND4"
+            },
+            {
+              "gene_id": "ENSG00000198763.3",
+              "symbol": "MT-ND2"
+            },
+            {
+              "gene_id": "ENSG00000198938.2",
+              "symbol": "MT-CO3"
+            },
+            {
+              "gene_id": "ENSG00000198727.2",
+              "symbol": "MT-CYB"
+            },
+            {
+              "gene_id": "ENSG00000198712.1",
+              "symbol": "MT-CO2"
+            },
+            {
+              "gene_id": "ENSG00000198804.2",
+              "symbol": "MT-CO1"
+            },
+            {
+              "gene_id": "ENSG00000210082.2",
+              "symbol": "MT-RNR2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "1",
+          "cells": 811,
+          "best_replay_cluster": "10",
+          "best_replay_overlap_fraction": 0.717632552404439,
+          "mapped_label_stable_fraction": 0.717632552404439,
+          "median_neighbor_jaccard": 0.6666666666666666,
+          "median_cell_total_relative_difference": 0.005285920230658337,
+          "median_cell_moved_mass_fraction": 0.004479603507434236,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000099204.23",
+              "symbol": "ABLIM1"
+            },
+            {
+              "gene_id": "ENSG00000089199.11",
+              "symbol": "CHGB"
+            },
+            {
+              "gene_id": "ENSG00000279249.5",
+              "symbol": "SYNAGE"
+            },
+            {
+              "gene_id": "ENSG00000163032.13",
+              "symbol": "VSNL1"
+            },
+            {
+              "gene_id": "ENSG00000112541.19",
+              "symbol": "PDE10A"
+            },
+            {
+              "gene_id": "ENSG00000079841.20",
+              "symbol": "RIMS1"
+            },
+            {
+              "gene_id": "ENSG00000168843.15",
+              "symbol": "FSTL5"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000006468.16",
+              "symbol": "ETV1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "2",
+          "cells": 939,
+          "best_replay_cluster": "2",
+          "best_replay_overlap_fraction": 0.6112886048988285,
+          "mapped_label_stable_fraction": 0.6112886048988285,
+          "median_neighbor_jaccard": 0.6666666666666666,
+          "median_cell_total_relative_difference": 0.00558659217877095,
+          "median_cell_moved_mass_fraction": 0.004548211036992117,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000132639.16",
+              "symbol": "SNAP25"
+            },
+            {
+              "gene_id": "ENSG00000089199.11",
+              "symbol": "CHGB"
+            },
+            {
+              "gene_id": "ENSG00000133639.6",
+              "symbol": "BTG1"
+            },
+            {
+              "gene_id": "ENSG00000179915.25",
+              "symbol": "NRXN1"
+            },
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000296425.1",
+              "symbol": "ENSG00000296425"
+            },
+            {
+              "gene_id": "ENSG00000079841.20",
+              "symbol": "RIMS1"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000167281.21",
+              "symbol": "RBFOX3"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "3",
+          "cells": 209,
+          "best_replay_cluster": "3",
+          "best_replay_overlap_fraction": 0.9952153110047847,
+          "mapped_label_stable_fraction": 0.9952153110047847,
+          "median_neighbor_jaccard": 1.0,
+          "median_cell_total_relative_difference": 0.004731536720839333,
+          "median_cell_moved_mass_fraction": 0.003979502834714348,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000123560.15",
+              "symbol": "PLP1"
+            },
+            {
+              "gene_id": "ENSG00000197971.16",
+              "symbol": "MBP"
+            },
+            {
+              "gene_id": "ENSG00000091513.17",
+              "symbol": "TF"
+            },
+            {
+              "gene_id": "ENSG00000112531.18",
+              "symbol": "QKI"
+            },
+            {
+              "gene_id": "ENSG00000168314.20",
+              "symbol": "MOBP"
+            },
+            {
+              "gene_id": "ENSG00000184226.15",
+              "symbol": "PCDH9"
+            },
+            {
+              "gene_id": "ENSG00000164124.12",
+              "symbol": "TMEM144"
+            },
+            {
+              "gene_id": "ENSG00000070214.18",
+              "symbol": "SLC44A1"
+            },
+            {
+              "gene_id": "ENSG00000167123.21",
+              "symbol": "CERCAM"
+            },
+            {
+              "gene_id": "ENSG00000107317.14",
+              "symbol": "PTGDS"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "4",
+          "cells": 104,
+          "best_replay_cluster": "4",
+          "best_replay_overlap_fraction": 0.6538461538461539,
+          "mapped_label_stable_fraction": 0.6538461538461539,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0037404564895870806,
+          "median_cell_moved_mass_fraction": 0.005080547745754492,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000198712.1",
+              "symbol": "MT-CO2"
+            },
+            {
+              "gene_id": "ENSG00000198763.3",
+              "symbol": "MT-ND2"
+            },
+            {
+              "gene_id": "ENSG00000211459.2",
+              "symbol": "MT-RNR1"
+            },
+            {
+              "gene_id": "ENSG00000198899.2",
+              "symbol": "MT-ATP6"
+            },
+            {
+              "gene_id": "ENSG00000198727.2",
+              "symbol": "MT-CYB"
+            },
+            {
+              "gene_id": "ENSG00000198886.2",
+              "symbol": "MT-ND4"
+            },
+            {
+              "gene_id": "ENSG00000198840.2",
+              "symbol": "MT-ND3"
+            },
+            {
+              "gene_id": "ENSG00000198804.2",
+              "symbol": "MT-CO1"
+            },
+            {
+              "gene_id": "ENSG00000198888.2",
+              "symbol": "MT-ND1"
+            },
+            {
+              "gene_id": "ENSG00000198938.2",
+              "symbol": "MT-CO3"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "5",
+          "cells": 537,
+          "best_replay_cluster": "6",
+          "best_replay_overlap_fraction": 0.8957169459962756,
+          "mapped_label_stable_fraction": 0.8957169459962756,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.005263157894736842,
+          "median_cell_moved_mass_fraction": 0.00463743676222597,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000079215.16",
+              "symbol": "SLC1A3"
+            },
+            {
+              "gene_id": "ENSG00000125462.21",
+              "symbol": "MIR9-1HG"
+            },
+            {
+              "gene_id": "ENSG00000165795.26",
+              "symbol": "NDRG2"
+            },
+            {
+              "gene_id": "ENSG00000018625.16",
+              "symbol": "ATP1A2"
+            },
+            {
+              "gene_id": "ENSG00000245532.13",
+              "symbol": "NEAT1"
+            },
+            {
+              "gene_id": "ENSG00000135821.20",
+              "symbol": "GLUL"
+            },
+            {
+              "gene_id": "ENSG00000184226.15",
+              "symbol": "PCDH9"
+            },
+            {
+              "gene_id": "ENSG00000080493.20",
+              "symbol": "SLC4A4"
+            },
+            {
+              "gene_id": "ENSG00000134769.24",
+              "symbol": "DTNA"
+            },
+            {
+              "gene_id": "ENSG00000112531.18",
+              "symbol": "QKI"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "6",
+          "cells": 659,
+          "best_replay_cluster": "7",
+          "best_replay_overlap_fraction": 0.8892261001517451,
+          "mapped_label_stable_fraction": 0.8892261001517451,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005711318795430945,
+          "median_cell_moved_mass_fraction": 0.004512942779291553,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000279249.5",
+              "symbol": "SYNAGE"
+            },
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000141837.24",
+              "symbol": "CACNA1A"
+            },
+            {
+              "gene_id": "ENSG00000214548.20",
+              "symbol": "MEG3"
+            },
+            {
+              "gene_id": "ENSG00000253230.12",
+              "symbol": "MIR124-1HG"
+            },
+            {
+              "gene_id": "ENSG00000112541.19",
+              "symbol": "PDE10A"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000003393.17",
+              "symbol": "ALS2"
+            },
+            {
+              "gene_id": "ENSG00000280650.1",
+              "symbol": "KCNIP4-IT1"
+            },
+            {
+              "gene_id": "ENSG00000289740.2",
+              "symbol": "TALAM1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "7",
+          "cells": 255,
+          "best_replay_cluster": "12",
+          "best_replay_overlap_fraction": 0.8901960784313725,
+          "mapped_label_stable_fraction": 0.8901960784313725,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005345394736842105,
+          "median_cell_moved_mass_fraction": 0.004500978473581213,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000132872.13",
+              "symbol": "SYT4"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000172995.18",
+              "symbol": "ARPP21"
+            },
+            {
+              "gene_id": "ENSG00000081803.18",
+              "symbol": "CADPS2"
+            },
+            {
+              "gene_id": "ENSG00000102924.13",
+              "symbol": "CBLN1"
+            },
+            {
+              "gene_id": "ENSG00000186472.21",
+              "symbol": "PCLO"
+            },
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000104435.15",
+              "symbol": "STMN2"
+            },
+            {
+              "gene_id": "ENSG00000168502.19",
+              "symbol": "MTCL1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "8",
+          "cells": 389,
+          "best_replay_cluster": "8",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.004337631887456037,
+          "median_cell_moved_mass_fraction": 0.003941836019621584,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000157103.13",
+              "symbol": "SLC6A1"
+            },
+            {
+              "gene_id": "ENSG00000143153.15",
+              "symbol": "ATP1B1"
+            },
+            {
+              "gene_id": "ENSG00000157404.18",
+              "symbol": "KIT"
+            },
+            {
+              "gene_id": "ENSG00000069667.16",
+              "symbol": "RORA"
+            },
+            {
+              "gene_id": "ENSG00000128683.15",
+              "symbol": "GAD1"
+            },
+            {
+              "gene_id": "ENSG00000051128.20",
+              "symbol": "HOMER3"
+            },
+            {
+              "gene_id": "ENSG00000100362.14",
+              "symbol": "PVALB"
+            },
+            {
+              "gene_id": "ENSG00000136750.13",
+              "symbol": "GAD2"
+            },
+            {
+              "gene_id": "ENSG00000162545.7",
+              "symbol": "CAMK2N1"
+            },
+            {
+              "gene_id": "ENSG00000022355.19",
+              "symbol": "GABRA1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "9",
+          "cells": 255,
+          "best_replay_cluster": "9",
+          "best_replay_overlap_fraction": 0.7254901960784313,
+          "mapped_label_stable_fraction": 0.7254901960784313,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005312084993359893,
+          "median_cell_moved_mass_fraction": 0.00457117979973879,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000089199.11",
+              "symbol": "CHGB"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000081803.18",
+              "symbol": "CADPS2"
+            },
+            {
+              "gene_id": "ENSG00000167281.21",
+              "symbol": "RBFOX3"
+            },
+            {
+              "gene_id": "ENSG00000175806.16",
+              "symbol": "MSRA"
+            },
+            {
+              "gene_id": "ENSG00000132639.16",
+              "symbol": "SNAP25"
+            },
+            {
+              "gene_id": "ENSG00000050405.15",
+              "symbol": "LIMA1"
+            },
+            {
+              "gene_id": "ENSG00000214548.20",
+              "symbol": "MEG3"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "10",
+          "cells": 234,
+          "best_replay_cluster": "16",
+          "best_replay_overlap_fraction": 0.7777777777777778,
+          "mapped_label_stable_fraction": 0.7777777777777778,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005320740478970366,
+          "median_cell_moved_mass_fraction": 0.004471440080333032,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000279249.5",
+              "symbol": "SYNAGE"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000081803.18",
+              "symbol": "CADPS2"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000214548.20",
+              "symbol": "MEG3"
+            },
+            {
+              "gene_id": "ENSG00000163032.13",
+              "symbol": "VSNL1"
+            },
+            {
+              "gene_id": "ENSG00000139899.12",
+              "symbol": "CBLN3"
+            },
+            {
+              "gene_id": "ENSG00000152495.12",
+              "symbol": "CAMK4"
+            },
+            {
+              "gene_id": "ENSG00000099204.23",
+              "symbol": "ABLIM1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "11",
+          "cells": 111,
+          "best_replay_cluster": "11",
+          "best_replay_overlap_fraction": 0.9369369369369369,
+          "mapped_label_stable_fraction": 0.9369369369369369,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005396430053964301,
+          "median_cell_moved_mass_fraction": 0.004545454545454545,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000156299.16",
+              "symbol": "TIAM1"
+            },
+            {
+              "gene_id": "ENSG00000137766.18",
+              "symbol": "UNC13C"
+            },
+            {
+              "gene_id": "ENSG00000133816.21",
+              "symbol": "MICAL2"
+            },
+            {
+              "gene_id": "ENSG00000134986.15",
+              "symbol": "NREP"
+            },
+            {
+              "gene_id": "ENSG00000167281.21",
+              "symbol": "RBFOX3"
+            },
+            {
+              "gene_id": "ENSG00000144834.15",
+              "symbol": "TAGLN3"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000163032.13",
+              "symbol": "VSNL1"
+            },
+            {
+              "gene_id": "ENSG00000167460.19",
+              "symbol": "TPM4"
+            },
+            {
+              "gene_id": "ENSG00000196739.15",
+              "symbol": "COL27A1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "12",
+          "cells": 106,
+          "best_replay_cluster": "14",
+          "best_replay_overlap_fraction": 0.8584905660377359,
+          "mapped_label_stable_fraction": 0.8584905660377359,
+          "median_neighbor_jaccard": 0.6666666666666666,
+          "median_cell_total_relative_difference": 0.005067989233799756,
+          "median_cell_moved_mass_fraction": 0.00440956344076827,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000188536.14",
+              "symbol": "HBA2"
+            },
+            {
+              "gene_id": "ENSG00000081803.18",
+              "symbol": "CADPS2"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            },
+            {
+              "gene_id": "ENSG00000206172.9",
+              "symbol": "HBA1"
+            },
+            {
+              "gene_id": "ENSG00000101333.20",
+              "symbol": "PLCB4"
+            },
+            {
+              "gene_id": "ENSG00000296425.1",
+              "symbol": "ENSG00000296425"
+            },
+            {
+              "gene_id": "ENSG00000139899.12",
+              "symbol": "CBLN3"
+            },
+            {
+              "gene_id": "ENSG00000168843.15",
+              "symbol": "FSTL5"
+            },
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "13",
+          "cells": 127,
+          "best_replay_cluster": "15",
+          "best_replay_overlap_fraction": 0.968503937007874,
+          "mapped_label_stable_fraction": 0.968503937007874,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005325545438928019,
+          "median_cell_moved_mass_fraction": 0.004480537664519743,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000279249.5",
+              "symbol": "SYNAGE"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000058404.22",
+              "symbol": "CAMK2B"
+            },
+            {
+              "gene_id": "ENSG00000214548.20",
+              "symbol": "MEG3"
+            },
+            {
+              "gene_id": "ENSG00000172995.18",
+              "symbol": "ARPP21"
+            },
+            {
+              "gene_id": "ENSG00000141837.24",
+              "symbol": "CACNA1A"
+            },
+            {
+              "gene_id": "ENSG00000250305.10",
+              "symbol": "TRMT9B"
+            },
+            {
+              "gene_id": "ENSG00000257923.13",
+              "symbol": "CUX1"
+            },
+            {
+              "gene_id": "ENSG00000184672.12",
+              "symbol": "RALYL"
+            },
+            {
+              "gene_id": "ENSG00000146352.14",
+              "symbol": "CLVS2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "14",
+          "cells": 156,
+          "best_replay_cluster": "13",
+          "best_replay_overlap_fraction": 0.8397435897435898,
+          "mapped_label_stable_fraction": 0.8397435897435898,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005364550226617181,
+          "median_cell_moved_mass_fraction": 0.004425740047337857,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000168843.15",
+              "symbol": "FSTL5"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000099204.23",
+              "symbol": "ABLIM1"
+            },
+            {
+              "gene_id": "ENSG00000279249.5",
+              "symbol": "SYNAGE"
+            },
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000151746.16",
+              "symbol": "BICD1"
+            },
+            {
+              "gene_id": "ENSG00000145526.13",
+              "symbol": "CDH18"
+            },
+            {
+              "gene_id": "ENSG00000146352.14",
+              "symbol": "CLVS2"
+            },
+            {
+              "gene_id": "ENSG00000184408.10",
+              "symbol": "KCND2"
+            },
+            {
+              "gene_id": "ENSG00000136531.19",
+              "symbol": "SCN2A"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "15",
+          "cells": 121,
+          "best_replay_cluster": "1",
+          "best_replay_overlap_fraction": 0.8925619834710744,
+          "mapped_label_stable_fraction": 0.8925619834710744,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005341880341880342,
+          "median_cell_moved_mass_fraction": 0.004467005076142132,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000164418.22",
+              "symbol": "GRIK2"
+            },
+            {
+              "gene_id": "ENSG00000124493.15",
+              "symbol": "GRM4"
+            },
+            {
+              "gene_id": "ENSG00000250305.10",
+              "symbol": "TRMT9B"
+            },
+            {
+              "gene_id": "ENSG00000171867.19",
+              "symbol": "PRNP"
+            },
+            {
+              "gene_id": "ENSG00000007372.25",
+              "symbol": "PAX6"
+            },
+            {
+              "gene_id": "ENSG00000074416.17",
+              "symbol": "MGLL"
+            },
+            {
+              "gene_id": "ENSG00000184672.12",
+              "symbol": "RALYL"
+            },
+            {
+              "gene_id": "ENSG00000138814.18",
+              "symbol": "PPP3CA"
+            },
+            {
+              "gene_id": "ENSG00000106772.20",
+              "symbol": "PRUNE2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "16",
+          "cells": 100,
+          "best_replay_cluster": "17",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.004580123271694526,
+          "median_cell_moved_mass_fraction": 0.003980071779760105,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000106278.13",
+              "symbol": "PTPRZ1"
+            },
+            {
+              "gene_id": "ENSG00000038427.16",
+              "symbol": "VCAN"
+            },
+            {
+              "gene_id": "ENSG00000116147.19",
+              "symbol": "TNR"
+            },
+            {
+              "gene_id": "ENSG00000260807.8",
+              "symbol": "CEROX1"
+            },
+            {
+              "gene_id": "ENSG00000184221.13",
+              "symbol": "OLIG1"
+            },
+            {
+              "gene_id": "ENSG00000072134.17",
+              "symbol": "EPN2"
+            },
+            {
+              "gene_id": "ENSG00000112531.18",
+              "symbol": "QKI"
+            },
+            {
+              "gene_id": "ENSG00000145284.12",
+              "symbol": "SCD5"
+            },
+            {
+              "gene_id": "ENSG00000079482.15",
+              "symbol": "OPHN1"
+            },
+            {
+              "gene_id": "ENSG00000132692.20",
+              "symbol": "BCAN"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "17",
+          "cells": 32,
+          "best_replay_cluster": "18",
+          "best_replay_overlap_fraction": 0.875,
+          "mapped_label_stable_fraction": 0.875,
+          "median_neighbor_jaccard": 0.7647058823529411,
+          "median_cell_total_relative_difference": 0.005765335492161941,
+          "median_cell_moved_mass_fraction": 0.004503967688683233,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSG00000198034.12",
+              "symbol": "RPS4X"
+            },
+            {
+              "gene_id": "ENSG00000081138.14",
+              "symbol": "CDH7"
+            },
+            {
+              "gene_id": "ENSG00000067715.16",
+              "symbol": "SYT1"
+            },
+            {
+              "gene_id": "ENSG00000102409.11",
+              "symbol": "BEX4"
+            },
+            {
+              "gene_id": "ENSG00000248919.7",
+              "symbol": "ATP5MF-PTCD1"
+            },
+            {
+              "gene_id": "ENSG00000133169.7",
+              "symbol": "BEX1"
+            },
+            {
+              "gene_id": "ENSG00000168843.15",
+              "symbol": "FSTL5"
+            },
+            {
+              "gene_id": "ENSG00000096384.21",
+              "symbol": "HSP90AB1"
+            },
+            {
+              "gene_id": "ENSG00000050405.15",
+              "symbol": "LIMA1"
+            },
+            {
+              "gene_id": "ENSG00000105640.14",
+              "symbol": "RPL18A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D5_mouse_5_prime",
+      "role": "cross_chemistry_stress_test",
+      "oracle_cluster_count": 6,
+      "replay_cluster_count": 7,
+      "hungarian_one_to_one_matched_fraction": 0.7378210806023029,
+      "best_overlap_remapped_label_stable_fraction": 0.8113374667847653,
+      "oracle_vs_replay_fixed_centroid_label_agreement": 0.9884853852967228,
+      "mismatched_cells": 213,
+      "mismatched_cell_median_total_relative_difference": 0.0025375343624444912,
+      "stable_cell_median_total_relative_difference": 0.0025449012321851826,
+      "mismatched_cell_median_moved_mass_fraction": 0.006541524459613196,
+      "stable_cell_median_moved_mass_fraction": 0.00652919236474725,
+      "contingency": {
+        "oracle_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "replay_labels": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "counts": [
+          [
+            98,
+            83,
+            0,
+            65,
+            3,
+            12,
+            0
+          ],
+          [
+            17,
+            0,
+            0,
+            0,
+            0,
+            72,
+            0
+          ],
+          [
+            0,
+            0,
+            213,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            52,
+            0,
+            157,
+            27,
+            0,
+            0
+          ],
+          [
+            4,
+            32,
+            0,
+            1,
+            269,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            24
+          ]
+        ]
+      },
+      "oracle_cluster_strata": [
+        {
+          "oracle_cluster": "0",
+          "cells": 261,
+          "best_replay_cluster": "0",
+          "best_replay_overlap_fraction": 0.37547892720306514,
+          "mapped_label_stable_fraction": 0.6934865900383141,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.002735562310030395,
+          "median_cell_moved_mass_fraction": 0.0073147711184521,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSMUSG00000024610.18",
+              "symbol": "Cd74"
+            },
+            {
+              "gene_id": "ENSMUSG00000034634.9",
+              "symbol": "Ly6d"
+            },
+            {
+              "gene_id": "ENSMUSG00000029322.14",
+              "symbol": "Plac8"
+            },
+            {
+              "gene_id": "ENSMUSG00000003379.9",
+              "symbol": "Cd79a"
+            },
+            {
+              "gene_id": "ENSMUSG00000076937.4",
+              "symbol": "Iglc2"
+            },
+            {
+              "gene_id": "ENSMUSG00000024353.7",
+              "symbol": "Mzb1"
+            },
+            {
+              "gene_id": "ENSMUSG00000040592.13",
+              "symbol": "Cd79b"
+            },
+            {
+              "gene_id": "ENSMUSG00000105547.2",
+              "symbol": "Iglc3"
+            },
+            {
+              "gene_id": "ENSMUSG00000036594.17",
+              "symbol": "H2-Aa"
+            },
+            {
+              "gene_id": "ENSMUSG00000024673.11",
+              "symbol": "Ms4a1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "1",
+          "cells": 89,
+          "best_replay_cluster": "5",
+          "best_replay_overlap_fraction": 0.8089887640449438,
+          "mapped_label_stable_fraction": 0.8089887640449438,
+          "median_neighbor_jaccard": 1.0,
+          "median_cell_total_relative_difference": 0.0019049886891296583,
+          "median_cell_moved_mass_fraction": 0.005553809074714451,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSMUSG00000030579.12",
+              "symbol": "Tyrobp"
+            },
+            {
+              "gene_id": "ENSMUSG00000058715.13",
+              "symbol": "Fcer1g"
+            },
+            {
+              "gene_id": "ENSMUSG00000069516.10",
+              "symbol": "Lyz2"
+            },
+            {
+              "gene_id": "ENSMUSG00000025492.8",
+              "symbol": "Ifitm3"
+            },
+            {
+              "gene_id": "ENSMUSG00000060063.11",
+              "symbol": "Alox5ap"
+            },
+            {
+              "gene_id": "ENSMUSG00000027447.8",
+              "symbol": "Cst3"
+            },
+            {
+              "gene_id": "ENSMUSG00000001025.10",
+              "symbol": "S100a6"
+            },
+            {
+              "gene_id": "ENSMUSG00000063856.10",
+              "symbol": "Gpx1"
+            },
+            {
+              "gene_id": "ENSMUSG00000004207.17",
+              "symbol": "Psap"
+            },
+            {
+              "gene_id": "ENSMUSG00000030214.9",
+              "symbol": "Plbd1"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "2",
+          "cells": 213,
+          "best_replay_cluster": "2",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0029813664596273293,
+          "median_cell_moved_mass_fraction": 0.007517118189937481,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSMUSG00000032093.9",
+              "symbol": "Cd3e"
+            },
+            {
+              "gene_id": "ENSMUSG00000056290.18",
+              "symbol": "Ms4a4b"
+            },
+            {
+              "gene_id": "ENSMUSG00000032094.10",
+              "symbol": "Cd3d"
+            },
+            {
+              "gene_id": "ENSMUSG00000002033.16",
+              "symbol": "Cd3g"
+            },
+            {
+              "gene_id": "ENSMUSG00000030742.9",
+              "symbol": "Lat"
+            },
+            {
+              "gene_id": "ENSMUSG00000000409.16",
+              "symbol": "Lck"
+            },
+            {
+              "gene_id": "ENSMUSG00000000782.18",
+              "symbol": "Tcf7"
+            },
+            {
+              "gene_id": "ENSMUSG00000032011.7",
+              "symbol": "Thy1"
+            },
+            {
+              "gene_id": "ENSMUSG00000027985.16",
+              "symbol": "Lef1"
+            },
+            {
+              "gene_id": "ENSMUSG00000009687.16",
+              "symbol": "Fxyd5"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "3",
+          "cells": 236,
+          "best_replay_cluster": "3",
+          "best_replay_overlap_fraction": 0.6652542372881356,
+          "mapped_label_stable_fraction": 0.6652542372881356,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.002553316461480766,
+          "median_cell_moved_mass_fraction": 0.006474371513775116,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSMUSG00000024610.18",
+              "symbol": "Cd74"
+            },
+            {
+              "gene_id": "ENSMUSG00000003379.9",
+              "symbol": "Cd79a"
+            },
+            {
+              "gene_id": "ENSMUSG00000036594.17",
+              "symbol": "H2-Aa"
+            },
+            {
+              "gene_id": "ENSMUSG00000060586.13",
+              "symbol": "H2-Eb1"
+            },
+            {
+              "gene_id": "ENSMUSG00000040592.13",
+              "symbol": "Cd79b"
+            },
+            {
+              "gene_id": "ENSMUSG00000073421.8",
+              "symbol": "H2-Ab1"
+            },
+            {
+              "gene_id": "ENSMUSG00000034634.9",
+              "symbol": "Ly6d"
+            },
+            {
+              "gene_id": "ENSMUSG00000076937.4",
+              "symbol": "Iglc2"
+            },
+            {
+              "gene_id": "ENSMUSG00000105547.2",
+              "symbol": "Iglc3"
+            },
+            {
+              "gene_id": "ENSMUSG00000037548.17",
+              "symbol": "H2-DMb2"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "4",
+          "cells": 306,
+          "best_replay_cluster": "4",
+          "best_replay_overlap_fraction": 0.8790849673202614,
+          "mapped_label_stable_fraction": 0.8790849673202614,
+          "median_neighbor_jaccard": 0.875,
+          "median_cell_total_relative_difference": 0.0022603426882591817,
+          "median_cell_moved_mass_fraction": 0.005934094105529825,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSMUSG00000024610.18",
+              "symbol": "Cd74"
+            },
+            {
+              "gene_id": "ENSMUSG00000003379.9",
+              "symbol": "Cd79a"
+            },
+            {
+              "gene_id": "ENSMUSG00000036594.17",
+              "symbol": "H2-Aa"
+            },
+            {
+              "gene_id": "ENSMUSG00000040592.13",
+              "symbol": "Cd79b"
+            },
+            {
+              "gene_id": "ENSMUSG00000005583.18",
+              "symbol": "Mef2c"
+            },
+            {
+              "gene_id": "ENSMUSG00000060586.13",
+              "symbol": "H2-Eb1"
+            },
+            {
+              "gene_id": "ENSMUSG00000073421.8",
+              "symbol": "H2-Ab1"
+            },
+            {
+              "gene_id": "ENSMUSG00000076937.4",
+              "symbol": "Iglc2"
+            },
+            {
+              "gene_id": "ENSMUSG00000057098.16",
+              "symbol": "Ebf1"
+            },
+            {
+              "gene_id": "ENSMUSG00000127251.1",
+              "symbol": "Gm68734"
+            }
+          ]
+        },
+        {
+          "oracle_cluster": "5",
+          "cells": 24,
+          "best_replay_cluster": "6",
+          "best_replay_overlap_fraction": 1.0,
+          "mapped_label_stable_fraction": 1.0,
+          "median_neighbor_jaccard": 1.0,
+          "median_cell_total_relative_difference": 0.0025848608398140755,
+          "median_cell_moved_mass_fraction": 0.005308933921422126,
+          "top_positive_markers": [
+            {
+              "gene_id": "ENSMUSG00000035042.4",
+              "symbol": "Ccl5"
+            },
+            {
+              "gene_id": "ENSMUSG00000023132.10",
+              "symbol": "Gzma"
+            },
+            {
+              "gene_id": "ENSMUSG00000004612.11",
+              "symbol": "Nkg7"
+            },
+            {
+              "gene_id": "ENSMUSG00000058715.13",
+              "symbol": "Fcer1g"
+            },
+            {
+              "gene_id": "ENSMUSG00000075010.8",
+              "symbol": "AW112010"
+            },
+            {
+              "gene_id": "ENSMUSG00000030579.12",
+              "symbol": "Tyrobp"
+            },
+            {
+              "gene_id": "ENSMUSG00000024910.7",
+              "symbol": "Ctsw"
+            },
+            {
+              "gene_id": "ENSMUSG00000068220.8",
+              "symbol": "Lgals1"
+            },
+            {
+              "gene_id": "ENSMUSG00000068227.11",
+              "symbol": "Il2rb"
+            },
+            {
+              "gene_id": "ENSMUSG00000032231.16",
+              "symbol": "Anxa2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

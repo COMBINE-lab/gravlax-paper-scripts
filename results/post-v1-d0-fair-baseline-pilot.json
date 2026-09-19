@@ -1,0 +1,64 @@
+{
+  "schema": "gravlax.post_v1.fair_baseline_pilot.v1",
+  "date": "2026-08-30",
+  "dataset": "D0 / 10x PBMC 1k v3",
+  "status": "correctness_passed_performance_preliminary",
+  "code_commit": "b5a791e681e7f1f93d46459745eedba59ac841d6",
+  "threads": 24,
+  "molecules": 22156853,
+  "artifacts": [
+    {
+      "name": "all_tag_annotation_free_bam",
+      "bytes": 4208722967,
+      "sha256": "0757ea351b0e999bec024e10169f91a7edb14526e31c73b619e8cb41752ef974"
+    },
+    {
+      "name": "all_tag_annotation_free_cram31",
+      "bytes": 1404884801,
+      "sha256": "6349ebc5a0bc24a566361bfa0c61c8d1ef3e63b0c37b56f23e8710bf07e0be21"
+    },
+    {
+      "name": "ingest_equivalent_minimal_bam",
+      "bytes": 1843272819,
+      "sha256": "b376342589cb793b052ee2a5f41f397ae2deaaf0130544d6fbd4ec5657bc8fd6"
+    },
+    {
+      "name": "ingest_equivalent_minimal_cram31",
+      "bytes": 758514044,
+      "sha256": "c38f0c63d51478020159e4321eeb1424034a92f7715e7089b1820ae37767ad01"
+    },
+    {
+      "name": "canonical_genome_stamped_aie",
+      "bytes": 111087381,
+      "sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842"
+    }
+  ],
+  "ratios": {
+    "all_tag_to_minimal_bam": 2.283288,
+    "all_tag_to_minimal_cram": 1.852154,
+    "minimal_bam_to_aie": 16.593,
+    "minimal_cram_to_aie": 6.828085
+  },
+  "equivalence": {
+    "fresh_full_vs_minimal_aie_byte_identical": true,
+    "fresh_archive_sha256": "a664edd16cecc86347341bff177f184f67ad53007d3c194ed8b41f0f4d49c82c",
+    "genome_stamped_minimal_vs_canonical_aie_byte_identical": true,
+    "minimal_bam_vs_cram_normalized_sam_sha256": "fbcf85ca51d6f24318a6921fc0ff47aba2b0e7e9a220c669b811dd7674b66933",
+    "archive_and_bam_replays_vs_frozen_reference_byte_identical": true,
+    "matrix_sha256": "abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335",
+    "barcodes_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b",
+    "features_sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+  },
+  "preliminary_timings": [
+    {"operation": "make_minimal_bam", "wall_seconds": 56.87, "user_seconds": 198.28, "system_seconds": 32.36, "max_rss_kb": 34752},
+    {"operation": "make_minimal_cram", "wall_seconds": 67.74, "user_seconds": 1324.21, "system_seconds": 56.93, "max_rss_kb": 7069076},
+    {"operation": "ingest_minimal_bam", "wall_seconds": 67.40, "user_seconds": 119.71, "system_seconds": 80.21, "max_rss_kb": 5902504},
+    {"operation": "ingest_full_bam", "wall_seconds": 72.43, "user_seconds": 161.05, "system_seconds": 107.67, "max_rss_kb": 5887540},
+    {"operation": "replay_aie", "wall_seconds": 2.52, "user_seconds": 10.61, "system_seconds": 6.50, "max_rss_kb": 6951916},
+    {"operation": "replay_from_minimal_bam", "wall_seconds": 58.68, "user_seconds": 87.68, "system_seconds": 8.98, "max_rss_kb": 6201108},
+    {"operation": "replay_from_full_bam", "wall_seconds": 60.97, "user_seconds": 124.61, "system_seconds": 15.45, "max_rss_kb": 6190724}
+  ],
+  "timing_caveat": "Single warm/uncontrolled pilot observations; not publication estimates. The frozen protocol requires randomized order, five warm replicates, and one recorded cold-cache replicate.",
+  "capability_caveat": "The minimized BAM/CRAM is ingest-equivalent but remains information-richer than the post-correction AIE abstraction because it retains raw barcode correction evidence, QNAMEs, and every alignment instance. The 6.83x CRAM ratio is therefore not yet a fully capability-matched lower bound."
+}
+

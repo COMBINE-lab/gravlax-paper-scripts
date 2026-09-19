@@ -1,0 +1,6 @@
+annotation compiled: 78686 genes, 385669 transcripts (1.1s)
+barcode frequency pass: 309167 exact whitelist barcodes (24.1s)
+multimapper reads counted (single-gene union): 1348779
+molecules assigned: 32912597 of 0 (940395 multi-gene) from 56981029 reads (52.9s)
+collapse done (4.7s)
+replay complete: 3565875 nonzero entries, 10327612 total UMIs -> runs/replay/full-v48-pseudo (84.1s wall total)

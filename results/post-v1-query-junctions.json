@@ -1,0 +1,133 @@
+{
+  "configuration": {
+    "coordinates": "0-based half-open",
+    "dataset": "D0",
+    "default_interval_semantics": "both_endpoints_contained",
+    "locus": "chr11:35138870-35232402",
+    "min_supporting_children": 20,
+    "threads": 24,
+    "warm_repetitions": 5
+  },
+  "correctness": {
+    "annotation_flags_well_formed": true,
+    "contained_and_either_boundary_semantics_exercised": true,
+    "five_machine_output_repetitions_byte_identical": true,
+    "junction_rows": 2,
+    "min_cells_filter_exercised": true,
+    "min_support_filter_exercised": true,
+    "point_checks": [
+      {
+        "cells": 15,
+        "locus": "chr11:35186900-35189834",
+        "per_cell_exact": true,
+        "supporting_children": 26,
+        "umis": 17
+      },
+      {
+        "cells": 66,
+        "locus": "chr11:35221732-35229128",
+        "per_cell_exact": true,
+        "supporting_children": 77,
+        "umis": 73
+      }
+    ],
+    "point_interval_aggregate_and_per_cell_exact": true,
+    "tsv_json_ordered_rows_equal": true,
+    "workspace_tests_passed": 93
+  },
+  "format": {
+    "archive_bytes_added": 0,
+    "json_with_cells_sha256": "2f6afb47ce7a349dfe7977a27bf25c4c32acbfcde5e4f3b2e7afc21fe4d84556",
+    "tsv_sha256": "8be2450cd157b5d20f3c38a846d73cae5760a8225ab8609a5baebd6155dbd3d7"
+  },
+  "implementation_commit": "0efabed0d3e92a72c432b4c815c2e0b70c7155e4",
+  "inputs": {
+    "aie_binary": {
+      "bytes": 76492672,
+      "path": "aie",
+      "sha256": "30ef45ce5466c3a0b9bdf2d36b9c1f4690eb2a9e5b1a61b87d6dbf97f549f685"
+    },
+    "archive": {
+      "bytes": 111087381,
+      "path": "runs/archive/d0.aie",
+      "sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842"
+    },
+    "gencode_v49": {
+      "bytes": 3323462848,
+      "path": "annotations/gencode.v49.annotation.gtf",
+      "sha256": "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914"
+    }
+  },
+  "performance": {
+    "index_only": {
+      "max_rss_kb": 28388,
+      "median_wall_seconds": 0.01,
+      "rss_gate_kb": 524288,
+      "runs": [
+        {
+          "max_rss_kb": 28292,
+          "rep": 1,
+          "wall_seconds": 0.01
+        },
+        {
+          "max_rss_kb": 28388,
+          "rep": 2,
+          "wall_seconds": 0.01
+        },
+        {
+          "max_rss_kb": 28100,
+          "rep": 3,
+          "wall_seconds": 0.01
+        },
+        {
+          "max_rss_kb": 28108,
+          "rep": 4,
+          "wall_seconds": 0.01
+        },
+        {
+          "max_rss_kb": 28164,
+          "rep": 5,
+          "wall_seconds": 0.01
+        }
+      ],
+      "verdict": "pass",
+      "wall_gate_seconds": 0.2
+    },
+    "with_cells": {
+      "max_rss_kb": 108988,
+      "median_wall_seconds": 0.06,
+      "rss_gate_kb": 2097152,
+      "runs": [
+        {
+          "max_rss_kb": 107848,
+          "rep": 1,
+          "wall_seconds": 0.06
+        },
+        {
+          "max_rss_kb": 108796,
+          "rep": 2,
+          "wall_seconds": 0.06
+        },
+        {
+          "max_rss_kb": 108408,
+          "rep": 3,
+          "wall_seconds": 0.06
+        },
+        {
+          "max_rss_kb": 108988,
+          "rep": 4,
+          "wall_seconds": 0.06
+        },
+        {
+          "max_rss_kb": 108944,
+          "rep": 5,
+          "wall_seconds": 0.06
+        }
+      ],
+      "verdict": "pass",
+      "wall_gate_seconds": 2.0
+    }
+  },
+  "protocol_lock_commit": "52dca7a87942db4b44a7d5aea8feeb2c679c7511",
+  "schema": "gravlax.query-junctions-gate.v1"
+}

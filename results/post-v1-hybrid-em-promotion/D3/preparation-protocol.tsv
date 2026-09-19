@@ -1,0 +1,19 @@
+key	value
+date	2026-08-31
+dataset	D3
+threads	24
+gravlax_commit	0446feaa3b49d5bd657f59584888d3fde71ab888
+scripts_commit	710bd432b64413a986d18f4120171ed027fb1315
+aie_binary_sha256	0af35c11894bfbebe094ba51649349f2c07f5dd4b8f341d314a4baa693a166de
+manifest_sha256	e4cecb3a015b60ab71c672a2309b1da824db16a749a38b8240904afa6bf406c1
+archive_sha256	a7f2e83b36f49dbb93f0b0f5d3c0b3eadb1a92da149016e8779845b6bc2cc2b1
+gtf_sha256	ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914
+whitelist_sha256	843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b
+STAR	2.7.11b
+python	/tmp/gravlax-downstream-env/bin/python
+python_version	Python 3.12.14
+r1_csv	${GRAVLAX_PROJECT_ROOT}/data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R1_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R1_001.fastq.gz
+r2_csv	${GRAVLAX_PROJECT_ROOT}/data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L001_R2_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d3/pbmc_10k_v3_fastqs/pbmc_10k_v3_S1_L002_R2_001.fastq.gz
+called_cells	11644
+hostname	analysis-host
+kernel	Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux

@@ -1,0 +1,78 @@
+experiment: cell_group_scoped_junction_set_query
+date_locked: 2026-08-31
+status: PASS
+reference_gravlax_commit: 2690905c6d4d5d47fbd3949692ee8c90e46465e6
+implementation_gravlax_commit: f1f99ece33f3d89b6f54d160cb081b3e49e5e3a7
+reproduction:
+  runner: scripts/175_run_cell_group_junction_set_query.sh
+  validator: scripts/176_validate_cell_group_junction_set_query.py
+  compact_result: results/post-v1-cell-group-junction-set-query.json
+threads: 24
+scope:
+  commands: [query_region, query_junction, query_junctions, query_batch, query_jset]
+  cell_file: headerless_one_barcode_per_line
+  group_file: headerless_barcode_TAB_group
+  cell_and_group_files_mutually_exclusive: true
+  aggregation: [auto, cell, group, bulk]
+  auto_behavior:
+    no_scope_or_cells: cell
+    groups: group
+  strict_validation:
+    - malformed_rows_rejected
+    - duplicate_barcodes_rejected
+    - unknown_archive_barcodes_rejected
+    - empty_scope_rejected
+    - group_aggregation_requires_groups
+  default_unscoped_output_unchanged: true
+junction_set:
+  command: aie_query_ARCHIVE_jset_--include_LOCUS_--exclude_LOCUS
+  repeated_include_and_exclude_arguments: true
+  duplicate_or_cross_side_junctions_rejected: true
+  absent_junctions_reported_without_aborting: true
+  class_categories: [include_only, exclude_only, both]
+  informative_umis: include_only_plus_exclude_only
+  usage_fraction: include_only_divided_by_informative_umis
+  zero_informative_denominator: null
+  both_excluded_from_usage_denominator: true
+  one_union_decode_per_selected_chunk: true
+correctness_gate:
+  fixture:
+    - multi_junction_union_deduplicates_a_class
+    - class_supporting_both_sides_is_reported_only_as_both
+    - zero_denominator_serializes_null
+    - absent_junction_is_reported
+  real_D0:
+    plan: experiments/plans/junction-set-d0.tsv
+    include_point_equals_include_only_plus_both_per_cell: true
+    exclude_point_equals_exclude_only_plus_both_per_cell: true
+    group_rows_equal_sums_of_scoped_cell_rows: true
+    group_rows_sum_to_bulk_totals: true
+    cells_scope_equals_matching_unscoped_cells: true
+    repeated_JSON_byte_identical: true
+  real_D1:
+    group_rows_equal_sums_of_scoped_cell_rows: true
+    group_rows_sum_to_bulk_totals: true
+performance_gate:
+  dataset: D0
+  plan: experiments/plans/junction-set-d0.tsv
+  repetitions: 7
+  jset_median_wall_fraction_of_two_independent_point_processes_max: 0.75
+  grouped_jset_median_wall_fraction_of_unscoped_jset_max: 1.50
+  grouped_jset_peak_rss_kib_max: 1048576
+inputs:
+  D0_archive_sha256: d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842
+  D1_archive_sha256: e8568b72525a84342203e062fc0f544baf84fcb2b346da7d50c8e1ba8e78c834
+  D0_groups:
+    path: runs/post-v1/hierarchical-em-groups-r1/groups/D0.real.tsv
+    cells: 1225
+    sha256: a8ad72b9437af1d06d98ec23e09f3424898e54e35c3abfadad11ea8411c90404
+  D1_groups:
+    path: runs/post-v1/hierarchical-em-groups-r1/groups/D1.real.tsv
+    cells: 5038
+    sha256: 1c8357521d6e8c76a184a70ea64fe3f2ad967ea4e63684e6988bb4ac20e94ed7
+decision:
+  observed: publish_shared_scope_and_jset_v1
+  follow_up: replace_the_sparse_correctness_pair_with_a_cross_dataset_group_usage_study
+  PASS: publish_shared_scope_and_jset_v1_then_run_cross_dataset_group_usage_study
+  FAIL_correctness: remove_public_jset_and_retain_only_validated_scope_paths
+  FAIL_performance: retain_exact_semantics_but_rework_union_executor_before_publication

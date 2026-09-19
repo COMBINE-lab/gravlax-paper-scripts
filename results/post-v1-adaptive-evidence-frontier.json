@@ -1,0 +1,330 @@
+{
+  "schema": "gravlax.adaptive-evidence-frontier.result.v1",
+  "date": "2026-09-01",
+  "status": "STOP",
+  "promotion": false,
+  "registration": {
+    "campaign_manifest": "experiments/manifests/atlas-collection-and-evidence-v2.json",
+    "campaign_specification": "experiments/specs/atlas-collection-and-evidence-v2.md",
+    "dedicated_frozen_specification": "experiments/specs/adaptive-evidence-frontier.md",
+    "initial_preimplementation_spec_sha256": "3f0a037aec4d393010cc79be1f4f34294b09ca3e6f85bb48bdedfc75f7c88505",
+    "specification_with_prerescue_addendum_sha256": "ba3113855652bbc88e83e3dbe43835f0237d0ac5fc88f59c02bb83ea6113eff3",
+    "result_memo": "memos/adaptive-evidence-frontier.md",
+    "artifact_manifest": "manifests/adaptive-evidence-frontier-artifacts.tsv"
+  },
+  "implementation_provenance": {
+    "gravlax_base_commit": "e378516a0fb6602e63d626d0c49fb11e58f463c8",
+    "prototype_branch": "post-v1-frontier-pilot",
+    "prototype_status": "uncommitted, unpushed, rejected; not added to main Gravlax",
+    "prototype_modified_files": [
+      "crates/aie/src/archivecmd.rs",
+      "crates/aie/src/debugcmd.rs",
+      "crates/aie/src/rows.rs"
+    ],
+    "prototype_source_diff_bytes": 27866,
+    "prototype_source_diff_sha256": "1c527b09d0cbd320a3f075ae04add1ac924416b4be81775fa245effb3fcf0e6f",
+    "prototype_binary_logical_path": "env/cargo-target-frontier/release/aie",
+    "prototype_binary_bytes": 91679920,
+    "prototype_binary_sha256": "a73a0024512e83731ff8f27c6b1e2a7f9d0bdbbc51f8598d69bb86ef05364de4",
+    "rustc": "1.98.0 (88d9e12ae 2026-08-18)",
+    "host": "analysis-host",
+    "kernel": "Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux",
+    "logical_cpus": 256,
+    "rayon_threads": 24
+  },
+  "inputs": {
+    "d0_ingest_bam": {
+      "logical_path": "runs/ingest/full/Aligned.sortedByCoord.out.bam",
+      "bytes": 4208722967,
+      "sha256": "0757ea351b0e999bec024e10169f91a7edb14526e31c73b619e8cb41752ef974"
+    },
+    "d2_prime_ingest_bam": {
+      "logical_path": "runs/ingest/d2p/Aligned.sortedByCoord.out.bam",
+      "bytes": 16425883029,
+      "sha256": "d4021960316844222f6e1880db6f1b0bf732f9236734e6da1757150b932167fd"
+    },
+    "whitelist_and_raw_barcode_universe": {
+      "logical_path": "data/3M-february-2018.txt",
+      "bytes": 115512960,
+      "sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    "annotation": {
+      "logical_path": "annotations/gencode.v49.annotation.gtf",
+      "bytes": 3323462848,
+      "sha256": "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914"
+    },
+    "d0_called_barcodes": {
+      "logical_path": "runs/oracle/full/v49/Solo.out/Gene/filtered/barcodes.tsv",
+      "bytes": 20825,
+      "sha256": "565788aad5ad4f31287fcabd8847bef8da2882daa9f76b5c6c05a9249f1743fc"
+    },
+    "d2_prime_called_barcodes": {
+      "logical_path": "runs/oracle/d2p/v49/Solo.out/Gene/filtered/barcodes.tsv",
+      "bytes": 109820,
+      "sha256": "8337209908869cedc60372b6920687d46b2775a2cee8e459b490a2f57e43210a"
+    }
+  },
+  "arms": {
+    "control": "archive-v1 two lexicographic span extremes; default and absent-option behavior",
+    "all_chain_frontier": "containment-maximal union containment-minimal distinct outer intervals within every fixed absolute junction chain; exact chain weight retained",
+    "junction_only_rescue": "the same frontier only for chains with at least one splice junction; archive-v1 two extremes for empty-junction chains"
+  },
+  "frozen_gates": {
+    "correctness": {
+      "default_archive_byte_identical": true,
+      "wide_representative_roundtrip_and_malformed_rejection": true,
+      "eager_streaming_matrix_byte_identical": true,
+      "deterministic_repeated_ingest": true,
+      "exact_chain_weight_conserved": true
+    },
+    "max_archive_growth_percent": 3.0,
+    "max_replay_wall_ratio": 1.15,
+    "accuracy_alternatives": {
+      "min_d0_gene_improvement_percentage_points": 0.015,
+      "max_other_annotation_gene_worsening_percentage_points": 0.005,
+      "min_velocity_component_improvement_percentage_points": 0.5,
+      "min_velocity_mean_improvement_percentage_points": 0.25,
+      "max_velocity_component_worsening_percentage_points": 0.1
+    },
+    "rescue_policy": "one pre-declared junction-only rescue; failure is final STOP and gates are not diluted"
+  },
+  "d0": {
+    "dataset": "pbmc_1k_v3",
+    "called_cells": 1225,
+    "exact_chain_read_weight": 56981029,
+    "control": {
+      "archive_bytes": 111079672,
+      "archive_sha256": "a664edd16cecc86347341bff177f184f67ad53007d3c194ed8b41f0f4d49c82c",
+      "chains": 21601508,
+      "representatives": 33118838,
+      "mean_representatives_per_chain": 1.5331724988829483,
+      "chains_with_more_than_two": 0,
+      "maximum_representatives": 2,
+      "representative_count_histogram": {
+        "1": 10084178,
+        "2": 11517330,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9_or_more": 0
+      },
+      "gene_replay_original_pair_median_wall_seconds": 3.13,
+      "gene_replay_original_pair_median_peak_rss_kib": 1370936,
+      "gene_replay_rescue_pair_median_wall_seconds": 3.17,
+      "gene_replay_rescue_pair_median_peak_rss_kib": 1371792,
+      "gene_umi_movement_fraction": 0.0024390383413946098,
+      "gene_umi_movement_percent": 0.24390383413946098,
+      "velocity_relative_l1_percent": {
+        "spliced": 1.8077336149141516,
+        "unspliced": 0.519739676240765,
+        "ambiguous": 3.0588092611284554
+      }
+    },
+    "all_chain_frontier": {
+      "archive_bytes": 132487429,
+      "archive_sha256": "611e073550a0184f3c6c6cd6ff37d1c864375caa1eade4d5ba3b1c1c29f61f25",
+      "archive_growth_percent": 19.272434473879,
+      "archive_gate_pass": false,
+      "chains": 21601508,
+      "representatives": 48640255,
+      "mean_representatives_per_chain": 2.2517064549382386,
+      "chains_with_more_than_two": 7051867,
+      "maximum_representatives": 80,
+      "representative_count_histogram": {
+        "1": 10084178,
+        "2": 4465463,
+        "3": 2894497,
+        "4": 1883836,
+        "5": 1130256,
+        "6": 615008,
+        "7": 303562,
+        "8": 135639,
+        "9_or_more": 89069
+      },
+      "gene_replay_median_wall_seconds": 3.92,
+      "gene_replay_wall_ratio": 1.252396166134,
+      "gene_replay_gate_pass": false,
+      "gene_replay_median_peak_rss_kib": 1740264,
+      "gene_umi_movement_fraction": 0.00215574084968698,
+      "gene_umi_movement_percent": 0.215574084968698,
+      "gene_improvement_percentage_points": 0.02832974917076298,
+      "velocity_relative_l1_percent": {
+        "spliced": 1.5880260804638633,
+        "unspliced": 0.5161388597065139,
+        "ambiguous": 2.042335991069589
+      },
+      "velocity_improvement_percentage_points": {
+        "spliced": 0.2197075344502883,
+        "unspliced": 0.0036008165342511,
+        "ambiguous": 1.0164732700588664,
+        "mean": 0.4132605403478019
+      },
+      "accuracy_gate_pass": true,
+      "overall_gate_pass": false,
+      "representative_strata": {
+        "empty_junction": {
+          "chains": 16756542,
+          "exact_reads": 48142141,
+          "representatives": 41075791,
+          "chains_with_more_than_two": 6387206,
+          "maximum_representatives": 80
+        },
+        "junction_containing": {
+          "chains": 4844966,
+          "exact_reads": 8838888,
+          "representatives": 7564464,
+          "chains_with_more_than_two": 664661,
+          "maximum_representatives": 15
+        }
+      }
+    },
+    "junction_only_rescue": {
+      "archive_bytes": 114201153,
+      "archive_sha256": "337a7fe802131a98abb176ad67e8624740dd275b74e80654e896525efe1a1cd4",
+      "archive_growth_percent": 2.810128031347,
+      "archive_gate_pass": true,
+      "chains": 21601508,
+      "representatives": 34130033,
+      "mean_representatives_per_chain": 1.5799838140929792,
+      "chains_with_more_than_two": 664661,
+      "maximum_representatives": 15,
+      "representative_count_histogram": {
+        "1": 10084178,
+        "2": 10852669,
+        "3": 426183,
+        "4": 161434,
+        "5": 54213,
+        "6": 16731,
+        "7": 4533,
+        "8": 1176,
+        "9_or_more": 391
+      },
+      "gene_replay_median_wall_seconds": 3.25,
+      "gene_replay_wall_ratio": 1.02523659306,
+      "gene_replay_gate_pass": true,
+      "gene_replay_median_peak_rss_kib": 1407104,
+      "gene_umi_movement_fraction": 0.0024406801851491315,
+      "gene_umi_movement_percent": 0.24406801851491315,
+      "gene_improvement_percentage_points": -0.00016418437545217,
+      "velocity_relative_l1_percent": {
+        "spliced": 1.807648960071697,
+        "unspliced": 0.519739676240765,
+        "ambiguous": 3.0586788520874575
+      },
+      "velocity_improvement_percentage_points": {
+        "spliced": 0.0000846548424545,
+        "unspliced": 0.0,
+        "ambiguous": 0.0001304090409979,
+        "mean": 0.0000716879611508
+      },
+      "accuracy_gate_pass": false,
+      "overall_gate_pass": false
+    }
+  },
+  "d2_prime": {
+    "dataset": "Brain_3p single-nucleus 3-prime",
+    "called_cells": 6460,
+    "exact_chain_read_weight": 231711883,
+    "control": {
+      "archive_bytes": 595246459,
+      "archive_sha256": "b493523e1f6a05df05c656ca15c8791b2d5da2e42c8fe700950030c9886dc06c",
+      "chains": 124595227,
+      "representatives": 173703807,
+      "mean_representatives_per_chain": 1.3941449538833457,
+      "chains_with_more_than_two": 0,
+      "maximum_representatives": 2,
+      "representative_count_histogram": {
+        "1": 75486647,
+        "2": 49108580
+      },
+      "velocity_replay_wall_seconds": 177.52,
+      "velocity_replay_peak_rss_kib": 41479468,
+      "velocity_relative_l1_percent": {
+        "spliced": 2.7889830998481946,
+        "unspliced": 0.5743308157645766,
+        "ambiguous": 3.9462574598382067
+      }
+    },
+    "all_chain_frontier": {
+      "archive_bytes": 640092167,
+      "archive_sha256": "0fb6fef789f59a17ef45caa1253173f55a0531ac76dce34cf2e171d35c3b697c",
+      "archive_growth_percent": 7.53397308324,
+      "archive_gate_pass": false,
+      "chains": 124595227,
+      "representatives": 206669195,
+      "mean_representatives_per_chain": 1.6587248161600925,
+      "chains_with_more_than_two": 20614311,
+      "maximum_representatives": 122,
+      "representative_count_histogram": {
+        "1": 75486647,
+        "2": 28494269,
+        "3": 12537972,
+        "4": 5196736,
+        "5": 1925237,
+        "6": 654039,
+        "7": 207508,
+        "8": 64269,
+        "9_or_more": 28550
+      },
+      "velocity_replay_wall_seconds": 193.7,
+      "velocity_replay_wall_ratio": 1.091144659757,
+      "velocity_replay_gate_pass": true,
+      "velocity_replay_peak_rss_kib": 44078308,
+      "velocity_relative_l1_percent": {
+        "spliced": 2.6475986934522453,
+        "unspliced": 0.5725794901129763,
+        "ambiguous": 3.711359440429823
+      },
+      "velocity_improvement_percentage_points": {
+        "spliced": 0.1413844063959493,
+        "unspliced": 0.0017513256516003,
+        "ambiguous": 0.2348980194083837,
+        "mean": 0.1260112504853111
+      },
+      "accuracy_gate_pass": false,
+      "overall_gate_pass": false
+    },
+    "junction_only_rescue_run": false,
+    "junction_only_rescue_reason": "the rescue failed the binding D0 accuracy gate; no additional tuning or D2-prime run was allowed"
+  },
+  "correctness_evidence": {
+    "workspace_tests_passed": 143,
+    "workspace_tests_failed": 0,
+    "containment_proof_and_counterexample_tests": 5,
+    "wide_token_and_malformed_stream_tests": 4,
+    "git_diff_check_passed": true,
+    "default_d0_archive_byte_identical": true,
+    "default_d0_archive_sha256": "a664edd16cecc86347341bff177f184f67ad53007d3c194ed8b41f0f4d49c82c",
+    "rescue_d0_two_ingests_byte_identical": true,
+    "rescue_d0_archive_sha256": "337a7fe802131a98abb176ad67e8624740dd275b74e80654e896525efe1a1cd4",
+    "development_all_chain_two_ingests_byte_identical": true,
+    "development_all_chain_archive_sha256": "108947cc7c87d4903544572129c56252521a07e21d637c03e1c1d2e4a5b8bcfe",
+    "rescue_d0_eager_streaming_gene_matrix_byte_identical": true,
+    "rescue_d0_gene_matrix_sha256": "397259ebcb5889f50323cfd707f4b125c3e14b45efe96122fa83031da6d5cd17"
+  },
+  "formal_scope": {
+    "preserved": "for a fixed absolute junction chain, the unique smallest observed subset preserving every existential interval-containment predicate that is upward-closed or downward-closed",
+    "proof_witnesses": "observed containment-maximal elements witness upward-closed predicates and observed containment-minimal elements witness downward-closed predicates; principal sets establish necessity",
+    "not_preserved": [
+      "predicates confined to an interior endpoint band",
+      "geometry multiplicity or counts of reads satisfying a predicate",
+      "arbitrary velocity state transitions at exon boundaries",
+      "sequence, edit, or quality predicates",
+      "complete isoform phasing"
+    ]
+  },
+  "decision": {
+    "verdict": "STOP",
+    "reason": "the endpoint diversity carrying measurable fidelity value is dominated by empty-junction evidence and cannot satisfy both the frozen resource and accuracy gates",
+    "do_not": [
+      "merge or promote either prototype",
+      "change the default two-extreme archive representation",
+      "dilute the frozen thresholds",
+      "describe the prototype as a production archive-v2 format"
+    ],
+    "possible_future_direction": "an explicitly optional query-targeted or annotation-conditioned disposable sidecar, evaluated under a new prospective gate"
+  }
+}

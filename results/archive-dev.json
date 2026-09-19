@@ -1,0 +1,59 @@
+{
+  "E0_no_umi": {
+    "cb_delta": 4652612,
+    "chrom": 512,
+    "distinct_shapes": 13141,
+    "flags": 139932,
+    "molecules": 3052251,
+    "n_reads": 355932,
+    "pos_delta": 2183793,
+    "shape_dict": 33975,
+    "shape_id": 575414,
+    "total": 7942170,
+    "umi": 0
+  },
+  "E0_with_umi": {
+    "cb_delta": 4652612,
+    "chrom": 512,
+    "distinct_shapes": 13141,
+    "flags": 139932,
+    "molecules": 3052251,
+    "n_reads": 355932,
+    "pos_delta": 2183793,
+    "shape_dict": 33975,
+    "shape_id": 575414,
+    "total": 18256295,
+    "umi": 10314125
+  },
+  "E1_no_umi": {
+    "cb_delta": 4652612,
+    "chrom": 512,
+    "distinct_shapes": 97612,
+    "flags": 139932,
+    "molecules": 3052251,
+    "n_reads": 355932,
+    "pos_delta": 2183793,
+    "shape_dict": 388411,
+    "shape_id": 752469,
+    "total": 8473661,
+    "umi": 0
+  },
+  "E1_with_umi": {
+    "cb_delta": 4652612,
+    "chrom": 512,
+    "distinct_shapes": 97612,
+    "flags": 139932,
+    "molecules": 3052251,
+    "n_reads": 355932,
+    "pos_delta": 2183793,
+    "shape_dict": 388411,
+    "shape_id": 752469,
+    "total": 18787786,
+    "umi": 10314125
+  },
+  "cb_dictionary_bytes": 391884,
+  "distinct_barcodes": 97971,
+  "mapped_primary_reads": 3800595,
+  "molecules": 3052251,
+  "reads_per_molecule": 1.1948735539770483
+}

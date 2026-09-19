@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-31",
+  "intervention": "serial_shard_finalization",
+  "reference_gravlax_commit": "0446feaa3b49d5bd657f59584888d3fde71ab888",
+  "dataset": "D3",
+  "control": "shuffled_groups",
+  "seed": 7,
+  "mode": "hybrid_only_D8_p8",
+  "reference": {
+    "wall_seconds": 17.16,
+    "peak_rss_kib": 7653508
+  },
+  "result": {
+    "wall_seconds": 28.69,
+    "peak_rss_kib": 7639532,
+    "metrics_json_byte_identical": true
+  },
+  "acceptance": {
+    "metrics_json_byte_identical": true,
+    "peak_rss_at_most_4194304_KiB": false,
+    "wall_at_most_60_seconds": true
+  },
+  "verdict": "FAIL",
+  "code_disposition": "discarded"
+}

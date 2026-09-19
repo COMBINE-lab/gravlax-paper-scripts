@@ -1,0 +1,10 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 32 --genomeDir ref/star-base --readFilesIn data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz --readFilesCommand zcat --outSAMattributes NH HI AS nM jM jI --outSAMtype BAM Unsorted --outSAMunmapped Within --outFileNamePrefix runs/gatec/full/noanno_2pass/ --twopassMode Basic
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 28 13:33:08 ..... started STAR run
+Aug 28 13:33:08 ..... loading genome
+Aug 28 13:33:11 ..... started 1st pass mapping
+Aug 28 13:34:06 ..... finished 1st pass mapping
+Aug 28 13:34:06 ..... inserting junctions into the genome indices
+Aug 28 13:35:01 ..... started mapping
+Aug 28 13:36:05 ..... finished mapping
+Aug 28 13:36:05 ..... finished successfully

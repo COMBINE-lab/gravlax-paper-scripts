@@ -1,0 +1,76 @@
+{
+  "chr19_six_sample_gate": {
+    "exact_event_objects_equal_to_independent_legacy_filter": true,
+    "implementations": {
+      "original": {
+        "emitted_events": 2393,
+        "json_bytes": 15165992,
+        "json_sha256": "e7f44f479d2b26069515e322556bb38d81e41ba6809573e3f6d711a4e4d88e8e",
+        "peak_rss_kib": 2696248,
+        "wall_seconds": 5.67
+      },
+      "packed_default": {
+        "byte_identical_to_original": true,
+        "emitted_events": 2393,
+        "json_bytes": 15165992,
+        "json_sha256": "e7f44f479d2b26069515e322556bb38d81e41ba6809573e3f6d711a4e4d88e8e",
+        "peak_rss_kib": 1685504,
+        "wall_seconds": 4.88
+      },
+      "packed_exact_row_pushdown": {
+        "emitted_events": 683,
+        "json_bytes": 4388100,
+        "json_sha256": "566e40b4d87fb682091952596abb238468956e1aa5e74001e06545d56fc356f3",
+        "min_row_informative": 20,
+        "peak_rss_kib": 1738916,
+        "wall_seconds": 4.73
+      }
+    }
+  },
+  "execution": {
+    "compiled_annotation_sha256": "85f38ac6f3ce1a49e2b850cbe1f98550b7143f4807249cd861dd6ab878b49797",
+    "executable_sha256": "1d17a4ca5a2f30c9721438b235078b4d181ecae27f3a7fea14627f42e173de7a",
+    "gravlax_commit": "c6b68cce2945eb4ca5b1ebc55400f7f066c2863a",
+    "host": "same project host as the frozen screen",
+    "threads": 24,
+    "workers": 4
+  },
+  "full_workflow": {
+    "candidate_tables_byte_identical_to_frozen": true,
+    "driver_wall_seconds": 45.340899657,
+    "external_peak_rss_kib_note": "wait4 maximum across child processes; not aggregate concurrent RSS",
+    "external_wall_seconds": 45.62,
+    "optimized_raw_json_bytes": 102166302,
+    "original_raw_json_bytes": 413115915,
+    "pbmc": {
+      "catalogue_recurrent_events": 22953,
+      "denominator_qualified_events": 4703,
+      "maximum_single_command_peak_rss_kib": 1554168,
+      "minimum_delta_at_least_0_10": 44,
+      "minimum_delta_at_least_0_15": 14,
+      "original_maximum_single_command_peak_rss_kib": 2436292,
+      "original_summed_command_wall_seconds": 43.78,
+      "strict_candidates": 784,
+      "summed_command_wall_seconds": 41.54,
+      "tsv_sha256": "4caf5db65601894b9a897a6cf6b7e70e4458d0c38d1594873d6a856ef5e724b9"
+    },
+    "tissue": {
+      "catalogue_recurrent_events": 54328,
+      "denominator_qualified_events": 10760,
+      "maximum_single_command_peak_rss_kib": 1914832,
+      "original_maximum_single_command_peak_rss_kib": 2696248,
+      "original_summed_command_wall_seconds": 73.71,
+      "strict_candidates": 66,
+      "summed_command_wall_seconds": 67.48,
+      "tsv_sha256": "622a090ce71a4621dfcb1a665f2005e02507d8ea93b927b6066e2a492f643002"
+    }
+  },
+  "schema": "gravlax.federated-query-workflow-optimization.v1",
+  "streaming_summarizer": {
+    "legacy_outputs_byte_identical": true,
+    "new_peak_rss_kib": 32336,
+    "new_wall_seconds": 12.29,
+    "old_peak_rss_kib": 826756,
+    "old_wall_seconds": 13.33
+  }
+}

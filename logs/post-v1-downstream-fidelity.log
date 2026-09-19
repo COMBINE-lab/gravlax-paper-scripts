@@ -1,0 +1,23 @@
+2026-08-31 downstream clustering, marker, and velocity fidelity gate
+
+Thresholds frozen before outcomes at scripts commit d3e9b3a.
+Executable protocol frozen before outcomes at scripts commit 07d37b41ccd9c866ac403c5bb653eddc15e19ec4.
+Environment: Python 3.12.14, Scanpy 1.12.4, anndata 0.13.3.post0, NumPy 2.5.2,
+SciPy 1.18.1, scikit-learn 1.9.0, igraph 1.0.0, leidenalg 0.12.0; seed 1729; 24-thread budget.
+
+Primary run:
+  external wall 28.26 s; user 88.40 s; system 6.76 s; max RSS 3,014,024 KiB
+  result sha256 06e017cda86a585aa9b7463a4f1a914a60af54bb0b3e0edfabf33311bd24196f
+Replicate:
+  external wall 27.55 s; user 87.83 s; system 7.45 s; max RSS 3,086,512 KiB
+  every non-timing JSON field identical to primary
+
+Frozen verdicts:
+  human Gene downstream: FAIL (D0 PASS; D1/D2_prime FAIL)
+  human velocity consequence: PASS (D0/D1/D2_prime PASS)
+  D5 mouse Gene stress test: FAIL
+  D5 mouse velocity consequence: PASS
+
+No gate threshold changed after outcomes. Post-hoc cluster localization is separately labeled and
+does not change the FAIL verdict. All input matrix, feature, and barcode identities and exact
+package versions are embedded in results/post-v1-downstream-fidelity.json.

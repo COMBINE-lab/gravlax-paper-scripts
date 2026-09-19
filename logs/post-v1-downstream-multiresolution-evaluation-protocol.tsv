@@ -1,0 +1,15 @@
+key	value
+stage	locked_replay_evaluation
+date	2026-08-31
+threads	24
+python	/tmp/gravlax-downstream-env/bin/python
+python_version	Python 3.12.14
+manifest	${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/experiments/manifests/downstream-multiresolution.yaml
+manifest_sha256	6f8959321b050e6594b273670428c4f817f320dbede706b8560748f945ff486b
+selection	${GRAVLAX_PROJECT_ROOT}/gravlax-paper-scripts/results/post-v1-downstream-multiresolution-selection.json
+selection_sha256	91bbe3ccd97aeebcdf0c101ec375cb119f607ce68c54b2de6e770f16e982d09a
+script_sha256	e07a543657d0306a7d694ba231baea5ab12056a347c7ffc284ea379bcccf82f8
+scripts_commit	de8f6038ca9415b212d12e3a97c1350b3688b130
+scripts_dirty_entries	0
+hostname	analysis-host
+kernel	Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux

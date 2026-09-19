@@ -1,0 +1,23 @@
+	Command being timed: "taskset -c 0-23 ${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR --runThreadN 24 --genomeDir ${GRAVLAX_PROJECT_ROOT}/ref/star-49 --readFilesIn ${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R2_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R2_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R2_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R2_001.fastq.gz ${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R1_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R1_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R1_001.fastq.gz,${GRAVLAX_PROJECT_ROOT}/data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures GeneFull --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --outSAMtype None --outSAMunmapped Within --outFileNamePrefix ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/d2p-genefull-timing/warm-b5-p1-star/"
+	User time (seconds): 4768.39
+	System time (seconds): 33.38
+	Percent of CPU this job got: 1339%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:58.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 34130652
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 24356763
+	Voluntary context switches: 1754992
+	Involuntary context switches: 12894
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 9336744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

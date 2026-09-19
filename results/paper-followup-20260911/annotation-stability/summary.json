@@ -1,0 +1,350 @@
+{
+ "versions": {
+  "v32": {
+   "genes": 60609,
+   "transcripts": 227462,
+   "single_exon_transcripts": 25234,
+   "distinct_intron_chains": 199555,
+   "junctions": 382880,
+   "junctions_in_one_transcript": 179506,
+   "protein_coding_transcripts": 83986
+  },
+  "v48": {
+   "genes": 78686,
+   "transcripts": 385669,
+   "single_exon_transcripts": 28950,
+   "distinct_intron_chains": 354185,
+   "junctions": 526983,
+   "junctions_in_one_transcript": 266225,
+   "protein_coding_transcripts": 89843
+  },
+  "v49": {
+   "genes": 78691,
+   "transcripts": 507365,
+   "single_exon_transcripts": 28948,
+   "distinct_intron_chains": 475887,
+   "junctions": 620090,
+   "junctions_in_one_transcript": 314329,
+   "protein_coding_transcripts": 211446
+  }
+ },
+ "pairs": {
+  "v32->v48": {
+   "genes_by_id": {
+    "old": 60609,
+    "new": 78686,
+    "shared": 59252,
+    "removed": 1357,
+    "added": 19434,
+    "jaccard": 0.7403,
+    "frac_of_new_present_in_old": 0.753,
+    "frac_of_old_retained": 0.9776
+   },
+   "transcripts_by_id": {
+    "old": 227462,
+    "new": 385669,
+    "shared": 223083,
+    "removed": 4379,
+    "added": 162586,
+    "jaccard": 0.5719,
+    "frac_of_new_present_in_old": 0.5784,
+    "frac_of_old_retained": 0.9807,
+    "shared_with_changed_structure": 7710
+   },
+   "transcripts_by_structure": {
+    "old": 224766,
+    "new": 383125,
+    "shared": 214523,
+    "removed": 10243,
+    "added": 168602,
+    "jaccard": 0.5453,
+    "frac_of_new_present_in_old": 0.5599,
+    "frac_of_old_retained": 0.9544
+   },
+   "intron_chains": {
+    "old": 199555,
+    "new": 354185,
+    "shared": 190683,
+    "removed": 8872,
+    "added": 163502,
+    "jaccard": 0.5252,
+    "frac_of_new_present_in_old": 0.5384,
+    "frac_of_old_retained": 0.9555
+   },
+   "junctions": {
+    "old": 382880,
+    "new": 526983,
+    "shared": 379651,
+    "removed": 3229,
+    "added": 147332,
+    "jaccard": 0.716,
+    "frac_of_new_present_in_old": 0.7204,
+    "frac_of_old_retained": 0.9916
+   }
+  },
+  "v48->v49": {
+   "genes_by_id": {
+    "old": 78686,
+    "new": 78691,
+    "shared": 78677,
+    "removed": 9,
+    "added": 14,
+    "jaccard": 0.9997,
+    "frac_of_new_present_in_old": 0.9998,
+    "frac_of_old_retained": 0.9999
+   },
+   "transcripts_by_id": {
+    "old": 385669,
+    "new": 507365,
+    "shared": 385284,
+    "removed": 385,
+    "added": 122081,
+    "jaccard": 0.7588,
+    "frac_of_new_present_in_old": 0.7594,
+    "frac_of_old_retained": 0.999,
+    "shared_with_changed_structure": 122
+   },
+   "transcripts_by_structure": {
+    "old": 383125,
+    "new": 504825,
+    "shared": 382942,
+    "removed": 183,
+    "added": 121883,
+    "jaccard": 0.7583,
+    "frac_of_new_present_in_old": 0.7586,
+    "frac_of_old_retained": 0.9995
+   },
+   "intron_chains": {
+    "old": 354185,
+    "new": 475887,
+    "shared": 354016,
+    "removed": 169,
+    "added": 121871,
+    "jaccard": 0.7436,
+    "frac_of_new_present_in_old": 0.7439,
+    "frac_of_old_retained": 0.9995
+   },
+   "junctions": {
+    "old": 526983,
+    "new": 620090,
+    "shared": 526898,
+    "removed": 85,
+    "added": 93192,
+    "jaccard": 0.8496,
+    "frac_of_new_present_in_old": 0.8497,
+    "frac_of_old_retained": 0.9998
+   }
+  },
+  "v32->v49": {
+   "genes_by_id": {
+    "old": 60609,
+    "new": 78691,
+    "shared": 59248,
+    "removed": 1361,
+    "added": 19443,
+    "jaccard": 0.7401,
+    "frac_of_new_present_in_old": 0.7529,
+    "frac_of_old_retained": 0.9775
+   },
+   "transcripts_by_id": {
+    "old": 227462,
+    "new": 507365,
+    "shared": 222958,
+    "removed": 4504,
+    "added": 284407,
+    "jaccard": 0.4356,
+    "frac_of_new_present_in_old": 0.4394,
+    "frac_of_old_retained": 0.9802,
+    "shared_with_changed_structure": 7789
+   },
+   "transcripts_by_structure": {
+    "old": 224766,
+    "new": 504825,
+    "shared": 214467,
+    "removed": 10299,
+    "added": 290358,
+    "jaccard": 0.4163,
+    "frac_of_new_present_in_old": 0.4248,
+    "frac_of_old_retained": 0.9542
+   },
+   "intron_chains": {
+    "old": 199555,
+    "new": 475887,
+    "shared": 190637,
+    "removed": 8918,
+    "added": 285250,
+    "jaccard": 0.3932,
+    "frac_of_new_present_in_old": 0.4006,
+    "frac_of_old_retained": 0.9553
+   },
+   "junctions": {
+    "old": 382880,
+    "new": 620090,
+    "shared": 379610,
+    "removed": 3270,
+    "added": 240480,
+    "jaccard": 0.609,
+    "frac_of_new_present_in_old": 0.6122,
+    "frac_of_old_retained": 0.9915
+   }
+  }
+ },
+ "observed": {
+  "D0": {
+   "observed_junctions_unique_reads_ge1": 99330,
+   "unique_read_support": 9350571,
+   "min_unique_reads_1": {
+    "junctions": 99330,
+    "reads": 9350571,
+    "in_v32_junction_frac": 0.5731,
+    "in_v32_read_frac": 0.9508,
+    "in_v48_junction_frac": 0.5899,
+    "in_v48_read_frac": 0.9517,
+    "in_v49_junction_frac": 0.601,
+    "in_v49_read_frac": 0.9531,
+    "in_v49_not_v32_junction_frac": 0.028,
+    "in_v49_not_v32_read_frac": 0.0026,
+    "in_v32_not_v49_junction_frac": 0.0002,
+    "in_v32_not_v49_read_frac": 0.0003,
+    "in_no_version_junction_frac": 0.3989,
+    "in_no_version_read_frac": 0.0466
+   },
+   "min_unique_reads_3": {
+    "junctions": 56669,
+    "reads": 9292240,
+    "in_v32_junction_frac": 0.7009,
+    "in_v32_read_frac": 0.9541,
+    "in_v48_junction_frac": 0.7153,
+    "in_v48_read_frac": 0.9549,
+    "in_v49_junction_frac": 0.7249,
+    "in_v49_read_frac": 0.9562,
+    "in_v49_not_v32_junction_frac": 0.0242,
+    "in_v49_not_v32_read_frac": 0.0024,
+    "in_v32_not_v49_junction_frac": 0.0002,
+    "in_v32_not_v49_read_frac": 0.0003,
+    "in_no_version_junction_frac": 0.2748,
+    "in_no_version_read_frac": 0.0435
+   },
+   "min_unique_reads_10": {
+    "junctions": 20732,
+    "reads": 9119630,
+    "in_v32_junction_frac": 0.8625,
+    "in_v32_read_frac": 0.96,
+    "in_v48_junction_frac": 0.8709,
+    "in_v48_read_frac": 0.9605,
+    "in_v49_junction_frac": 0.8767,
+    "in_v49_read_frac": 0.9616,
+    "in_v49_not_v32_junction_frac": 0.0145,
+    "in_v49_not_v32_read_frac": 0.0019,
+    "in_v32_not_v49_junction_frac": 0.0003,
+    "in_v32_not_v49_read_frac": 0.0003,
+    "in_no_version_junction_frac": 0.123,
+    "in_no_version_read_frac": 0.0381
+   }
+  },
+  "D1": {
+   "observed_junctions_unique_reads_ge1": 328223,
+   "unique_read_support": 58194416,
+   "min_unique_reads_1": {
+    "junctions": 328223,
+    "reads": 58194416,
+    "in_v32_junction_frac": 0.3505,
+    "in_v32_read_frac": 0.9345,
+    "in_v48_junction_frac": 0.3667,
+    "in_v48_read_frac": 0.9355,
+    "in_v49_junction_frac": 0.3792,
+    "in_v49_read_frac": 0.9374,
+    "in_v49_not_v32_junction_frac": 0.0288,
+    "in_v49_not_v32_read_frac": 0.0033,
+    "in_v32_not_v49_junction_frac": 0.0001,
+    "in_v32_not_v49_read_frac": 0.0003,
+    "in_no_version_junction_frac": 0.6207,
+    "in_no_version_read_frac": 0.0623
+   },
+   "min_unique_reads_3": {
+    "junctions": 203987,
+    "reads": 58023052,
+    "in_v32_junction_frac": 0.4558,
+    "in_v32_read_frac": 0.9367,
+    "in_v48_junction_frac": 0.4715,
+    "in_v48_read_frac": 0.9377,
+    "in_v49_junction_frac": 0.4831,
+    "in_v49_read_frac": 0.9395,
+    "in_v49_not_v32_junction_frac": 0.0275,
+    "in_v49_not_v32_read_frac": 0.0032,
+    "in_v32_not_v49_junction_frac": 0.0001,
+    "in_v32_not_v49_read_frac": 0.0003,
+    "in_no_version_junction_frac": 0.5168,
+    "in_no_version_read_frac": 0.0601
+   },
+   "min_unique_reads_10": {
+    "junctions": 82793,
+    "reads": 57431356,
+    "in_v32_junction_frac": 0.6881,
+    "in_v32_read_frac": 0.943,
+    "in_v48_junction_frac": 0.7003,
+    "in_v48_read_frac": 0.9438,
+    "in_v49_junction_frac": 0.7094,
+    "in_v49_read_frac": 0.9455,
+    "in_v49_not_v32_junction_frac": 0.0214,
+    "in_v49_not_v32_read_frac": 0.0029,
+    "in_v32_not_v49_junction_frac": 0.0001,
+    "in_v32_not_v49_read_frac": 0.0003,
+    "in_no_version_junction_frac": 0.2904,
+    "in_no_version_read_frac": 0.0542
+   }
+  },
+  "D2p": {
+   "observed_junctions_unique_reads_ge1": 428419,
+   "unique_read_support": 10817626,
+   "min_unique_reads_1": {
+    "junctions": 428419,
+    "reads": 10817626,
+    "in_v32_junction_frac": 0.3347,
+    "in_v32_read_frac": 0.8182,
+    "in_v48_junction_frac": 0.3482,
+    "in_v48_read_frac": 0.8238,
+    "in_v49_junction_frac": 0.3587,
+    "in_v49_read_frac": 0.826,
+    "in_v49_not_v32_junction_frac": 0.024,
+    "in_v49_not_v32_read_frac": 0.0078,
+    "in_v32_not_v49_junction_frac": 0.0001,
+    "in_v32_not_v49_read_frac": 0.0,
+    "in_no_version_junction_frac": 0.6412,
+    "in_no_version_read_frac": 0.174
+   },
+   "min_unique_reads_3": {
+    "junctions": 217227,
+    "reads": 10538997,
+    "in_v32_junction_frac": 0.5394,
+    "in_v32_read_frac": 0.8362,
+    "in_v48_junction_frac": 0.5525,
+    "in_v48_read_frac": 0.8416,
+    "in_v49_junction_frac": 0.5617,
+    "in_v49_read_frac": 0.8435,
+    "in_v49_not_v32_junction_frac": 0.0224,
+    "in_v49_not_v32_read_frac": 0.0073,
+    "in_v32_not_v49_junction_frac": 0.0001,
+    "in_v32_not_v49_read_frac": 0.0,
+    "in_no_version_junction_frac": 0.4382,
+    "in_no_version_read_frac": 0.1565
+   },
+   "min_unique_reads_10": {
+    "junctions": 92804,
+    "reads": 9955850,
+    "in_v32_junction_frac": 0.7959,
+    "in_v32_read_frac": 0.8616,
+    "in_v48_junction_frac": 0.8045,
+    "in_v48_read_frac": 0.8664,
+    "in_v49_junction_frac": 0.8094,
+    "in_v49_read_frac": 0.8677,
+    "in_v49_not_v32_junction_frac": 0.0136,
+    "in_v49_not_v32_read_frac": 0.006,
+    "in_v32_not_v49_junction_frac": 0.0,
+    "in_v32_not_v49_read_frac": 0.0,
+    "in_no_version_junction_frac": 0.1906,
+    "in_no_version_read_frac": 0.1323
+   }
+  }
+ }
+}

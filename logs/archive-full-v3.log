@@ -1,0 +1,23 @@
+extracted: 22156853 molecules, 1834103 edges, 324465 cells, 809069 shapes, 844565 patterns, 19266290 classes (91.1s)
+pattern #3 stats: 844565 patterns, 2700614 alt entries, 1159098 distinct (chrom,offset) hops (2.33x hop sharing), 78.7% alts share the anchor's shape
+section                 raw         zstd
+meta                    121          106
+chroms                 1996          260
+cells               1297860      1294981
+shapes              5250114      3115332
+patterns           14736694      9161487
+mol.chrom               301          310
+mol.anchor         23493113      9016465
+mol.cell           35827176     28656351
+mol.class          28264061      8800719
+mol.layout         66470563      2965661
+mol.weight         21601513      8084541
+mol.rep            84382992     32809775
+mol.mm             25232141      8008892
+edges               6343958      5518553
+TOTAL                          117433433  (42.40 bits/molecule over 22156853 molecules)
+wrote runs/archive/d0.aie (117433783 bytes)
+molecules 22156853 -> assigned 21197710 -> 10393179 UMIs in 3600217 entries | load 1.5s, +anno 1.9s, +replay 41.1s, total 47.4s
+molecules 22156853 -> assigned 21197710 -> 10393179 UMIs in 3600217 entries | load 91.3s, +anno 2.4s, +replay 43.1s, total 139.6s
+REGRESSION: BYTE-IDENTICAL
+FULL_V3_DONE

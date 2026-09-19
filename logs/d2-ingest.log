@@ -1,0 +1,13 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 20 --genomeDir ref/star-base --twopassMode Basic --readFilesIn data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L001_R2_001.fastq.gz,data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L002_R2_001.fastq.gz data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L001_R1_001.fastq.gz,data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L002_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures SJ --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --outSAMattributes NH HI AS nM CR UR CY UY --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 32000000000 --outSAMunmapped Within --outFileNamePrefix runs/ingest/d2/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 29 13:18:00 ..... started STAR run
+Aug 29 13:18:00 ..... loading genome
+Aug 29 13:18:08 ..... started 1st pass mapping
+Aug 29 13:21:28 ..... finished 1st pass mapping
+Aug 29 13:21:29 ..... inserting junctions into the genome indices
+Aug 29 13:23:15 ..... started mapping
+Aug 29 13:27:13 ..... finished mapping
+Aug 29 13:27:15 ..... started Solo counting
+Aug 29 13:27:25 ..... finished Solo counting
+Aug 29 13:27:25 ..... started sorting BAM
+Aug 29 13:28:12 ..... finished successfully

@@ -1,0 +1,118 @@
+experiment: event_engine_v1
+date_locked: 2026-08-31
+status: PASS_ENGINE_FAIL_HELD_OUT_BIOLOGY
+reference_gravlax_commit: f1f99ece33f3d89b6f54d160cb081b3e49e5e3a7
+implementation_gravlax_commit: cc28ab4f05ab19c81f0943364e8ea6deebc24317
+semantic_contract: experiments/specs/event-engine-v1.md
+reproduction:
+  runner: scripts/177_run_event_engine_v1.sh
+  validator: scripts/178_validate_event_engine_v1.py
+  compact_result: results/post-v1-event-engine-v1.json
+threads: 24
+implementation:
+  query_surface: aie_query_ARCHIVE_events_LOCUS
+  cohort_surface: aie_cohort_events_LOCUS_--sample_ID=ARCHIVE
+  event_types: [alt_acceptor, alt_donor, cassette]
+  one_union_decode_per_selected_chunk: true
+  exact_class_categories: [include_only, exclude_only, both]
+  conservative_usage_denominator: include_only_plus_exclude_only
+  deterministic_order: true
+  annotation_independent_candidate_discovery: true
+  annotation_labels_optional_and_count_neutral: true
+correctness_gate:
+  synthetic:
+    - all_three_event_types_discovered
+    - repeated_components_are_decoded_once
+    - each_class_is_reduced_once_per_event
+    - multi_flank_cassette_support_is_not_double_counted
+    - both_is_excluded_from_usage
+    - max_events_fails_without_truncation
+    - malformed_sample_and_group_maps_fail
+  real:
+    datasets: [D0, D1]
+    compare_first_n_events_to_standalone_jset: 50
+    exact_categories_and_rows: true
+    group_rows_sum_to_bulk_totals: true
+    cohort_rows_equal_independent_query_events: true
+    repeated_JSON_byte_identical: true
+    legacy_query_and_federate_bytes_identical: true
+performance_gate:
+  dataset: D0
+  locus: chr1
+  min_support: 2
+  min_informative: 10
+  repetitions: 7
+  event_engine_wall_fraction_of_standalone_jset_processes_max: 0.25
+  grouped_peak_rss_kib_max: 1048576
+  D1_grouped_peak_rss_kib_max: 2097152
+held_out_descriptive_gate:
+  dataset: D4
+  inspected_after_lock_only: true
+  event:
+    id: AKR1A1_coordinate_defined_cassette
+    chrom: chr1
+    include: [chr1:45568177-45568484, chr1:45568684-45568926]
+    exclude: [chr1:45568177-45568926]
+  grouping:
+    path: results/post-v1-em-confirmation-d4/groups-real.tsv
+    cells: 564
+    target_genes_excluded_from_group_construction: true
+  pass_if:
+    event_present: true
+    informative_molecules_min: 100
+    eligible_group_informative_min: 20
+    max_minus_min_group_usage_min: 0.05
+  interpretation: descriptive_structure_not_replication_of_T_vs_monocyte_effect
+exploratory_vignette:
+  event: AKR1A1_coordinate_defined_cassette
+  datasets: [D0, D1]
+  status: POST_HOC_NOT_CONFIRMATORY
+inputs:
+  D0_archive:
+    logical_path: runs/archive/d0.aie
+    sha256: d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842
+  D1_archive:
+    logical_path: runs/archive/d1.aie
+    sha256: e8568b72525a84342203e062fc0f544baf84fcb2b346da7d50c8e1ba8e78c834
+  D4_archive:
+    logical_path: runs/archive/d4.aie
+    bytes: 99050193
+    sha256: 031330c0de6c18d0e93eacf76e2dd617db24dbab6b6d0dbb39c537dfefaf97e9
+  D4_groups:
+    logical_path: results/post-v1-em-confirmation-d4/groups-real.tsv
+    sha256: b5032541a9676ba953c3a65e68d7d058ffd79c93282b608906e41c5bdfbd9ba1
+decision:
+  PASS: publish_event_and_cohort_surfaces_with_descriptive_D4_result
+  FAIL_correctness: do_not_publish_the_new_surfaces
+  FAIL_performance: retain_semantics_and_rework_union_planner_before_publication
+  FAIL_held_out_only: publish_engine_without_a_biological_generalization_claim
+observed:
+  decision: FAIL_held_out_only
+  implementation_tests_passed: 115
+  D0_chr1:
+    candidate_events: 1905
+    retained_events: 1211
+    unique_vs_independent_chunk_decodes: 57/4263
+    median_wall_seconds: 0.20096
+    peak_rss_kib: 336472
+  D1_chr1:
+    candidate_events: 17951
+    retained_events: 9242
+    unique_vs_independent_chunk_decodes: 58/39526
+    wall_seconds: 1.64
+    peak_rss_kib: 1469384
+  D0_D1_cohort:
+    candidate_events: 1311
+    retained_events: 1291
+    wall_seconds: 0.80
+    peak_rss_kib: 1171404
+  performance:
+    standalone_50_jset_median_seconds: 2.92747
+    all_1211_event_median_seconds: 0.20096
+    wall_fraction: 0.0686464
+  held_out_D4:
+    event_present: true
+    informative_molecules: 110
+    eligible_group_usage_range: 0.0419790
+    threshold: 0.05
+    pass: false

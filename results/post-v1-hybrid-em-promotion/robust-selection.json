@@ -1,0 +1,73 @@
+{
+  "status": "ELIGIBLE_MODEL_SELECTED",
+  "stage": "transparent_post_hoc_D0_D4_robustness_selection",
+  "selection_rule": "maximize minimum relative mean Brier improvement versus proxy across D0/D4; tie by joint NLL, lower power, lower scale",
+  "reference": {
+    "D0": {
+      "pooled": {
+        "targets": 500006,
+        "negative_log_loss": 0.05972566238469802,
+        "multiclass_brier": 0.02789596677568946,
+        "top1_percent": 98.18202181573821
+      },
+      "dirichlet-proxy": {
+        "targets": 500006,
+        "negative_log_loss": 0.05810640453435863,
+        "multiclass_brier": 0.0267797616906842,
+        "top1_percent": 98.23482118214581
+      }
+    },
+    "D4": {
+      "pooled": {
+        "targets": 354545,
+        "negative_log_loss": 0.06879770680579846,
+        "multiclass_brier": 0.03153110776093485,
+        "top1_percent": 97.88207420778744
+      },
+      "dirichlet-proxy": {
+        "targets": 354545,
+        "negative_log_loss": 0.06668527913876181,
+        "multiclass_brier": 0.030199379508754287,
+        "top1_percent": 98.03325388878703
+      }
+    }
+  },
+  "eligible_configuration_count": 24,
+  "selected": {
+    "depth_scale": 8,
+    "depth_power": 8,
+    "joint_target_weighted_negative_log_loss": 0.061424341779899465,
+    "by_dataset": {
+      "D0": {
+        "targets": 500006,
+        "negative_log_loss": 0.05787940076954766,
+        "multiclass_brier": 0.026694325130520512,
+        "top1_percent": 98.23502117974584
+      },
+      "D4": {
+        "targets": 354545,
+        "negative_log_loss": 0.0664236839644514,
+        "multiclass_brier": 0.03010075382871858,
+        "top1_percent": 98.0552539169922
+      }
+    },
+    "criteria": {
+      "D0_NLL_below_pooled": true,
+      "D0_NLL_below_proxy": true,
+      "D0_Brier_at_most_pooled": true,
+      "D0_Brier_at_most_proxy": true,
+      "D0_top1_drop_at_most_0_10pp": true,
+      "D4_NLL_below_pooled": true,
+      "D4_NLL_below_proxy": true,
+      "D4_Brier_at_most_pooled": true,
+      "D4_Brier_at_most_proxy": true,
+      "D4_top1_drop_at_most_0_10pp": true
+    },
+    "eligible": true,
+    "relative_mean_Brier_improvement_vs_proxy": {
+      "D0": 0.0031903405695132858,
+      "D4": 0.0032658180942795995
+    },
+    "minimum_relative_mean_Brier_improvement_vs_proxy": 0.0031903405695132858
+  }
+}

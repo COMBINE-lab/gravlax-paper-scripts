@@ -1,0 +1,55 @@
+kind	path_or_identity	bytes	sha256_or_identity	reason_and_regeneration
+fastq	10x pbmc_1k_v3 R1+R2	5038856791	see input-digests.sha256	public D0 input; download identity and paths in PROVENANCE.md
+fastq_bundle	data/d1/5k_pbmc_v3_fastqs.tar	29256734720	10x 5k_pbmc_v3	public D1 input
+fastq_bundle	data/d2/d2_fastqs.tar	19185735680	10x Parent_SC3v3_Human_Glioblastoma	public D2 input
+fastq_bundle	data/d2p/d2p_fastqs.tar	22562355200	10x Brain_3p	public D2-prime input
+fastq_bundle	data/d3/d3.tar	51657605120	10x pbmc_10k_v3	public D3 atlas input
+fastq_bundle	data/d4/d4.tar	6896957440	10x 500_PBMC_3p_LT_Chromium_X	public D4 atlas input
+bam	runs/ingest/full/Aligned.sortedByCoord.out.bam	4208722967	0757ea351b0e999bec024e10169f91a7edb14526e31c73b619e8cb41752ef974	regenerate with scripts/40_ingest_align.sh
+bam	runs/post-v1/fair-baselines/d0/ingest.replay-minimal.bam	1843272819	b376342589cb793b052ee2a5f41f397ae2deaaf0130544d6fbd4ec5657bc8fd6	regenerate with scripts/110_make_replay_minimal_bam.sh or scripts/111_d0_fair_baseline_pilot.sh
+cram	runs/post-v1/fair-baselines/d0/ingest.replay-minimal.cram	758514044	c38f0c63d51478020159e4321eeb1424034a92f7715e7089b1820ae37767ad01	regenerate with scripts/111_d0_fair_baseline_pilot.sh; CRAM 3.1 archive mode
+aie	runs/post-v1/fair-baselines/d0/d0.replay-minimal.stamped.aie	111087381	d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842	regenerate with scripts/111_d0_fair_baseline_pilot.sh; byte-identical to frozen runs/archive/d0.aie
+bam	runs/post-v1/fair-baselines/d1-post-correction-v1/post-correction.molecules.bam	3582119668	145b6732bc4f399f3c79532e4b0ea24f6e4ea7d0af1aab059ff65f31c8775c97	regenerate with scripts/118_post_correction_storage.sh
+cram	runs/post-v1/fair-baselines/d1-post-correction-v1/post-correction.molecules.cram	1293782063	d9e67f148b59176f6b7bd63fea982ac129278706f6aa60d583469269a3fef7e9	regenerate with scripts/118_post_correction_storage.sh; CRAM 3.1 archive mode
+bam	runs/post-v1/fair-baselines/d2p-post-correction-v1/post-correction.molecules.bam	3791941865	b4e267577a9a3bdeaffe5bac984f3b1c1216213e11db34a914614c751e835189	regenerate with scripts/118_post_correction_storage.sh
+cram	runs/post-v1/fair-baselines/d2p-post-correction-v1/post-correction.molecules.cram	1519093985	9df205225272a44c26804966ca47dc6469edfec7ce6e1e2d8ce4dd9ff7952b8b	regenerate with scripts/118_post_correction_storage.sh; CRAM 3.1 archive mode
+matrix_trees	runs/post-v1/fair-baselines/{d0,d1,d2p}-{streamed-cram,native-aie}-replay-v1		exact identities and timings in results/post-v1-matched-cram-generalization.json	regenerate with scripts/117_stream_molecule_cram_replay.sh and scripts/119_native_aie_replay.sh
+matrix_trees	runs/post-v1/fair-baselines/{d1,d2p}-randomized-counts-v1		exact identities and timings in results/post-v1-scale-randomized-counts.json	regenerate with scripts/120_scale_randomized_counts_comparison.sh
+matrix_tree	runs/post-v1/fair-baselines/d0/starsolo-counts-only-same-features	1098316373	see results/post-v1-d0-counts-only-pilot.json	one four-feature no-BAM diagnostic; regenerate with scripts/112_d0_starsolo_counts_only.sh
+matrix_trees	runs/post-v1/fair-baselines/d0/starsolo-counts-only-gene-only{,-r2,-r3,-r4,-r5}	1085113390	see results/post-v1-d0-counts-only-pilot.json	five warm Gene-only no-BAM outputs; regenerate with scripts/113_d0_warm_counts_comparison.sh
+matrix_trees	runs/post-v1/fair-baselines/d0/aie-replay-r{1,2,3,4,5}	878607312	see results/post-v1-d0-counts-only-pilot.json	five warm replay outputs; regenerate with scripts/113_d0_warm_counts_comparison.sh
+bam	runs/ingest/d1/Aligned.sortedByCoord.out.bam	20090002111		regenerate with scripts/90_d1_reverify.sh
+bam	runs/ingest/d2/Aligned.sortedByCoord.out.bam	12672115830		regenerate with scripts/96_d2_campaign.sh
+bam	runs/ingest/d2p/Aligned.sortedByCoord.out.bam	16425883029	d4021960316844222f6e1880db6f1b0bf732f9236734e6da1757150b932167fd	regenerate with scripts/97_d2p_campaign.sh
+bam	runs/ingest/d3/Aligned.sortedByCoord.out.bam	39268046464		regenerate with scripts/103_atlas_build.sh
+bam	runs/ingest/d4/Aligned.sortedByCoord.out.bam	5744091835		regenerate with scripts/103_atlas_build.sh
+reference	data/GRCh38.primary_assembly.genome.fa.gz	845635028	3023c0705e83e86309271b09e25bdf678945fac98ce2fe5bb6e068f2225452	public GENCODE/EBI input
+annotation	annotations/gencode.v32.annotation.gtf.gz	43097815	da9dc827e9a111c9bde60c55f55b7d37ffebc4649fc01f0745a670240e939ed4	public GENCODE input
+annotation	annotations/gencode.v48.annotation.gtf.gz	58971717	37a298c2b57e41988cfe12667134106523c69c24a1807347679d19e88aa1f4a9	public GENCODE input
+annotation	annotations/gencode.v49.annotation.gtf.gz	93374019	d6e6fe0515c95b2a8cd36a853c1989cee9115c736c60237c56ae92b9daaaf7c4	public GENCODE input
+external_truth	runs/apa2/polyasite.bed.gz	14442791	PolyASite 2.0 GRCh38.96 clusters	download provenance in PROVENANCE.md
+star_indexes	ref/star-base and ref/star-{32,48,49}	114000000000		regenerate from genome/GTF with scripts/05_build_anno_indices.sh and commands in PROVENANCE.md
+run_tree	runs/	296148166249		large generated intermediates and matrices; compact results/logs are committed
+bam	runs/post-v1/fnbp1-normal-brain-confirmation-r1/gex_possorted_bam.bam	26185111333	e49697023eb7f5cca2bac7330a6c032d0ce40c0f3e9dcc703b11e4e72fb1dbbb	public 10x 10k_Human_Brain_MO_gemx input; download with scripts/184_fnbp1_normal_brain_confirmation.sh
+bai	runs/post-v1/fnbp1-normal-brain-confirmation-r1/gex_possorted_bam.bam.bai	14372368	61fe1a7d796fce3ed1388743f80e7ed0107b5b4055a986d1e32e86311793f046	public 10x BAM index; download with scripts/184_fnbp1_normal_brain_confirmation.sh
+matrix_h5	runs/post-v1/fnbp1-normal-brain-confirmation-r1/filtered_feature_bc_matrix.h5	158165615	5dc9d83c2ce7b0f6fbc5f6b9ee75b2fa3cdb7c470b027b7c6284a8381fe2f99a	public 10x called-nucleus matrix; download with scripts/184_fnbp1_normal_brain_confirmation.sh
+run_tree	runs/post-v1/adaptive-frontier-pilot-r1	7553998957	see manifests/adaptive-evidence-frontier-artifacts.tsv	rejected adaptive-frontier pilot; compact result and memo are committed, generated archives/matrices/logs remain excluded
+executable	env/cargo-target-frontier/release/aie	91679920	a73a0024512e83731ff8f27c6b1e2a7f9d0bdbbc51f8598d69bb86ef05364de4	exact rejected adaptive-frontier pilot binary; source prototype was not merged
+aie	runs/post-v1/adaptive-frontier-pilot-r1/d0-control/d0.aie	111079672	a664edd16cecc86347341bff177f184f67ad53007d3c194ed8b41f0f4d49c82c	paired unstamped D0 two-extreme control; exact command in PROVENANCE.md section 8.23
+aie	runs/post-v1/adaptive-frontier-pilot-r1/d0-frontier/d0.aie	132487429	611e073550a0184f3c6c6cd6ff37d1c864375caa1eade4d5ba3b1c1c29f61f25	rejected D0 all-chain frontier treatment
+aie	runs/post-v1/adaptive-frontier-pilot-r1/d0-junction-frontier/d0.aie	114201153	337a7fe802131a98abb176ad67e8624740dd275b74e80654e896525efe1a1cd4	rejected D0 pre-declared junction-only rescue
+aie	runs/post-v1/adaptive-frontier-pilot-r1/d2p-frontier/d2p.aie	640092167	0fb6fef789f59a17ef45caa1253173f55a0531ac76dce34cf2e171d35c3b697c	rejected D2-prime all-chain frontier treatment
+matrix_trees	runs/post-v1/adaptive-frontier-pilot-r1/{d0,d2p}-{replay,velocity}-*		see manifests/adaptive-evidence-frontier-artifacts.tsv	Gene and Velocity control/treatment outputs; regenerate only with the rejected experimental prototype identified in the compact result
+aie_panel	runs/post-v1/sez-transcript-end-atlas-r1/donor-{A,B,C,D,E,F,G,H}/sez.called.aie	1326036691	BLAKE3 identities in results/post-v1-collection-index-v2.json	eight called-cell SEZ source archives; regenerate with the transcript-end atlas workflow in PROVENANCE.md section 8.20
+executable	env/cargo-target-atlas-v2/release/aie	95985528	3c5faaf38d8b9ea14001a8561b78b026452804d454b16a5f2e11dbc089605a4d	clean Gravlax 6b92503cffbd48da8312bdd75c1f1f70d5ff2a27 binary used for the final sparse-output and collection-index runs
+collection_index	runs/post-v1/collection-index-v2-r5/sez8-root.aicollection	8931229	9b33caf12e07deaae0a1fab2d20345a6aa5b8787d162572a251e533cf9105245	final deterministic eight-archive root; regenerate with scripts/206_benchmark_collection_index.sh
+collection_index	runs/post-v1/collection-index-v2-r5/sez4-base.aicollection	4751118	25e322d6ee6fd7fb604403ffda726ad6da489160578d1756a2571ddc924163bb	immutable A--D base used by the final chained-index test
+collection_index	runs/post-v1/collection-index-v2-r5/sez8-extension.aicollection	4718653	f62198792de007550b4733a79765208c59511c9a80f53778774980a8f5606bff	E--H extension; the parent locator makes its bytes specific to the r5 base path
+run_tree	runs/post-v1/collection-index-v2-r5	30924202	canonical file-set SHA-256 b45001fc876e82dc265b8b355e11c23c88455c1af4a84ae7a0364d4e1c60c025	114 validated files; per-file relative path/size/SHA-256 encoding is defined in results/post-v1-collection-index-v2.json
+run_tree	runs/post-v1/federated-sparse-output-r2-final	3569029	identities in results/post-v1-federated-sparse-output-validation.json	final annotation_genes_json sparse bundle, matched dense JSON, and GNU-time records; regenerate with the command in PROVENANCE.md section 8.22
+run_tree	runs/post-v1/archive-root-gate-a-r1	1506084878	canonical-tree-sha256:07605bb007eb73d3a4a1f4ba649648a34b2dc0667866176bc2cec3347f09ae87	incomplete non-confirmatory harness run; stopped before the first collection build and has no completion record or driver artifact manifest
+run_tree	runs/post-v1/archive-root-gate-a-r2	6896522424	complete-artifact-manifest-sha256:e6d5758a20022c5eb77f6bb13c278fd8c711d84f29d89e5457e6eb5db7cba6f7	diagnostic-only completed workload used to harden the reducer; not a reported treatment arm
+run_tree	runs/post-v1/archive-root-gate-a-r3	6896522383	complete-artifact-manifest-sha256:d64a953320a56d53e0caaa11d81c91bffbb55a2067027466201f161a49def64d	confirmatory Gate-A PASS run; exact per-artifact identities are in manifests/archive-root-gate-a-artifacts.tsv
+run_tree	runs/post-v1/jshape-routing-gate-b-r1	0	canonical-file-set-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855	preflight-only empty run skeleton; no protocol, measurement, completion record, or artifact manifest; not confirmatory evidence
+run_tree	runs/post-v1/jshape-routing-gate-b-r2	647324075	complete-artifact-manifest-sha256:ce2076e52dacfd085d4fd639cdc83c3b2e877934ff61a475e48eeb81c69f42de	diagnostic-only completed workload that failed frozen construction wall/RSS and region-wall gates before optimization; not a reported treatment arm
+run_tree	runs/post-v1/jshape-routing-gate-b-r3	647307809	complete-artifact-manifest-sha256:70b48020f62a99437027332cd24ceb493c9bdd8c4debbbc8819b4693cefef52e	sole confirmatory Gate-B PASS run; exact binary, source, collection, and run identities are in manifests/jshape-routing-gate-b-artifacts.tsv

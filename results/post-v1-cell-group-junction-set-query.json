@@ -1,0 +1,95 @@
+{
+  "schema": "gravlax.cell-group-junction-set-query.v1",
+  "status": "PASS",
+  "gravlax_commit": "f1f99ece33f3d89b6f54d160cb081b3e49e5e3a7",
+  "configuration": {
+    "datasets": ["D0", "D1"],
+    "threads": 24,
+    "repetitions": 7,
+    "host": "analysis-host",
+    "cpu": "AMD EPYC 9575F 64-Core Processor"
+  },
+  "semantics": {
+    "categories": ["include_only", "exclude_only", "both"],
+    "usage": "include_only / (include_only + exclude_only)",
+    "both_excluded_from_denominator": true,
+    "zero_denominator": null
+  },
+  "d0": {
+    "selected_cells": 1225,
+    "groups": 7,
+    "support_cells": 11,
+    "totals": {
+      "both": 0,
+      "exclude_only": 3,
+      "include_only": 8,
+      "informative_umis": 11,
+      "usage_fraction": 0.7272727272727273
+    },
+    "planning": {
+      "chunk_decode_reduction_fraction": 0.5,
+      "independent_chunk_decodes": 2,
+      "unique_chunk_decodes": 1
+    },
+    "group_json_sha256": "e83dd45e0063e374cd808e3da592b905efd1d269512a04bba9fc28eff68a6de4"
+  },
+  "d1": {
+    "selected_cells": 5038,
+    "groups": 8,
+    "support_cells": 60,
+    "totals": {
+      "both": 0,
+      "exclude_only": 0,
+      "include_only": 63,
+      "informative_umis": 63,
+      "usage_fraction": 1.0
+    },
+    "planning": {
+      "chunk_decode_reduction_fraction": 0.0,
+      "independent_chunk_decodes": 1,
+      "unique_chunk_decodes": 1
+    },
+    "group_json_sha256": "7082e2f26377b1e9d1ef2db88ab8ff75cf75c1bc25645dba9f943f1b90b901ae"
+  },
+  "performance": {
+    "jset_wall_seconds": [0.05, 0.05, 0.05, 0.05, 0.04, 0.05, 0.05],
+    "grouped_jset_wall_seconds": [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    "two_point_processes_wall_seconds": [0.09, 0.09, 0.09, 0.09, 0.09, 0.09, 0.09],
+    "jset_median_wall_seconds": 0.05,
+    "grouped_jset_median_wall_seconds": 0.05,
+    "two_point_processes_median_wall_seconds": 0.09,
+    "jset_wall_fraction_of_two_points": 0.5555555555555556,
+    "grouped_wall_fraction_of_unscoped": 1.0,
+    "jset_max_rss_kib": 75524,
+    "grouped_jset_max_rss_kib": 74208
+  },
+  "compatibility": {
+    "batch.json": true,
+    "junction.json": true,
+    "junctions.json": true,
+    "region.txt": true
+  },
+  "acceptance": {
+    "synthetic_exactness_and_strict_scope_cases_in_111_tests": true,
+    "d0_point_set_conservation_per_cell": true,
+    "d0_group_rows_equal_cell_sums": true,
+    "d1_group_rows_equal_cell_sums": true,
+    "group_rows_sum_to_bulk_totals": true,
+    "cells_scope_equals_group_scoped_cells": true,
+    "repeated_json_byte_identical": true,
+    "unscoped_outputs_byte_identical_to_pre_scope_release": true,
+    "jset_wall_at_most_75pct_of_two_points": true,
+    "grouped_wall_at_most_150pct_of_unscoped": true,
+    "grouped_peak_rss_at_most_1gib": true
+  },
+  "provenance": {
+    "aie_binary_sha256": "3f27f7d3cf77d23570ce2f92412b01c097d32c904e0b0b9582793121d4f5dab1",
+    "d0_archive_sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842",
+    "d1_archive_sha256": "e8568b72525a84342203e062fc0f544baf84fcb2b346da7d50c8e1ba8e78c834",
+    "d0_groups_sha256": "a8ad72b9437af1d06d98ec23e09f3424898e54e35c3abfadad11ea8411c90404",
+    "d1_groups_sha256": "1c8357521d6e8c76a184a70ea64fe3f2ad967ea4e63684e6988bb4ac20e94ed7",
+    "plan_sha256": "85f3424d0ec67fe9ea929f1bbd6048ff1c0e5adc3078ae620422fc146748fc70"
+  },
+  "decision": "publish_shared_scope_and_jset_v1",
+  "interpretation": "The locked pair is a correctness fixture, not a biological result: it has only 11 informative D0 molecules, and its exclusion junction is absent in D1."
+}

@@ -1,0 +1,11 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-49 --readFilesIn data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L001_R2_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L002_R2_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L003_R2_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L004_R2_001.fastq.gz data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L001_R1_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L002_R1_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L003_R1_001.fastq.gz,data/d1/5k_pbmc_v3_fastqs/5k_pbmc_v3_S1_L004_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures Gene GeneFull SJ Velocyto --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --outSAMattributes NH HI AS nM CR UR CB UB GX GN --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 80000000000 --outSAMunmapped Within --outFileNamePrefix runs/oracle/d1/v49/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 29 06:58:55 ..... started STAR run
+Aug 29 06:58:56 ..... loading genome
+Aug 29 06:59:04 ..... started mapping
+Aug 29 07:05:37 ..... finished mapping
+Aug 29 07:05:39 ..... started Solo counting
+Aug 29 07:17:22 ..... finished Solo counting
+Aug 29 07:17:22 ..... started sorting BAM
+Aug 29 07:19:13 ..... finished successfully
+oracle_wall=1225.50

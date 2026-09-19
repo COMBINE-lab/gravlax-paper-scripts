@@ -1,0 +1,11 @@
+artifact	bytes	note
+fastq_gz:pbmc_1k_v3_S1_R1_001.fastq.gz	1502502973	raw reads
+fastq_gz:pbmc_1k_v3_S1_R2_001.fastq.gz	3536353818	raw reads
+bam:oracle_v49	4289445164	uncompressed-tag BAM
+cram31:oracle_v49	1581239072	CRAM 3.1 archive mode, all tags retained
+bam:ingest_annotation_free	4208722967	uncompressed-tag BAM
+cram31:ingest_annotation_free	1404884801	CRAM 3.1 archive mode, all tags retained
+
+wrote results/gatee-baselines-full.tsv
+Reference points measured earlier on this same dataset:
+  Malva index (pbmc_1k_v3): 393,216,000 bytes approx (375 MB) -- ${MALVA_ROOT}/indices/pbmc_1k_v3

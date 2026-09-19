@@ -1,0 +1,15 @@
+{
+  "human_partition_retention_verdict": "PASS",
+  "human_marker_retention_verdict": "PASS",
+  "human_pseudobulk_retention_verdict": "FAIL",
+  "human_control_sensitivity_verdict": "PASS",
+  "human_composite_verdict": "FAIL",
+  "mouse_5_prime_component_verdicts": {
+    "partition_retention": "PASS",
+    "marker_retention": "PASS",
+    "pseudobulk_retention": "FAIL",
+    "control_sensitivity": "PASS",
+    "composite": "FAIL"
+  },
+  "frozen_resolution_0_8_verdict_changed": false
+}

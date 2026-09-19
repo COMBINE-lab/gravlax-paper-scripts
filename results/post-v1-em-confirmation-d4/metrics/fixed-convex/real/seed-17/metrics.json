@@ -1,0 +1,133 @@
+{
+  "archive": "${GRAVLAX_PROJECT_ROOT}/runs/archive/d4.aie",
+  "blend_alpha": 20.0,
+  "collapse_groups": false,
+  "convex_candidate_normalized": true,
+  "convex_cell_weight": 0.2,
+  "convex_global_weight": 0.20000000000000007,
+  "convex_group_prior": 80.0,
+  "convex_group_weight": 0.6,
+  "convex_leave_one_cell_out_group": true,
+  "convex_only": true,
+  "depth_hybrid_adaptive_cell_prior": 64.0,
+  "depth_hybrid_adaptive_component": "posterior-mean Dirichlet proxy",
+  "depth_hybrid_adaptive_group_prior": 80.0,
+  "depth_hybrid_fixed_cell_weight": 0.2,
+  "depth_hybrid_fixed_component": "candidate-normalized convex",
+  "depth_hybrid_fixed_group_prior": 80.0,
+  "depth_hybrid_fixed_group_weight": 0.6,
+  "depth_hybrid_fixed_sample_weight": 0.2,
+  "depth_hybrid_gate": "d^2/(d^2+scale^2) using mode-independent fitted unique candidate mass",
+  "depth_hybrid_only": false,
+  "depth_hybrid_scale": 16.0,
+  "dirichlet_proxy_candidate_normalized": true,
+  "dirichlet_proxy_cell_prior": 16.0,
+  "dirichlet_proxy_group_prior": 20.0,
+  "dirichlet_proxy_inference": "posterior_mean_screen_not_full_variational",
+  "dirichlet_proxy_leave_one_cell_out_group": true,
+  "dirichlet_proxy_only": false,
+  "evidence_depth_definition": "sum of mode-independent fitted unique counts over the target candidate genes: 0-1, (1,4], (4,16], 16+",
+  "global_alpha": 5.0,
+  "group_alpha": 20.0,
+  "group_names": [
+    "g0",
+    "g1",
+    "g2",
+    "g3",
+    "g4",
+    "g5",
+    "g6"
+  ],
+  "groups_file": "${GRAVLAX_PROJECT_ROOT}/runs/post-v1/em-confirmation-d4-prep-r1/groups/D4.real.tsv",
+  "gtf": "${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf",
+  "mask_fraction": 0.2,
+  "modes": [
+    {
+      "calibration_max_probability_deciles": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          80,
+          28
+        ],
+        [
+          309,
+          106
+        ],
+        [
+          857,
+          468
+        ],
+        [
+          880,
+          531
+        ],
+        [
+          727,
+          547
+        ],
+        [
+          2195,
+          1950
+        ],
+        [
+          112918,
+          112075
+        ]
+      ],
+      "evidence_depth_strata": [
+        {
+          "expected_accuracy_percent": 85.45200854149142,
+          "multiclass_brier": 0.1685357392620976,
+          "n": 7733,
+          "name": "0-1",
+          "negative_log_loss": 0.3210568536837205,
+          "top1_percent": 87.27531359110307
+        },
+        {
+          "expected_accuracy_percent": 90.59156089474143,
+          "multiclass_brier": 0.10011908643498067,
+          "n": 5262,
+          "name": "1-4",
+          "negative_log_loss": 0.18106209074406954,
+          "top1_percent": 92.7213987077157
+        },
+        {
+          "expected_accuracy_percent": 95.47035869933335,
+          "multiclass_brier": 0.04781648017248126,
+          "n": 12627,
+          "name": "4-16",
+          "negative_log_loss": 0.09976540439304764,
+          "top1_percent": 97.12520788785935
+        },
+        {
+          "expected_accuracy_percent": 98.35635021446879,
+          "multiclass_brier": 0.011730049247632265,
+          "n": 92358,
+          "name": "16+",
+          "negative_log_loss": 0.032124581184457886,
+          "top1_percent": 99.41315316485849
+        }
+      ],
+      "expected_accuracy_percent": 96.8553414806228,
+      "multiclass_brier": 0.02981230791731997,
+      "n": 117980,
+      "name": "convex",
+      "negative_log_loss": 0.06494474657854443,
+      "top1_percent": 98.07424987285981
+    }
+  ],
+  "schema_version": 1,
+  "scored_cells": 565,
+  "seed": 17
+}

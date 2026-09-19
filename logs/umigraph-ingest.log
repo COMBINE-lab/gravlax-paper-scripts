@@ -1,0 +1,16 @@
+reads used: 63634933 / 63683421   cells: 745619   oracle tags: false
+=== UMI adjacency graph ===
+base molecules (exact-UMI, 2000 bp loci): 23113618
+distinct (cell,chrom,strand,value) classes: 22584174
+cells touched by any edge: 54874
+
+      window same-value links        1MM edges
+       10000           349787          1076634
+      100000           426116          1078540
+     1000000           468094          1080072
+     3000000           476687          1081023
+  chrom-wide           529444          1098826
+
+stored graph @ 3000000 bp: 476687 links + 1081023 edges = 3463112 B zstd  (1.1986 bits/molecule; UMI stream was 27.00)
+(no GX tags — sufficiency test skipped; statistics and bytes only)
+wrote results/umigraph-ingest.json

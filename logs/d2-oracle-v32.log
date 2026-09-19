@@ -1,0 +1,9 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-32 --readFilesIn data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L001_R2_001.fastq.gz,data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L002_R2_001.fastq.gz data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L001_R1_001.fastq.gz,data/d2/Parent_SC3v3_Human_Glioblastoma_fastqs/Parent_SC3v3_Human_Glioblastoma/Parent_SC3v3_Human_Glioblastoma_S1_L002_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures Gene --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --outSAMtype None --outFileNamePrefix runs/oracle/d2/v32/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 29 13:33:31 ..... started STAR run
+Aug 29 13:33:31 ..... loading genome
+Aug 29 13:33:38 ..... started mapping
+Aug 29 13:36:56 ..... finished mapping
+Aug 29 13:36:58 ..... started Solo counting
+Aug 29 13:38:01 ..... finished Solo counting
+Aug 29 13:38:01 ..... finished successfully

@@ -1,0 +1,55 @@
++ P=${GRAVLAX_PROJECT_ROOT}
++ PY=${GRAVLAX_PYTHON}
++ AIE=${GRAVLAX_PROJECT_ROOT}/src/target/release/aie
++ cd ${GRAVLAX_PROJECT_ROOT}
++ ${GRAVLAX_PYTHON} scripts/100_apa_replicate.py run d0 runs/oracle/full/v49/Solo.out/Gene/filtered runs/archive/d0.aie results/apa-shifts-d0.tsv
+${GRAVLAX_PROJECT_ROOT}/scripts/100_apa_replicate.py:42: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m=scipy.io.mmread(str(d/"matrix.mtx")).tocsr()
+d0: 466 T / 365 mono; 239 genes measured
++ ${GRAVLAX_PYTHON} scripts/100_apa_replicate.py run d1 runs/oracle/d1/v49/Solo.out/Gene/filtered runs/archive/d1.aie results/apa-shifts-d1.tsv
+${GRAVLAX_PROJECT_ROOT}/scripts/100_apa_replicate.py:42: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m=scipy.io.mmread(str(d/"matrix.mtx")).tocsr()
+d1: 1808 T / 1040 mono; 250 genes measured
++ ${GRAVLAX_PYTHON} scripts/100_apa_replicate.py analyze
+D0: 35/239 significant (P95=592bp); D1: 52/250 (P95=220bp)
+replication: 26 genes significant in BOTH (of 27 D0-sig testable in D1; expected by chance 5.3)
+replicated genes: ANXA1, ARHGDIB, ARPC2, CALM2, CCNI, COTL1, CTSS, EEF1A1, FOSB, FYB1, GNAI2, GNAS, HMGB1, KLF6, LAPTM5, MCL1, NEAT1, NPM1, PABPC1, PSAP
+3'-end concordance (D0 significants): 30/35 genes have BOTH dominant sites within 200bp of annotated ends; 3/30 use DISTINCT annotated ends
++ echo APA_REPLICATION_DONE
+APA_REPLICATION_DONE
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie query runs/archive/d0.aie discover --gtf annotations/gencode.v49.annotation.gtf --tsv
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie query runs/archive/d1.aie discover --gtf annotations/gencode.v49.annotation.gtf --tsv
++ ${GRAVLAX_PYTHON} -
+intergenic candidates: D0 3164, D1 14851
+D0 intergenic loci replicated in D1: 2513/3164 (79.4% of loci, 89.8% of mass)
++ echo INTERGENIC_REPLICATION_DONE
+INTERGENIC_REPLICATION_DONE
++ ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie em runs/archive/d1.aie --gtf annotations/gencode.v49.annotation.gtf --mask 0 --emit runs/replay/d1-em-layer --barcodes runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv
++ tail -1
+wrote 3153496 recovered entries to runs/replay/d1-em-layer
++ ${GRAVLAX_PYTHON} -
+<stdin>:4: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+EM recovered-fraction replication (D0 vs D1, 2823 genes with total>=100 in both):
+  Pearson r = 0.9920; median |delta fraction| = 0.0037
++ echo EM_REPLICATION_DONE
+EM_REPLICATION_DONE
++ echo REPLICATION_PACK_DONE
+REPLICATION_PACK_DONE

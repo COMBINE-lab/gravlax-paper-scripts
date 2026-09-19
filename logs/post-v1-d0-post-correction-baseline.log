@@ -1,0 +1,21 @@
+2026-08-30 D0 post-correction baseline, accepted run v3
+protocol scripts/114_d0_post_correction_baseline.sh
+scripts protocol commit b0d3bbfb31077b17862e22f92aa5e05b075ddbde
+gravlax commit 7e8e9abf26a67201a5f57999b723ecd15faaed95
+binary sha256 f181dde2097291abe2d2337a485ff1799158e4308c24328ef578c04abca79c0d
+samtools 1.23.1; 24 threads; CRAM 3.1 archive,use_lzma=1
+reference sha256 e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b
+exported 22,156,853 molecules and 1,834,103 edges as 48,220,505 BAM records
+AIE 111087381 bytes sha256 d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842
+BAM 688313625 bytes sha256 ab03a6041e7dc80ff2c3ac4c9cb1f6d1730d5ba2708d87f7dda6435e74be7f50
+CRAM 258151959 bytes sha256 d494242c81ace999e8d1ca1ffe710fa6ed641bb56d41deb06068cfc23a19ed0e
+normalized SAM sha256 d4f5b0845334154f9df0f774a7e498db61fec9917036022eb646fa4b6811dcad
+all quickchecks passed; BAM and CRAM normalized SAM streams byte-identical
+both BAM and CRAM-decoded replays byte-identical to frozen matrix/features/barcodes
+matrix abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335
+features d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0
+barcodes 843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b
+single-run diagnostics: export 60.16s/3822176KB; CRAM 32.22s/8041680KB;
+decode 12.16s/6630972KB; BAM replay 17.03s/7475780KB; decoded replay 17.30s/7494388KB
+accepted storage ratio post-correction CRAM/AIE 2.323864; AIE uses 56.968% fewer bytes
+timings are warm uncontrolled diagnostics, not publication estimates

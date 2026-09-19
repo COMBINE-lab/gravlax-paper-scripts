@@ -1,0 +1,20 @@
+{
+  "label_a": "v32",
+  "label_b": "v49",
+  "genes_a": 60609,
+  "genes_b": 78691,
+  "genes_shared": 59248,
+  "genes_only_a": 1316,
+  "genes_only_b": 19443,
+  "total_umi_a": 10254695.0,
+  "total_umi_b": 10402182.0,
+  "umi_mass_in_genes_only_a": 11111.0,
+  "umi_mass_in_genes_only_b": 105662.0,
+  "l1_shared": 381500.0,
+  "umi_mass_moved_frac": 0.018601235824176145,
+  "expressed_genes": 24181,
+  "genes_changed_gt10pct": 5261,
+  "genes_changed_gt10pct_frac": 0.21756751168272612,
+  "cells_changed_gt1pct": 28596,
+  "cells_live": 238266
+}

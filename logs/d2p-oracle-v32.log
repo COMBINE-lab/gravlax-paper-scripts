@@ -1,0 +1,9 @@
+	${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR-avx2 --runThreadN 24 --genomeDir ref/star-32 --readFilesIn data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R2_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R2_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R2_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R2_001.fastq.gz data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L001_R1_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L002_R1_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L003_R1_001.fastq.gz,data/d2p/Brain_3p_fastqs/mm_ST_7500_S6_L004_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures Gene --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIdedup 1MM_CR --soloUMIfiltering MultiGeneUMI_CR --soloCellFilter EmptyDrops_CR --outSAMtype None --outFileNamePrefix runs/oracle/d2p/v32/
+	STAR version: 2.7.11b   compiled: 2025-11-14T12:06:42+0000 :/opt/conda/conda-bld/star_1763121846936/work/source
+Aug 29 15:28:27 ..... started STAR run
+Aug 29 15:28:27 ..... loading genome
+Aug 29 15:28:32 ..... started mapping
+Aug 29 15:32:49 ..... finished mapping
+Aug 29 15:32:51 ..... started Solo counting
+Aug 29 15:33:13 ..... finished Solo counting
+Aug 29 15:33:13 ..... finished successfully

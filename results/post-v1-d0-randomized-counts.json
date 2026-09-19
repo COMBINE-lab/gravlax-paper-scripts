@@ -1,0 +1,90 @@
+{
+  "schema": "gravlax.post_v1.randomized_counts_comparison.v1",
+  "date": "2026-08-30",
+  "dataset": "D0 / 10x PBMC 1k v3",
+  "status": "randomized_warm_and_specific_file_cold_complete",
+  "gravlax_commit": "ef2126684378d8ba0dad5605ff81eed635bcab6a",
+  "protocol_script_commit": "4e3d6de60a1461e39eff462142135a83c2960d1a",
+  "protocol": "scripts/116_d0_randomized_counts_comparison.sh",
+  "cache_helper": "scripts/115_fadvise_dontneed.py",
+  "aie_binary_sha256": "915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd",
+  "host": {
+    "hostname": "analysis-host",
+    "kernel": "Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux"
+  },
+  "threads": 24,
+  "tools": {"STAR": "2.7.11b", "aie": "0.1.0"},
+  "schedule": {
+    "seed": 20260830,
+    "design": "balanced two-arm alternating crossover; seed selected STAR first",
+    "blocks": [
+      ["star", "aie"],
+      ["aie", "star"],
+      ["star", "aie"],
+      ["aie", "star"],
+      ["star", "aie"]
+    ]
+  },
+  "correctness": {
+    "starsolo_all_selected_outputs_byte_identical_to_frozen_oracle": true,
+    "aie_all_outputs_byte_identical_to_frozen_bam_sourced_replay": true,
+    "alignment_files_emitted_by_counts_only_arms": 0,
+    "runs_passing": 12,
+    "runs_total": 12
+  },
+  "warm_replicates": {
+    "starsolo_gene_only_seconds": [83.71, 83.80, 83.05, 84.60, 82.44],
+    "aie_replay_seconds": [2.44, 2.41, 2.44, 2.45, 2.45],
+    "starsolo_gene_only_max_rss_kb": [34934448, 34935640, 34934960, 34934268, 34934372],
+    "aie_replay_max_rss_kb": [6942012, 6914332, 6993300, 6954160, 6928472],
+    "starsolo_file_system_inputs": [0, 0, 0, 0, 0],
+    "aie_file_system_inputs": [0, 0, 0, 0, 0]
+  },
+  "warm_summary": {
+    "starsolo_median_seconds": 83.71,
+    "starsolo_range_seconds": [82.44, 84.60],
+    "starsolo_mean_seconds": 83.52,
+    "starsolo_sample_sd_seconds": 0.816731,
+    "starsolo_cv": 0.009779,
+    "aie_median_seconds": 2.44,
+    "aie_range_seconds": [2.41, 2.45],
+    "aie_mean_seconds": 2.438,
+    "aie_sample_sd_seconds": 0.016432,
+    "aie_cv": 0.006740,
+    "median_wall_speedup": 34.307377,
+    "starsolo_median_max_rss_kb": 34934448,
+    "aie_median_max_rss_kb": 6942012,
+    "median_peak_rss_ratio": 5.032323,
+    "position_check": {
+      "starsolo_mean_seconds_when_first": 83.066667,
+      "starsolo_mean_seconds_when_second": 84.200000,
+      "aie_mean_seconds_when_first": 2.430000,
+      "aie_mean_seconds_when_second": 2.443333,
+      "interpretation": "Descriptive only; five blocks do not support an inferential order-effect claim."
+    }
+  },
+  "cold_observations": {
+    "definition": "Best-effort POSIX_FADV_DONTNEED on only the named arm inputs immediately before execution; no host-wide cache drop.",
+    "aie": {
+      "advised_files": 3,
+      "advised_bytes": 3550063189,
+      "advisory_failures": 0,
+      "wall_seconds": 2.75,
+      "max_rss_kb": 6847008,
+      "file_system_inputs": 6933728
+    },
+    "starsolo": {
+      "advised_files": 19,
+      "advised_bytes": 35495765769,
+      "advisory_failures": 0,
+      "wall_seconds": 85.82,
+      "max_rss_kb": 34934700,
+      "file_system_inputs": 59158824
+    },
+    "wall_speedup": 31.207273,
+    "starsolo_cold_to_warm_median_ratio": 1.025206,
+    "aie_cold_to_warm_median_ratio": 1.127049,
+    "caveat": "The calls were accepted and both timed processes reported nonzero file-system input counters, but advisory eviction on a shared host cannot prevent another process from recaching a file."
+  },
+  "interpretation": "Randomized interleaving leaves the D0 warm result essentially unchanged from the sequential pilot (34.31x versus 34.58x). The main remaining generalization gap is D1 and D2-prime, not D0 order or cache state."
+}

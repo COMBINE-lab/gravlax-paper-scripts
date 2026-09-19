@@ -1,0 +1,15 @@
+velocity: 22156853 molecules -> 14583543 UMIs in 4924283 (cell,gene) entries | load 0.9s, total 10.8s
+velo_wall=11.72
+${GRAVLAX_PROJECT_ROOT}/scripts/91_velo_gate.py:20: DeprecationWarning: The default value for `spmatrix` is changing to `False` in v1.20.
+             That means the default return type will be a sparse array.
+             Unless you use * instead of @, ** for matrix power, or you depend
+             on 2D shapes from e.g. `A.sum(axis=0)` it may not matter to you.
+             See the spmatrix to sparray migration guide for details.
+             https://docs.scipy.org/doc/scipy/reference/sparse.migration_to_sparray.html
+             
+  m = scipy.io.mmread(str(d / name)).tocsr()
+spliced.mtx     oracle   7087604  replay   7358225  L1   513803  rel  7.249%  mass-delta  3.818%  [MARGINAL]
+unspliced.mtx   oracle   4582294  replay   4393857  L1   194819  rel  4.252%  mass-delta  4.112%  [MARGINAL]
+ambiguous.mtx   oracle   1533636  replay   1643406  L1   153318  rel  9.997%  mass-delta  7.158%  [MARGINAL]
+VELO-1: MARGINAL
+VELO_GATE_DONE

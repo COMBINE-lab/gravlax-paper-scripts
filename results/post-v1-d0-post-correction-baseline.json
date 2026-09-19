@@ -1,0 +1,65 @@
+{
+  "schema": "gravlax.post_v1.post_correction_baseline.v1",
+  "date": "2026-08-30",
+  "dataset": "D0 / 10x PBMC 1k v3",
+  "status": "correctness_passed_storage_accepted_timing_preliminary",
+  "gravlax_commit": "7e8e9abf26a67201a5f57999b723ecd15faaed95",
+  "protocol_script_commit": "b0d3bbfb31077b17862e22f92aa5e05b075ddbde",
+  "protocol": "scripts/114_d0_post_correction_baseline.sh",
+  "threads": 24,
+  "samtools": "samtools 1.23.1",
+  "cram": {
+    "version": "3.1",
+    "profile": "archive,use_lzma=1"
+  },
+  "reference_sha256": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b",
+  "aie_binary_sha256": "f181dde2097291abe2d2337a485ff1799158e4308c24328ef578c04abca79c0d",
+  "molecules": 22156853,
+  "umi_edges": 1834103,
+  "bam_records": 48220505,
+  "artifacts": [
+    {
+      "name": "canonical_genome_stamped_aie",
+      "bytes": 111087381,
+      "sha256": "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842"
+    },
+    {
+      "name": "post_correction_molecule_bam",
+      "bytes": 688313625,
+      "sha256": "ab03a6041e7dc80ff2c3ac4c9cb1f6d1730d5ba2708d87f7dda6435e74be7f50"
+    },
+    {
+      "name": "post_correction_molecule_cram31",
+      "bytes": 258151959,
+      "sha256": "d494242c81ace999e8d1ca1ffe710fa6ed641bb56d41deb06068cfc23a19ed0e"
+    }
+  ],
+  "ratios": {
+    "post_correction_bam_to_aie": 6.196146,
+    "post_correction_cram_to_aie": 2.323864,
+    "aie_smaller_than_post_correction_cram_percent": 56.968,
+    "ingest_equivalent_cram_to_post_correction_cram": 2.938246,
+    "post_correction_cram_smaller_than_ingest_equivalent_cram_percent": 65.966
+  },
+  "equivalence": {
+    "bam_quickcheck": true,
+    "cram_quickcheck": true,
+    "decoded_bam_quickcheck": true,
+    "bam_and_cram_normalized_sam_stream_byte_identical": true,
+    "normalized_sam_stream_sha256": "d4f5b0845334154f9df0f774a7e498db61fec9917036022eb646fa4b6811dcad",
+    "molecule_bam_replay_vs_frozen_reference_byte_identical": true,
+    "cram_decoded_replay_vs_frozen_reference_byte_identical": true,
+    "matrix_sha256": "abbe3da6395ab899911bf16cd7abae7484df9484891dea0c6079527be57db335",
+    "barcodes_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b",
+    "features_sha256": "d30b65224a815f91a8c28faa98d58fae60005360a0550bc95ba304e04403bdd0"
+  },
+  "single_run_timings": [
+    {"operation": "export_molecule_bam", "wall_seconds": 60.16, "user_seconds": 59.76, "system_seconds": 4.23, "max_rss_kb": 3822176},
+    {"operation": "make_molecule_cram", "wall_seconds": 32.22, "user_seconds": 409.32, "system_seconds": 81.21, "max_rss_kb": 8041680},
+    {"operation": "decode_molecule_cram", "wall_seconds": 12.16, "user_seconds": 77.15, "system_seconds": 137.98, "max_rss_kb": 6630972},
+    {"operation": "replay_molecule_bam", "wall_seconds": 17.03, "user_seconds": 23.14, "system_seconds": 3.94, "max_rss_kb": 7475780},
+    {"operation": "replay_cram_decoded", "wall_seconds": 17.30, "user_seconds": 23.42, "system_seconds": 4.03, "max_rss_kb": 7494388}
+  ],
+  "timing_caveat": "Single warm/uncontrolled observations. They are diagnostic, not publication estimates; randomized warm replicates and a recorded non-destructive cold-cache protocol remain required.",
+  "capability_caveat": "This is a standards-compliant BAM/CRAM container with Gravlax-specific local tags. It is function matched for reconstruction of the post-correction molecule abstraction and Gene replay, but generic tools do not understand the molecule relations, it carries no archive query indexes, and this prototype does not embed the archive genome signature."
+}

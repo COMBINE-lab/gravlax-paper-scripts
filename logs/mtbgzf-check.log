@@ -1,0 +1,57 @@
++ P=${GRAVLAX_PROJECT_ROOT}
++ AIE=${GRAVLAX_PROJECT_ROOT}/src/target/release/aie
++ GTF=${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf
++ for D in d0 d1
++ '[' d0 = d0 ']'
++ BAM=${GRAVLAX_PROJECT_ROOT}/runs/ingest/full/Aligned.sortedByCoord.out.bam
++ BARC=${GRAVLAX_PROJECT_ROOT}/runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv
++ REF=${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam
++ /usr/bin/time -f d0_aie_replay_wall=%e ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d0.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt
++ grep -E 'molecules|wall'
+molecules 22156853 -> assigned 21197710 -> 10393179 UMIs in 3600217 entries | load 0.9s, +anno 1.9s, +replay 2.3s, total 6.1s
+d0_aie_replay_wall=6.82
++ /usr/bin/time -f d0_frombam_wall=%e ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/ingest/full/Aligned.sortedByCoord.out.bam --from-bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/full/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt-frombam
++ grep -E 'molecules|wall'
+molecules 22156853 -> assigned 21197710 -> 10393179 UMIs in 3600217 entries | load 65.4s, +anno 2.5s, +replay 11.1s, total 80.4s
+d0_frombam_wall=84.96
++ ok=1
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/matrix.mtx
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt-frombam/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/matrix.mtx
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/barcodes.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt-frombam/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/barcodes.tsv
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d0-mt-frombam/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/full-frombam/features.tsv
++ '[' 1 = 1 ']'
++ echo 'd0 REGRESSION: BYTE-IDENTICAL'
+d0 REGRESSION: BYTE-IDENTICAL
++ for D in d0 d1
++ '[' d1 = d0 ']'
++ BAM=${GRAVLAX_PROJECT_ROOT}/runs/ingest/d1/Aligned.sortedByCoord.out.bam
++ BARC=${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv
++ REF=${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam
++ /usr/bin/time -f d1_aie_replay_wall=%e ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/archive/d1.aie --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt
++ grep -E 'molecules|wall'
+molecules 108747545 -> assigned 108329201 -> 49972932 UMIs in 17690037 entries | load 5.9s, +anno 2.1s, +replay 14.6s, total 25.7s
+d1_aie_replay_wall=30.50
++ /usr/bin/time -f d1_frombam_wall=%e ${GRAVLAX_PROJECT_ROOT}/src/target/release/aie replay-rows ${GRAVLAX_PROJECT_ROOT}/runs/ingest/d1/Aligned.sortedByCoord.out.bam --from-bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --gtf ${GRAVLAX_PROJECT_ROOT}/annotations/gencode.v49.annotation.gtf --barcodes ${GRAVLAX_PROJECT_ROOT}/runs/oracle/d1/v49/Solo.out/Gene/raw/barcodes.tsv --out-dir ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt-frombam
++ grep -E 'molecules|wall'
+molecules 108747545 -> assigned 108329201 -> 49972932 UMIs in 17690037 entries | load 389.3s, +anno 3.2s, +replay 52.2s, total 447.8s
+d1_frombam_wall=472.06
++ ok=1
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/matrix.mtx
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt-frombam/matrix.mtx ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/matrix.mtx
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/barcodes.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt-frombam/barcodes.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/barcodes.tsv
++ for f in matrix.mtx barcodes.tsv features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/features.tsv
++ cmp -s ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-mt-frombam/features.tsv ${GRAVLAX_PROJECT_ROOT}/runs/replay/d1-frombam/features.tsv
++ '[' 1 = 1 ']'
++ echo 'd1 REGRESSION: BYTE-IDENTICAL'
+d1 REGRESSION: BYTE-IDENTICAL
++ echo MTBGZF_DONE
+MTBGZF_DONE

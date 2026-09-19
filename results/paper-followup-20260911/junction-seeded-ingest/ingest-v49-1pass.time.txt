@@ -1,0 +1,23 @@
+	Command being timed: "taskset -c 0-23 ${GRAVLAX_PROJECT_ROOT}/runs/gravlax-release-0.2.2-20260910/aie-0.2.2 ingest-archive ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/align-v49-1pass/Aligned.sortedByCoord.out.bam --whitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --out ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/d0-v49-1pass.aie --zstd-level 19 --junction-discovery frozen-catalogue --junction-catalogue ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/v49.sjdb.tab --alignment-annotation ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/v49.sjdb.tab --alignment-index-identity ${GRAVLAX_PROJECT_ROOT}/ref/star-base (annotation-free STAR 2.7.11b index; seed inserted at mapping, sjdbOverhang 90) --alignment-chemistry 10x-3p-v3 --alignment-log ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/align-v49-1pass/Log.out --report-format json --report-output ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/ingest-v49-1pass.report.json"
+	User time (seconds): 156.87
+	System time (seconds): 17.44
+	Percent of CPU this job got: 251%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6070428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 14
+	Minor (reclaiming a frame) page faults: 1383749
+	Voluntary context switches: 2558037
+	Involuntary context switches: 254
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 217768
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,15 @@
+2026-08-30 D0 randomized Gene-only counts comparison
+protocol scripts/116_d0_randomized_counts_comparison.sh at scripts commit 4e3d6de60a1461e39eff462142135a83c2960d1a
+gravlax ef2126684378d8ba0dad5605ff81eed635bcab6a
+binary 915fede315c9a6778256148c1afe3e4f10a5425fc02b1e224a2df557f89c57dd
+STAR 2.7.11b; 24 threads; host analysis-host
+schedule blocks: STAR/AIE, AIE/STAR, STAR/AIE, AIE/STAR, STAR/AIE
+warm STAR seconds 83.71 83.80 83.05 84.60 82.44; median 83.71
+warm AIE seconds 2.44 2.41 2.44 2.45 2.45; median 2.44
+warm ratio of medians 34.307377
+warm median RSS KB STAR 34934448 AIE 6942012 ratio 5.032323
+cold helper POSIX_FADV_DONTNEED; host-wide caches not dropped
+cold AIE: 3 files 3550063189 advised bytes, 0 failures, 2.75 s, fs inputs 6933728
+cold STAR: 19 files 35495765769 advised bytes, 0 failures, 85.82 s, fs inputs 59158824
+cold wall ratio 31.207273
+all 12 executions passed byte-identity against their separate frozen references

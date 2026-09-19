@@ -1,0 +1,14 @@
+2026-08-30 D0 streamed molecule-CRAM quantification
+protocol scripts/117_stream_molecule_cram_replay.sh at scripts commit 1b64f8322ac59ecdfbfdf265f556255788a604b9
+gravlax ef2126684378d8ba0dad5605ff81eed635bcab6a
+samtools 1.23.1; both processes taskset to shared CPUs 0-23
+CRAM 258151959 bytes d494242c81ace999e8d1ca1ffe710fa6ed641bb56d41deb06068cfc23a19ed0e
+transport named pipe; no materialized BAM
+warm pipeline seconds 21.251791052 20.598180885 20.651640174 20.876267525 20.352123186
+warm median 20.651640174 mean 20.7460005644 sd 0.3386323332 CV 0.0163227766
+warm decoder median 18.02; replay-process median 20.64; reported load median about 18.3
+native AIE median 2.44 -> molecule-CRAM/AIE runtime ratio 8.463787
+counts-only STARsolo median 83.71 -> STARsolo/molecule-CRAM ratio 4.053431
+storage molecule-CRAM/AIE ratio 2.323864
+cold: 5 inputs / 6848551696 advised bytes / 0 failures / 20.742647199 s
+all 6 runs byte-identical to frozen D0 matrix, features, and barcodes

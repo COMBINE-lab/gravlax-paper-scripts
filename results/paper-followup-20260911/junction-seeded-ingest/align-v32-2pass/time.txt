@@ -1,0 +1,23 @@
+	Command being timed: "taskset -c 0-23 ${GRAVLAX_PROJECT_ROOT}/env/sc/bin/STAR --runThreadN 24 --genomeDir ${GRAVLAX_PROJECT_ROOT}/ref/star-base --sjdbFileChrStartEnd ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/v32.sjdb.tab --sjdbOverhang 90 --twopassMode Basic --readFilesIn ${GRAVLAX_PROJECT_ROOT}/data/fastq/pbmc_1k_v3_S1_R2_001.fastq.gz ${GRAVLAX_PROJECT_ROOT}/data/fastq/pbmc_1k_v3_S1_R1_001.fastq.gz --readFilesCommand zcat --soloType CB_UMI_Simple --soloCBwhitelist ${GRAVLAX_PROJECT_ROOT}/data/3M-february-2018.txt --soloCBstart 1 --soloCBlen 16 --soloUMIstart 17 --soloUMIlen 12 --soloBarcodeReadLength 0 --soloFeatures SJ --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --outSAMattributes NH HI AS nM CR UR CY UY --outSAMtype BAM SortedByCoordinate --limitBAMsortRAM 32000000000 --outSAMunmapped Within --outFileNamePrefix ${GRAVLAX_PROJECT_ROOT}/runs/paper-followup-20260911/junction-seeded-ingest/align-v32-2pass/"
+	User time (seconds): 3463.42
+	System time (seconds): 48.06
+	Percent of CPU this job got: 1035%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:39.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 39558896
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 9
+	Minor (reclaiming a frame) page faults: 28498380
+	Voluntary context switches: 868464
+	Involuntary context switches: 8912
+	Swaps: 0
+	File system inputs: 56713832
+	File system outputs: 64870960
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

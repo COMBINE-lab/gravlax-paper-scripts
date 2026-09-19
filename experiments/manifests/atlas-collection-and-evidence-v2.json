@@ -1,0 +1,83 @@
+{
+  "schema": "gravlax.atlas-collection-and-evidence-campaign.v1",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_BENCHMARKS",
+  "date": "2026-09-01",
+  "base_commits": {
+    "gravlax": "e378516a0fb6602e63d626d0c49fb11e58f463c8",
+    "paper_scripts": "22a69e5a535c12c368b34007e744abc9f6637b09",
+    "paper": "61fc84a7a7ed7b76ad7fdcb1866b56dc37bdc054"
+  },
+  "ordered_tracks": [
+    "optional federated collection index and exact planner",
+    "bounded-memory cohort execution and sparse streaming output",
+    "adaptive annotation-independent evidence frontier",
+    "sparse oriented terminal-tail evidence"
+  ],
+  "collection": {
+    "artifact": "derived, rebuildable, versioned sidecar; authoritative evidence remains in standalone .aie archives",
+    "required": [
+      "archive identities and reference signatures",
+      "global junction catalogue with sample presence and support upper bounds",
+      "global interval-to-archive-to-local-chunk routing",
+      "strict deterministic construction and malformed-input rejection",
+      "human-readable query-plan accounting",
+      "exact region, junction, and junction-set answers relative to naive archive federation"
+    ],
+    "forbidden": [
+      "annotation-, PolyASite-, or cell-group-dependent state in authoritative archives",
+      "silently accepting duplicate archives or mixed references",
+      "approximating exact molecule or cell counts from support upper bounds"
+    ],
+    "gates": {
+      "exactness": "byte- or value-identical answers for synthetic adversarial cases and frozen real queries",
+      "determinism": "two builds from the same manifest are byte-identical",
+      "metadata_only_build": "collection construction does not decode molecule chunks",
+      "size": "sidecar no larger than 5 percent of aggregate archive bytes",
+      "latency": "no more than 10 percent regression on the existing six-archive targeted query and measurable pruning on a sparse multi-archive panel",
+      "incrementality": "adding a segment does not rewrite existing segments and gives the same logical catalogue as a clean rebuild"
+    }
+  },
+  "bounded_cohort": {
+    "primary_workload": "eight-donor SEZ PolyASite mixture",
+    "required": [
+      "memory bounded by an active chromosome or gene shard rather than total cohort molecules",
+      "same cross-fitted kernels, EM arithmetic, recurrence, inference, and row ordering",
+      "versioned sparse output with explicit dimensions so omitted rows reconstruct as logical zeros",
+      "streaming conversion to interoperable columnar output when the dependency cost is acceptable"
+    ],
+    "gates": {
+      "identity": "sites.tsv, genes.tsv, and fragment-kernel.tsv remain byte-identical",
+      "memory": "maximum RSS at most 2.25 GiB on the frozen eight-donor workload",
+      "runtime": "wall time at most 30 seconds on the frozen host",
+      "output": "large federated event output at least 4-fold smaller than the current pushed-down JSON without losing schema fields or zero semantics"
+    }
+  },
+  "adaptive_frontier": {
+    "status": "optional archive-v2 pilot; default two-representative mode remains unchanged until promotion",
+    "definition": "retain a deterministic annotation-independent antichain of nondominated read geometries within each molecule junction chain, plus exact chain multiplicity",
+    "gates": {
+      "default_regression": "current mode remains byte-identical",
+      "format_safety": "explicit layout/version guard and malformed-frontier rejection",
+      "storage": "no more than 5 percent archive-size premium for a promoted default",
+      "accuracy": "at least 20 percent relative improvement in the principal incomplete-chain velocity discrepancy or at least 25 percent relative improvement in Gene replay discrepancy, with no component worsening by more than 0.25 percentage point",
+      "theory": "state and test the preserved predicate class; publish counterexamples outside it"
+    }
+  },
+  "terminal_tail": {
+    "status": "optional sparse pilot; absence of tail evidence is never interpreted as evidence of absence",
+    "stored_fields": "only oriented terminal soft-clip tail evidence and its genomic anchor/confidence; never general sequence or qualities",
+    "gates": {
+      "default_regression": "archive bytes and replay are unchanged when disabled",
+      "storage": "no more than 2 percent archive-size premium and target below 0.5 bit per input read",
+      "orientation": "synthetic forward/reverse and clipped/unclipped cases are exact",
+      "accuracy": "tail-positive evidence is enriched at external PolyASite candidates versus matched noncandidate/internal-priming controls in at least three independent 3-prime datasets",
+      "utility": "held-out candidate discrimination or calibration improves in at least three datasets; otherwise retain only as an audit, not an archive feature"
+    }
+  },
+  "claim_guards": [
+    "Collection support totals are routing bounds, not cell-group counts.",
+    "A fragment endpoint is not a cleavage site.",
+    "An adaptive evidence frontier is sufficient only for the explicitly proved predicate class.",
+    "Negative or underpowered pilots remain recorded and cannot be rescued by relaxing gates after inspection."
+  ]
+}

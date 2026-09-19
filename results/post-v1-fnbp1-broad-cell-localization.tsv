@@ -1,0 +1,8 @@
+group	full_H5_nuclei	archive_selected_nuclei	event_bearing_cells	event_bearing_cells_per_1000_full_H5_nuclei	include_only	exclude_only	both	informative_umis	inclusion_usage	inclusion_usage_wilson_95_low	inclusion_usage_wilson_95_high
+neuronal	923	635	4	4.333694	4	0	0	4	1.000000	0.510109	1.000000
+oligodendrocyte_OPC	3206	2345	30	9.357455	30	0	0	30	1.000000	0.886487	1.000000
+astrocyte	788	571	7	8.883249	7	0	0	7	1.000000	0.645670	1.000000
+microglia_immune	1222	386	4	3.273322	2	2	0	4	0.500000	0.150039	0.849961
+vascular	286	167	1	3.496503	1	0	0	1	1.000000	0.206549	1.000000
+unresolved	3533	2280	27	7.642230	27	0	0	27	1.000000	0.875445	1.000000
+ambiguous_or_doublet	303	200	1	3.300330	1	0	0	1	1.000000	0.206549	1.000000

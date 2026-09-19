@@ -1,0 +1,605 @@
+{
+  "status": "untouched_confirmation_complete",
+  "dataset": "D4",
+  "protocol": {
+    "date": "2026-08-31",
+    "dataset": "D4",
+    "threads": "24",
+    "gravlax_commit": "69a18c2fc227691793907a2a35b3b11a19b8dffc",
+    "scripts_commit": "9417c1ad3d41ec30644ebf47296be3969d73bbbd",
+    "aie_binary_sha256": "f986b5f888268f6df178c9f851542018af90ca92ff008af4bade0a19327604f5",
+    "manifest_sha256": "e4cecb3a015b60ab71c672a2309b1da824db16a749a38b8240904afa6bf406c1",
+    "archive_sha256": "031330c0de6c18d0e93eacf76e2dd617db24dbab6b6d0dbb39c537dfefaf97e9",
+    "gtf_sha256": "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914",
+    "groups_sha256": "b5032541a9676ba953c3a65e68d7d058ffd79c93282b608906e41c5bdfbd9ba1",
+    "shuffled_groups_sha256": "fcf1ee3803babe0a5771347c18ac019904d8ca667e0884abc41f40f59f2089cc",
+    "group_selection_sha256": "112886f2ac43e7c11d43bc31f04dc29ca2aff000120b94efbb4f7b37353584cf",
+    "hostname": "analysis-host",
+    "kernel": "Linux 4.18.0-553.156.1.el8_10.x86_64 x86_64 GNU/Linux"
+  },
+  "arms": {
+    "hybrid_real": {
+      "means": {
+        "negative_log_loss": 0.06637680326977129,
+        "multiclass_brier": 0.030211932646435184,
+        "top1_percent": 98.0513250880914,
+        "expected_accuracy_percent": 96.90798590254416
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 118290,
+          "negative_log_loss": 0.06734139376793728,
+          "multiclass_brier": 0.030888741738506278,
+          "top1_percent": 98.03195536393609,
+          "expected_accuracy_percent": 96.86941241930461
+        },
+        {
+          "seed": 17,
+          "n": 117980,
+          "negative_log_loss": 0.06401440404294449,
+          "multiclass_brier": 0.029524444041263462,
+          "top1_percent": 98.07424987285981,
+          "expected_accuracy_percent": 96.94679907273938
+        },
+        {
+          "seed": 29,
+          "n": 118275,
+          "negative_log_loss": 0.06777461199843207,
+          "multiclass_brier": 0.030222612159535818,
+          "top1_percent": 98.04777002747834,
+          "expected_accuracy_percent": 96.90774621558845
+        }
+      ],
+      "evidence_depth_strata": [
+        {
+          "name": "0-1",
+          "n_by_seed": [
+            7691,
+            7733,
+            7704
+          ],
+          "mean_negative_log_loss": 0.32110745746570435,
+          "mean_multiclass_brier": 0.1637953472623547,
+          "mean_top1_percent": 87.80782081228101,
+          "mean_expected_accuracy_percent": 85.64476783188411
+        },
+        {
+          "name": "1-4",
+          "n_by_seed": [
+            5464,
+            5262,
+            5439
+          ],
+          "mean_negative_log_loss": 0.19871494704221626,
+          "mean_multiclass_brier": 0.10674801776565894,
+          "mean_top1_percent": 92.37684655802076,
+          "mean_expected_accuracy_percent": 90.24677862199356
+        },
+        {
+          "name": "4-16",
+          "n_by_seed": [
+            12721,
+            12627,
+            12831
+          ],
+          "mean_negative_log_loss": 0.10347235414261875,
+          "mean_multiclass_brier": 0.04947267012128959,
+          "mean_top1_percent": 97.03030540683217,
+          "mean_expected_accuracy_percent": 95.38410865910434
+        },
+        {
+          "name": "16+",
+          "n_by_seed": [
+            92414,
+            92358,
+            92301
+          ],
+          "mean_negative_log_loss": 0.03226773247973317,
+          "mean_multiclass_brier": 0.011936130915442022,
+          "mean_top1_percent": 99.37850556575268,
+          "mean_expected_accuracy_percent": 98.4470682080688
+        }
+      ]
+    },
+    "hybrid_shuffled": {
+      "means": {
+        "negative_log_loss": 0.06705876719737112,
+        "multiclass_brier": 0.030764863037617652,
+        "top1_percent": 97.97261663255132,
+        "expected_accuracy_percent": 96.86623955951852
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 118290,
+          "negative_log_loss": 0.06808893248625533,
+          "multiclass_brier": 0.03144649362058905,
+          "top1_percent": 97.96347958407304,
+          "expected_accuracy_percent": 96.8255207037905
+        },
+        {
+          "seed": 17,
+          "n": 117980,
+          "negative_log_loss": 0.06471117700538599,
+          "multiclass_brier": 0.030137015670634527,
+          "top1_percent": 97.9767757246991,
+          "expected_accuracy_percent": 96.90256289965528
+        },
+        {
+          "seed": 29,
+          "n": 118275,
+          "negative_log_loss": 0.06837619210047204,
+          "multiclass_brier": 0.030711079821629378,
+          "top1_percent": 97.97759458888184,
+          "expected_accuracy_percent": 96.87063507510975
+        }
+      ],
+      "evidence_depth_strata": [
+        {
+          "name": "0-1",
+          "n_by_seed": [
+            7691,
+            7733,
+            7704
+          ],
+          "mean_negative_log_loss": 0.32449987765189137,
+          "mean_multiclass_brier": 0.16593283281607532,
+          "mean_top1_percent": 87.77313773959133,
+          "mean_expected_accuracy_percent": 85.51297867194329
+        },
+        {
+          "name": "1-4",
+          "n_by_seed": [
+            5464,
+            5262,
+            5439
+          ],
+          "mean_negative_log_loss": 0.19989047806035753,
+          "mean_multiclass_brier": 0.1081038425420036,
+          "mean_top1_percent": 92.18507956668702,
+          "mean_expected_accuracy_percent": 90.12219031542274
+        },
+        {
+          "name": "4-16",
+          "n_by_seed": [
+            12721,
+            12627,
+            12831
+          ],
+          "mean_negative_log_loss": 0.10413765215112386,
+          "mean_multiclass_brier": 0.05041569917152935,
+          "mean_top1_percent": 96.8546788811538,
+          "mean_expected_accuracy_percent": 95.34349492933181
+        },
+        {
+          "name": "16+",
+          "n_by_seed": [
+            92414,
+            92358,
+            92301
+          ],
+          "mean_negative_log_loss": 0.03269678082743549,
+          "mean_multiclass_brier": 0.012256087719235887,
+          "mean_top1_percent": 99.31606541800393,
+          "mean_expected_accuracy_percent": 98.41753159581579
+        }
+      ]
+    },
+    "Dirichlet_proxy_real": {
+      "means": {
+        "negative_log_loss": 0.06668326655991717,
+        "multiclass_brier": 0.030198755508941955,
+        "top1_percent": 98.03328465712549,
+        "expected_accuracy_percent": 96.92777045483625
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 118290,
+          "negative_log_loss": 0.06771538182159866,
+          "multiclass_brier": 0.030917457106794197,
+          "top1_percent": 98.01166624397666,
+          "expected_accuracy_percent": 96.88764526790563
+        },
+        {
+          "seed": 17,
+          "n": 117980,
+          "negative_log_loss": 0.06431693422925137,
+          "multiclass_brier": 0.029485347069972377,
+          "top1_percent": 98.06916426512969,
+          "expected_accuracy_percent": 96.96869978444178
+        },
+        {
+          "seed": 29,
+          "n": 118275,
+          "negative_log_loss": 0.0680174836289015,
+          "multiclass_brier": 0.0301934623500593,
+          "top1_percent": 98.01902346227013,
+          "expected_accuracy_percent": 96.92696631216131
+        }
+      ],
+      "evidence_depth_strata": [
+        {
+          "name": "0-1",
+          "n_by_seed": [
+            7691,
+            7733,
+            7704
+          ],
+          "mean_negative_log_loss": 0.32278846863076766,
+          "mean_multiclass_brier": 0.16457299371330705,
+          "mean_top1_percent": 87.59587692114614,
+          "mean_expected_accuracy_percent": 85.63873321068013
+        },
+        {
+          "name": "1-4",
+          "n_by_seed": [
+            5464,
+            5262,
+            5439
+          ],
+          "mean_negative_log_loss": 0.20063166018940481,
+          "mean_multiclass_brier": 0.10762962648952044,
+          "mean_top1_percent": 92.21088685483214,
+          "mean_expected_accuracy_percent": 90.2406706787663
+        },
+        {
+          "name": "4-16",
+          "n_by_seed": [
+            12721,
+            12627,
+            12831
+          ],
+          "mean_negative_log_loss": 0.10430551682420501,
+          "mean_multiclass_brier": 0.049400524224451826,
+          "mean_top1_percent": 97.00941600140281,
+          "mean_expected_accuracy_percent": 95.39752923685485
+        },
+        {
+          "name": "16+",
+          "n_by_seed": [
+            92414,
+            92358,
+            92301
+          ],
+          "mean_negative_log_loss": 0.0322928701129977,
+          "mean_multiclass_brier": 0.011812836536600193,
+          "mean_top1_percent": 99.38572519964852,
+          "mean_expected_accuracy_percent": 98.47139555264492
+        }
+      ]
+    },
+    "Dirichlet_proxy_shuffled": {
+      "means": {
+        "negative_log_loss": 0.06740670250034973,
+        "multiclass_brier": 0.03079512994637067,
+        "top1_percent": 98.0073250746615,
+        "expected_accuracy_percent": 96.87894551269143
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 118290,
+          "negative_log_loss": 0.06855648603041949,
+          "multiclass_brier": 0.031540675001998926,
+          "top1_percent": 97.98545946402908,
+          "expected_accuracy_percent": 96.83507588422961
+        },
+        {
+          "seed": 17,
+          "n": 117980,
+          "negative_log_loss": 0.06502625035632983,
+          "multiclass_brier": 0.03012705912146305,
+          "top1_percent": 98.0301746058654,
+          "expected_accuracy_percent": 96.91787032432822
+        },
+        {
+          "seed": 29,
+          "n": 118275,
+          "negative_log_loss": 0.06863737111429989,
+          "multiclass_brier": 0.030717655715650032,
+          "top1_percent": 98.00634115409004,
+          "expected_accuracy_percent": 96.88389032951648
+        }
+      ],
+      "evidence_depth_strata": [
+        {
+          "name": "0-1",
+          "n_by_seed": [
+            7691,
+            7733,
+            7704
+          ],
+          "mean_negative_log_loss": 0.3274264383897769,
+          "mean_multiclass_brier": 0.16743528751013562,
+          "mean_top1_percent": 87.63900484989738,
+          "mean_expected_accuracy_percent": 85.45039902630778
+        },
+        {
+          "name": "1-4",
+          "n_by_seed": [
+            5464,
+            5262,
+            5439
+          ],
+          "mean_negative_log_loss": 0.20217032632812915,
+          "mean_multiclass_brier": 0.10947880889343559,
+          "mean_top1_percent": 92.10475170503905,
+          "mean_expected_accuracy_percent": 90.05970134273493
+        },
+        {
+          "name": "4-16",
+          "n_by_seed": [
+            12721,
+            12627,
+            12831
+          ],
+          "mean_negative_log_loss": 0.10492060984173508,
+          "mean_multiclass_brier": 0.05051992503572905,
+          "mean_top1_percent": 96.84169246383475,
+          "mean_expected_accuracy_percent": 95.34419535883892
+        },
+        {
+          "name": "16+",
+          "n_by_seed": [
+            92414,
+            92358,
+            92301
+          ],
+          "mean_negative_log_loss": 0.03265682232194844,
+          "mean_multiclass_brier": 0.012074820191325731,
+          "mean_top1_percent": 99.37814400358718,
+          "mean_expected_accuracy_percent": 98.44256769870117
+        }
+      ]
+    },
+    "fixed_convex_real": {
+      "means": {
+        "negative_log_loss": 0.06730302325314431,
+        "multiclass_brier": 0.03049710251531205,
+        "top1_percent": 98.0513250880914,
+        "expected_accuracy_percent": 96.81526143415844
+      },
+      "by_seed": [
+        {
+          "seed": 7,
+          "n": 118290,
+          "negative_log_loss": 0.06823557944252014,
+          "multiclass_brier": 0.03115826604105754,
+          "top1_percent": 98.03195536393609,
+          "expected_accuracy_percent": 96.77704419595258
+        },
+        {
+          "seed": 17,
+          "n": 117980,
+          "negative_log_loss": 0.06494474657854443,
+          "multiclass_brier": 0.02981230791731997,
+          "top1_percent": 98.07424987285981,
+          "expected_accuracy_percent": 96.8553414806228
+        },
+        {
+          "seed": 29,
+          "n": 118275,
+          "negative_log_loss": 0.06872874373836836,
+          "multiclass_brier": 0.03052073358755865,
+          "top1_percent": 98.04777002747834,
+          "expected_accuracy_percent": 96.81339862589991
+        }
+      ],
+      "evidence_depth_strata": [
+        {
+          "name": "0-1",
+          "n_by_seed": [
+            7691,
+            7733,
+            7704
+          ],
+          "mean_negative_log_loss": 0.32108287752028847,
+          "mean_multiclass_brier": 0.163790898000421,
+          "mean_top1_percent": 87.80782081228101,
+          "mean_expected_accuracy_percent": 85.6447956452203
+        },
+        {
+          "name": "1-4",
+          "n_by_seed": [
+            5464,
+            5262,
+            5439
+          ],
+          "mean_negative_log_loss": 0.1986837122300814,
+          "mean_multiclass_brier": 0.10674146190571132,
+          "mean_top1_percent": 92.3707460211735,
+          "mean_expected_accuracy_percent": 90.24667360062892
+        },
+        {
+          "name": "4-16",
+          "n_by_seed": [
+            12721,
+            12627,
+            12831
+          ],
+          "mean_negative_log_loss": 0.10344381827412097,
+          "mean_multiclass_brier": 0.049478326513701654,
+          "mean_top1_percent": 97.03290328177047,
+          "mean_expected_accuracy_percent": 95.38269332342396
+        },
+        {
+          "name": "16+",
+          "n_by_seed": [
+            92414,
+            92358,
+            92301
+          ],
+          "mean_negative_log_loss": 0.033460782703915753,
+          "mean_multiclass_brier": 0.012301022106071318,
+          "mean_top1_percent": 99.378505124169,
+          "mean_expected_accuracy_percent": 98.32861387699315
+        }
+      ]
+    }
+  },
+  "factorial_contrasts": {
+    "model_form_relative_nll_improvement_hybrid_vs_proxy_real": 0.004595805004101272,
+    "model_form_hybrid_better_by_seed": [
+      true,
+      true,
+      true
+    ],
+    "group_information_relative_nll_improvement_real_vs_shuffled_hybrid": 0.010169646059741055,
+    "group_information_real_better_by_seed": [
+      true,
+      true,
+      true
+    ],
+    "model_form_absolute_brier_change_hybrid_minus_proxy": 1.3177137493228241e-05,
+    "model_form_brier_change_by_seed": [
+      -2.8715368287919596e-05,
+      3.909697129108464e-05,
+      2.9149809476519684e-05
+    ],
+    "model_form_top1_percentage_point_change_hybrid_minus_proxy": 0.018040430965911014,
+    "group_information_absolute_brier_change_real_minus_shuffled": -0.0005529303911824685,
+    "group_information_top1_percentage_point_change_real_minus_shuffled": 0.07870845554008099,
+    "proxy_group_information_relative_nll_improvement_real_vs_shuffled": 0.010732403657170535,
+    "difference_in_differences_NLL": -4.147201283272173e-05
+  },
+  "evidence_depth_comparison": [
+    {
+      "name": "0-1",
+      "n_by_seed": [
+        7691,
+        7733,
+        7704
+      ],
+      "reference": "fixed-convex",
+      "hybrid_mean_negative_log_loss": 0.32110745746570435,
+      "reference_mean_negative_log_loss": 0.32108287752028847,
+      "relative_nll_change_vs_reference": 7.65532737395133e-05,
+      "absolute_brier_change_vs_reference": 4.449261933714421e-06,
+      "top1_percentage_point_change_vs_reference": 0.0
+    },
+    {
+      "name": "1-4",
+      "n_by_seed": [
+        5464,
+        5262,
+        5439
+      ],
+      "reference": "fixed-convex",
+      "hybrid_mean_negative_log_loss": 0.19871494704221626,
+      "reference_mean_negative_log_loss": 0.1986837122300814,
+      "relative_nll_change_vs_reference": 0.00015720872025322166,
+      "absolute_brier_change_vs_reference": 6.555859947618425e-06,
+      "top1_percentage_point_change_vs_reference": 0.006100536847256421
+    },
+    {
+      "name": "4-16",
+      "n_by_seed": [
+        12721,
+        12627,
+        12831
+      ],
+      "reference": "fixed-convex",
+      "hybrid_mean_negative_log_loss": 0.10347235414261875,
+      "reference_mean_negative_log_loss": 0.10344381827412097,
+      "relative_nll_change_vs_reference": 0.0002758586155642974,
+      "absolute_brier_change_vs_reference": -5.6563924120608955e-06,
+      "top1_percentage_point_change_vs_reference": -0.00259787493830288
+    },
+    {
+      "name": "16+",
+      "n_by_seed": [
+        92414,
+        92358,
+        92301
+      ],
+      "reference": "Dirichlet-proxy",
+      "hybrid_mean_negative_log_loss": 0.03226773247973317,
+      "reference_mean_negative_log_loss": 0.0322928701129977,
+      "relative_nll_change_vs_reference": -0.0007784267293855307,
+      "absolute_brier_change_vs_reference": 0.00012329437884182892,
+      "top1_percentage_point_change_vs_reference": -0.007219633895843458
+    }
+  ],
+  "model_form_depth_residual_audit": [
+    {
+      "name": "0-1",
+      "n_by_seed": [
+        7691,
+        7733,
+        7704
+      ],
+      "absolute_nll_change_hybrid_minus_proxy": -0.0016810111650633064,
+      "absolute_brier_change_hybrid_minus_proxy": -0.0007776464509523517,
+      "top1_percentage_point_change_hybrid_minus_proxy": 0.21194389113486523
+    },
+    {
+      "name": "1-4",
+      "n_by_seed": [
+        5464,
+        5262,
+        5439
+      ],
+      "absolute_nll_change_hybrid_minus_proxy": -0.0019167131471885535,
+      "absolute_brier_change_hybrid_minus_proxy": -0.0008816087238615045,
+      "top1_percentage_point_change_hybrid_minus_proxy": 0.1659597031886193
+    },
+    {
+      "name": "4-16",
+      "n_by_seed": [
+        12721,
+        12627,
+        12831
+      ],
+      "absolute_nll_change_hybrid_minus_proxy": -0.0008331626815862581,
+      "absolute_brier_change_hybrid_minus_proxy": 7.21458968377664e-05,
+      "top1_percentage_point_change_hybrid_minus_proxy": 0.02088940542935802
+    },
+    {
+      "name": "16+",
+      "n_by_seed": [
+        92414,
+        92358,
+        92301
+      ],
+      "absolute_nll_change_hybrid_minus_proxy": -2.5137633264532555e-05,
+      "absolute_brier_change_hybrid_minus_proxy": 0.00012329437884182892,
+      "top1_percentage_point_change_hybrid_minus_proxy": -0.007219633895843458
+    }
+  ],
+  "acceptance": {
+    "model_form_hybrid_beats_proxy_on_all_seeds": true,
+    "model_form_mean_relative_nll_improvement_at_least_0_2_percent": true,
+    "group_information_real_beats_shuffled_on_all_seeds": true,
+    "group_information_mean_relative_nll_improvement_at_least_0_2_percent": true,
+    "model_form_mean_brier_does_not_increase": false,
+    "group_information_mean_brier_does_not_increase": true,
+    "top1_drop_vs_proxy_at_most_0_10_percentage_point": true,
+    "each_shallow_stratum_regression_vs_fixed_at_most_0_25_percent": true,
+    "high_stratum_regression_vs_proxy_at_most_0_25_percent": true,
+    "peak_rss_below_4_GiB": true
+  },
+  "verdict": "MARGINAL",
+  "next_step": "close_EM_branch_without_D3",
+  "full_hierarchical_Dirichlet": {
+    "licensed": false,
+    "structured_depth_residual_observed": true,
+    "replicated_real_group_signal_available": false,
+    "decision": "not_licensed_D4_did_not_open_replication"
+  },
+  "production_emission": "pooled",
+  "performance": {
+    "runs": 15,
+    "wall_seconds": {
+      "minimum": 2.72,
+      "median": 2.8,
+      "maximum": 2.9
+    },
+    "peak_rss_kib": {
+      "minimum": 1097176,
+      "median": 1119600,
+      "maximum": 1144444
+    }
+  }
+}

@@ -1,0 +1,23 @@
+	Command being timed: "uv run --with numpy==2.5.2 --python 3.12 python gravlax-paper-scripts/scripts/190_build_fnbp1_multidonor_feasibility.py --manifest gravlax-paper-scripts/experiments/manifests/fnbp1-multidonor-sez-validation.json --counts data/multidonor-fnbp1/gse234790/GSE234790_counts.txt.gz --metadata data/multidonor-fnbp1/gse234790/GSE234790_meta_data_counts.csv.gz --ena data/multidonor-fnbp1/gse234790/PRJNA983239-ena-runs.tsv --out runs/post-v1/fnbp1-multidonor-sez-feasibility-r1"
+	User time (seconds): 20.20
+	System time (seconds): 0.12
+	Percent of CPU this job got: 128%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 102864
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 54459
+	Voluntary context switches: 357
+	Involuntary context switches: 56
+	Swaps: 0
+	File system inputs: 320
+	File system outputs: 3200
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

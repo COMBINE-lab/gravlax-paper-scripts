@@ -1,0 +1,76 @@
+{
+  "baseline_commit": "0efabed0d3e92a72c432b4c815c2e0b70c7155e4",
+  "candidate_commit": "c1ef9c4d8a4f65c762bec118c98a79f0d746d512",
+  "configuration": {
+    "cpuset": "0-23",
+    "threads": 24,
+    "warm_repetitions": {
+      "discovery": 3,
+      "junction_query": 5,
+      "replay": 3
+    }
+  },
+  "correctness": {
+    "d0_default_discovery_sha256": "a130189b5091315d10eb65c7bcd202e772fad1b289e7e32d36ada11f777b3127",
+    "d1_default_discovery_sha256": "e0605e09515e6e08b50e087a0cc7d2473299a519646545f0e3a9ece6d0f3e110",
+    "d1_junction_query_sha256": "c67e88a6855bf9abfc7e2697ec861310e8f985070344620393bc6b9430ad9cc5",
+    "outputs_byte_identical": true,
+    "workspace_tests_passed": 94
+  },
+  "accepted": {
+    "default_discovery": {
+      "bounded_working_set": "at most two access units and at most 500000 molecules across a pair",
+      "d0": {
+        "baseline_median_max_rss_kb": 366344,
+        "baseline_median_wall_seconds": 3.36,
+        "candidate_median_max_rss_kb": 431264,
+        "candidate_median_wall_seconds": 2.3,
+        "rss_change_kb": 64920,
+        "wall_reduction_fraction": 0.31547619047619047
+      },
+      "d1": {
+        "baseline_median_max_rss_kb": 1311396,
+        "baseline_median_wall_seconds": 15.07,
+        "candidate_median_max_rss_kb": 1394400,
+        "candidate_median_wall_seconds": 10.67,
+        "rss_change_kb": 83004,
+        "wall_reduction_fraction": 0.291970802919708
+      },
+      "verdict": "accepted: the absolute extra decode working set is 63-81 MiB and capped rather than proportional to archive length"
+    },
+    "d1_whole_chromosome_junction_query_with_cells": {
+      "baseline_median_max_rss_kb": 1189836,
+      "baseline_median_wall_seconds": 0.51,
+      "candidate_median_max_rss_kb": 1048624,
+      "candidate_median_wall_seconds": 0.44,
+      "rss_change_fraction": -0.11868190237982379,
+      "wall_reduction_fraction": 0.13725490196078427,
+      "rows": 5089,
+      "verdict": "accepted: immutable archive tables and shapes are shared rather than deep-cloned"
+    }
+  },
+  "replay": {
+    "baseline": {
+      "d0_median_max_rss_kb": 1358860,
+      "d0_median_wall_seconds": 2.81,
+      "d1_median_max_rss_kb": 5375848,
+      "d1_median_wall_seconds": 7.12
+    },
+    "rejected_trials": [
+      {
+        "change": "fused decode and classification",
+        "d0_median_wall_seconds": 2.82,
+        "d1_median_wall_seconds": 8.42,
+        "reason": "D1 regressed by 18.3%; change reverted"
+      },
+      {
+        "change": "in-place reducer compaction",
+        "d0_median_wall_seconds": 2.77,
+        "d1_median_wall_seconds": 7.08,
+        "reason": "less than 2% improvement and no stable RSS gain; change reverted"
+      }
+    ],
+    "verdict": "no replay change passed the predeclared 10% wall-time gate; retain the existing bounded streaming implementation"
+  },
+  "schema": "gravlax.hotpath-optimization.v1"
+}

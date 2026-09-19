@@ -1,0 +1,900 @@
+#!/usr/bin/env python3
+"""Fail-closed reducer for the prospective Gate-A archive-root benchmark."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import re
+from pathlib import Path
+from typing import Any, Iterable, Mapping
+
+from archive_root_gate_common import (
+    GateError,
+    load_json,
+    median,
+    parse_archive,
+    parse_gnu_time,
+    require,
+    self_test_blake3,
+    sha256_file,
+    tree_digest,
+    validate_artifact_manifest,
+)
+
+
+ROOT_DOMAIN = b"gravlax-aie-directory-root-v2\0"
+SAMPLES = tuple("ABCDEFGH")
+SOURCE = {
+    "A": (110_183_760, "029de28423c59a8b9ca283e73687a9501cd7533cfd508788b61b15e79b751463"),
+    "B": (83_674_178, "4feced152203593f22ddb5a13207dbcd7dd0be42e08d229c5209a9433105e474"),
+    "C": (68_177_196, "9067a7d94acc472085a882b139e512a8e28dd1b39f761f9b9d2b4c6c0a697076"),
+    "D": (397_844_161, "4f69add3177ebee40584aea2b4c1e8e40a81a1b64a32c455c27e502cd1e0b1f9"),
+    "E": (64_156_624, "3afe043952a1d1c1b4d831365d3c12b4bdbd2c040d09e4c5a99defde964d76e5"),
+    "F": (91_947_535, "8850c98d1453965fbce69fbb5cad17a71ee8714e5c1d2303dabff1c4e1e8ec55"),
+    "G": (436_377_659, "19e9672274ef24bb194926ac0fc66e3c3c1b788ece74f1e478e9e04f7a7ddee3"),
+    "H": (73_675_578, "d26731d109a6c0b74afe95e32f1471a290fa8e274f1e75c4ec7e55d70673375c"),
+}
+D0_BYTES = 111_087_381
+D0_SHA256 = "d7c11d4258f7b78b5c3a20ebc5349e3a1f1f52a0279425701d14acbf79948842"
+GTF_BYTES = 3_323_462_848
+GTF_SHA256 = "ff32fd55c6799b3b94fe10aa17b2b5d4da952fa1de12fe44afadf32e949ec914"
+BARCODES_BYTES = 115_512_960
+BARCODES_SHA256 = "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+BUILD_SECTIONS = {
+    "meta",
+    "chroms",
+    "rans.tables",
+    "index.chunks",
+    "index.junctions",
+    "index.jpost",
+}
+QUERY_KINDS = ("dense", "sparse", "absent", "region", "jset")
+TIMED_QUERY_KINDS = ("dense", "sparse", "jset")
+COLLECTION_STRUCTURAL_COUNT_FIELDS = (
+    "segment_junctions",
+    "archive_routes",
+    "chunk_postings",
+)
+EXPECTED_TOTALS = {
+    "dense": {"cells": 180, "umis": 182},
+    "sparse": {"cells": 4, "umis": 4},
+    "absent": {"cells": 0, "umis": 0},
+    "region": {"cells": 20_019, "molecules": 74_848, "umis": 74_352},
+    "jset": {
+        "both": 0,
+        "exclude_only": 4,
+        "include_only": 182,
+        "informative_umis": 186,
+        "usage_fraction": 182 / 186,
+    },
+}
+EXPECTED_REPLAY_DIAGNOSTICS = {
+    "gene": {
+        "molecules": 22_156_853,
+        "assigned": 21_197_710,
+        "umis": 10_393_179,
+        "entries": 3_600_217,
+    },
+    "velocity": {
+        "molecules": 22_156_853,
+        "umis": 14_298_196,
+        "entries": 4_998_654,
+    },
+}
+REQUIRED_FIXTURE_CASES = {
+    "zero_sections": "accept",
+    "one_section": "accept",
+    "many_sections": "accept",
+    "unknown_optional_section": "accept",
+    "maximum_legal_name": "accept",
+    "unselected_corruption_lazy_read": "accept",
+    "bad_magic": "reject",
+    "future_version": "reject",
+    "root_mutation": "reject",
+    "directory_byte_mutation": "reject",
+    "entry_order_mutation": "reject",
+    "name_mutation": "reject",
+    "offset_mutation": "reject",
+    "raw_length_mutation": "reject",
+    "compressed_length_mutation": "reject",
+    "payload_digest_mutation": "reject",
+    "inline_header_mutation": "reject",
+    "terminator_mutation": "reject",
+    "footer_mutation": "reject",
+    "payload_mutation": "reject",
+    "swapped_payloads": "reject",
+    "overlap": "reject",
+    "gap": "reject",
+    "truncation": "reject",
+    "trailing_bytes": "reject",
+    "decompressed_length_mismatch": "reject",
+    "allocation_bomb": "reject",
+    "compression_bomb": "reject",
+    "selected_corruption_normal_read": "reject",
+    "unselected_corruption_full_verify": "reject",
+}
+
+
+def exact_keys(value: Mapping[str, Any], keys: set[str], label: str) -> None:
+    require(type(value) is dict and set(value) == keys, f"{label}: fields changed: {sorted(value)}")
+
+
+def logical_path(path: Path, project_root: Path) -> str:
+    resolved = path.resolve()
+    require(resolved.is_relative_to(project_root), f"artifact is outside project root: {resolved}")
+    value = resolved.relative_to(project_root).as_posix()
+    require(value and "\t" not in value and "\n" not in value, f"unsafe artifact path: {value!r}")
+    return value
+
+
+def excluded_artifact_inventory(
+    *,
+    project_root: Path,
+    run: Path,
+    run_manifest: Mapping[str, Any],
+    binary: Path,
+    binary_sha256: str,
+    archives: Mapping[str, Mapping[str, Any]],
+    replay_artifacts: Mapping[Path, Mapping[str, Any]],
+) -> str:
+    """Build the compact inventory for large/rebuildable Gate-A outputs.
+
+    The run-tree row binds every retained byte through the driver's complete manifest.  The
+    individual archive, collection, and matrix rows make the excluded scientific artifacts easy
+    to locate and audit without duplicating them in Git.
+    """
+    role = (
+        "generated by scripts/209_benchmark_archive_root.py and validated by "
+        "scripts/210_validate_archive_root.py; do not commit the artifact"
+    )
+    rows: list[tuple[str, str, int, str, str, str]] = []
+
+    def add(
+        path: Path,
+        kind: str,
+        size: int,
+        digest_scheme: str,
+        digest: str,
+        description: str = role,
+    ) -> None:
+        require(type(size) is int and size >= 0, f"bad inventory size for {path}")
+        require(re.fullmatch(r"[0-9a-f]{64}", digest) is not None, f"bad inventory digest for {path}")
+        for value in (kind, digest_scheme, description):
+            require("\t" not in value and "\n" not in value, "unsafe inventory field")
+        rows.append((logical_path(path, project_root), kind, size, digest_scheme, digest, description))
+
+    add(
+        run,
+        "gate_a_run_tree",
+        run_manifest["bytes"],
+        "complete-artifact-manifest-sha256",
+        run_manifest["manifest_sha256"],
+    )
+    add(binary, "executable", binary.stat().st_size, "sha256", binary_sha256)
+    for sample in (*SAMPLES, "D0"):
+        record = archives[sample]
+        add(
+            run / "archives" / f"{sample}.v2.aie",
+            "rooted_aie",
+            record["sealed_bytes"],
+            "sha256",
+            record["sealed_sha256"],
+        )
+    for path in sorted((run / "collections").rglob("*.aicollection")):
+        add(path, "collection", path.stat().st_size, "sha256", sha256_file(path))
+    for path, digest in sorted(replay_artifacts.items(), key=lambda row: str(row[0])):
+        add(
+            path,
+            "matrix_tree",
+            sum(record["bytes"] for record in digest["files"]),
+            "canonical-tree-sha256",
+            digest["tree_sha256"],
+        )
+    require(len({(row[0], row[1]) for row in rows}) == len(rows), "duplicate inventory row")
+    rows.sort(key=lambda row: (row[0], row[1]))
+    lines = ["logical_path\tkind\tbytes\tdigest_scheme\tdigest\trole_and_regeneration"]
+    lines.extend("\t".join(map(str, row)) for row in rows)
+    return "\n".join(lines) + "\n"
+
+
+def write_pass_outputs(
+    *,
+    result_path: Path,
+    result: Mapping[str, Any],
+    inventory_path: Path,
+    inventory: str,
+) -> None:
+    """Publish the compact inventory and PASS only after both complete temporary writes."""
+    result_path.parent.mkdir(parents=True, exist_ok=True)
+    inventory_path.parent.mkdir(parents=True, exist_ok=True)
+    result_temporary = result_path.with_name(result_path.name + ".tmp")
+    inventory_temporary = inventory_path.with_name(inventory_path.name + ".tmp")
+    require(not result_temporary.exists(), f"stale temporary output {result_temporary}")
+    require(not inventory_temporary.exists(), f"stale temporary output {inventory_temporary}")
+    try:
+        result_temporary.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+        inventory_temporary.write_text(inventory)
+        os.replace(inventory_temporary, inventory_path)
+        try:
+            os.replace(result_temporary, result_path)
+        except OSError:
+            inventory_path.unlink(missing_ok=True)
+            raise
+    finally:
+        result_temporary.unlink(missing_ok=True)
+        inventory_temporary.unlink(missing_ok=True)
+
+
+_COUNT = r"(?:0|[1-9][0-9]*)"
+_SECONDS = r"(?:0|[1-9][0-9]*)(?:\.[0-9]+)?"
+
+
+def parse_replay_stderr(text: str, mode: str) -> dict[str, Any]:
+    """Validate the one intentional replay progress line without accepting general stderr."""
+    require(text.endswith("\n") and text.count("\n") == 1, f"{mode}: replay stderr is not one newline-terminated line")
+    if mode == "gene-stream":
+        pattern = re.compile(
+            rf"molecules (?P<molecules>{_COUNT}) -> assigned (?P<assigned>{_COUNT}) -> "
+            rf"(?P<umis>{_COUNT}) UMIs in (?P<entries>{_COUNT}) entries \| streaming \| "
+            rf"open\+dict (?P<open_dict>{_SECONDS})s, \+anno (?P<anno>{_SECONDS})s, "
+            rf"\+decode/replay (?P<decode_replay>{_SECONDS})s, total (?P<total>{_SECONDS})s\n"
+        )
+        timing_fields = ("open_dict", "anno", "decode_replay", "total")
+        expected = EXPECTED_REPLAY_DIAGNOSTICS["gene"]
+    elif mode == "gene-eager":
+        pattern = re.compile(
+            rf"molecules (?P<molecules>{_COUNT}) -> assigned (?P<assigned>{_COUNT}) -> "
+            rf"(?P<umis>{_COUNT}) UMIs in (?P<entries>{_COUNT}) entries \| eager \| "
+            rf"load (?P<load>{_SECONDS})s, \+anno (?P<anno>{_SECONDS})s, "
+            rf"\+replay (?P<replay>{_SECONDS})s, total (?P<total>{_SECONDS})s\n"
+        )
+        timing_fields = ("load", "anno", "replay", "total")
+        expected = EXPECTED_REPLAY_DIAGNOSTICS["gene"]
+    elif mode in {"velocity-stream", "velocity-eager"}:
+        pattern = re.compile(
+            rf"velocity: (?P<molecules>{_COUNT}) molecules -> (?P<umis>{_COUNT}) UMIs in "
+            rf"(?P<entries>{_COUNT}) \(cell,gene\) entries \| load (?P<load>{_SECONDS})s, "
+            rf"total (?P<total>{_SECONDS})s\n"
+        )
+        timing_fields = ("load", "total")
+        expected = EXPECTED_REPLAY_DIAGNOSTICS["velocity"]
+    else:
+        raise GateError(f"unknown replay diagnostic mode {mode!r}")
+    match = pattern.fullmatch(text)
+    require(match is not None, f"{mode}: replay stderr grammar changed")
+    counts = {key: int(match.group(key)) for key in expected}
+    require(counts == expected, f"{mode}: replay diagnostic scientific counts differ")
+    timings = {key: float(match.group(key)) for key in timing_fields}
+    require(timings["total"] >= max(value for key, value in timings.items() if key != "total"), f"{mode}: replay diagnostic timing is inconsistent")
+    return {"mode": mode, "counts": counts, "timings_seconds": timings}
+
+
+def command_files(
+    directory: Path,
+    *,
+    replay_mode: str | None = None,
+    require_empty_stdout: bool = False,
+) -> dict[str, Any]:
+    require(directory.is_dir(), f"missing command directory {directory}")
+    require(
+        {path.name for path in directory.iterdir()} == {"command.json", "stdout.txt", "stderr.txt", "time.txt"},
+        f"{directory}: command artifact set changed",
+    )
+    command = load_json(directory / "command.json")
+    exact_keys(command, {"schema", "argv", "cwd", "environment"}, str(directory / "command.json"))
+    require(command["schema"] == "gravlax.archive-root-command.v1", "command schema changed")
+    require(type(command["argv"]) is list and all(type(v) is str for v in command["argv"]), "bad command argv")
+    require(command["environment"] == {"RAYON_NUM_THREADS": "24"}, "command environment differs")
+    record = parse_gnu_time(directory / "time.txt")
+    stdout = directory / "stdout.txt"
+    stderr = directory / "stderr.txt"
+    diagnostic = None
+    if replay_mode is None:
+        require(stderr.stat().st_size == 0, f"{directory}: successful command wrote unexpected stderr")
+    else:
+        try:
+            diagnostic = parse_replay_stderr(stderr.read_text(), replay_mode)
+        except UnicodeDecodeError as error:
+            raise GateError(f"{directory}: replay stderr is not UTF-8") from error
+        require_empty_stdout = True
+    if require_empty_stdout:
+        require(stdout.stat().st_size == 0, f"{directory}: command wrote unexpected stdout")
+    result = {"command": command, "resources": record}
+    if diagnostic is not None:
+        result["replay_diagnostic"] = diagnostic
+    return result
+
+
+def parse_schedule(path: Path, kind_column: bool = False) -> list[dict[str, Any]]:
+    lines = path.read_text().splitlines()
+    header = "kind\tblock\tposition\tarm\tlabel" if kind_column else "block\tposition\tarm\tlabel"
+    require(lines and lines[0] == header, f"{path}: schedule header changed")
+    rows = []
+    for line in lines[1:]:
+        fields = line.split("\t")
+        require(len(fields) == (5 if kind_column else 4), f"{path}: malformed schedule row")
+        if kind_column:
+            kind, raw_block, raw_position, arm, label = fields
+        else:
+            raw_block, raw_position, arm, label = fields
+            kind = None
+        require(re.fullmatch(r"[1-8]", raw_block) is not None, f"{path}: invalid block")
+        require(raw_position in {"1", "2"} and arm in {"v1", "v2"}, f"{path}: invalid paired row")
+        block, position = int(raw_block), int(raw_position)
+        expected = ("v1", "v2") if block % 2 else ("v2", "v1")
+        require(arm == expected[position - 1], f"{path}: alternating order differs")
+        rows.append({"kind": kind, "block": block, "position": position, "arm": arm, "label": label})
+    expected_rows = 48 if kind_column else 16
+    require(len(rows) == expected_rows and len({row["label"] for row in rows}) == expected_rows, f"{path}: schedule cardinality differs")
+    if kind_column:
+        require({row["kind"] for row in rows} == set(TIMED_QUERY_KINDS), f"{path}: query kinds differ")
+        for kind in TIMED_QUERY_KINDS:
+            require(sum(row["kind"] == kind for row in rows) == 16, f"{path}: {kind} row count differs")
+    return rows
+
+
+_PLAN_FIELDS = {
+    "archive",
+    "actual_archive_bytes_read",
+    "planned_compressed_bytes",
+    "chunks_decoded",
+    "unique_chunks_decoded",
+    "independent_chunk_decodes",
+}
+
+
+def scientific_projection(value: Any) -> Any:
+    if isinstance(value, list):
+        return [scientific_projection(item) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: scientific_projection(item)
+            for key, item in value.items()
+            if key not in {"planning", "explain"}
+            and key not in _PLAN_FIELDS
+            and not key.endswith("_seconds")
+        }
+    return value
+
+
+def ratio(treatment: float, control: float, label: str) -> float:
+    require(control > 0 and treatment >= 0, f"{label}: invalid ratio operands")
+    return treatment / control
+
+
+def collection_structural_counts(build: Mapping[str, Any]) -> tuple[int, ...]:
+    """Return identity-representation-independent collection cardinalities."""
+    return tuple(build[field] for field in COLLECTION_STRUCTURAL_COUNT_FIELDS)
+
+
+def paired_summary(
+    rows: Iterable[dict[str, Any]],
+    command_root: Path,
+    *,
+    replay_mode: str | None = None,
+) -> dict[str, Any]:
+    by_arm: dict[str, list[dict[str, Any]]] = {"v1": [], "v2": []}
+    for row in rows:
+        resources = command_files(
+            command_root / row["label"],
+            replay_mode=replay_mode,
+        )["resources"]
+        by_arm[row["arm"]].append(resources)
+    result = {}
+    for field in ("wall_seconds", "max_rss_kib"):
+        controls = [row[field] for row in by_arm["v1"]]
+        treatments = [row[field] for row in by_arm["v2"]]
+        result[field] = {
+            "v1": controls,
+            "v2": treatments,
+            "v1_median": median(controls),
+            "v2_median": median(treatments),
+            "v2_over_v1": ratio(median(treatments), median(controls), field),
+        }
+    return result
+
+
+def validate_build_json(
+    value: Any,
+    *,
+    output: Path,
+    arm: str,
+    new_sample_ids: tuple[str, ...],
+    all_sample_ids: tuple[str, ...] | None = None,
+) -> dict[str, Any]:
+    all_sample_ids = new_sample_ids if all_sample_ids is None else all_sample_ids
+    exact_keys(
+        value,
+        {
+            "schema",
+            "output",
+            "collection_format_version",
+            "new_archives",
+            "segment_junctions",
+            "archive_routes",
+            "chunk_postings",
+            "raw_section_bytes",
+            "file_bytes",
+            "elapsed_seconds",
+            "source_io",
+        },
+        "collection build JSON",
+    )
+    require(value["schema"] == "gravlax.collection.build.v1", "collection build schema changed")
+    require(Path(value["output"]).resolve() == output.resolve(), "collection output path differs")
+    require(value["collection_format_version"] == 3, "collection format version differs")
+    require(value["new_archives"] == len(new_sample_ids), "new archive count differs")
+    for key in ("segment_junctions", "archive_routes", "chunk_postings", "raw_section_bytes", "file_bytes"):
+        require(type(value[key]) is int and value[key] > 0, f"collection build {key} is invalid")
+    require(value["file_bytes"] == output.stat().st_size, "collection file-byte count differs")
+    require(type(value["elapsed_seconds"]) in (int, float) and value["elapsed_seconds"] >= 0, "bad build elapsed time")
+    source_io = value["source_io"]
+    exact_keys(source_io, {"identity_content_bytes_read", "total_bytes_read", "sections_read", "archives"}, "build source_io")
+    require(source_io["sections_read"] == sorted(BUILD_SECTIONS), "build section union differs")
+    archives = source_io["archives"]
+    require(type(archives) is list and len(archives) == len(all_sample_ids), "build archive I/O rows differ")
+    require([row.get("id") for row in archives] == list(all_sample_ids), "build archive I/O rows are not ID-sorted")
+    identity_sum = total_sum = 0
+    for row in archives:
+        exact_keys(
+            row,
+            {"id", "format_version", "identity_scheme", "identity_content_bytes_read", "total_bytes_read", "sections_read"},
+            f"build archive {row.get('id')}",
+        )
+        sample = row["id"]
+        is_new = sample in new_sample_ids
+        require(
+            row["sections_read"] == (sorted(BUILD_SECTIONS) if is_new else []),
+            f"{sample}: build sections differ",
+        )
+        require(
+            type(row["total_bytes_read"]) is int
+            and row["total_bytes_read"] >= 0
+            and (not is_new or row["total_bytes_read"] > 0),
+            f"{sample}: total bytes invalid",
+        )
+        if arm == "v1":
+            require(row["format_version"] == 1 and row["identity_scheme"] == "full-file-blake3-v1", f"{sample}: v1 identity differs")
+            require(
+                row["identity_content_bytes_read"] == (SOURCE[sample][0] if is_new else 0),
+                f"{sample}: v1 identity scan differs",
+            )
+        else:
+            require(row["format_version"] == 2 and row["identity_scheme"] == "aie-directory-root-v2", f"{sample}: v2 identity differs")
+            require(row["identity_content_bytes_read"] == 0, f"{sample}: rooted identity read payload bytes")
+        require(row["total_bytes_read"] >= row["identity_content_bytes_read"], f"{sample}: total I/O undercounts identity")
+        identity_sum += row["identity_content_bytes_read"]
+        total_sum += row["total_bytes_read"]
+    require(source_io["identity_content_bytes_read"] == identity_sum, "aggregate identity bytes differ")
+    require(source_io["total_bytes_read"] == total_sum, "aggregate source bytes differ")
+    source_bytes = sum(SOURCE[sample][0] for sample in all_sample_ids)
+    if arm == "v2":
+        require(total_sum <= 0.02 * source_bytes, "rooted build reads more than 2% of source bytes")
+    return {
+        "new_archives": value["new_archives"],
+        "segment_junctions": value["segment_junctions"],
+        "archive_routes": value["archive_routes"],
+        "chunk_postings": value["chunk_postings"],
+        "raw_section_bytes": value["raw_section_bytes"],
+        "file_bytes": value["file_bytes"],
+        "source_io": {
+            "identity_content_bytes_read": identity_sum,
+            "total_bytes_read": total_sum,
+            "source_fraction_read": total_sum / source_bytes,
+            "sections_read": sorted(BUILD_SECTIONS),
+        },
+    }
+
+
+def validate_archive_audits(run: Path, protocol: Mapping[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+    summaries = {}
+    total_source = total_sealed = total_added = total_sections = 0
+    for sample in (*SAMPLES, "D0"):
+        audit_path = run / "archive-audits" / f"{sample}.json"
+        audit = load_json(audit_path)
+        exact_keys(
+            audit,
+            {
+                "schema",
+                "source",
+                "sealed",
+                "source_bytes",
+                "sealed_bytes",
+                "added_bytes",
+                "section_count",
+                "directory_offset",
+                "archive_root",
+                "sections",
+                "repeat_sha256",
+                "sealed_sha256",
+            },
+            str(audit_path),
+        )
+        require(audit["schema"] == "gravlax.archive-root-section-comparison.v1", "archive audit schema changed")
+        source = Path(audit["source"]).resolve()
+        sealed = Path(audit["sealed"]).resolve()
+        require(sealed == (run / "archives" / f"{sample}.v2.aie").resolve(), f"{sample}: sealed path differs")
+        expected_source_bytes = SOURCE[sample][0] if sample in SOURCE else D0_BYTES
+        require(source.is_file() and source.stat().st_size == expected_source_bytes, f"{sample}: source archive differs")
+        require(sealed.is_file() and sealed.stat().st_size == audit["sealed_bytes"], f"{sample}: sealed archive differs")
+        require(sha256_file(sealed) == audit["sealed_sha256"] == audit["repeat_sha256"], f"{sample}: seal determinism differs")
+        parsed = parse_archive(sealed, ROOT_DOMAIN, verify_payloads=False)
+        require(parsed.version == 2 and parsed.root == audit["archive_root"], f"{sample}: independent root differs")
+        require(parsed.directory_offset == audit["directory_offset"], f"{sample}: directory offset differs")
+        require(len(parsed.sections) == audit["section_count"] == len(audit["sections"]), f"{sample}: section count differs")
+        require(audit["added_bytes"] == 32 * audit["section_count"] + 32, f"{sample}: fixed layout cost differs")
+        require(audit["sealed_bytes"] - audit["source_bytes"] == audit["added_bytes"], f"{sample}: archive growth differs")
+        for recorded, entry in zip(audit["sections"], parsed.sections, strict=True):
+            exact_keys(
+                recorded,
+                {"name", "raw_bytes", "compressed_bytes", "compressed_sha256", "compressed_blake3", "committed_compressed_blake3"},
+                f"{sample} section audit",
+            )
+            require(
+                (recorded["name"], recorded["raw_bytes"], recorded["compressed_bytes"], recorded["compressed_blake3"])
+                == (entry.name, entry.raw_len, entry.compressed_len, entry.committed_blake3),
+                f"{sample}: section audit differs for {entry.name}",
+            )
+            require(recorded["compressed_blake3"] == recorded["committed_compressed_blake3"], f"{sample}: committed payload digest differs")
+            require(re.fullmatch(r"[0-9a-f]{64}", recorded["compressed_sha256"]) is not None, f"{sample}: malformed payload SHA-256")
+        seal_dir = run / "commands" / "seal" / sample
+        seal = load_json(seal_dir / "stdout.txt")
+        command_files(seal_dir)
+        require(seal.get("schema") == "gravlax.archive.seal.v1", f"{sample}: seal schema differs")
+        require(seal.get("archive_root") == {"scheme": "aie-directory-root-v2", "blake3": audit["archive_root"]}, f"{sample}: seal root differs")
+        require(seal.get("source_identity_content_bytes_read") == expected_source_bytes, f"{sample}: migration source scan differs")
+        if sample in SOURCE:
+            require(seal.get("source_full_file_blake3") == SOURCE[sample][1], f"{sample}: frozen BLAKE3 differs")
+        command_files(run / "commands" / "seal-repeat" / sample)
+        encoded_identity = seal.get("encoded_sections_identity")
+        for mode, full in (("lazy", False), ("full", True)):
+            inspect_dir = run / "commands" / "inspect" / sample / mode
+            command_files(inspect_dir)
+            inspect = load_json(inspect_dir / "stdout.txt")
+            require(inspect.get("schema") == "gravlax.archive.identity.v1", f"{sample}: inspect schema differs")
+            require(inspect.get("native_identity") == seal.get("archive_root"), f"{sample}: inspect root differs")
+            require(inspect.get("encoded_sections_identity") == encoded_identity, f"{sample}: encoded identity differs")
+            verification = inspect.get("verification")
+            require(type(verification) is dict and verification.get("directory_and_root") is True, f"{sample}: root not verified")
+            require(verification.get("all_payloads") is full, f"{sample}: payload verification flag differs")
+            expected_payload = sum(row["compressed_bytes"] for row in audit["sections"]) if full else 0
+            require(verification.get("identity_content_bytes_read") == expected_payload, f"{sample}: inspection payload accounting differs")
+        summaries[sample] = {
+            "source_bytes": audit["source_bytes"],
+            "sealed_bytes": audit["sealed_bytes"],
+            "added_bytes": audit["added_bytes"],
+            "section_count": audit["section_count"],
+            "archive_root": audit["archive_root"],
+            "sealed_sha256": audit["sealed_sha256"],
+            "audit_sha256": sha256_file(audit_path),
+        }
+        if sample in SOURCE:
+            total_source += audit["source_bytes"]
+            total_sealed += audit["sealed_bytes"]
+            total_added += audit["added_bytes"]
+            total_sections += audit["section_count"]
+            require(audit["added_bytes"] <= 64 * audit["section_count"] + 256, f"{sample}: per-archive size gate failed")
+    require(total_source == 1_326_036_691, "aggregate source archive bytes differ")
+    require(total_added / total_source <= 0.001, "aggregate archive-root size gate failed")
+    return summaries, {
+        "source_bytes": total_source,
+        "sealed_bytes": total_sealed,
+        "added_bytes": total_added,
+        "sections": total_sections,
+        "premium_fraction": total_added / total_source,
+    }
+
+
+def validate_fixtures(run: Path, binary_sha256: str) -> dict[str, Any]:
+    fixture_root = run / "fixtures"
+    hook_dirs = sorted(path for path in fixture_root.iterdir() if path.is_dir())
+    require(bool(hook_dirs), "no adversarial fixture hook output")
+    observed: dict[str, str] = {}
+    hooks = []
+    for hook_dir in hook_dirs:
+        command_files(
+            run / "commands" / "fixture-hooks" / hook_dir.name,
+            require_empty_stdout=True,
+        )
+        result_path = hook_dir / "result.json"
+        result = load_json(result_path)
+        exact_keys(
+            result,
+            {"schema", "binary_sha256", "source_archive", "fixture_archive", "root_domain_hex", "cases"},
+            str(result_path),
+        )
+        require(result["schema"] == "gravlax.archive-root-adversarial.v1", "fixture schema changed")
+        require(result["binary_sha256"] == binary_sha256, "fixture binary differs")
+        require(result["root_domain_hex"] == ROOT_DOMAIN.hex(), "fixture root domain differs")
+        cases = result["cases"]
+        require(type(cases) is list and cases, "fixture case list is empty")
+        for case in cases:
+            exact_keys(
+                case,
+                {"id", "expect", "command", "exit_status", "stdout", "stderr", "fixture_bytes", "fixture_sha256", "mutation", "rejected_before_scientific_output"},
+                "fixture case",
+            )
+            case_id, expect = case["id"], case["expect"]
+            require(case_id not in observed and expect in {"accept", "reject"}, "duplicate or malformed fixture case")
+            observed[case_id] = expect
+            require(re.fullmatch(r"[0-9a-f]{64}", case["fixture_sha256"]) is not None, f"{case_id}: bad fixture SHA")
+            stdout = hook_dir / case["stdout"]
+            stderr = hook_dir / case["stderr"]
+            require(stdout.is_file() and stderr.is_file(), f"{case_id}: fixture streams missing")
+            if expect == "reject":
+                require(case["exit_status"] != 0 and case["rejected_before_scientific_output"] is True, f"{case_id}: corruption accepted or partial output")
+                require(stdout.stat().st_size == 0, f"{case_id}: rejected fixture wrote stdout")
+            else:
+                require(case["exit_status"] == 0 and case["rejected_before_scientific_output"] is False, f"{case_id}: valid fixture rejected")
+                require(type(load_json(stdout)) is dict, f"{case_id}: accepted fixture did not emit JSON")
+        hooks.append({"name": hook_dir.name, "result_sha256": sha256_file(result_path), "cases": len(cases)})
+    require(observed == REQUIRED_FIXTURE_CASES, f"fixture coverage/expectations differ: {observed}")
+    return {"hooks": hooks, "cases": len(observed), "all_required_cases_behaved_as_expected": True}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run-dir", type=Path, required=True)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--artifact-inventory-out", type=Path, required=True)
+    parser.add_argument("--gravlax-commit", required=True)
+    parser.add_argument("--paper-scripts-commit", required=True)
+    args = parser.parse_args()
+
+    self_test_blake3()
+    run = args.run_dir.resolve()
+    out = args.out.resolve()
+    inventory_out = args.artifact_inventory_out.resolve()
+    require(run.is_dir(), f"missing run directory {run}")
+    require(not out.exists(), f"refusing to overwrite {out}")
+    require(not inventory_out.exists(), f"refusing to overwrite {inventory_out}")
+    require(out != inventory_out, "result and artifact inventory paths must differ")
+    require(re.fullmatch(r"[0-9a-f]{40}", args.gravlax_commit) is not None, "bad Gravlax commit")
+    require(re.fullmatch(r"[0-9a-f]{40}", args.paper_scripts_commit) is not None, "bad scripts commit")
+
+    artifact_manifest = validate_artifact_manifest(run)
+    protocol = load_json(run / "protocol.json")
+    exact_keys(
+        protocol,
+        {
+            "schema", "date", "interface_status", "promotable_run", "root_domain_ascii",
+            "root_domain_hex", "root_preimage", "threads", "warm_paired_blocks", "schedule",
+            "project_root", "run_dir", "aie", "gravlax", "paper_scripts", "adapter", "inputs",
+            "fixture_hooks", "host", "tools",
+        },
+        "protocol",
+    )
+    require(protocol["schema"] == "gravlax.archive-root-gate-protocol.v1", "protocol schema changed")
+    require(protocol["interface_status"] == "final" and protocol["promotable_run"] is True, "run is not promotable")
+    require(protocol["root_domain_hex"] == ROOT_DOMAIN.hex(), "root domain differs")
+    require(protocol["threads"] == 24 and protocol["warm_paired_blocks"] == 8, "thread/block protocol differs")
+    require(protocol["gravlax"] == {"repo": protocol["gravlax"]["repo"], "commit": args.gravlax_commit, "dirty": False}, "Gravlax identity differs")
+    require(protocol["paper_scripts"] == {"repo": protocol["paper_scripts"]["repo"], "commit": args.paper_scripts_commit, "dirty": False}, "scripts identity differs")
+    binary = Path(protocol["aie"]["path"]).resolve()
+    binary_sha256 = sha256_file(binary)
+    require(binary_sha256 == protocol["aie"]["sha256"] and binary.stat().st_size == protocol["aie"]["bytes"], "binary identity differs")
+    inputs = protocol["inputs"]
+    require(inputs["d0"]["bytes"] == D0_BYTES and inputs["d0"]["sha256"] == D0_SHA256, "D0 protocol identity differs")
+    require(inputs["gtf"]["bytes"] == GTF_BYTES and inputs["gtf"]["sha256"] == GTF_SHA256, "GTF protocol identity differs")
+    require(inputs["barcodes"]["bytes"] == BARCODES_BYTES and inputs["barcodes"]["sha256"] == BARCODES_SHA256, "barcode protocol identity differs")
+    require(
+        [(row["id"], row["bytes"], row["expected_blake3"]) for row in inputs["archives"]]
+        == [(sample, *SOURCE[sample]) for sample in SAMPLES],
+        "source archive protocol identities differ",
+    )
+
+    completion = load_json(run / "driver-completion.json")
+    exact_keys(completion, {"schema", "status", "promotable_run", "fixture_cases", "root_domain_hex"}, "driver completion")
+    require(completion["schema"] == "gravlax.archive-root-driver-completion.v1", "completion schema changed")
+    require(completion["status"] == "COMPLETE" and completion["promotable_run"] is True, "driver did not complete promotably")
+    require(
+        completion["fixture_cases"]
+        == [{"id": case, "expect": REQUIRED_FIXTURE_CASES[case]} for case in sorted(REQUIRED_FIXTURE_CASES)],
+        "completion fixture list differs",
+    )
+
+    archives, aggregate_size = validate_archive_audits(run, protocol)
+
+    build_summaries = {}
+    canonical_counts = {}
+    form_samples = {
+        "root": SAMPLES,
+        "base": SAMPLES[:4],
+        "extension": SAMPLES[4:],
+        "root-reverse": SAMPLES,
+    }
+    for arm in ("v1", "v2"):
+        for form, sample_ids in form_samples.items():
+            command_dir = run / "commands" / "collection-canonical" / f"{arm}-{form}"
+            command_files(command_dir)
+            output = run / "collections" / f"{arm}-{form}.aicollection"
+            build = validate_build_json(
+                load_json(command_dir / "stdout.txt"),
+                output=output,
+                arm=arm,
+                new_sample_ids=sample_ids,
+                all_sample_ids=SAMPLES if form == "extension" else sample_ids,
+            )
+            build_summaries[f"{arm}-{form}"] = build
+            canonical_counts[(arm, form)] = collection_structural_counts(build)
+        require(sha256_file(run / "collections" / f"{arm}-root.aicollection") == sha256_file(run / "collections" / f"{arm}-root-reverse.aicollection"), f"{arm}: reversed root bytes differ")
+        require(canonical_counts[(arm, "root")] == canonical_counts[(arm, "root-reverse")], f"{arm}: reversed root counts differ")
+    require(canonical_counts[("v1", "root")] == canonical_counts[("v2", "root")], "v1/v2 root collection counts differ")
+    require(canonical_counts[("v1", "base")] == canonical_counts[("v2", "base")], "v1/v2 base collection counts differ")
+    require(canonical_counts[("v1", "extension")] == canonical_counts[("v2", "extension")], "v1/v2 extension counts differ")
+
+    query_audit = load_json(run / "archive-audits" / "query-equivalence.json")
+    exact_keys(query_audit, {"schema", "arms", "queries"}, "query equivalence audit")
+    require(query_audit["schema"] == "gravlax.archive-root-query-equivalence.v1", "query audit schema differs")
+    require(query_audit["arms"] == ["v1-root", "v1-extension", "v2-root", "v2-extension"], "query arms differ")
+    require(set(query_audit["queries"]) == set(QUERY_KINDS), "query audit kinds differ")
+    for kind in QUERY_KINDS:
+        require(query_audit["queries"][kind]["totals"] == EXPECTED_TOTALS[kind], f"{kind}: scientific totals differ")
+        for arm in ("v1", "v2"):
+            for form in ("root", "extension"):
+                command_dir = run / "commands" / "query-canonical" / f"{arm}-{form}-{kind}"
+                command_files(command_dir)
+                raw = load_json(command_dir / "stdout.txt")
+                require(scientific_projection(raw) == query_audit["queries"][kind], f"{arm}-{form}-{kind}: query differs")
+
+    replay_trees = {}
+    replay_artifacts: dict[Path, dict[str, Any]] = {}
+    for arm in ("v1", "v2"):
+        for mode in ("gene-stream", "gene-eager", "velocity-stream", "velocity-eager"):
+            command_files(
+                run / "commands" / "replay-canonical" / f"{arm}-{mode}",
+                replay_mode=mode,
+            )
+            recorded = load_json(run / "archive-audits" / f"replay-{arm}-{mode}.json")
+            actual = tree_digest(run / "replay" / "canonical" / f"{arm}-{mode}")
+            require(recorded == actual, f"{arm}-{mode}: replay tree changed")
+            replay_trees[(arm, mode)] = recorded
+            replay_artifacts[run / "replay" / "canonical" / f"{arm}-{mode}"] = actual
+    for mode in ("gene-stream", "gene-eager", "velocity-stream", "velocity-eager"):
+        require(replay_trees[("v1", mode)] == replay_trees[("v2", mode)], f"{mode}: v1/v2 replay differs")
+    for arm in ("v1", "v2"):
+        require(replay_trees[(arm, "gene-stream")] == replay_trees[(arm, "gene-eager")], f"{arm}: Gene eager differs")
+        require(replay_trees[(arm, "velocity-stream")] == replay_trees[(arm, "velocity-eager")], f"{arm}: Velocity eager differs")
+
+    build_rows = parse_schedule(run / "collection-build-schedule.tsv")
+    for row in build_rows:
+        command_dir = run / "commands" / "collection-build-benchmark" / row["label"]
+        command_files(command_dir)
+        output = run / "collections" / "build-benchmark" / f"{row['label']}.aicollection"
+        validate_build_json(
+            load_json(command_dir / "stdout.txt"),
+            output=output,
+            arm=row["arm"],
+            new_sample_ids=SAMPLES,
+        )
+    build_perf = paired_summary(build_rows, run / "commands" / "collection-build-benchmark")
+    require(build_perf["wall_seconds"]["v2_over_v1"] <= 1.10, "collection-build wall gate failed")
+    require(build_perf["max_rss_kib"]["v2_over_v1"] <= 1.05, "collection-build RSS ratio gate failed")
+    require(build_perf["max_rss_kib"]["v2_median"] <= 600 * 1024, "collection-build absolute RSS gate failed")
+
+    replay_rows = parse_schedule(run / "replay-schedule.tsv")
+    for row in replay_rows:
+        command_files(
+            run / "commands" / "replay-benchmark" / row["label"],
+            replay_mode="gene-stream",
+        )
+        replay_path = run / "replay" / "benchmark" / row["label"]
+        replay_digest = tree_digest(replay_path)
+        require(replay_digest == replay_trees[("v1", "gene-stream")], f"{row['label']}: timed replay differs")
+        replay_artifacts[replay_path] = replay_digest
+    replay_perf = paired_summary(
+        replay_rows,
+        run / "commands" / "replay-benchmark",
+        replay_mode="gene-stream",
+    )
+    require(replay_perf["wall_seconds"]["v2_over_v1"] <= 1.05, "streaming replay wall gate failed")
+    require(replay_perf["max_rss_kib"]["v2_over_v1"] <= 1.02, "streaming replay RSS gate failed")
+
+    query_rows = parse_schedule(run / "query-schedule.tsv", kind_column=True)
+    query_perf = {}
+    for kind in TIMED_QUERY_KINDS:
+        rows = [row for row in query_rows if row["kind"] == kind]
+        for row in rows:
+            command_dir = run / "commands" / "query-benchmark" / row["label"]
+            command_files(command_dir)
+            require(scientific_projection(load_json(command_dir / "stdout.txt")) == query_audit["queries"][kind], f"{row['label']}: timed query differs")
+        summary = paired_summary(rows, run / "commands" / "query-benchmark")
+        require(summary["wall_seconds"]["v2_over_v1"] <= 1.10, f"{kind}: query wall gate failed")
+        require(summary["max_rss_kib"]["v2_over_v1"] <= 1.10, f"{kind}: query RSS gate failed")
+        query_perf[kind] = summary
+
+    fixtures = validate_fixtures(run, binary_sha256)
+    project_root = Path(protocol["project_root"]).resolve()
+    inventory = excluded_artifact_inventory(
+        project_root=project_root,
+        run=run,
+        run_manifest=artifact_manifest,
+        binary=binary,
+        binary_sha256=binary_sha256,
+        archives=archives,
+        replay_artifacts=replay_artifacts,
+    )
+    inventory_sha256 = hashlib.sha256(inventory.encode()).hexdigest()
+    result = {
+        "schema": "gravlax.archive-root-gate-a.v1",
+        "status": "PASS",
+        "identity": {
+            "gravlax_commit": args.gravlax_commit,
+            "paper_scripts_commit": args.paper_scripts_commit,
+            "run_dir": str(run),
+            "artifact_manifest": artifact_manifest,
+            "excluded_artifact_inventory": {
+                "path": logical_path(inventory_out, project_root),
+                "bytes": len(inventory.encode()),
+                "sha256": inventory_sha256,
+            },
+            "binary": {"path": str(binary), "bytes": binary.stat().st_size, "sha256": binary_sha256},
+        },
+        "protocol": {
+            "date": protocol["date"],
+            "threads": protocol["threads"],
+            "warm_paired_blocks": protocol["warm_paired_blocks"],
+            "root_domain_hex": protocol["root_domain_hex"],
+            "host": protocol["host"],
+            "tools": protocol["tools"],
+        },
+        "archive_root": {
+            "format_version": 2,
+            "meaning": "exact encoded-section content commitment; not a publisher signature",
+            "archives": archives,
+            "aggregate": aggregate_size,
+        },
+        "collection_builds": build_summaries,
+        "scientific_exactness": {
+            "query_totals": EXPECTED_TOTALS,
+            "fresh_root_extension_and_v1_v2_equal": True,
+            "gene_and_velocity_stream_eager_and_v1_v2_equal": True,
+        },
+        "adversarial": fixtures,
+        "performance": {"collection_build": build_perf, "streaming_replay": replay_perf, "queries": query_perf},
+        "gates": {
+            "independent_roots_and_payload_commitments_match": True,
+            "compressed_payloads_preserved": True,
+            "repeat_migrations_byte_identical": True,
+            "reversed_collection_builds_byte_identical": True,
+            "all_scientific_outputs_exact": True,
+            "all_required_corruptions_rejected_without_partial_output": True,
+            "valid_boundary_fixtures_accepted": True,
+            "size_limits_pass": True,
+            "rooted_collection_identity_reads_zero_content_bytes": True,
+            "rooted_collection_source_io_below_two_percent": True,
+            "runtime_and_memory_limits_pass": True,
+        },
+        "claim_guards": [
+            "The archive root is not a publisher signature or provenance attestation.",
+            "Ordinary reads verify selected payloads only; --verify-content verifies every payload.",
+            "Migration is a one-time construction cost and is excluded from query speed claims.",
+        ],
+    }
+    write_pass_outputs(
+        result_path=out,
+        result=result,
+        inventory_path=inventory_out,
+        inventory=inventory,
+    )
+    print(
+        json.dumps(
+            {
+                "status": "PASS",
+                "out": str(out),
+                "artifact_inventory": str(inventory_out),
+                "artifact_inventory_sha256": inventory_sha256,
+            },
+            sort_keys=True,
+        )
+    )
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except GateError as error:
+        raise SystemExit(f"archive-root validation failed: {error}") from error

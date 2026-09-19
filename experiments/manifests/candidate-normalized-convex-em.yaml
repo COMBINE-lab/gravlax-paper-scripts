@@ -1,0 +1,108 @@
+experiment: candidate_normalized_convex_em
+date_locked: 2026-08-31
+status: locked_after_implementation_before_grid_or_confirmation
+reference_gravlax_commit: f6fd759ae118049ae0a11ef9f50b0d32d5daee07
+disclosure:
+  observed_before_lock:
+    - dataset: D0
+      role: implementation_smoke_only
+      parameters:
+        cell_weight: 0.10
+        group_weight: 0.45
+        group_prior: 20
+        seed: 7
+      negative_log_loss: 0.05868726201090055
+      top1_percent: 98.21174777367995
+      wall_seconds: 2.90
+      peak_rss_kib: 1212224
+  interpretation: D0_is_development_and_the_observed_point_cannot_support_confirmation
+model:
+  iterations: 10
+  epsilon: 1.0e-9
+  cell_shards: 64
+  component_normalization: target_candidate_set
+  group_component: leave_one_cell_out
+  group_prior_center: candidate_normalized_sample_distribution
+  ungrouped_cell_policy: transfer_group_weight_to_sample
+  production_emission_unchanged: pooled
+development_grid:
+  dataset: D0
+  cell_weights: [0.00, 0.05, 0.10, 0.20]
+  group_fraction_of_remainder: [0.00, 0.25, 0.50, 0.75, 1.00]
+  group_weight_formula: (1-cell_weight)*group_fraction_of_remainder
+  group_priors: [0, 5, 20, 80]
+  group_prior_when_group_weight_zero: 20
+  selection_metric: mean_negative_log_loss
+  tie_break: [lower_group_weight, lower_cell_weight, lower_group_prior]
+  comparator: best_development_candidate_normalized_no_group_arm
+targets:
+  type: keyed_mixed_class_mask
+  mask_fraction: 0.20
+  seeds: [7, 17, 29]
+  candidate_gene_exclusion: union_across_all_seeds
+  evaluation_population: supplied_group_barcodes_only
+groups:
+  expression_source: gravlax_base_gene_matrix_before_em
+  called_cell_source: fresh_v49_STARsolo_filtered_barcodes_only
+  normalization: library_size_10000_log1p
+  hvg_count_max: 2000
+  minimum_eligible_genes: 500
+  leiden_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  label_selection: maximum_mean_within_arm_ari_medoid
+  controls:
+    - deterministic_size_preserving_permutation
+    - tuned_candidate_normalized_no_group
+datasets:
+  - id: D0
+    role: development_only
+    archive: runs/archive/d0.aie
+    groups: runs/post-v1/hierarchical-em-groups-r1/groups/D0.real.tsv
+    shuffled_groups: runs/post-v1/hierarchical-em-groups-r1/groups/D0.shuffled.tsv
+    dimension: 40
+    resolution: 0.60
+  - id: D1
+    role: descriptive_only_already_inspected
+    archive: runs/archive/d1.aie
+  - id: D2_prime
+    role: descriptive_only_already_inspected
+    archive: runs/archive/d2p.aie
+  - id: D4
+    role: untouched_primary_confirmation
+    archive: runs/archive/d4.aie
+    fresh_v49_quantification: required_before_unblinding
+    group_grid:
+      dimensions: [20, 30, 40, 50]
+      resolutions: [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00]
+      eligible_cluster_count: [3, 12]
+      minimum_group_cells: 20
+      minimum_median_pairwise_seed_ari: 0.90
+      selection: maximum_median_pairwise_seed_ari
+      tie_break: [lower_dimension, resolution_closest_to_0.50, lower_resolution]
+      failure: stop_if_no_eligible_configuration
+  - id: D3
+    role: held_back_replication_if_D4_passes
+    archive: runs/archive/d3.aie
+    fresh_v49_quantification: required_before_unblinding
+    group_grid: same_as_D4
+acceptance:
+  D4:
+    real_better_than_tuned_no_group_on_all_seeds: true
+    mean_relative_log_loss_improvement_over_tuned_no_group_min: 0.005
+    real_better_than_shuffled_on_all_seeds: true
+    shuffle_explained_fraction_of_group_gain_max: 0.50
+    mean_brier_must_not_increase: true
+    top1_drop_percentage_points_max: 0.20
+    peak_rss_gib_max: 4
+  D3_replication:
+    required_before_production_recommendation: true
+    mean_group_increment_direction: positive
+    real_better_than_shuffled_seeds_min: 2
+decisions:
+  pass: D4_meets_all_gates_then_run_D3_replication
+  marginal: proper_scores_repeatably_improve_but_one_magnitude_or_hard_assignment_gate_fails
+  stop: D4_has_no_real_group_increment_or_shuffle_explains_the_gain
+  full_hierarchical_dirichlet_escalation:
+    required_signal: real_groups_repeatably_beat_shuffle_and_no_group
+    required_failure: fixed_weights_leave_group_depth_or_candidate_class_dependent_calibration_error
+    forbidden_reason: model_formality_alone
+    validation: new_untouched_data_or_nested_cross_fitting
